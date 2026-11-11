@@ -136,5 +136,120 @@
    "n_pollsters": 7,
    "jk_mean_pct": 6.2
   }
+ },
+ "reform": {
+  "definition": "share = 개혁신당 / sum of named parties (excl. no party, don't know); pooled like the 조국 ratio",
+  "pr2024_list_share_pct": 3.61,
+  "pre2024": {
+   "all": {
+    "ratio": 0.029,
+    "logit": -3.5124,
+    "n_polls": 21,
+    "n_pollsters": 15,
+    "ref_mean_pct": 2.77
+   },
+   "ARS": {
+    "ratio": 0.0299,
+    "logit": -3.4796,
+    "n_polls": 12,
+    "n_pollsters": 8,
+    "ref_mean_pct": 3.1
+   },
+   "CATI": {
+    "ratio": 0.026,
+    "logit": -3.6243,
+    "n_polls": 9,
+    "n_pollsters": 7,
+    "ref_mean_pct": 2.33
+   }
+  },
+  "current": {
+   "all": {
+    "ratio": 0.0233,
+    "logit": -3.7363,
+    "n_polls": 23,
+    "n_pollsters": 10,
+    "ref_mean_pct": 2.05
+   },
+   "ARS": {
+    "ratio": 0.0228,
+    "logit": -3.7573,
+    "n_polls": 17,
+    "n_pollsters": 8,
+    "ref_mean_pct": 2.05
+   },
+   "CATI": {
+    "ratio": 0.0287,
+    "logit": -3.523,
+    "n_polls": 5,
+    "n_pollsters": 2,
+    "ref_mean_pct": 2.0
+   }
+  },
+  "swing_logit_by_mode": {
+   "ARS": -0.2777,
+   "CATI": 0.1013
+  },
+  "swing_logit": -0.1826,
+  "scenarios": {
+   "fixed_2024": {
+    "share_pct": 3.61,
+    "label": "2024 득표 고정"
+   },
+   "poll_swing": {
+    "share_pct": 3.03,
+    "label": "여론 변화 반영",
+    "share_pct_ARS_only": 2.76,
+    "share_pct_CATI_only": 3.98
+   },
+   "poll_direct": {
+    "share_pct": 2.33,
+    "label": "현재 지지율 그대로"
+   }
+  },
+  "monthly_since_2026_local": {
+   "2026-06": {
+    "ratio": 0.0344,
+    "logit": -3.3344,
+    "n_polls": 28,
+    "n_pollsters": 15,
+    "ref_mean_pct": 2.99
+   },
+   "2026-07": {
+    "ratio": 0.0298,
+    "logit": -3.4832,
+    "n_polls": 32,
+    "n_pollsters": 15,
+    "ref_mean_pct": 2.56
+   },
+   "2026-08": {
+    "ratio": 0.0297,
+    "logit": -3.4864,
+    "n_polls": 34,
+    "n_pollsters": 15,
+    "ref_mean_pct": 2.54
+   },
+   "2026-09": {
+    "ratio": 0.0252,
+    "logit": -3.6569,
+    "n_polls": 31,
+    "n_pollsters": 16,
+    "ref_mean_pct": 2.16
+   },
+   "2026-10": {
+    "ratio": 0.023,
+    "logit": -3.7488,
+    "n_polls": 28,
+    "n_pollsters": 12,
+    "ref_mean_pct": 1.97
+   },
+   "2026-11": {
+    "ratio": 0.0254,
+    "logit": -3.6479,
+    "n_polls": 7,
+    "n_pollsters": 7,
+    "ref_mean_pct": 2.27
+   }
+  }
  }
 }

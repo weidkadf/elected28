@@ -9,7 +9,8 @@ J = lambda p: json.loads((ROOT / p).read_text(encoding='utf-8'))
 def main():
     f, a, r, st = J('outputs/forecast_v050.json'), J('outputs/alpha_identification.json'), J('outputs/pollster_ratings.json'), J('state.json')
     s300, jks = J('outputs/seats_300.json'), J('outputs/jk_support.json')
-    assert s300['jk_sensitivity']['scenarios']['fixed_2024']['by_alpha'] == [{k: r[k] for k in ('total_300', 'pr', 'p10_p50_p90', 'p_majority_151')} for r in s300['by_alpha']['rows']]
+    ps = s300['pr_sensitivity']
+    assert ps['grid']['fixed_2024|fixed_2024']['by_alpha'] == [{k: r[k] for k in ('total_300', 'pr', 'p10_p50_p90', 'p_majority_151')} for r in s300['by_alpha']['rows']]
     assert s300['by_alpha']['district_ids'] == [d['district_id'] for d in f['districts_main']]
     curve = [{'a': p['alpha'], 'd': p['dem']['mean'], 'dl': p['dem']['p10_p50_p90'][0], 'dh': p['dem']['p10_p50_p90'][2],
               'c': p['con']['mean'], 'cl': p['con']['p10_p50_p90'][0], 'ch': p['con']['p10_p50_p90'][2]} for p in f['scenarios']['main_composite_254']['curve']]
@@ -27,8 +28,10 @@ def main():
         'seats': {k: v for k, v in a['seat_distribution'].items() if k != 'condition'},
         'ba': {'alpha': s300['by_alpha']['alpha'], 'rows': s300['by_alpha']['rows']},
         'jk': {'n': jks['source']['n_rows'], 'cur_pct': jks['current']['all']['jk_mean_pct'], 'cur_ratio': jks['current']['all']['ratio'], 'cur_n': jks['current']['all']['n_polls'],
-               'pre_ratio': jks['pre2024']['all']['ratio'],
-               'sc': {k: {'label': v['label'], 'ratio': v['ratio'], 'rows': v['by_alpha']} for k, v in s300['jk_sensitivity']['scenarios'].items()}},
+               'pre_ratio': jks['pre2024']['all']['ratio'], 'sc': ps['jk'],
+               'ref': {'sc': ps['ref'], 'cur_pct': jks['reform']['current']['all']['ref_mean_pct'], 'cur_share': jks['reform']['current']['all']['ratio'],
+                       'pre_share': jks['reform']['pre2024']['all']['ratio']},
+               'grid': {k: v['by_alpha'] for k, v in ps['grid'].items()}},
         'modes': r['mode_summary']['all_parsed'], 'quality': r['quality_weights_for_model'], 'n_rated': r['n_polls'],
         'frame_change': f['inputs']['frame_change_by_scope_main'], 'polls': f['inputs']['current_polls_A_plus_B'],
         'districts': [{'id': d['district_id'].split('-', 2)[2], 'r': d['region'], 'b24': d['dem_two_party_2024'], 'b25': d['dem_two_party_pres2025'], 'b': d['composite_baseline'],

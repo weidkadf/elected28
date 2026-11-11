@@ -107,6 +107,41 @@ def pooled(polls, qw):
             'jk_mean_pct': round(sum(p['조국혁신당'] for p in polls) / len(polls), 2)}
 
 
+NAMED = ['더불어민주당', '국민의힘', '조국혁신당', '개혁신당', '진보당', '정의당', '새로운미래', '자유통일당', '기타정당']
+REF2024_LIST = 3.61                              # NEC 2024 list vote %, 개혁신당
+
+
+def reform(rows, qw, pre_w, cur_w):
+    """개혁신당 share of respondents naming a party (≈ share of valid list votes). Same pooling and scenarios as the 조국 ratio."""
+    use = []
+    for r in rows:
+        if EXCLUDE.search(r['pollster']) or r['개혁신당'] in ('', 0): continue
+        named = sum(r[p] for p in NAMED if r[p] != '')
+        use.append(dict(r, ratio=r['개혁신당'] / named, jk_mean_pct=0))
+    pre = [p for p in use if pre_w[0] <= p['fieldwork_end'] <= pre_w[1]]
+    cur = [p for p in use if cur_w[0] < p['fieldwork_end'] <= cur_w[1]]
+    def pool(ps):
+        d = pooled([dict(p, 조국혁신당=p['개혁신당']) for p in ps], qw); d['ref_mean_pct'] = d.pop('jk_mean_pct'); return d
+    out = {'definition': 'share = 개혁신당 / sum of named parties (excl. no party, don\'t know); pooled like the 조국 ratio',
+           'pr2024_list_share_pct': REF2024_LIST, 'pre2024': {'all': pool(pre)}, 'current': {'all': pool(cur)}}
+    sw = {}
+    for m in ('ARS', 'CATI'):
+        out['pre2024'][m] = pool([p for p in pre if p['mode'] == m]); out['current'][m] = pool([p for p in cur if p['mode'] == m])
+        sw[m] = out['current'][m]['logit'] - out['pre2024'][m]['logit']
+    s = (qw['ARS'] * sw['ARS'] + qw['CATI'] * sw['CATI']) / (qw['ARS'] + qw['CATI'])
+    base = logit(REF2024_LIST / 100)
+    out['swing_logit_by_mode'] = {k: round(v, 4) for k, v in sw.items()}; out['swing_logit'] = round(s, 4)
+    out['scenarios'] = {'fixed_2024': {'share_pct': REF2024_LIST, 'label': '2024 득표 고정'},
+                        'poll_swing': {'share_pct': round(100 * inv(base + s), 2), 'label': '여론 변화 반영',
+                                       **{f'share_pct_{m}_only': round(100 * inv(base + sw[m]), 2) for m in sw}},
+                        'poll_direct': {'share_pct': round(100 * out['current']['all']['ratio'], 2), 'label': '현재 지지율 그대로'}}
+    month = {}
+    for p in use:
+        if p['fieldwork_end'] >= SINCE: month.setdefault(p['fieldwork_end'][:7], []).append(p)
+    out['monthly_since_2026_local'] = {k: pool(v) for k, v in sorted(month.items())}
+    return out
+
+
 def main():
     cfg = json.loads((ROOT / 'config/forecast_v050.json').read_text(encoding='utf-8'))
     q = cfg['frame_inputs']['aggregator']['quality_weights']
@@ -150,6 +185,7 @@ def main():
     for p in use:
         if p['fieldwork_end'] >= SINCE: month.setdefault(p['fieldwork_end'][:7], []).append(p)
     res['monthly_since_2026_local'] = {k: pooled(v, qw) for k, v in sorted(month.items())}
+    res['reform'] = reform(rows, qw, pre_w=PRE2024, cur_w=(lo, as_of.isoformat()))
     (ROOT / 'outputs/jk_support.json').write_text(json.dumps(res, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print(json.dumps({k: res[k] for k in ('pre2024', 'current', 'swing_logit', 'list_vote_uplift_logit')}, ensure_ascii=False))
     print({k: v['ratio'] for k, v in sc.items()}, sc['poll_swing'])
