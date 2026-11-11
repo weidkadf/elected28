@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Rough 300-seat view: 254 district seats (v0.5 engine) + 46 PR seats by parallel largest-remainder allocation.
-PR shares start from the 2024 list vote and move with the same national frame shift (alpha x change + national error)."""
+PR shares start from the 2024 list vote and move with the same national frame shift (alpha x change + national error).
+The 민주:조국혁신당 split of the Dem-bloc list vote is the 2024 ratio in the main output; outputs/jk_support.json
+(scripts/build_party_support.py, NESDC party support) supplies two sensitivity ratios reported under `jk_sensitivity`."""
 import json, sys, math
 from datetime import date
 from pathlib import Path
@@ -34,7 +36,7 @@ def main():
     grid = np.array(A['grid']); out = {'national_frame_change_logit': round(nat_change, 4), 'pr_rule': 'parallel, 46 seats, 3% threshold, largest remainder; Dem-bloc split 민주:조국 at 2024 ratio', 'scenarios': {}}
     d0 = PR2024['민주연합'] + PR2024['조국혁신당']; c0 = PR2024['국민의미래']; two = d0 + c0; z0 = math.log(d0 / c0); rj = PR2024['조국혁신당'] / d0
 
-    def run(alphas, weights):
+    def run(alphas, weights, rj=rj):
         acc = {k: [] for k in ('dem_d', 'con_d', 'oth_d', 'dem_pr', 'jk_pr', 'con_pr', 'ref_pr')}; ww = []; run.last_win = None
         for a, wi in zip(alphas, weights):
             sn = F.sigma_national(float(a), days, s); r = sim.run(float(a), change, sn, s['region'], s['district'])
@@ -64,9 +66,22 @@ def main():
     out['by_alpha'] = {'alpha': ag, 'rows': [], 'district_ids': [d['district_id'] for d in sim.eligible], 'dem_win_prob': []}
     for a in ag:
         out['by_alpha']['rows'].append(run([a], [1.0])); out['by_alpha']['dem_win_prob'].append([round(float(x), 3) for x in run.last_win])
+    J = json.loads((ROOT / 'outputs/jk_support.json').read_text(encoding='utf-8'))
+    keys = ('total_300', 'pr', 'p10_p50_p90', 'p_majority_151')
+    out['jk_sensitivity'] = {'source': 'outputs/jk_support.json', 'scenarios': {}}
+    for k, sc in J['scenarios'].items():
+        r_k = rj if k == 'fixed_2024' else sc['ratio']   # main ratio unrounded, so this row equals by_alpha exactly
+        res = {'ratio': sc['ratio'], 'label': sc['label']}
+        for name, wk in (('posterior_all_three', 'weights_all_three'),):
+            w = np.array(A[wk]); keep = (w > 1e-4) & (grid >= 0); r = run(grid[keep], w[keep], r_k)
+            res[name] = {x: r[x] for x in keys}
+        res['by_alpha'] = [{x: r[x] for x in keys} for r in (run([a], [1.0], r_k) for a in ag)]
+        out['jk_sensitivity']['scenarios'][k] = res
     (ROOT / 'outputs/seats_300.json').write_text(json.dumps(out, ensure_ascii=False) + '\n', encoding='utf-8')
     for k, v in out['scenarios'].items():
         print(k, v['total_300'], v['pr'], v['p10_p50_p90'], v['p_majority_151'])
+    for k, v in out['jk_sensitivity']['scenarios'].items():
+        print('jk', k, v['ratio'], v['posterior_all_three']['pr'], v['posterior_all_three']['p_majority_151'])
     print(out['national_frame_change_logit'])
 
 

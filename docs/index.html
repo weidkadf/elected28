@@ -72,6 +72,8 @@ input[type=range]{width:100%;padding:0;border:0;background:none;accent-color:var
 <div class="legend"><span><i class="sw" style="background:var(--dem)"></i>더불어민주당</span><span><i class="sw" style="background:var(--dem);opacity:.5"></i>조국혁신당</span><span><i class="sw" style="background:var(--mute)"></i>기타</span><span><i class="sw" style="background:var(--con)"></i>국민의힘</span></div>
 <div class="seatbar" id="bar" role="img"></div><div class="half"><span>과반 151</span></div>
 <div class="scroll"><table id="s300"></table></div>
+<div class="ctl" style="margin-top:14px"><span class="small"><b>범민주 비례표 중 조국혁신당 몫</b></span><div class="seg" id="jk" role="group" aria-label="조국혁신당 비례 몫"></div></div>
+<p class="mute small" id="jkNote" style="margin:0"></p>
 </div>
 
 <h2>α에 따른 지역구 의석</h2>
@@ -102,7 +104,7 @@ input[type=range]{width:100%;padding:0;border:0;background:none;accent-color:var
 <li><b>출발점</b>: 지역구 성향 = 2024 총선 0.5 + 2025 대선 0.3 + 2026 시도지사 0.2 (읍면동 개표를 2024 선거구에 배정).</li>
 <li><b>여론</b>: “정부 지원 vs 견제” 문항의 2024년 → 현재 변화를 권역별로 집계. 최신성 반감기, 기관 단위 가중, 조사방식 품질가중, 투표 의향 보정을 적용.</li>
 <li><b>전이</b>: 지역구 득표 logit = 출발점 + α × 여론 변화 + 전국·권역·지역구 오차. 전국 오차는 선거까지 남은 날의 제곱근에 비례해 커짐.</li>
-<li><b>비례</b>: 2024년 비례 득표율에서 출발해 같은 여론 변화를 적용, 3% 봉쇄조항·병립형 배분. 민주·조국혁신당 비율과 개혁신당 득표율은 2024년 값 고정.</li>
+<li><b>비례</b>: 2024년 비례 득표율에서 출발해 같은 여론 변화를 적용, 3% 봉쇄조항·병립형 배분. 개혁신당 득표율은 2024년 값 고정. 범민주 비례표를 민주·조국혁신당으로 나누는 비율은 기본이 2024년 득표비이고, 여심위 등록 전국 정당지지도로 만든 두 값을 선택할 수 있음(이 선택은 민주·조국 사이 배분만 바꾸고 범민주 대 국민의힘 의석은 그대로).</li>
 <li><b>한계</b>: α 추정 경로가 서로 다른 값을 가리킴. 결과표는 PDF 자동 추출. 품질가중은 대선 한 번의 결과. 선거구 획정·후보·선거제도·신당 미반영.</li>
 </ul>
 <footer id="foot"></footer>
@@ -112,7 +114,11 @@ input[type=range]{width:100%;padding:0;border:0;background:none;accent-color:var
 <script>
 const D=window.E23,$=s=>document.querySelector(s),f1=x=>x==null?'–':x.toFixed(1),f2=x=>x==null?'–':x.toFixed(2),pc=x=>x==null?'–':(x>0&&x<.005?'<1':x>.995&&x<1?'>99':(100*x).toFixed(0))+'%',r1=x=>Math.round(x);
 const BA=D.ba,P=D.alpha.post.all_three,THR=D.thresholds.main_composite_254.dem,dd=Math.round((new Date(D.election)-new Date(D.as_of))/864e5);
-let ai=BA.alpha.indexOf(0.5),sk='id',sd=1;
+let ai=BA.alpha.indexOf(0.5),sk='id',sd=1,jkKey='fixed_2024';
+const JK=D.jk;
+$('#jk').innerHTML=Object.entries(JK.sc).map(([k,v])=>`<button type="button" data-k="${k}" aria-pressed="${k==jkKey}">${v.label} ${(100*v.ratio).toFixed(0)}%</button>`).join('');
+$('#jk').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.dataset.k==jkKey)return;jkKey=b.dataset.k;$('#jk').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.k==jkKey));render()});
+$('#jkNote').textContent=`여심위 공개 전국 정당지지도 ${JK.n.toLocaleString()}건(2023.10~)에서 계산했고 여론조사꽃은 제외했다. 최근 4주(${JK.cur_n}건) 조국혁신당 지지율 평균 ${f1(JK.cur_pct)}%, 민주+조국 중 조국 ${(100*JK.cur_ratio).toFixed(1)}%. 2024년 직전 여론은 ${(100*JK.pre_ratio).toFixed(1)}%였으나 실제 비례 득표는 ${(100*JK.sc.fixed_2024.ratio).toFixed(1)}%로, 여론보다 비례 득표가 높았다. '여론 변화 반영'은 그 차이를 유지하고 같은 조사방식 안의 변화만 옮긴 값이다.`;
 $('#meta').textContent=`Election23 v${D.version} · 기준일 ${D.as_of} · 선거일 ${D.election} (D-${dd})`;
 const tx=a=>a/1.5*100;
 $('#trk').innerHTML=`<i style="left:${tx(P.ci95[0])}%;width:${tx(P.ci95[1]-P.ci95[0])}%"></i><span style="left:${tx((P.ci95[0]+P.ci95[1])/2)}%">추정 범위 ${f2(P.ci95[0])}~${f2(P.ci95[1])}</span>`;
@@ -141,7 +147,7 @@ const h=(k,t)=>`<th class="s" data-k="${k}">${t}${sk==k?(sd>0?' ▲':' ▼'):''}
 $('#dist').innerHTML=`<tr>${h('id','지역구')}${h('r','시도')}${h('b24','2024 총선')}${h('b25','2025 대선')}${h('b','출발점')}${h('w','민주 승리 확률')}</tr>`+R.map(d=>`<tr><td>${d.id}</td><td style="text-align:left">${d.r}</td><td>${d.b24==null?'–':(100*d.b24).toFixed(1)}</td><td>${d.b25==null?'–':(100*d.b25).toFixed(1)}</td><td>${(100*d.b).toFixed(1)}</td><td><span class="bar"><i style="width:${100*d.w[ai]}%"></i></span>${pc(d.w[ai])}</td></tr>`).join('');
 const exp=R.reduce((s,d)=>s+d.w[ai],0);$('#distNote').textContent=`${R.length}곳 표시 · 득표율은 민주당 양당 득표율(%) · α ${f2(BA.alpha[ai])}에서 표시된 지역구의 민주당 기대 승리 수 ${exp.toFixed(1)}`}
 
-function render(){const a=BA.alpha[ai],T=BA.rows[ai],t=T.total_300,pm=T.p_majority_151,pd=T.p_district_majority_128;
+function render(){const a=BA.alpha[ai],T=Object.assign({},BA.rows[ai],JK.sc[jkKey].rows[ai]),t=T.total_300,pm=T.p_majority_151,pd=T.p_district_majority_128;
 $('#alv').textContent=f2(a);$('#al').value=a;$('#al').setAttribute('aria-valuetext',`α ${f2(a)}`);
 const lead=t['국민의힘']>t['민주+조국혁신당']?'국민의힘':'민주+조국혁신당';
 $('#kpis').innerHTML=[

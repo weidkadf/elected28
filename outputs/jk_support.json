@@ -1,0 +1,140 @@
+{
+ "source": {
+  "file": "data/nesdc/nesdc_major_data_national.xlsx",
+  "board": "https://www.nesdc.go.kr/portal/bbs/B0000025/list.do?menuNo=200500",
+  "n_rows": 1581,
+  "first_fieldwork_end": "2023-10-30",
+  "last_fieldwork_end": "2026-11-07",
+  "excluded_pollsters": "여론조사꽃"
+ },
+ "definition": "ratio = 조국혁신당 / (더불어민주당 + 조국혁신당) in national party support; pooled in logit, within pollster then quality-weighted",
+ "quality_weights": {
+  "ARS": 1.0,
+  "CATI": 0.335,
+  "mixed": 0.6675
+ },
+ "pr2024_list_ratio": 0.4761,
+ "pre2024": {
+  "window": [
+   "2024-03-25",
+   "2024-04-03"
+  ],
+  "all": {
+   "ratio": 0.2479,
+   "logit": -1.11,
+   "n_polls": 17,
+   "n_pollsters": 13,
+   "jk_mean_pct": 10.77
+  },
+  "ARS": {
+   "ratio": 0.2674,
+   "logit": -1.008,
+   "n_polls": 8,
+   "n_pollsters": 6,
+   "jk_mean_pct": 12.78
+  },
+  "CATI": {
+   "ratio": 0.2025,
+   "logit": -1.371,
+   "n_polls": 9,
+   "n_pollsters": 7,
+   "jk_mean_pct": 8.99
+  }
+ },
+ "current": {
+  "window": [
+   "2026-10-14",
+   "2026-11-11"
+  ],
+  "all": {
+   "ratio": 0.1367,
+   "logit": -1.8427,
+   "n_polls": 23,
+   "n_pollsters": 10,
+   "jk_mean_pct": 5.58
+  },
+  "ARS": {
+   "ratio": 0.1421,
+   "logit": -1.7982,
+   "n_polls": 17,
+   "n_pollsters": 8,
+   "jk_mean_pct": 6.29
+  },
+  "CATI": {
+   "ratio": 0.0769,
+   "logit": -2.4848,
+   "n_polls": 5,
+   "n_pollsters": 2,
+   "jk_mean_pct": 3.0
+  }
+ },
+ "list_vote_uplift_logit": 1.0141,
+ "swing_logit_by_mode": {
+  "ARS": -0.7902,
+  "CATI": -1.1138
+ },
+ "swing_logit": -0.8714,
+ "scenarios": {
+  "fixed_2024": {
+   "ratio": 0.4761,
+   "label": "2024 비례 득표비 고정",
+   "basis": "NEC 2024 list vote"
+  },
+  "poll_swing": {
+   "ratio": 0.2754,
+   "label": "여론 변화 반영",
+   "basis": "2024 list ratio moved by the within-mode change in poll ratio, pre-2024 window -> current window",
+   "ratio_ARS_only": 0.2919,
+   "ratio_CATI_only": 0.2298
+  },
+  "poll_direct": {
+   "ratio": 0.1367,
+   "label": "현재 지지율 그대로",
+   "basis": "current pooled poll ratio; no list-vote uplift (2024 polls understated 조국혁신당 list vote)"
+  }
+ },
+ "monthly_since_2026_local": {
+  "2026-06": {
+   "ratio": 0.0629,
+   "logit": -2.7007,
+   "n_polls": 28,
+   "n_pollsters": 15,
+   "jk_mean_pct": 2.79
+  },
+  "2026-07": {
+   "ratio": 0.0605,
+   "logit": -2.7434,
+   "n_polls": 32,
+   "n_pollsters": 15,
+   "jk_mean_pct": 2.67
+  },
+  "2026-08": {
+   "ratio": 0.072,
+   "logit": -2.5565,
+   "n_polls": 34,
+   "n_pollsters": 15,
+   "jk_mean_pct": 3.39
+  },
+  "2026-09": {
+   "ratio": 0.1111,
+   "logit": -2.0793,
+   "n_polls": 31,
+   "n_pollsters": 16,
+   "jk_mean_pct": 4.32
+  },
+  "2026-10": {
+   "ratio": 0.1319,
+   "logit": -1.884,
+   "n_polls": 28,
+   "n_pollsters": 12,
+   "jk_mean_pct": 5.27
+  },
+  "2026-11": {
+   "ratio": 0.1495,
+   "logit": -1.7384,
+   "n_polls": 7,
+   "n_pollsters": 7,
+   "jk_mean_pct": 6.2
+  }
+ }
+}
