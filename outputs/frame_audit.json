@@ -1,0 +1,102 @@
+{
+  "audit_date": "2026-10-16",
+  "auditor": "independent_baseline_data_agent",
+  "engine_version": "0.2.0",
+  "status": "PASS",
+  "checks": {
+    "baseline_all_254_valid": true,
+    "three_requested_scenarios": true,
+    "entire_report_unchanged_when_party_support_mutated": true,
+    "entire_report_unchanged_when_party_support_removed": true,
+    "roles_2024_conservative_government_2026_democratic_government": true,
+    "role_aware_frame_proxy_matches_independent_calculation": true,
+    "nine_missing_major_party_districts_not_estimated": true,
+    "254_unique_output_rows_per_scenario": true,
+    "245_simulated_plus_9_pending_seats": true,
+    "national_mean_seats_sum_to_245": true,
+    "regional_mean_plus_pending_matches_region_counts": true,
+    "district_win_fractions_sum_to_one": true,
+    "third_party_vote_shares_exactly_fixed_and_labeled": true,
+    "suppressed_gangwon_jeju_flagged_as_national_fallback": true,
+    "zero_transfer_zero_noise_reproduces_eligible_2024_winners": true,
+    "higher_current_government_support_raises_democratic_signal": true,
+    "output_explicitly_uncalibrated": true,
+    "legacy_party_support_entrypoint_rejected": true
+  },
+  "details": {
+    "national_role_calculation": {
+      "baseline_support": 0.4,
+      "baseline_opposition": 0.49,
+      "current_support": 0.34,
+      "current_opposition": 0.47,
+      "democratic_proxy_2024": 0.550561797752809,
+      "democratic_proxy_2026": 0.41975308641975306,
+      "logit_change": -0.5267279210905873
+    },
+    "unestimated_districts": [
+      {
+        "region": "부산광역시",
+        "district_name": "연제구"
+      },
+      {
+        "region": "대구광역시",
+        "district_name": "달서구병"
+      },
+      {
+        "region": "대구광역시",
+        "district_name": "동구군위군을"
+      },
+      {
+        "region": "대구광역시",
+        "district_name": "서구"
+      },
+      {
+        "region": "대구광역시",
+        "district_name": "수성구을"
+      },
+      {
+        "region": "울산광역시",
+        "district_name": "북구"
+      },
+      {
+        "region": "세종특별자치시",
+        "district_name": "세종특별자치시갑"
+      },
+      {
+        "region": "경상북도",
+        "district_name": "경산시"
+      },
+      {
+        "region": "경상북도",
+        "district_name": "의성군청송군영덕군울진군"
+      }
+    ],
+    "zero_transfer_eligible_baseline_seats": {
+      "개혁신당": 1.0,
+      "국민의힘": 83.0,
+      "더불어민주당": 161.0
+    }
+  },
+  "test_draws": 1000,
+  "test_seed": 98765,
+  "audited_sha256": {
+    "model.py": "6074bb144920ff6c9caf1d1e62537a36e9a2148387e6b34715080076b7f295bd",
+    "config/frame_comparison.json": "b5fcbd7ac2f75e274f4dcf593d21d98595661e5a9eef38f67d0ece69c4d105b3",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4"
+  },
+  "limitations": [
+    "검증은 코드·자료연결·합계의 정합성 검사이며 실제 2028 예측력 검증이 아니다.",
+    "제3당 비율 고정과 후보·경계 고정은 조건부 가정이다.",
+    "전국 의석 수치는 추정 가능한245석에 한정;9석은 별도 미추정이다.",
+    "강원·제주 최신권역수치는 전국값으로 가정한 대체값이고 실측이 아니다.",
+    "지역 축소계수400 및 오차규모, 전달계수0/.5/1은 경험적으로 보정되지 않았다."
+  ],
+  "root_final_revalidation": {
+    "final_model_sha256": "5d311a2811d9c3ab9c32c2e9d11196f3fae896e5199650251b319e88dc6eb57d",
+    "final_code_reproduces_saved_report_exactly": true,
+    "final_code_entire_report_unchanged_without_party_support": true,
+    "unit_tests_passed_on_final_code": 9,
+    "note": "Independent audit preceded CLI alias finalization; final engine output and exclusion invariance rechecked by root."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-16",
+  "coverage": "partial; targeted verification of two previously mentioned by-election events only",
+  "not_current_membership_registry": true,
+  "events": [
+    {
+      "event_id": "20260603_gyeonggi_pyeongtaek_eul",
+      "event_date": "2026-06-03",
+      "type": "by_election_winner",
+      "province": "경기",
+      "district": "평택시을",
+      "winner_name": "유의동",
+      "party_at_event": "국민의힘",
+      "current_party_verified": false,
+      "source_url": "https://imnews.imbc.com/news/2026/politics/article/6827626_36911.html",
+      "source_published_at": "2026-06-04",
+      "verification_status": "secondary_full_article_verified",
+      "model_action": "flag_candidate_structure_review; do_not_overwrite_2024_votes"
+    },
+    {
+      "event_id": "20260603_busan_buk_gap",
+      "event_date": "2026-06-03",
+      "type": "by_election_winner",
+      "province": "부산",
+      "district": "북구갑",
+      "winner_name": "한동훈",
+      "party_at_event": "무소속",
+      "current_party_verified": false,
+      "source_url": "https://www.yna.co.kr/amp/view/AKR20260604018200051",
+      "source_published_at": "2026-06-04",
+      "verification_status": "secondary_full_article_verified",
+      "model_action": "flag_multi_party_candidate_structure; do_not_overwrite_2024_votes",
+      "notes": [
+        "당선 판정 기사에 개표율99.51% 수치가 있어 최종 득표율로 수록하지 않음.",
+        "2028 출마·소속을 확정하지 않는다."
+      ]
+    }
+  ]
+}

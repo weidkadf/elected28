@@ -1,0 +1,101 @@
+{
+  "audit_date": "2026-10-17",
+  "model_version": "0.2.3",
+  "audit_kind": "read_only_regression_and_input_invariance",
+  "status": "PASS",
+  "model_changed": false,
+  "inputs_changed": false,
+  "report_recalculated_for_release": false,
+  "audit_draws": 100,
+  "seed": 20261016,
+  "tested_input_sha256": {
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "test_model.py": "dc0023184f15cf891cc31590f8ec8d5b1191dfdb43e1683cf30b2ce1fce9840a",
+    "test_safety_guards.py": "a79e596eab6f21f30b97ddce7c630d6ef0b50e1ba5861552bb197e4c2577ae45",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "data/history_2020/test_crosscheck.py": "b368f9edf69e4cf93b2c15e28218e268aa608804e779b0e8d4aefea3aacf53c7"
+  },
+  "party_support_rows_mutated_and_removed": 19,
+  "checks": {
+    "model_29_tests_pass": true,
+    "historical_crosscheck_8_tests_pass": true,
+    "seed_repeat_full_report_identical": true,
+    "party_support_mutation_full_report_identical": true,
+    "party_support_removal_full_report_identical": true,
+    "coverage_254": true,
+    "all_scenario_vote_and_seat_checks": true,
+    "every_scenario_covers_254": true,
+    "source_files_unchanged": true
+  },
+  "test_runs": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_model.py",
+        "test_safety_guards.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_future_release_is_blocked_even_if_fieldwork_has_finished (test_model.FrameModelTests.test_future_release_is_blocked_even_if_fieldwork_has_finished) ... ok\ntest_missing_release_date_is_not_assumed_available (test_model.FrameModelTests.test_missing_release_date_is_not_assumed_available) ... ok\ntest_more_current_government_support_increases_democratic_share (test_model.FrameModelTests.test_more_current_government_support_increases_democratic_share) ... ok\ntest_no_inputs_and_legacy_linkage_blocked (test_model.FrameModelTests.test_no_inputs_and_legacy_linkage_blocked) ... ok\ntest_party_support_changes_do_not_change_any_output (test_model.FrameModelTests.test_party_support_changes_do_not_change_any_output) ... ok\ntest_postelection_baseline_release_is_rejected (test_model.FrameModelTests.test_postelection_baseline_release_is_rejected) ... ok\ntest_postelection_regional_release_cannot_leak_through_national_anchor (test_model.FrameModelTests.test_postelection_regional_release_cannot_leak_through_national_anchor) ... ok\ntest_reproducibility_and_all_seats_accounted (test_model.FrameModelTests.test_reproducibility_and_all_seats_accounted) ... ok\ntest_roles_reverse_sign (test_model.FrameModelTests.test_roles_reverse_sign) ... ok\ntest_same_democratic_orientation_means_zero_change (test_model.FrameModelTests.test_same_democratic_orientation_means_zero_change) ... ok\ntest_suppressed_region_uses_national_change_with_explicit_flag (test_model.FrameModelTests.test_suppressed_region_uses_national_change_with_explicit_flag) ... ok\ntest_third_party_fixed_and_missing_major_party_pending (test_model.FrameModelTests.test_third_party_fixed_and_missing_major_party_pending) ... ok\ntest_zero_change_and_zero_error_recovers_baseline (test_model.FrameModelTests.test_zero_change_and_zero_error_recovers_baseline) ... ok\ntest_absent_regional_observation_keeps_explicit_fallback (test_safety_guards.SafetyGuardTests.test_absent_regional_observation_keeps_explicit_fallback) ... ok\ntest_correct_regional_identity_is_accepted (test_safety_guards.SafetyGuardTests.test_correct_regional_identity_is_accepted) ... ok\ntest_correct_scope_with_wrong_mapped_province_is_rejected (test_safety_guards.SafetyGuardTests.test_correct_scope_with_wrong_mapped_province_is_rejected) ... ok\ntest_exact_baseline_available_on_is_accepted (test_safety_guards.SafetyGuardTests.test_exact_baseline_available_on_is_accepted) ... ok\ntest_future_baseline_result_is_rejected (test_safety_guards.SafetyGuardTests.test_future_baseline_result_is_rejected) ... ok\ntest_malformed_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_malformed_baseline_election_date_is_rejected) ... ok\ntest_missing_baseline_availability_metadata_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_availability_metadata_is_rejected) ... ok\ntest_missing_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_election_date_is_rejected) ... ok\ntest_national_anchor_cannot_be_reused_as_regional_poll (test_safety_guards.SafetyGuardTests.test_national_anchor_cannot_be_reused_as_regional_poll) ... ok\ntest_party_support_is_still_fully_ignored (test_safety_guards.SafetyGuardTests.test_party_support_is_still_fully_ignored) ... ok\ntest_post_election_but_before_baseline_availability_is_rejected (test_safety_guards.SafetyGuardTests.test_post_election_but_before_baseline_availability_is_rejected) ... ok\ntest_real_current_inputs_remain_accepted (test_safety_guards.SafetyGuardTests.test_real_current_inputs_remain_accepted) ... ok\ntest_same_day_result_is_not_assumed_public (test_safety_guards.SafetyGuardTests.test_same_day_result_is_not_assumed_public) ... ok\ntest_suppression_does_not_bypass_region_identity (test_safety_guards.SafetyGuardTests.test_suppression_does_not_bypass_region_identity) ... ok\ntest_wrong_baseline_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_baseline_region_is_rejected) ... ok\ntest_wrong_current_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_current_region_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.199s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "data/history_2020",
+        "-p",
+        "test_crosscheck.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"check_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-16\",\n  \"status\": \"PASS\",\n  \"official_zip_sha256\": \"690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f\",\n  \"official_workbooks\": 329,\n  \"source_page\": \"https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129\",\n  \"parser_sha256\": \"0069904313822badaff3c514aba8fe6f15d05f91a57ef6a8fcd8c3d3852eea21\",\n  \"districts_checked\": 253,\n  \"districts_passed\": 253,\n  \"candidate_labels_checked\": 1101,\n  \"excluded_xlsx_by_category\": {\n    \"비례대표\": 250,\n    \"재보궐\": 56\n  },\n  \"historical_district_totals_verified\": true,\n  \"model_eligible\": false,\n  \"remaining_gates\": [\n    \"2020_to_2024_boundary_crosswalk\",\n    \"poll_history_and_time_split_backtest\",\n    \"candidate_party_mapping\"\n  ],\n  \"scope_note\": \"NEC alternative official XLSX representation, not independent ballot recount. District totals only; not every polling-station row or withdrawn-candidate registry.\",\n  \"raw_files_unchanged\": true\n}\n",
+      "stderr": "test_alternate_official_title_supported (test_crosscheck.CrosscheckTests.test_alternate_official_title_supported) ... ok\ntest_every_district_and_candidate_label_checked (test_crosscheck.CrosscheckTests.test_every_district_and_candidate_label_checked) ... ok\ntest_historical_validation_not_future_geography (test_crosscheck.CrosscheckTests.test_historical_validation_not_future_geography) ... ok\ntest_known_original_header_and_totals (test_crosscheck.CrosscheckTests.test_known_original_header_and_totals) ... ok\ntest_proportional_and_byelection_tables_excluded (test_crosscheck.CrosscheckTests.test_proportional_and_byelection_tables_excluded) ... ok\ntest_proportional_table_cannot_pass_district_parser (test_crosscheck.CrosscheckTests.test_proportional_table_cannot_pass_district_parser) ... ok\ntest_reconstruction_source_hash_still_matches (test_crosscheck.CrosscheckTests.test_reconstruction_source_hash_still_matches) ... ok\ntest_unknown_nonnumeric_or_negative_votes_rejected (test_crosscheck.CrosscheckTests.test_unknown_nonnumeric_or_negative_votes_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 1.814s\n\nOK\n"
+    }
+  ],
+  "coverage": {
+    "expected_districts": 254,
+    "observed_districts": 254,
+    "valid_districts": 254,
+    "scenario_eligible_districts": 245,
+    "complete": true
+  },
+  "scenario_counts": [
+    {
+      "name": "government_frame_delta_alpha_0",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    },
+    {
+      "name": "government_frame_delta_alpha_0.5",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    },
+    {
+      "name": "government_frame_delta_alpha_1",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    }
+  ],
+  "limitations": [
+    "미보정 조건부 시나리오의 계산·입력불변성 검사이며 당선확률 보정이나 예측정확도 검증이 아니다.",
+    "발표일 및 기준선 available_on은 날짜 단위이며 동일 날짜 내 발표 전후 시각을 구분하지 않는다.",
+    "지역구 경계변환 및 후보변동은 이번 감사 범위가 아니다."
+  ]
+}

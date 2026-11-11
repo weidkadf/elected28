@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-10-16T20:55:32.990627+09:00",
+  "previous_check": "outputs/research_check_20261016_1530.json",
+  "new_eligible_poll_count": 0,
+  "model_inputs_changed": false,
+  "party_support_used": false,
+  "conclusion": "갤럽 최신 678호는 기존 관측과 동일. 여심위 최신 등록목록의 갤럽17313·NBS17312도 이전 확인과 동일하여 새 적격 조사 추가 없음.",
+  "existing_same_day_frame_poll_ids": [
+    "gallup_678_frame_national",
+    "gallup_678_frame_서울",
+    "gallup_678_frame_인천/경기",
+    "gallup_678_frame_강원",
+    "gallup_678_frame_대전/세종/충청",
+    "gallup_678_frame_광주/전라",
+    "gallup_678_frame_대구/경북",
+    "gallup_678_frame_부산/울산/경남",
+    "gallup_678_frame_제주"
+  ],
+  "checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "access": "direct_http_200_cp949",
+      "latest_report": 678,
+      "published_at": "2026-10-16",
+      "latest_post_id": 1662,
+      "new_observation": false
+    },
+    {
+      "source": "갤럽678 원문",
+      "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662",
+      "access": "direct_http_200_cp949",
+      "fieldwork_start": "2026-10-13",
+      "fieldwork_end": "2026-10-15",
+      "sample_size": 1003,
+      "shares": {
+        "정부지원": 0.34,
+        "정부견제": 0.47,
+        "유보": 0.18
+      },
+      "duplicate_of": "gallup_678_frame_national",
+      "opposition_judgment_directly_measured": false
+    },
+    {
+      "source": "여심위 최신등록목록",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "access": "direct_http_200",
+      "top_registration": 17314,
+      "gallup_registration": 17313,
+      "nbs_registration": 17312,
+      "finding": "이전 확인과 동일한 목록. 새 갤럽/NBS 회차 식별 없음."
+    },
+    {
+      "source": "NBS190 여심위 등록페이지",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19568",
+      "access": "direct_http_200",
+      "registration": 17312,
+      "fieldwork_start": "2026-10-12",
+      "fieldwork_end": "2026-10-14",
+      "sample_size": 1000,
+      "finding": "190차 설문/통계표 첨부명 및 조사기간 동일. 전 회차 직접 읽은 전체설문에 정부지원·견제 문항이 없다는 확인을 유지. 이번 회차 PDF 중복 다운로드하지 않음.",
+      "model_input_eligible": false
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://nbsurvey.kr/",
+      "method": "direct_http",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ],
+  "limitations": [
+    "NBS 자체 최신목록 접근 실패는 계속됨. 여심위 최신등록목록·기존190차 등록페이지로 보완.",
+    "새 적격 조사 없음은 확인한 갤럽/NBS/여심위 공개 목록 범위의 결론이며 모든 조사기관의 완전한 부재를 의미하지 않음.",
+    "정당지지도 및 대통령 직무평가를 지원·견제 문항의 대체 입력으로 사용하지 않음."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "project_version": "0.2.3",
+  "engine_version": "0.2.3",
+  "verified_date": "2026-10-16",
+  "status": "PASS",
+  "checks": {
+    "model_report.json_all_scenario_values_unchanged": true,
+    "model_report_monthly.json_all_scenario_values_unchanged": true,
+    "original_sources_and_2024_baseline_preserved": true,
+    "2024_baseline_254_districts_693_candidates_29234129_valid_votes": true,
+    "5000_draw_seed_reproducibility": true,
+    "party_support_deleted_full_output_identical": true,
+    "party_support_corrupted_full_output_identical": true,
+    "model_and_safety_tests_pass": true,
+    "historical_crosscheck_tests_pass": true,
+    "official_boundary_source_pdf_hashes": true
+  },
+  "unit_tests_total": 37,
+  "scenario_recalculated_for_release": true,
+  "scenario_numbers_changed": false,
+  "draws": 5000,
+  "seed": 20261016,
+  "baseline_information": {
+    "election_date": "2024-04-10",
+    "available_on": "2026-10-16",
+    "source_url": "https://www.data.go.kr/data/15025527/fileData.do",
+    "availability_basis": "project_retrieval_date_conservative_not_original_publication"
+  },
+  "remaining_gates": [
+    "boundary_crosswalk_and_weights",
+    "historical_frame_poll_archive",
+    "historical_availability_evidence_before_project_retrieval",
+    "timestamp_precision",
+    "time_split_backtest_and_calibration"
+  ],
+  "input_sha256": {
+    "data/raw/nec_2024.csv": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/districts_2024.csv": "cd9a3b2fc3e75427b73cde2dff1c9b70a67f9a4783901ea10d4f073b5dbbf730",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/events.json": "eb1f7812638d741961e27dc60c7e7aa70d4657bf5b19c3f0ebf1f124fcec3b76",
+    "data/history_2020/nec_2020_raw.csv": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+    "data/history_2020/nec_2020_original_tables.zip": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+    "data/history_2020/verified_candidates_2020.csv": "1d67e5b134010fffef258dc061a935ec4e76f8e43208566fb72b74fc10076684",
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "config/frame_comparison_monthly.json": "e1bf5c082032d80655dd66bc20549ccd893a0b1f90245399f1d8cfcea0b4526b",
+    "test_safety_guards.py": "a79e596eab6f21f30b97ddce7c630d6ef0b50e1ba5861552bb197e4c2577ae45"
+  }
+}

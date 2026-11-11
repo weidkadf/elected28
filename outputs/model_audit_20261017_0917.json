@@ -1,0 +1,329 @@
+{
+  "audit_date": "2026-10-17",
+  "model_version_observed": "0.2.3",
+  "audit_kind": "read_only_regression_input_invariance_and_immutable_source_hashes",
+  "status": "PASS",
+  "model_changed": false,
+  "inputs_changed": false,
+  "report_recalculated_for_release": false,
+  "audit_draws": 100,
+  "seed": 20261016,
+  "tested_input_sha256": {
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "test_model.py": "dc0023184f15cf891cc31590f8ec8d5b1191dfdb43e1683cf30b2ce1fce9840a",
+    "test_safety_guards.py": "a79e596eab6f21f30b97ddce7c630d6ef0b50e1ba5861552bb197e4c2577ae45",
+    "test_boundary_inventory.py": "80c8ba67223a9eff2762048133e475cae853c45551586b5adc6b7753a473316b",
+    "test_ward_inventory.py": "74245ad76c1b823a74294abae6e39e829c8af6c43f19aa2c5d1c81883c4bd41f",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "data/history_2020/test_crosscheck.py": "b368f9edf69e4cf93b2c15e28218e268aa608804e779b0e8d4aefea3aacf53c7",
+    "test_historical_frame_archive.py": "e0a1c5d7cc5136096adbfe54baa95d50470473847a2259c7a6769aa3de5f41f9"
+  },
+  "party_support_rows_mutated_and_removed": 19,
+  "checks": {
+    "existing_61_tests_pass": true,
+    "original_source_sha_and_size_before_pass": true,
+    "original_source_sha_and_size_after_pass": true,
+    "seed_repeat_full_report_identical": true,
+    "party_support_mutation_full_report_identical": true,
+    "party_support_removal_full_report_identical": true,
+    "coverage_254": true,
+    "eligibility_245_pending_9": true,
+    "all_scenario_vote_and_seat_checks": true,
+    "every_scenario_covers_254": true,
+    "audited_code_and_model_inputs_unchanged": true
+  },
+  "source_integrity_before": [
+    {
+      "path": "data/raw/nec_2024.csv",
+      "expected_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "observed_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "expected_bytes": 7588808,
+      "observed_bytes": 7588808,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_raw.csv",
+      "expected_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "observed_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "expected_bytes": 17774982,
+      "observed_bytes": 17774982,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_original_tables.zip",
+      "expected_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "observed_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "expected_bytes": 15560000,
+      "observed_bytes": 15560000,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+      "expected_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "observed_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "expected_bytes": 264345,
+      "observed_bytes": 264345,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+      "expected_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "observed_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "expected_bytes": 273733,
+      "observed_bytes": 273733,
+      "passed": true
+    }
+  ],
+  "source_integrity_after": [
+    {
+      "path": "data/raw/nec_2024.csv",
+      "expected_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "observed_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "expected_bytes": 7588808,
+      "observed_bytes": 7588808,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_raw.csv",
+      "expected_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "observed_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "expected_bytes": 17774982,
+      "observed_bytes": 17774982,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_original_tables.zip",
+      "expected_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "observed_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "expected_bytes": 15560000,
+      "observed_bytes": 15560000,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+      "expected_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "observed_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "expected_bytes": 264345,
+      "observed_bytes": 264345,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+      "expected_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "observed_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "expected_bytes": 273733,
+      "observed_bytes": 273733,
+      "passed": true
+    }
+  ],
+  "test_runs": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_model.py",
+        "test_safety_guards.py"
+      ],
+      "exit_code": 0,
+      "test_count": 29,
+      "stdout": "",
+      "stderr": "test_future_release_is_blocked_even_if_fieldwork_has_finished (test_model.FrameModelTests.test_future_release_is_blocked_even_if_fieldwork_has_finished) ... ok\ntest_missing_release_date_is_not_assumed_available (test_model.FrameModelTests.test_missing_release_date_is_not_assumed_available) ... ok\ntest_more_current_government_support_increases_democratic_share (test_model.FrameModelTests.test_more_current_government_support_increases_democratic_share) ... ok\ntest_no_inputs_and_legacy_linkage_blocked (test_model.FrameModelTests.test_no_inputs_and_legacy_linkage_blocked) ... ok\ntest_party_support_changes_do_not_change_any_output (test_model.FrameModelTests.test_party_support_changes_do_not_change_any_output) ... ok\ntest_postelection_baseline_release_is_rejected (test_model.FrameModelTests.test_postelection_baseline_release_is_rejected) ... ok\ntest_postelection_regional_release_cannot_leak_through_national_anchor (test_model.FrameModelTests.test_postelection_regional_release_cannot_leak_through_national_anchor) ... ok\ntest_reproducibility_and_all_seats_accounted (test_model.FrameModelTests.test_reproducibility_and_all_seats_accounted) ... ok\ntest_roles_reverse_sign (test_model.FrameModelTests.test_roles_reverse_sign) ... ok\ntest_same_democratic_orientation_means_zero_change (test_model.FrameModelTests.test_same_democratic_orientation_means_zero_change) ... ok\ntest_suppressed_region_uses_national_change_with_explicit_flag (test_model.FrameModelTests.test_suppressed_region_uses_national_change_with_explicit_flag) ... ok\ntest_third_party_fixed_and_missing_major_party_pending (test_model.FrameModelTests.test_third_party_fixed_and_missing_major_party_pending) ... ok\ntest_zero_change_and_zero_error_recovers_baseline (test_model.FrameModelTests.test_zero_change_and_zero_error_recovers_baseline) ... ok\ntest_absent_regional_observation_keeps_explicit_fallback (test_safety_guards.SafetyGuardTests.test_absent_regional_observation_keeps_explicit_fallback) ... ok\ntest_correct_regional_identity_is_accepted (test_safety_guards.SafetyGuardTests.test_correct_regional_identity_is_accepted) ... ok\ntest_correct_scope_with_wrong_mapped_province_is_rejected (test_safety_guards.SafetyGuardTests.test_correct_scope_with_wrong_mapped_province_is_rejected) ... ok\ntest_exact_baseline_available_on_is_accepted (test_safety_guards.SafetyGuardTests.test_exact_baseline_available_on_is_accepted) ... ok\ntest_future_baseline_result_is_rejected (test_safety_guards.SafetyGuardTests.test_future_baseline_result_is_rejected) ... ok\ntest_malformed_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_malformed_baseline_election_date_is_rejected) ... ok\ntest_missing_baseline_availability_metadata_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_availability_metadata_is_rejected) ... ok\ntest_missing_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_election_date_is_rejected) ... ok\ntest_national_anchor_cannot_be_reused_as_regional_poll (test_safety_guards.SafetyGuardTests.test_national_anchor_cannot_be_reused_as_regional_poll) ... ok\ntest_party_support_is_still_fully_ignored (test_safety_guards.SafetyGuardTests.test_party_support_is_still_fully_ignored) ... ok\ntest_post_election_but_before_baseline_availability_is_rejected (test_safety_guards.SafetyGuardTests.test_post_election_but_before_baseline_availability_is_rejected) ... ok\ntest_real_current_inputs_remain_accepted (test_safety_guards.SafetyGuardTests.test_real_current_inputs_remain_accepted) ... ok\ntest_same_day_result_is_not_assumed_public (test_safety_guards.SafetyGuardTests.test_same_day_result_is_not_assumed_public) ... ok\ntest_suppression_does_not_bypass_region_identity (test_safety_guards.SafetyGuardTests.test_suppression_does_not_bypass_region_identity) ... ok\ntest_wrong_baseline_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_baseline_region_is_rejected) ... ok\ntest_wrong_current_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_current_region_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.221s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "data/history_2020",
+        "-p",
+        "test_crosscheck.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "test_count": 8,
+      "stdout": "{\n  \"check_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-16\",\n  \"status\": \"PASS\",\n  \"official_zip_sha256\": \"690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f\",\n  \"official_workbooks\": 329,\n  \"source_page\": \"https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129\",\n  \"parser_sha256\": \"0069904313822badaff3c514aba8fe6f15d05f91a57ef6a8fcd8c3d3852eea21\",\n  \"districts_checked\": 253,\n  \"districts_passed\": 253,\n  \"candidate_labels_checked\": 1101,\n  \"excluded_xlsx_by_category\": {\n    \"비례대표\": 250,\n    \"재보궐\": 56\n  },\n  \"historical_district_totals_verified\": true,\n  \"model_eligible\": false,\n  \"remaining_gates\": [\n    \"2020_to_2024_boundary_crosswalk\",\n    \"poll_history_and_time_split_backtest\",\n    \"candidate_party_mapping\"\n  ],\n  \"scope_note\": \"NEC alternative official XLSX representation, not independent ballot recount. District totals only; not every polling-station row or withdrawn-candidate registry.\",\n  \"raw_files_unchanged\": true\n}\n",
+      "stderr": "test_alternate_official_title_supported (test_crosscheck.CrosscheckTests.test_alternate_official_title_supported) ... ok\ntest_every_district_and_candidate_label_checked (test_crosscheck.CrosscheckTests.test_every_district_and_candidate_label_checked) ... ok\ntest_historical_validation_not_future_geography (test_crosscheck.CrosscheckTests.test_historical_validation_not_future_geography) ... ok\ntest_known_original_header_and_totals (test_crosscheck.CrosscheckTests.test_known_original_header_and_totals) ... ok\ntest_proportional_and_byelection_tables_excluded (test_crosscheck.CrosscheckTests.test_proportional_and_byelection_tables_excluded) ... ok\ntest_proportional_table_cannot_pass_district_parser (test_crosscheck.CrosscheckTests.test_proportional_table_cannot_pass_district_parser) ... ok\ntest_reconstruction_source_hash_still_matches (test_crosscheck.CrosscheckTests.test_reconstruction_source_hash_still_matches) ... ok\ntest_unknown_nonnumeric_or_negative_votes_rejected (test_crosscheck.CrosscheckTests.test_unknown_nonnumeric_or_negative_votes_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 1.916s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_boundary_inventory.py",
+        "test_ward_inventory.py"
+      ],
+      "exit_code": 0,
+      "test_count": 20,
+      "stdout": "{\n  \"inventory_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-17\",\n  \"status\": \"STATUTORY_ROW_INVENTORY_PASS_CROSSWALK_NOT_READY\",\n  \"parser\": \"pdfplumber ruled-table cell extraction\",\n  \"pdfplumber_version\": \"0.11.9\",\n  \"extracted_counts\": {\n    \"2020\": 253,\n    \"2024\": 254\n  },\n  \"province_counts_match_source_headings\": true,\n  \"district_keys_match_historical_vote_files\": true,\n  \"comparison_status_counts\": {\n    \"same_name_same_statutory_text_geometry_unverified\": 171,\n    \"same_name_statutory_text_diff_review_required\": 61,\n    \"no_same_name_predecessor_review_required\": 22\n  },\n  \"2024_districts_reviewed\": 254,\n  \"crosswalk_eligible_districts\": 0,\n  \"vote_transfer_weights_estimated\": false,\n  \"model_inputs_modified\": false,\n  \"province_alias_policy\": {\n    \"강원도\": \"강원특별자치도\",\n    \"전라북도\": \"전북특별자치도\"\n  },\n  \"normalization_policy\": \"NFKC, whitespace removal and middle-dot glyph harmonization only; no administrative-unit equivalence assumed\",\n  \"limitations\": [\n    \"Matching statutory text does not prove unchanged geometry.\",\n    \"Text differences may include administrative renaming/splitting, not only electoral moves.\",\n    \"No areal/population/vote allocation weights or party vote redistribution.\"\n  ],\n  \"source_pdf_sha256\": {\n    \"2020\": \"9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97\",\n    \"2024\": \"aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae\"\n  },\n  \"parser_sha256\": \"a727692a7a9504ef8c1d4c1c8fe6938f8d93772e6b146838fbc7b54da76c4113\"\n}\n{\n  \"inventory_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-17\",\n  \"status\": \"PASS\",\n  \"official_workbooks_checked\": 329,\n  \"districts_reconciled\": 253,\n  \"named_ward_rows\": 3485,\n  \"unlocated_category_rows\": 1645,\n  \"national_valid_votes\": 28741408,\n  \"named_ward_valid_votes\": 25941047,\n  \"unlocated_valid_votes\": 2800361,\n  \"unlocated_category_valid_votes\": {\n    \"거소·선상투표\": 91272,\n    \"관외사전투표\": 2671307,\n    \"국외부재자투표\": 34842,\n    \"국외부재자투표(공관)\": 1372,\n    \"잘못 투입·구분된 투표지\": 1568\n  },\n  \"districts_with_positive_unlocated_votes\": 253,\n  \"candidate_totals_match_verified_2020\": true,\n  \"model_inputs_modified\": false,\n  \"allocation_weights_created\": false,\n  \"crosswalk_eligible_districts\": 0,\n  \"source_zip_sha256\": \"690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f\",\n  \"parser_sha256\": \"3b1829ca037b8a7ca51c42f71a7022ef5dbec8d0c7e467c9e8cb0655f401b9b4\",\n  \"limitations\": [\n    \"Named subtotal describes 2020 administrative units, not verified 2024 geometry.\",\n    \"Unlocated categories remain in original district/candidate identities.\",\n    \"This is bookkeeping partition, not electoral transfer or calibrated forecast.\"\n  ]\n}\n",
+      "stderr": "test_all_crosswalks_and_transfer_weights_remain_unavailable (test_boundary_inventory.BoundaryInventoryTests.test_all_crosswalks_and_transfer_weights_remain_unavailable) ... ok\ntest_all_model_district_ids_join_exactly (test_boundary_inventory.BoundaryInventoryTests.test_all_model_district_ids_join_exactly) ... ok\ntest_complete_statutory_row_counts (test_boundary_inventory.BoundaryInventoryTests.test_complete_statutory_row_counts) ... ok\ntest_gildong_moves_across_same_named_districts (test_boundary_inventory.BoundaryInventoryTests.test_gildong_moves_across_same_named_districts) ... ok\ntest_no_duplicate_statutory_keys (test_boundary_inventory.BoundaryInventoryTests.test_no_duplicate_statutory_keys) ... ok\ntest_nowon_three_to_two_districts (test_boundary_inventory.BoundaryInventoryTests.test_nowon_three_to_two_districts) ... ok\ntest_only_typographic_normalization (test_boundary_inventory.BoundaryInventoryTests.test_only_typographic_normalization) ... ok\ntest_pdf_provenance_and_hashes (test_boundary_inventory.BoundaryInventoryTests.test_pdf_provenance_and_hashes) ... ok\ntest_sinpyeong2_moves_across_same_named_districts (test_boundary_inventory.BoundaryInventoryTests.test_sinpyeong2_moves_across_same_named_districts) ... ok\ntest_text_comparison_counts_are_a_partition_not_geographic_claim (test_boundary_inventory.BoundaryInventoryTests.test_text_comparison_counts_are_a_partition_not_geographic_claim) ... ok\ntest_candidate_partitions_reconcile_in_every_district (test_ward_inventory.WardInventoryTests.test_candidate_partitions_reconcile_in_every_district) ... ok\ntest_complete_original_workbook_and_district_coverage (test_ward_inventory.WardInventoryTests.test_complete_original_workbook_and_district_coverage) ... ok\ntest_every_district_keeps_special_votes_unallocated (test_ward_inventory.WardInventoryTests.test_every_district_keeps_special_votes_unallocated) ... ok\ntest_every_selected_row_has_unique_source_coordinate (test_ward_inventory.WardInventoryTests.test_every_selected_row_has_unique_source_coordinate) ... ok\ntest_gildong_original_subtotal (test_ward_inventory.WardInventoryTests.test_gildong_original_subtotal) ... ok\ntest_national_valid_vote_partition (test_ward_inventory.WardInventoryTests.test_national_valid_vote_partition) ... ok\ntest_signed_correction_abstentions_preserved (test_ward_inventory.WardInventoryTests.test_signed_correction_abstentions_preserved) ... ok\ntest_sinpyeong2_original_subtotal (test_ward_inventory.WardInventoryTests.test_sinpyeong2_original_subtotal) ... ok\ntest_special_categories_are_not_counted_as_wards (test_ward_inventory.WardInventoryTests.test_special_categories_are_not_counted_as_wards) ... ok\ntest_ward_and_special_row_counts (test_ward_inventory.WardInventoryTests.test_ward_and_special_row_counts) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 10.898s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_historical_frame_archive.py"
+      ],
+      "exit_code": 0,
+      "test_count": 4,
+      "stdout": "",
+      "stderr": "test_all_observations_are_frame_only_and_ineligible (test_historical_frame_archive.HistoricalFrameArchiveTests.test_all_observations_are_frame_only_and_ineligible) ... ok\ntest_national_values_roles_sample_and_suppression (test_historical_frame_archive.HistoricalFrameArchiveTests.test_national_values_roles_sample_and_suppression) ... ok\ntest_original_pdf_hash_and_current_inputs_remain_separate (test_historical_frame_archive.HistoricalFrameArchiveTests.test_original_pdf_hash_and_current_inputs_remain_separate) ... ok\ntest_publication_precedes_2020_election_without_invented_time (test_historical_frame_archive.HistoricalFrameArchiveTests.test_publication_precedes_2020_election_without_invented_time) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.003s\n\nOK\n"
+    }
+  ],
+  "coverage": {
+    "expected_districts": 254,
+    "observed_districts": 254,
+    "valid_districts": 254,
+    "scenario_eligible_districts": 245,
+    "complete": true
+  },
+  "scenario_counts": [
+    {
+      "name": "government_frame_delta_alpha_0",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    },
+    {
+      "name": "government_frame_delta_alpha_0.5",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    },
+    {
+      "name": "government_frame_delta_alpha_1",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "seat_total_including_unestimated": 254,
+      "national_mean_plus_pending": 254.0
+    }
+  ],
+  "temporal_checks": "기존 test_model.py와 test_safety_guards.py에서 미래 발표·발표일 누락·선거 후 기준조사·선거 후 지역조사·결과 선거일 미래/당일·결과 available_on 이전을 거부함을 검증.",
+  "limitations": [
+    "미보정 조건부 시나리오의 계산·입력불변성 검사이며 예측정확도나 당선확률 보정 검증이 아니다.",
+    "일단위 공개일은 같은 날짜 내 발표 전후 시각을 구분하지 않는다.",
+    "기존 역사관측보존 4개 검사는 포함했으나 root가 새로 개발하는 역사 여론조사 아카이브 검증기·추가 테스트는 포함하지 않는다."
+  ],
+  "test_count_note": "기존 모델29+2020교차8+경계10+행정동10+역사관측보존4=61. 확장 역사아카이브 검증기 테스트는 제외.",
+  "supplementary_historical_inventory_review": {
+    "review_date": "2026-10-17",
+    "separate_from_existing_61_tests": true,
+    "new_tests_run": 18,
+    "new_tests_pass": true,
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_historical_inventory.py"
+    ],
+    "test_output": "test_complete_inventory_not_training_approval (test_historical_inventory.HistoricalInventoryTests.test_complete_inventory_not_training_approval) ... ok\ntest_direct_opposition_judgment_mislabel_rejected (test_historical_inventory.HistoricalInventoryTests.test_direct_opposition_judgment_mislabel_rejected) ... ok\ntest_duplicate_wave_scope_across_files_rejected (test_historical_inventory.HistoricalInventoryTests.test_duplicate_wave_scope_across_files_rejected) ... ok\ntest_empty_archive_not_success (test_historical_inventory.HistoricalInventoryTests.test_empty_archive_not_success) ... ok\ntest_fieldwork_after_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_fieldwork_after_publication_rejected) ... ok\ntest_future_publication_excluded (test_historical_inventory.HistoricalInventoryTests.test_future_publication_excluded) ... ok\ntest_incomplete_scope_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_incomplete_scope_partition_rejected) ... ok\ntest_original_party_not_relabelled_as_successor (test_historical_inventory.HistoricalInventoryTests.test_original_party_not_relabelled_as_successor) ... ok\ntest_party_support_deleted_or_malformed_has_no_effect (test_historical_inventory.HistoricalInventoryTests.test_party_support_deleted_or_malformed_has_no_effect) ... ok\ntest_post_election_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_post_election_publication_rejected) ... ok\ntest_publication_day_excluded_and_next_day_available (test_historical_inventory.HistoricalInventoryTests.test_publication_day_excluded_and_next_day_available) ... ok\ntest_raw_sample_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_raw_sample_partition_rejected) ... ok\ntest_rounding_preserved_but_invalid_shares_rejected (test_historical_inventory.HistoricalInventoryTests.test_rounding_preserved_but_invalid_shares_rejected) ... ok\ntest_source_tamper_rejected (test_historical_inventory.HistoricalInventoryTests.test_source_tamper_rejected) ... ok\ntest_suppressed_region_not_filled_with_zeros (test_historical_inventory.HistoricalInventoryTests.test_suppressed_region_not_filled_with_zeros) ... ok\ntest_unreviewed_pollster_rejected (test_historical_inventory.HistoricalInventoryTests.test_unreviewed_pollster_rejected) ... ok\ntest_unreviewed_question_not_silently_pooled (test_historical_inventory.HistoricalInventoryTests.test_unreviewed_question_not_silently_pooled) ... ok\ntest_wrong_role_direction_rejected (test_historical_inventory.HistoricalInventoryTests.test_wrong_role_direction_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.046s\n\nOK\n",
+    "code_changed_by_auditor": false,
+    "reviewed_sha256": {
+      "scripts/validate_historical_frames.py": "154b9d73d38aa382b0819a2df4d09bf9448aa9147aab4dd2e28a5fe124d34848",
+      "test_historical_inventory.py": "0c3b55213c6035b956bf024bb807558fce5f98a6d10463fdf487c938da0da4a1"
+    },
+    "status": "PASS_PREVIOUS_THREE_FINDINGS_RESOLVED",
+    "reviewed_guards": [
+      "2020 민주당 여당/미래통합당 야당 방향 명시검사",
+      "지원·견제 응답보기 exact match",
+      "원문 PDF 해시·크기·레코드참조 검사",
+      "training/current_model/geography/mapping 승인 false",
+      "날짜단위 발표 당일 제외",
+      "비공개 권역값은 빈 shares 유지",
+      "원표본권역합=전국,가중표본 반올림허용",
+      "party_support 기록은 검사 전 제외하고 결과불변"
+    ],
+    "findings": [
+      {
+        "code": "EMPTY_INVENTORY_REPORTED_PASS",
+        "severity": "medium",
+        "detail": "paths=[] 호출은 0 wave/0 observations 상태에서도 status PASS를 반환한다. 누락된 glob 입력을 성공으로 보고할 위험.",
+        "recommended_action": "한 개 이상 아카이브 입력 및 관측을 필수화하거나 명시적 EMPTY_INPUT status 반환.",
+        "prior_reproduced": true,
+        "current_resolution": "resolved_by_root_and_independently_verified",
+        "current_detail": "빈 입력을 no archive files found ValueError로 차단함을 재현."
+      },
+      {
+        "code": "POLLSTER_IDENTITY_NOT_REVIEWED",
+        "severity": "medium",
+        "detail": "한 권역 pollster를 다른 조사기관으로 바꿔도 PASS. series_id와출처는갤럽이지만 pollster는 nonempty검사뿐이고 wave내동일성목록에도없다.",
+        "recommended_action": "한국갤럽 명시적 identity 및 wave내 pollster일관성 검사.",
+        "prior_reproduced": true,
+        "current_resolution": "resolved_by_root_and_independently_verified",
+        "current_detail": "한국갤럽 정확일치 검증으로 타기관 변조가 unreviewed pollster ValueError 발생."
+      },
+      {
+        "code": "MARCH_ONLY_DESCRIPTION_VERSUS_APRIL_ALLOWED_WINDOW",
+        "severity": "low",
+        "detail": "설명은 March2020만 검토했다고 하지만 start>=2020-03-01/end<=2020-04-14여서 4월조사도 허용한다. 해당기간여야역할오류는아니며 검토범위문구와허용정책불일치.",
+        "recommended_action": "검토창을3월한정하거나 설명을2020-03-01~2020-04-14로명시하고그범위승인근거보존.",
+        "prior_reproduced": true,
+        "current_resolution": "resolved_by_root_and_independently_verified",
+        "current_detail": "허용범위를 2020년3~4월 선거전으로 설명과코드 일치. 4월자료 전체 검증완료나 자동승인을 뜻하지 않는다."
+      }
+    ],
+    "interpretation": "현실 저장자료에서 오류를 발견했다는 뜻은 아니다. 모든 산출의 학습·현행모델 비승인 상태는 유지되며 이번 검토는 합성 변조에 대한 입력 게이트 범위 점검이다.",
+    "prior_review_history": [
+      {
+        "new_tests_run": 16,
+        "new_tests_pass": true,
+        "test_output": "test_complete_inventory_not_training_approval (test_historical_inventory.HistoricalInventoryTests.test_complete_inventory_not_training_approval) ... ok\ntest_direct_opposition_judgment_mislabel_rejected (test_historical_inventory.HistoricalInventoryTests.test_direct_opposition_judgment_mislabel_rejected) ... ok\ntest_duplicate_wave_scope_across_files_rejected (test_historical_inventory.HistoricalInventoryTests.test_duplicate_wave_scope_across_files_rejected) ... ok\ntest_fieldwork_after_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_fieldwork_after_publication_rejected) ... ok\ntest_future_publication_excluded (test_historical_inventory.HistoricalInventoryTests.test_future_publication_excluded) ... ok\ntest_incomplete_scope_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_incomplete_scope_partition_rejected) ... ok\ntest_original_party_not_relabelled_as_successor (test_historical_inventory.HistoricalInventoryTests.test_original_party_not_relabelled_as_successor) ... ok\ntest_party_support_deleted_or_malformed_has_no_effect (test_historical_inventory.HistoricalInventoryTests.test_party_support_deleted_or_malformed_has_no_effect) ... ok\ntest_post_election_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_post_election_publication_rejected) ... ok\ntest_publication_day_excluded_and_next_day_available (test_historical_inventory.HistoricalInventoryTests.test_publication_day_excluded_and_next_day_available) ... ok\ntest_raw_sample_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_raw_sample_partition_rejected) ... ok\ntest_rounding_preserved_but_invalid_shares_rejected (test_historical_inventory.HistoricalInventoryTests.test_rounding_preserved_but_invalid_shares_rejected) ... ok\ntest_source_tamper_rejected (test_historical_inventory.HistoricalInventoryTests.test_source_tamper_rejected) ... ok\ntest_suppressed_region_not_filled_with_zeros (test_historical_inventory.HistoricalInventoryTests.test_suppressed_region_not_filled_with_zeros) ... ok\ntest_unreviewed_question_not_silently_pooled (test_historical_inventory.HistoricalInventoryTests.test_unreviewed_question_not_silently_pooled) ... ok\ntest_wrong_role_direction_rejected (test_historical_inventory.HistoricalInventoryTests.test_wrong_role_direction_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.044s\n\nOK\n",
+        "reviewed_sha256": {
+          "scripts/validate_historical_frames.py": "e80e598e43b3bb6377b84bda841b7ccb0fe25dbb08bc7147dec3e93f58e0734d",
+          "test_historical_inventory.py": "eb22812d61f4f69635b73122a0f4cbc91cecb7ee094b3b1150cd7a0f041f1bb6"
+        },
+        "status": "TESTS_PASS_WITH_VALIDATION_GAPS",
+        "findings": [
+          {
+            "code": "EMPTY_INVENTORY_REPORTED_PASS",
+            "severity": "medium",
+            "detail": "paths=[] 호출은 0 wave/0 observations 상태에서도 status PASS를 반환한다. 누락된 glob 입력을 성공으로 보고할 위험.",
+            "recommended_action": "한 개 이상 아카이브 입력 및 관측을 필수화하거나 명시적 EMPTY_INPUT status 반환.",
+            "prior_reproduced": true,
+            "current_resolution": "resolved_by_root_and_independently_verified",
+            "current_detail": "빈 입력을 no archive files found ValueError로 차단함을 재현."
+          },
+          {
+            "code": "POLLSTER_IDENTITY_NOT_REVIEWED",
+            "severity": "medium",
+            "detail": "한 권역 pollster를 다른 조사기관으로 바꿔도 PASS. series_id와출처는갤럽이지만 pollster는 nonempty검사뿐이고 wave내동일성목록에도없다.",
+            "recommended_action": "한국갤럽 명시적 identity 및 wave내 pollster일관성 검사.",
+            "prior_reproduced": true,
+            "current_resolution": "resolved_by_root_and_independently_verified",
+            "current_detail": "한국갤럽 정확일치 검증으로 타기관 변조가 unreviewed pollster ValueError 발생."
+          },
+          {
+            "code": "MARCH_ONLY_DESCRIPTION_VERSUS_APRIL_ALLOWED_WINDOW",
+            "severity": "low",
+            "detail": "설명은 March2020만 검토했다고 하지만 start>=2020-03-01/end<=2020-04-14여서 4월조사도 허용한다. 해당기간여야역할오류는아니며 검토범위문구와허용정책불일치.",
+            "recommended_action": "검토창을3월한정하거나 설명을2020-03-01~2020-04-14로명시하고그범위승인근거보존.",
+            "prior_reproduced": true,
+            "current_resolution": "resolved_by_root_and_independently_verified",
+            "current_detail": "허용범위를 2020년3~4월 선거전으로 설명과코드 일치. 4월자료 전체 검증완료나 자동승인을 뜻하지 않는다."
+          }
+        ]
+      }
+    ],
+    "fix_verification_checks": {
+      "empty_input_rejected": true,
+      "different_pollster_rejected": true,
+      "april_window_still_supported_as_documented": true,
+      "comment_matches_march_april_window": true
+    },
+    "total_existing_plus_supplementary_tests": 79
+  }
+}

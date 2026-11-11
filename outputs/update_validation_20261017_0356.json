@@ -1,0 +1,48 @@
+{
+  "project_version": "0.2.5",
+  "engine_version": "0.2.3",
+  "verified_date": "2026-10-17",
+  "status": "PASS",
+  "unit_tests_total": 61,
+  "checks": {
+    "immutable_original_sources_engine_inputs_and_scenarios": true,
+    "254_district_coverage_and_vote_seat_accounting": true,
+    "all_61_tests_pass": true,
+    "independent_model_and_two_ward_source_audits": true,
+    "253_district_candidate_partition_and_no_allocation": true,
+    "historical_frame_only_pdf_retained_not_current_input": true,
+    "all_254_report_rows_preserved": true
+  },
+  "scenario_recalculated_for_release": false,
+  "scenario_numbers_changed": false,
+  "ward_rows": 3485,
+  "special_rows": 1645,
+  "unlocated_valid_votes": 2800361,
+  "historical_frame_waves": 1,
+  "historical_frame_observations": 9,
+  "historical_current_input_linked": false,
+  "original_zip_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "source_integrity_recovery": "outputs/source_integrity_recovery_20261017.json",
+  "protected_sha256": {
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/events.json": "eb1f7812638d741961e27dc60c7e7aa70d4657bf5b19c3f0ebf1f124fcec3b76",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/districts_2024.csv": "cd9a3b2fc3e75427b73cde2dff1c9b70a67f9a4783901ea10d4f073b5dbbf730",
+    "data/raw/nec_2024.csv": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "config/frame_comparison_monthly.json": "e1bf5c082032d80655dd66bc20549ccd893a0b1f90245399f1d8cfcea0b4526b",
+    "outputs/model_report.json": "f5a2db92164e0b5ce7260281095375181fa4b9aef60bafc0f1212b2d11583a7b",
+    "outputs/model_report_monthly.json": "dfc4b64f7df568176c690b52af30d29815327e139ad0f866e2e543beabcb8ac2",
+    "data/history_2020/nec_2020_raw.csv": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+    "data/history_2020/nec_2020_original_tables.zip": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+    "data/history_2020/verified_candidates_2020.csv": "1d67e5b134010fffef258dc061a935ec4e76f8e43208566fb72b74fc10076684"
+  },
+  "remaining_work": [
+    "geographic_crosswalk",
+    "unlocated_vote_policy",
+    "historical_poll_series",
+    "historical_party_mapping",
+    "time_split_backtest_and_calibration"
+  ]
+}

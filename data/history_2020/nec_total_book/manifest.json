@@ -1,0 +1,18 @@
+{
+  "source_url": "https://ok.nec.go.kr/common/board/Download.do?bcIdx=138933&cbIdx=1129&streFileNm=a5dc3bae-a62d-4d60-8e99-1194db10967c.pdf",
+  "retrieved_on": "2026-11-04",
+  "title": "제21대 국회의원선거 총람",
+  "pdf_pages": 1560,
+  "pdf_bytes": 37168652,
+  "sha256": "9b27872b506f2390c00df595d91bb4a67181d87707d0b96963d0e59ad9e017de",
+  "visually_reviewed_pdf_pages": [
+    181
+  ],
+  "regional_candidate_vote_total": 28741408,
+  "proportional_candidate_vote_total": 27899864,
+  "interpretation": "181쪽의 지역구 정당별 득표수 합계는 기존 2020 대체 XLSX 집계와 일치한다. 개표 단위별 결과의 실시간 공개를 설명하지만 보존된 329개 XLSX 각각의 파일 동일성·공개 시각을 증명하지 않는다.",
+  "historical_available_on_approved": false,
+  "geography_approved": false,
+  "model_input": false,
+  "pdf_metadata_not_publication_proof": true
+}

@@ -1,0 +1,64 @@
+{
+  "status": "ARITHMETIC_PASS_SYNTHETIC_ONLY",
+  "arithmetic_pass": true,
+  "synthetic_only": true,
+  "source_candidate_count": 1,
+  "target_count": 2,
+  "allocation_row_count": 2,
+  "source_totals": {
+    "fixed_named_ward": 10,
+    "unlocated": 4
+  },
+  "allocated_totals": {
+    "fixed_named_ward": 10,
+    "unlocated": 4
+  },
+  "synthetic_target_totals": {
+    "synthetic_A": {
+      "fixed_named_ward": 6,
+      "unlocated": 1
+    },
+    "synthetic_B": {
+      "fixed_named_ward": 4,
+      "unlocated": 3
+    }
+  },
+  "real_allocations_checked": 0,
+  "geographic_crosswalk_eligible_districts": 0,
+  "historical_backtests_executed": 0,
+  "actual_election_data_loaded": false,
+  "actual_geographic_edges_verified": false,
+  "fixed_named_ward_geography_verified": false,
+  "geography_approved": false,
+  "training_approved": false,
+  "current_model_linked": false,
+  "backtest_executed": false,
+  "win_probabilities_produced": false,
+  "allocation_generated": false,
+  "party_support_used": false,
+  "limitation": "Joint arithmetic only; synthetic edges and named-ward placements are not verified geography or model inputs.",
+  "synthetic_case_count": 3,
+  "valid_case_count": 1,
+  "invalid_cases_rejected": 2,
+  "cases": [
+    {
+      "case": "conserved_split",
+      "expected_acceptance": true,
+      "accepted": true,
+      "rejection_reason": null
+    },
+    {
+      "case": "duplicated_named_ward",
+      "expected_acceptance": false,
+      "accepted": false,
+      "rejection_reason": "joint conservation failed: ('synthetic_source', 'synthetic_party', 'synthetic_candidate') / fixed_named_ward"
+    },
+    {
+      "case": "duplicated_unlocated",
+      "expected_acceptance": false,
+      "accepted": false,
+      "rejection_reason": "joint conservation failed: ('synthetic_source', 'synthetic_party', 'synthetic_candidate') / unlocated"
+    }
+  ],
+  "scope": "Implementation diagnostic, not historical validation or a crosswalk."
+}

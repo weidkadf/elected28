@@ -1,0 +1,165 @@
+{
+  "schema_version": "gallup_frame_observations_local_1",
+  "target_election": "2026-06-03 제9회 전국동시지방선거",
+  "question_exact": "지방선거와 관련해 다음 중 어느 주장에 더 동의하십니까? 여당 후보가 많이 당선돼야 한다 / 야당 후보가 많이 당선돼야 한다",
+  "wording_note": "no 정부 지원/견제 clause; treated as the same class with this caveat",
+  "source_pdf": "gallup_663_20260515.pdf",
+  "source_pdf_sha256": "27448b26f466e456cd5400f4461209af47c112bdd885c2cc0f011171a137c8db",
+  "source_url": "https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_663(20260515).pdf",
+  "polls": [
+    {
+      "poll_id": "gallup_663_frame_national",
+      "pollster": "한국갤럽",
+      "scope": "national",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 1011,
+      "weighted_sample_size": 1011,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.44,
+        "정부견제": 0.33,
+        "모름/응답거절": 0.23
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_서울",
+      "pollster": "한국갤럽",
+      "scope": "서울",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 188,
+      "weighted_sample_size": 188,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.4,
+        "정부견제": 0.4,
+        "모름/응답거절": 0.2
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_인천/경기",
+      "pollster": "한국갤럽",
+      "scope": "인천/경기",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 319,
+      "weighted_sample_size": 328,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.51,
+        "정부견제": 0.28,
+        "모름/응답거절": 0.21
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_강원",
+      "pollster": "한국갤럽",
+      "scope": "강원",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 29,
+      "weighted_sample_size": 30,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {}
+    },
+    {
+      "poll_id": "gallup_663_frame_대전/세종/충청",
+      "pollster": "한국갤럽",
+      "scope": "대전/세종/충청",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 115,
+      "weighted_sample_size": 109,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.43,
+        "정부견제": 0.33,
+        "모름/응답거절": 0.24
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_광주/전라",
+      "pollster": "한국갤럽",
+      "scope": "광주/전라",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 96,
+      "weighted_sample_size": 97,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.64,
+        "정부견제": 0.13,
+        "모름/응답거절": 0.23
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_대구/경북",
+      "pollster": "한국갤럽",
+      "scope": "대구/경북",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 99,
+      "weighted_sample_size": 97,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.22,
+        "정부견제": 0.46,
+        "모름/응답거절": 0.33
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_부산/울산/경남",
+      "pollster": "한국갤럽",
+      "scope": "부산/울산/경남",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 152,
+      "weighted_sample_size": 149,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {
+        "정부지원": 0.37,
+        "정부견제": 0.43,
+        "모름/응답거절": 0.2
+      }
+    },
+    {
+      "poll_id": "gallup_663_frame_제주",
+      "pollster": "한국갤럽",
+      "scope": "제주",
+      "fieldwork_start": "2026-05-12",
+      "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
+      "sample_size": 13,
+      "weighted_sample_size": 13,
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_coordinate_component": "정부지원",
+      "shares": {}
+    }
+  ]
+}

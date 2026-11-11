@@ -1,0 +1,370 @@
+{
+  "schema_version": "pollster_ratings_v050_1",
+  "election": "제21대 대통령선거 2025-06-03",
+  "actual": {
+    "이재명": 49.42,
+    "김문수": 41.15,
+    "이준석": 8.34
+  },
+  "window": "fieldwork end 2025-05-13..05-27 (candidate registration to publication blackout)",
+  "n_polls": 67,
+  "metric": "logit(Lee/(Lee+Kim)) minus official",
+  "filters": "automatic PDF parsing; dropped question score<0, Lee-Kim margin outside [-5,30], Lee Jun-seok>16 (parser/target mismatch), exact duplicates",
+  "mode_summary": {
+    "all_parsed": {
+      "CATI": {
+        "n": 20,
+        "bias_logit": 0.1538,
+        "rmse_logit": 0.1843,
+        "margin_error_pp": 5.28
+      },
+      "ARS": {
+        "n": 44,
+        "bias_logit": 0.03,
+        "rmse_logit": 0.1066,
+        "margin_error_pp": 0.96
+      }
+    },
+    "question_verified_only": {
+      "CATI": {
+        "n": 17,
+        "bias_logit": 0.1516,
+        "rmse_logit": 0.182,
+        "margin_error_pp": 5.27
+      },
+      "ARS": {
+        "n": 27,
+        "bias_logit": 0.0119,
+        "rmse_logit": 0.0729,
+        "margin_error_pp": 0.2
+      }
+    },
+    "final_week_from_0523": {
+      "CATI": {
+        "n": 9,
+        "bias_logit": 0.0934,
+        "rmse_logit": 0.1117,
+        "margin_error_pp": 3.03
+      },
+      "ARS": {
+        "n": 19,
+        "bias_logit": -0.0082,
+        "rmse_logit": 0.0563,
+        "margin_error_pp": -0.66
+      }
+    }
+  },
+  "quality_weights_for_model": {
+    "CATI_live_interview": 0.335,
+    "ARS_RDD": 1.0
+  },
+  "quality_weights_rule": "(best mode RMSE / mode RMSE)^2 on all_parsed",
+  "pollsters_provisional": [
+    {
+      "pollster": "KOPRA",
+      "alias": null,
+      "mode": "ARS",
+      "n": 5,
+      "bias_logit": -0.0354,
+      "rmse_logit": 0.0473,
+      "margin_error_pp": -1.87,
+      "rmse_shrunk": 0.0752,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)코리아정보리서치",
+      "alias": null,
+      "mode": "ARS",
+      "n": 7,
+      "bias_logit": 0.0279,
+      "rmse_logit": 0.061,
+      "margin_error_pp": 0.9,
+      "rmse_shrunk": 0.0775,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "조원씨앤아이",
+      "alias": null,
+      "mode": "ARS",
+      "n": 4,
+      "bias_logit": 0.0434,
+      "rmse_logit": 0.0587,
+      "margin_error_pp": 1.5,
+      "rmse_shrunk": 0.0827,
+      "weight_provisional": 1.0,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "(주)에이스리서치",
+      "alias": null,
+      "mode": "ARS",
+      "n": 3,
+      "bias_logit": 0.0182,
+      "rmse_logit": 0.0496,
+      "margin_error_pp": 0.63,
+      "rmse_shrunk": 0.0831,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)리서치민",
+      "alias": null,
+      "mode": "ARS",
+      "n": 3,
+      "bias_logit": 0.003,
+      "rmse_logit": 0.0533,
+      "margin_error_pp": -0.1,
+      "rmse_shrunk": 0.0843,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "여론조사공정(주)",
+      "alias": null,
+      "mode": "ARS",
+      "n": 7,
+      "bias_logit": 0.0014,
+      "rmse_logit": 0.0856,
+      "margin_error_pp": -0.37,
+      "rmse_shrunk": 0.0924,
+      "weight_provisional": 1.0,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "한길리서치",
+      "alias": "한길리서치",
+      "mode": "ARS",
+      "n": 2,
+      "bias_logit": -0.0702,
+      "rmse_logit": 0.0704,
+      "margin_error_pp": -3.37,
+      "rmse_shrunk": 0.0938,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "케이에스오아이 주식회사(한국사회여론연구소)",
+      "alias": null,
+      "mode": "ARS",
+      "n": 2,
+      "bias_logit": 0.0546,
+      "rmse_logit": 0.0812,
+      "margin_error_pp": 1.93,
+      "rmse_shrunk": 0.0972,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "윈지코리아컨설팅",
+      "alias": null,
+      "mode": "ARS",
+      "n": 1,
+      "bias_logit": 0.0775,
+      "rmse_logit": 0.0775,
+      "margin_error_pp": 2.93,
+      "rmse_shrunk": 0.1001,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)에브리리서치",
+      "alias": null,
+      "mode": "ARS",
+      "n": 1,
+      "bias_logit": -0.0826,
+      "rmse_logit": 0.0826,
+      "margin_error_pp": -3.87,
+      "rmse_shrunk": 0.1011,
+      "weight_provisional": 1.0,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "미디어리서치",
+      "alias": null,
+      "mode": "ARS",
+      "n": 3,
+      "bias_logit": 0.0917,
+      "rmse_logit": 0.1345,
+      "margin_error_pp": 3.6,
+      "rmse_shrunk": 0.1214,
+      "weight_provisional": 0.772,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "미디어토마토",
+      "alias": "미디어토마토",
+      "mode": "ARS",
+      "n": 3,
+      "bias_logit": 0.1426,
+      "rmse_logit": 0.1621,
+      "margin_error_pp": 5.9,
+      "rmse_shrunk": 0.1372,
+      "weight_provisional": 0.604,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "한길리서치",
+      "alias": "한길리서치",
+      "mode": "MIX",
+      "n": 2,
+      "bias_logit": 0.0236,
+      "rmse_logit": 0.0291,
+      "margin_error_pp": 0.73,
+      "rmse_shrunk": 0.1439,
+      "weight_provisional": 0.548,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)코리아리서치인터내셔널",
+      "alias": null,
+      "mode": "CATI",
+      "n": 1,
+      "bias_logit": -0.0055,
+      "rmse_logit": 0.0055,
+      "margin_error_pp": -1.27,
+      "rmse_shrunk": 0.1596,
+      "weight_provisional": 0.446,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)리얼미터",
+      "alias": null,
+      "mode": "ARS",
+      "n": 1,
+      "bias_logit": 0.2667,
+      "rmse_logit": 0.2667,
+      "margin_error_pp": 10.53,
+      "rmse_shrunk": 0.1622,
+      "weight_provisional": 0.432,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "(주)리서치앤리서치",
+      "alias": null,
+      "mode": "CATI",
+      "n": 2,
+      "bias_logit": 0.1191,
+      "rmse_logit": 0.1251,
+      "margin_error_pp": 3.93,
+      "rmse_shrunk": 0.1632,
+      "weight_provisional": 0.427,
+      "question_verified_share": 0.5
+    },
+    {
+      "pollster": "넥스트리서치",
+      "alias": null,
+      "mode": "CATI",
+      "n": 2,
+      "bias_logit": 0.1084,
+      "rmse_logit": 0.1279,
+      "margin_error_pp": 3.43,
+      "rmse_shrunk": 0.1641,
+      "weight_provisional": 0.422,
+      "question_verified_share": 0.5
+    },
+    {
+      "pollster": "메타보이스(주)",
+      "alias": null,
+      "mode": "CATI",
+      "n": 1,
+      "bias_logit": 0.1327,
+      "rmse_logit": 0.1327,
+      "margin_error_pp": 4.73,
+      "rmse_shrunk": 0.1729,
+      "weight_provisional": 0.38,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)한국리서치",
+      "alias": null,
+      "mode": "CATI",
+      "n": 3,
+      "bias_logit": 0.1447,
+      "rmse_logit": 0.1629,
+      "margin_error_pp": 4.73,
+      "rmse_shrunk": 0.1739,
+      "weight_provisional": 0.376,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)엠브레인퍼블릭",
+      "alias": null,
+      "mode": "CATI",
+      "n": 1,
+      "bias_logit": 0.1454,
+      "rmse_logit": 0.1454,
+      "margin_error_pp": 5.73,
+      "rmse_shrunk": 0.1754,
+      "weight_provisional": 0.369,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "(주)리서치뷰",
+      "alias": "리서치뷰",
+      "mode": "ARS",
+      "n": 2,
+      "bias_logit": 0.0598,
+      "rmse_logit": 0.2662,
+      "margin_error_pp": 2.63,
+      "rmse_shrunk": 0.1875,
+      "weight_provisional": 0.323,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "한국갤럽조사연구소",
+      "alias": "한국갤럽",
+      "mode": "CATI",
+      "n": 7,
+      "bias_logit": 0.167,
+      "rmse_logit": 0.2073,
+      "margin_error_pp": 5.87,
+      "rmse_shrunk": 0.2007,
+      "weight_provisional": 0.282,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "입소스 주식회사",
+      "alias": null,
+      "mode": "CATI",
+      "n": 2,
+      "bias_logit": 0.2225,
+      "rmse_logit": 0.2306,
+      "margin_error_pp": 8.23,
+      "rmse_shrunk": 0.2041,
+      "weight_provisional": 0.273,
+      "question_verified_share": 1.0
+    },
+    {
+      "pollster": "조원씨앤아이",
+      "alias": null,
+      "mode": "CATI",
+      "n": 1,
+      "bias_logit": 0.2996,
+      "rmse_logit": 0.2996,
+      "margin_error_pp": 10.03,
+      "rmse_shrunk": 0.2189,
+      "weight_provisional": 0.237,
+      "question_verified_share": 0.0
+    },
+    {
+      "pollster": "(주)한국리서치",
+      "alias": null,
+      "mode": "WEB",
+      "n": 1,
+      "bias_logit": 0.3594,
+      "rmse_logit": 0.3594,
+      "margin_error_pp": 9.73,
+      "rmse_shrunk": 0.2403,
+      "weight_provisional": 0.197,
+      "question_verified_share": 1.0
+    }
+  ],
+  "caveats": [
+    "one election only",
+    "presidential vote question, not the government-frame item the model aggregates",
+    "CATI has more undecided respondents; two-party normalisation assumes they split like deciders",
+    "pollster rows are not used by the model until toplines are hand-verified"
+  ]
+}

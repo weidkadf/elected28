@@ -1,0 +1,33 @@
+{
+  "status": "PASS_PARTIAL_CANDIDATE_VOTE_CROSSCHECK",
+  "district_count": 13,
+  "candidate_count": 67,
+  "national_remaining_districts": 240,
+  "pdf_pages": [
+    890,
+    891
+  ],
+  "party_labels_crosschecked": false,
+  "method": "Independent visual transcription of candidate names and vote counts on both facing pages; exact candidate-set and vote equality against verified CSV; district valid-vote sums. No fuzzy name matching.",
+  "district_valid_votes": {
+    "종로구": 94038,
+    "중구성동구갑": 129745,
+    "중구성동구을": 123308,
+    "용산구": 133643,
+    "광진구갑": 105454,
+    "광진구을": 107618,
+    "동대문구갑": 97770,
+    "동대문구을": 101252,
+    "중랑구갑": 95540,
+    "중랑구을": 125037,
+    "성북구갑": 136203,
+    "성북구을": 119172,
+    "강북구갑": 85690
+  },
+  "source_pdf_sha256": "9b27872b506f2390c00df595d91bb4a67181d87707d0b96963d0e59ad9e017de",
+  "verified_csv_sha256": "1d67e5b134010fffef258dc061a935ec4e76f8e43208566fb72b74fc10076684",
+  "historical_available_on_approved": false,
+  "geography_approved": false,
+  "current_model_input": false,
+  "full_national_crosscheck": false
+}

@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-10-16T15:34:25.955144+09:00",
+  "checked_at_precision": "system clock at check completion",
+  "new_eligible_poll_count": 0,
+  "model_inputs_changed": false,
+  "party_support_used": false,
+  "conclusion": "기존 갤럽 678호와 중복. NBS 190차 전체 설문 원문에서 정부지원·견제/선거 결과 기대 문항 부재 확인. 이번 확인 범위에서 새 적격 관측 없음.",
+  "checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "access": "direct_http_200_cp949",
+      "latest_report": 678,
+      "published_at": "2026-10-16",
+      "finding": "최상단 게시물 1662; 기존 입력과 동일."
+    },
+    {
+      "source": "한국갤럽 678호 원문",
+      "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662",
+      "access": "direct_http_200_cp949",
+      "fieldwork_start": "2026-10-13",
+      "fieldwork_end": "2026-10-15",
+      "sample_size": 1003,
+      "support": 0.34,
+      "check": 0.47,
+      "undecided": 0.18,
+      "question_interpretation": "정부 지원을 위한 여당 다수 당선 대 정부 견제를 위한 야당 다수 당선 기대",
+      "opposition_judgment_directly_measured": false,
+      "duplicate_of": "gallup_678_frame_national",
+      "new_observation": false
+    },
+    {
+      "source": "여심위 갤럽 등록17313",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19569",
+      "access": "direct_http_200",
+      "sample_size": 1003,
+      "fieldwork_start": "2026-10-13",
+      "fieldwork_end": "2026-10-15",
+      "published_at": "2026-10-16T10:00:00+09:00",
+      "finding": "조사기간·표본·방법론 대조 성공. 결과 첨부는 최초공표 24시간 후 공개 안내. 원문 수치는 갤럽 자체 발표에서 확인."
+    },
+    {
+      "source": "여심위 NBS 등록17312 / 190차",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19568",
+      "access": "direct_http_200_and_attachment_pdf_text_extraction_success",
+      "fieldwork_start": "2026-10-12",
+      "fieldwork_end": "2026-10-14",
+      "published_at": "2026-10-15T11:00:00+09:00",
+      "sample_size": 1000,
+      "attachments": [
+        {
+          "name": "(NBS)_설문지_190차_최종.pdf",
+          "bytes": 136731,
+          "pdftotext_exit_code": 0,
+          "pages_read": 4
+        },
+        {
+          "name": "(NBS)_통계표_190차_최종.pdf",
+          "bytes": 1015991,
+          "pdftotext_exit_code": 0
+        }
+      ],
+      "question_topics": [
+        "국정운영평가",
+        "국정운영 신뢰도",
+        "정당지지도(제외)",
+        "성장 대 분배",
+        "사회 양극화",
+        "초과 세수 활용",
+        "전기요금",
+        "전월세 가격 전망",
+        "DMZ 지뢰 폭발 사고 대응"
+      ],
+      "finding": "설문 4쪽 전체 확인. 정부지원/견제 및 총선 결과 기대 문항 없음. 국정평가·신뢰도·정당지지도는 대체 입력하지 않음.",
+      "model_input_eligible": false
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662",
+      "method": "web open",
+      "error": "not accessible via tool",
+      "resolved_by": "direct HTTP CP949"
+    },
+    {
+      "url": "https://nbsurvey.kr/",
+      "method": "web open",
+      "error": "timeout"
+    },
+    {
+      "url": "https://nbsurvey.kr/",
+      "method": "direct HTTP",
+      "error": "502 Bad Gateway"
+    },
+    {
+      "url": "https://nbsurvey.kr/?page_id=12",
+      "method": "direct HTTP",
+      "error": "502 Bad Gateway"
+    },
+    {
+      "url": "http://nbsurvey.kr/",
+      "method": "direct HTTP",
+      "error": "200 but empty substantive body"
+    }
+  ],
+  "limitations": [
+    "NBS 자체 사이트 최신 게시물 목록은 접근 실패. 여심위 최신 등록목록에 게시된 190차의 설문·통계표로 보완했다.",
+    "모든 조사기관·모든 과거 회차를 망라한 검색은 아니며 신규 관측 없음은 이번 점검 범위의 결론이다.",
+    "PDF는 메모리에서 읽었고 이 기록에 바이트 수·원문 접근경로를 남겼다. 원자료 파일은 이 하위 작업에서 별도 저장하지 않았다."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-17T13:49:52.157159+09:00",
+  "model_input_modified": false,
+  "new_current_eligible_poll_count": 0,
+  "party_support_used": false,
+  "historical_collection_performed": false,
+  "checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "http_status": 200,
+      "latest_daily_report": 678,
+      "latest_post_id": 1662,
+      "published_at": "2026-10-16",
+      "existing_observation": true
+    },
+    {
+      "source": "여심위 최신목록",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "http_status": 200,
+      "top_registration": 17314,
+      "gallup_registration": 17313,
+      "nbs_registration": 17312,
+      "new_frame_observation_identified": false
+    },
+    {
+      "source": "NBS",
+      "url": "https://nbsurvey.kr/",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ],
+  "conclusion": "갤럽·여심위 최신목록 기존과 동일. 신규 정부지원·견제 적격 관측 식별 없음.",
+  "limitations": [
+    "최신목록 재확인 범위이며 모든 조사기관의 신규 문항 부재를 보장하지 않음.",
+    "NBS 자체 사이트 접근 실패 지속. 이전 여심위190차 원문 확인을 유지하나 이번 회차 새 원문 확인으로 간주하지 않음.",
+    "새 갤럽/NBS 회차가 없어 동일 원문 재다운로드 및 중복입력하지 않음.",
+    "정당지지도·국정평가를 지원·견제 대체 입력으로 사용하지 않음."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-10-17T19:08:01+09:00",
+  "status": "PASS_WITH_CURRENT_SOURCE_LIMITATION",
+  "model_input_modified": false,
+  "party_support_used": false,
+  "new_current_eligible_poll_count": 0,
+  "all_new_current_polls_absence_proven": false,
+  "historical_wave_independent_review": {
+    "report": 578,
+    "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1465",
+    "pdf_url": "https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_578(20240315).pdf",
+    "source_file": "data/history_polls/gallup_578_20240315.pdf",
+    "pdf_bytes": 1211141,
+    "pdf_sha256": "c2f26152f8e6c45de7ca8556d98a0729fc13703d105eadcc0c172bc043b5780f",
+    "source_html_file": "data/history_polls/gallup_578_source.html",
+    "html_bytes": 40277,
+    "html_sha256": "d8232e42bea5c2c03ff68169fb9b9da632bb63ba051c8819512c06865f2e1833",
+    "normalized_file": "data/history_polls/gallup_578_frame_observations.json",
+    "validation": "Independent PDF page 14 visual rendering and text, normalized nine rows, retained file hashes, and fresh official HTML all agree.",
+    "fieldwork_start": "2024-03-12",
+    "fieldwork_end": "2024-03-14",
+    "published_at": "2024-03-15",
+    "publication_time": null,
+    "sample_size": 1002,
+    "weighted_sample_size": 1002,
+    "response_rate": 0.147,
+    "margin_of_error_95_pp": 3.1,
+    "sampling": "이동통신 3사 제공 무선전화 가상번호 무작위 추출",
+    "mode": "전화조사원 인터뷰(CATI)",
+    "governing_party": "국민의힘",
+    "main_opposition_party": "더불어민주당",
+    "democratic_coordinate_component": "정부견제",
+    "option_wording_exact_match": true,
+    "option_order": "항목 로테이션",
+    "opposition_judgment_directly_measured": false,
+    "observation_rows": 9,
+    "regional_actual_sum": 1002,
+    "regional_weighted_sum": 1001,
+    "regional_rows_match_pdf": true,
+    "suppressed_scopes": ["강원", "제주"],
+    "national_shares": {"정부지원": 0.4, "정부견제": 0.49, "모름/응답거절": 0.11},
+    "training_eligible": false,
+    "current_model_input_eligible": false
+  },
+  "current_source_checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "retrieval": "success",
+      "latest_report": 678,
+      "latest_post_id": 1662,
+      "publication_date": "2026-10-16",
+      "already_in_existing_model": true
+    },
+    {
+      "source": "여심위 최신목록",
+      "url": "https://www.nesdc.go.kr/portal/bbs/B0000005/list.do?menuNo=200467",
+      "retrieval": "success",
+      "top_registration": 17314,
+      "gallup_registration": 17313,
+      "nbs_registration": 17312
+    },
+    {
+      "source": "여심위 한국갤럽 17313",
+      "url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?edate=&menuNo=200467&nttId=19569&pageIndex=1&pdate=&pollGubuncd=&sdate=&searchCnd=&searchTime=&searchWrd=",
+      "retrieval": "success",
+      "sample_size": 1003,
+      "scheduled_first_release": "2026-10-16T10:00:00+09:00",
+      "scheduled_release_not_actual_timestamp_proof": true
+    },
+    {
+      "source": "여심위 NBS 17312",
+      "url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?edate=&menuNo=200467&nttId=19568&pageIndex=1&pdate=&pollGubuncd=&sdate=&searchCnd=&searchTime=&searchWrd=",
+      "retrieval": "success",
+      "report": 190,
+      "sample_size": 1000,
+      "scheduled_first_release": "2026-10-15T11:00:00+09:00",
+      "scheduled_release_not_actual_timestamp_proof": true,
+      "fresh_original_questionnaire_review": false,
+      "attachment_status": "본문은 질문지·통계표 파일명을 제시하지만 이미지변환중으로 표시. 이번 점검에서 원문 재확인으로 간주하지 않음."
+    },
+    {
+      "source": "NBS 공식홈페이지",
+      "url": "https://nbsurvey.kr/",
+      "retrieval": "failed",
+      "error": "Web retrieval returned Timeout fetching on HTTPS and HTTP redirect retry.",
+      "transient": true
+    }
+  ],
+  "limitations": [
+    "새 현재 적격조사를 확인하지 못한 것이며 모든 기관의 새 문항 부재를 증명하지 않는다.",
+    "NBS 홈페이지 시간초과로 직접 최신 원문 검증이 제한됐다. 대통령 평가·정당지지율을 정부지원·견제 대체입력으로 쓰지 않았다.",
+    "578호 야당 범주는 여러 정당을 포함하므로 응답률을 민주당 득표율 또는 야권 내 배분으로 직접 사용하지 않는다.",
+    "2024년 1월 말~3월 초 3구도 질문은 578호 2구도와 자동 합치지 않는다.",
+    "월간 통합과 주간 조사 중복표본 및 전국·권역 표본중복을 독립 관측으로 취급하지 않는다."
+  ]
+}

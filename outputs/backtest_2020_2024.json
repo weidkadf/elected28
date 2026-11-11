@@ -1,0 +1,509 @@
+{
+  "schema_version": "backtest_2020_2024_partial_1",
+  "status": "PARTIAL_BACKTEST_EXECUTED",
+  "authorization": "user instruction 2026-11-05: run partial backtest on 171 same-text districts first",
+  "geography": "same_statutory_text_unverified_geometry",
+  "party_support_used": true,
+  "party_support_scope": "turnout weighting groups only (user decision 2026-11-11)",
+  "party_mapping": "Explicit role mapping for this backtest only: 2020 미래통합당 and 2024 국민의힘 are each the main conservative party of their election. Original party names are kept in outputs.",
+  "information_set": {
+    "baseline_results": "2020 verified alternative NEC tables",
+    "frames_2020": [
+      "gallup_392_frame_national",
+      "gallup_394_frame_national",
+      "gallup_395_frame_national"
+    ],
+    "frames_2024": [
+      "gallup_578_frame_national",
+      "gallup_579_frame_national",
+      "gallup_580_frame_national"
+    ],
+    "availability_rule": "published_at < election day (date only)",
+    "half_life_days": {
+      "2020": 28.0,
+      "2024": 14.0
+    }
+  },
+  "sample": {
+    "same_text_districts": 171,
+    "two_party_both_years": 155,
+    "used_primary": 149,
+    "robust_rule": "two-party share strictly inside (0.15, 0.85) in both 2020 and 2024 (logit leverage at extremes)",
+    "robust_excluded": [
+      "2024-29-서구갑",
+      "2024-52-전주시을",
+      "2024-46-목포시",
+      "2024-46-순천시광양시곡성군구례군갑",
+      "2024-46-순천시광양시곡성군구례군을",
+      "2024-46-영암군무안군신안군"
+    ],
+    "excluded": [
+      {
+        "district_id": "2024-11-관악구갑",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-26-연제구",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-27-서구",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-27-수성구을",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-27-달서구병",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-29-동구남구을",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-29-서구을",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-29-광산구갑",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-29-광산구을",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-31-북구",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-52-정읍시고창군",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-46-나주시화순군",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-46-담양군함평군영광군장성군",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-46-고흥군보성군장흥군강진군",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-46-해남군완도군진도군",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      },
+      {
+        "district_id": "2024-47-경산시",
+        "reason": "two_major_parties_not_both_present_in_both_years"
+      }
+    ]
+  },
+  "frame_aggregate": {
+    "2020_national_q": 0.5365549656095006,
+    "2024_national_q": 0.5620565694185611,
+    "national_logit_change": 0.10303153483358071,
+    "regional_logit_change": {
+      "서울": -0.005181763154435609,
+      "인천/경기": 0.10997809641347966,
+      "강원": 0.03922196119258542,
+      "대전/세종/충청": 0.000806875146410535,
+      "광주/전라": 0.119602519844908,
+      "대구/경북": 0.03456993469993627,
+      "부산/울산/경남": 0.04768243659306169,
+      "제주": 0.03922196119258542
+    },
+    "regional_deviation_2020": {
+      "서울": 0.02540175181035596,
+      "인천/경기": 0.03001854997198203,
+      "강원": 0.0,
+      "대전/세종/충청": -0.019718313505520578,
+      "광주/전라": 0.28399477373915377,
+      "대구/경북": -0.1755515288790786,
+      "부산/울산/경남": -0.0942700385267388,
+      "제주": 0.0
+    },
+    "regional_deviation_2024": {
+      "서울": -0.019001972536665076,
+      "인천/경기": 0.10077468519287627,
+      "강원": 0.0,
+      "대전/세종/충청": -0.05813339955169546,
+      "광주/전라": 0.3643753323914764,
+      "대구/경북": -0.18020355537172775,
+      "부산/울산/경남": -0.08580956312626253,
+      "제주": 0.0
+    }
+  },
+  "observed": {
+    "mean_district_two_party_logit_change": -0.054604133603311865,
+    "by_scope": {
+      "강원": {
+        "n": 8,
+        "mean_y": -0.28331120444129815,
+        "x": 0.03922196119258542
+      },
+      "대구/경북": {
+        "n": 14,
+        "mean_y": -0.15142429529211493,
+        "x": 0.03456993469993627
+      },
+      "대전/세종/충청": {
+        "n": 21,
+        "mean_y": 0.025464002915311902,
+        "x": 0.000806875146410535
+      },
+      "부산/울산/경남": {
+        "n": 30,
+        "mean_y": 0.0700651129885739,
+        "x": 0.04768243659306169
+      },
+      "서울": {
+        "n": 42,
+        "mean_y": -0.11671601768791524,
+        "x": -0.005181763154435609
+      },
+      "인천/경기": {
+        "n": 31,
+        "mean_y": -0.0664002580928775,
+        "x": 0.10997809641347966
+      },
+      "제주": {
+        "n": 3,
+        "mean_y": 0.19139905187313447,
+        "x": 0.03922196119258542
+      }
+    }
+  },
+  "fit_intercept_free": {
+    "nll": -16.14630509666854,
+    "converged": true,
+    "c": -0.05910246065300295,
+    "alpha": 0.06063455486680915,
+    "sigma_region": 0.10603715068600064,
+    "sigma_district": 0.20860357652990769,
+    "alpha_profile_ci95": [
+      -2.900000000000011,
+      2.999999999999968
+    ],
+    "profile": {
+      "grid": [
+        -6.0,
+        -5.5,
+        -5.0,
+        -4.5,
+        -4.0,
+        -3.5,
+        -3.0,
+        -2.5,
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        -0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0
+      ],
+      "delta_nll": [
+        4.648,
+        4.2407,
+        3.8187,
+        3.3826,
+        2.9338,
+        2.4751,
+        2.0113,
+        1.5503,
+        1.1047,
+        0.694,
+        0.3472,
+        0.1029,
+        0.0012,
+        0.0642,
+        0.2795,
+        0.6092,
+        1.0117,
+        1.4545,
+        1.9156,
+        2.3812,
+        2.8425,
+        3.2944,
+        3.7338,
+        4.1591,
+        4.5696
+      ]
+    },
+    "note": "alpha identified from cross-regional variation; c = realised 2024 national error"
+  },
+  "fit_no_intercept": {
+    "nll": -15.772967008813989,
+    "converged": true,
+    "c": 0.0,
+    "alpha": -0.7304693963031386,
+    "sigma_region": 0.11753659578728708,
+    "sigma_district": 0.20831806919872395,
+    "alpha_profile_ci95": [
+      -2.900000000000011,
+      1.4499999999999735
+    ]
+  },
+  "fit_all_155_incl_extremes": {
+    "nll": -6.247630302753636,
+    "converged": true,
+    "c": 0.04839611483634689,
+    "alpha": -4.437296028108355,
+    "sigma_region": 0.2636590187641796,
+    "sigma_district": 0.21436538432126742,
+    "alpha_profile_ci95": [
+      -8.0,
+      0.4999999999999698
+    ],
+    "note": "dominated by 6 Honam districts with extreme two-party shares"
+  },
+  "alpha_identified": false,
+  "conclusion": "alpha is NOT identified by one election pair: 95% profile interval spans negative to >2. sigma_region and sigma_district are identified and replace the v0.2 assumptions.",
+  "fit_legacy_single_wave_inputs": {
+    "nll": -16.16493095968297,
+    "converged": true,
+    "c": -0.04753820634190966,
+    "alpha": 0.11214614452967664,
+    "sigma_region": 0.10521859590909788,
+    "sigma_district": 0.2086375482298952,
+    "national_logit_change": -0.0810264339504827
+  },
+  "fit_without_turnout_adjustment": {
+    "nll": -16.146305096668527,
+    "converged": true,
+    "c": -0.06297152244764938,
+    "alpha": 0.06063450566616716,
+    "sigma_region": 0.10603715874459879,
+    "sigma_district": 0.20860357858174655,
+    "national_logit_change": 0.10303153483358071
+  },
+  "turnout_adjustment": {
+    "shift_2020": 0.04462058025299098,
+    "shift_2024": -0.019188993388004318,
+    "national_change_effect": -0.06380957364099529,
+    "national_frame_change_with": 0.03922196119258542,
+    "national_frame_change_without": 0.10303153483358071,
+    "observed_mean_district_change": -0.054604133603311865
+  },
+  "shrinkage_k_profile": {
+    "50": {
+      "nll": -16.1452,
+      "converged": true,
+      "c": -0.057,
+      "alpha": 0.0069,
+      "sigma_region": 0.1061,
+      "sigma_district": 0.2086
+    },
+    "100": {
+      "nll": -16.1454,
+      "converged": true,
+      "c": -0.0573,
+      "alpha": 0.0172,
+      "sigma_region": 0.1061,
+      "sigma_district": 0.2086
+    },
+    "200": {
+      "nll": -16.1459,
+      "converged": true,
+      "c": -0.058,
+      "alpha": 0.0341,
+      "sigma_region": 0.1061,
+      "sigma_district": 0.2086
+    },
+    "400": {
+      "nll": -16.1463,
+      "converged": true,
+      "c": -0.0591,
+      "alpha": 0.0606,
+      "sigma_region": 0.106,
+      "sigma_district": 0.2086
+    },
+    "800": {
+      "nll": -16.1465,
+      "converged": true,
+      "c": -0.061,
+      "alpha": 0.1055,
+      "sigma_region": 0.106,
+      "sigma_district": 0.2086
+    },
+    "1600": {
+      "nll": -16.1466,
+      "converged": true,
+      "c": -0.0643,
+      "alpha": 0.1887,
+      "sigma_region": 0.106,
+      "sigma_district": 0.2086
+    },
+    "6400": {
+      "nll": -16.1466,
+      "converged": true,
+      "c": -0.0833,
+      "alpha": 0.6726,
+      "sigma_region": 0.106,
+      "sigma_district": 0.2086
+    }
+  },
+  "leave_one_region_out_alpha": {
+    "강원": 0.0898094087815087,
+    "대구/경북": 0.018952838480752174,
+    "대전/세종/충청": 0.5709140802154522,
+    "부산/울산/경남": -0.11021492216867393,
+    "서울": -0.4322005026518467,
+    "인천/경기": 0.5818207346284373,
+    "제주": 0.04758102346450979
+  },
+  "evaluation_in_sample": [
+    {
+      "alpha": 0.0,
+      "brier": 0.08496291860738256,
+      "log_loss": 0.3481774805279116,
+      "two_party_rmse_pp": 5.420116988548279,
+      "p10_p90_coverage": 0.9328859060402684,
+      "dem_seats_mean": 77.55975,
+      "dem_seats_actual": 78,
+      "seat_error": -0.440250000000006
+    },
+    {
+      "alpha": 0.5,
+      "brier": 0.08771924369127516,
+      "log_loss": 0.3498857482863712,
+      "two_party_rmse_pp": 5.535646019429669,
+      "p10_p90_coverage": 0.9261744966442953,
+      "dem_seats_mean": 79.8125,
+      "dem_seats_actual": 78,
+      "seat_error": 1.8125
+    },
+    {
+      "alpha": 1.0,
+      "brier": 0.09233316902684563,
+      "log_loss": 0.3574553281863471,
+      "two_party_rmse_pp": 5.727870935274052,
+      "p10_p90_coverage": 0.9060402684563759,
+      "dem_seats_mean": 81.868,
+      "dem_seats_actual": 78,
+      "seat_error": 3.867999999999995
+    },
+    {
+      "alpha": 0.06063455486680915,
+      "brier": 0.08517123488255034,
+      "log_loss": 0.3481163951168907,
+      "two_party_rmse_pp": 5.429798589419984,
+      "p10_p90_coverage": 0.9328859060402684,
+      "dem_seats_mean": 77.84025,
+      "dem_seats_actual": 78,
+      "seat_error": -0.1597500000000025
+    }
+  ],
+  "evaluation_leave_one_region_out": [
+    {
+      "alpha": 0.0898094087815087,
+      "brier": 0.11733534375000002,
+      "log_loss": 0.39974279918276506,
+      "two_party_rmse_pp": 12.235683290458352,
+      "p10_p90_coverage": 0.875,
+      "dem_seats_mean": 3.4215,
+      "dem_seats_actual": 2,
+      "seat_error": 1.4215,
+      "scope": "강원",
+      "n": 8
+    },
+    {
+      "alpha": 0.018952838480752174,
+      "brier": 0.00029197607142857144,
+      "log_loss": 0.008928932044435497,
+      "two_party_rmse_pp": 5.270248410891355,
+      "p10_p90_coverage": 0.7857142857142857,
+      "dem_seats_mean": 0.1225,
+      "dem_seats_actual": 0,
+      "seat_error": 0.1225,
+      "scope": "대구/경북",
+      "n": 14
+    },
+    {
+      "alpha": 0.5709140802154522,
+      "brier": 0.10889104761904762,
+      "log_loss": 0.3691882763677296,
+      "two_party_rmse_pp": 3.128080576317873,
+      "p10_p90_coverage": 0.9523809523809523,
+      "dem_seats_mean": 12.0425,
+      "dem_seats_actual": 15,
+      "seat_error": -2.9574999999999996,
+      "scope": "대전/세종/충청",
+      "n": 21
+    },
+    {
+      "alpha": -0.11021492216867393,
+      "brier": 0.11024055275000001,
+      "log_loss": 0.6414651376183398,
+      "two_party_rmse_pp": 5.714455710960902,
+      "p10_p90_coverage": 0.9333333333333333,
+      "dem_seats_mean": 4.62475,
+      "dem_seats_actual": 2,
+      "seat_error": 2.6247499999999997,
+      "scope": "부산/울산/경남",
+      "n": 30
+    },
+    {
+      "alpha": -0.4322005026518467,
+      "brier": 0.0835049568452381,
+      "log_loss": 0.28510592834145954,
+      "two_party_rmse_pp": 3.875005285542308,
+      "p10_p90_coverage": 0.9761904761904762,
+      "dem_seats_mean": 31.89275,
+      "dem_seats_actual": 32,
+      "seat_error": -0.10725000000000051,
+      "scope": "서울",
+      "n": 42
+    },
+    {
+      "alpha": 0.5818207346284373,
+      "brier": 0.08365034072580645,
+      "log_loss": 0.2721853316900796,
+      "two_party_rmse_pp": 5.851181593685073,
+      "p10_p90_coverage": 0.9354838709677419,
+      "dem_seats_mean": 24.51275,
+      "dem_seats_actual": 24,
+      "seat_error": 0.5127500000000005,
+      "scope": "인천/경기",
+      "n": 31
+    },
+    {
+      "alpha": 0.04758102346450979,
+      "brier": 0.022569416666666665,
+      "log_loss": 0.16143540281285004,
+      "two_party_rmse_pp": 6.671781796005835,
+      "p10_p90_coverage": 0.6666666666666666,
+      "dem_seats_mean": 2.5535,
+      "dem_seats_actual": 3,
+      "seat_error": -0.4464999999999999,
+      "scope": "제주",
+      "n": 3
+    }
+  ],
+  "not_identified": [
+    "national_error_variance (single election pair)",
+    "time dependence of alpha"
+  ],
+  "limitations": [
+    "One election pair; 8 survey regions (2 suppressed -> national fallback) identify alpha.",
+    "Districts are not independent draws of the same geography; statutory text identity is not polygon identity.",
+    "Candidate changes, incumbency and third-party entry are absorbed in residuals.",
+    "Frames measured ~2 weeks before each election; forward use at longer horizons needs sigma(d)."
+  ]
+}

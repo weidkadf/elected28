@@ -1,0 +1,37 @@
+{
+  "inventory_version": "1.0.0",
+  "verified_date": "2026-10-17",
+  "status": "STATUTORY_ROW_INVENTORY_PASS_CROSSWALK_NOT_READY",
+  "parser": "pdfplumber ruled-table cell extraction",
+  "pdfplumber_version": "0.11.9",
+  "extracted_counts": {
+    "2020": 253,
+    "2024": 254
+  },
+  "province_counts_match_source_headings": true,
+  "district_keys_match_historical_vote_files": true,
+  "comparison_status_counts": {
+    "same_name_same_statutory_text_geometry_unverified": 171,
+    "same_name_statutory_text_diff_review_required": 61,
+    "no_same_name_predecessor_review_required": 22
+  },
+  "2024_districts_reviewed": 254,
+  "crosswalk_eligible_districts": 0,
+  "vote_transfer_weights_estimated": false,
+  "model_inputs_modified": false,
+  "province_alias_policy": {
+    "강원도": "강원특별자치도",
+    "전라북도": "전북특별자치도"
+  },
+  "normalization_policy": "NFKC, whitespace removal and middle-dot glyph harmonization only; no administrative-unit equivalence assumed",
+  "limitations": [
+    "Matching statutory text does not prove unchanged geometry.",
+    "Text differences may include administrative renaming/splitting, not only electoral moves.",
+    "No areal/population/vote allocation weights or party vote redistribution."
+  ],
+  "source_pdf_sha256": {
+    "2020": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+    "2024": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae"
+  },
+  "parser_sha256": "a727692a7a9504ef8c1d4c1c8fe6938f8d93772e6b146838fbc7b54da76c4113"
+}

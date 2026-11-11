@@ -1,0 +1,52 @@
+{
+  "project_version": "0.2.4",
+  "engine_version": "0.2.3",
+  "verified_date": "2026-10-17",
+  "status": "PASS",
+  "unit_tests_total": 47,
+  "new_boundary_tests": 10,
+  "checks": {
+    "original_baselines_engine_inputs_and_scenario_outputs_byte_identical": true,
+    "all_254_current_scenarios_and_vote_seat_accounting": true,
+    "model_safety_boundary_tests_pass": true,
+    "historical_tests_pass": true,
+    "separate_100_draw_party_exclusion_seed_and_accounting_audit": true,
+    "independent_original_pdf_case_audit": true,
+    "all_254_report_forecast_and_boundary_status_rows": true,
+    "state_input_hashes_match": true
+  },
+  "scenario_recalculated_for_release": false,
+  "scenario_numbers_changed": false,
+  "boundary_review_counts": {
+    "same_name_same_statutory_text_geometry_unverified": 171,
+    "same_name_statutory_text_diff_review_required": 61,
+    "no_same_name_predecessor_review_required": 22
+  },
+  "geographic_crosswalk_eligible_districts": 0,
+  "protected_sha256": {
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "test_model.py": "dc0023184f15cf891cc31590f8ec8d5b1191dfdb43e1683cf30b2ce1fce9840a",
+    "test_safety_guards.py": "a79e596eab6f21f30b97ddce7c630d6ef0b50e1ba5861552bb197e4c2577ae45",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/events.json": "eb1f7812638d741961e27dc60c7e7aa70d4657bf5b19c3f0ebf1f124fcec3b76",
+    "data/raw/nec_2024.csv": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/districts_2024.csv": "cd9a3b2fc3e75427b73cde2dff1c9b70a67f9a4783901ea10d4f073b5dbbf730",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "config/frame_comparison_monthly.json": "e1bf5c082032d80655dd66bc20549ccd893a0b1f90245399f1d8cfcea0b4526b",
+    "outputs/model_report.json": "f5a2db92164e0b5ce7260281095375181fa4b9aef60bafc0f1212b2d11583a7b",
+    "outputs/model_report_monthly.json": "dfc4b64f7df568176c690b52af30d29815327e139ad0f866e2e543beabcb8ac2",
+    "data/history_2020/nec_2020_raw.csv": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+    "data/history_2020/nec_2020_original_tables.zip": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+    "data/history_2020/verified_candidates_2020.csv": "1d67e5b134010fffef258dc061a935ec4e76f8e43208566fb72b74fc10076684",
+    "data/boundary_research/public_official_election_act_annex1_2020.pdf": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+    "data/boundary_research/public_official_election_act_annex1_2024.pdf": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae"
+  },
+  "boundary_parser_sha256": "a727692a7a9504ef8c1d4c1c8fe6938f8d93772e6b146838fbc7b54da76c4113",
+  "remaining_work": [
+    "administrative_boundary_history",
+    "geographic_vote_unit_crosswalk",
+    "historical_frame_poll_archive",
+    "time_split_backtest_and_calibration"
+  ]
+}

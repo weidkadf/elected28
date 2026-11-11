@@ -1,0 +1,61 @@
+{
+  "checked_on": "2026-10-17",
+  "run_label": "1348",
+  "scope": "후보·선거구 변경 신규 공식자료 짧은 검색 및 별도표 부분식별 수학식 검토",
+  "status": "no_new_admissible_evidence_found_in_limited_search",
+  "searches": [
+    {
+      "query": "site.nec.go.kr \"2026.10.17\" 국회의원 선거구 / site.nec.go.kr \"2028\" \"선거구획정\"",
+      "result": "관련 신규 공식 확정근거 미확보. 일부 검색결과는 도메인·주제 불일치로 배제."
+    },
+    {
+      "query": "제23대 국회의원 선거구획정 2026 / 2026 10 국회의원 재보궐선거 확정",
+      "domain_filter": [
+        "nec.go.kr"
+      ],
+      "result": "검색서비스가 nec.go.kr robots.txt 접근제한을 보고. 검색결과는 과거 22대 획정 및 2026-04-30 재보궐 14곳 확정 자료 등이었으며 신규 근거로 승격하지 않음."
+    }
+  ],
+  "prior_evidence_preserved": [
+    "outputs/candidate_check_20261016_2053.json",
+    "outputs/boundary_evidence_20261017_0917.json"
+  ],
+  "lead_not_new": {
+    "title": "2026-04-30 6·3 지방선거와 동시 실시하는 국회의원 재보궐선거 14곳 확정",
+    "url": "https://img.nec.go.kr/viewer/skin/viewerTop.jsp?bcIdx=319052&cbIdx=1090&fileMg=134574&fileNo=1&fileSn=pdf&hwpViewer=&orignlFileNm=%E2%98%85%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C+260430++6+3+%EC%A7%80%EB%B0%A9%EC%84%A0%EA%B1%B0%EC%99%80+%EB%8F%99%EC%8B%9C+%EC%8B%A4%EC%8B%9C%ED%95%98%EB%8A%94+%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%9B%90+%EC%9E%AC%EB%B3%B4%EA%B6%90%EC%84%A0%EA%B1%B0+14%EA%B3%B3+%ED%99%95%EC%A0%95&streFileNm=dcc18c0f-c37e-4aa8-85fd-ebc22734c118.pdf",
+    "verification": "검색 제목만 확인. 기존 6·3 확정 결과보다 이전 자료로 이번 입력에는 미사용."
+  },
+  "limitations": [
+    "짧은 검색이며 전체 공식 공고를 전수 재검토하지 않음.",
+    "검색 색인 지연과 접근 제한 때문에 새로운 변경이 없다고 단정할 수 없음.",
+    "확정 후보·현역 소속 변경·2028 경계 및 후보 구도를 새로 생성하지 않음."
+  ],
+  "math_review": {
+    "status": "formulas_correct_under_stated_box_constraints",
+    "definitions": {
+      "L_c": "해당 분석 대상에 포함한 행정동 소계의 후보 c 유효득표",
+      "U_c": "후보 c의 원지역구 동 미귀속 별도 유효득표",
+      "x_c": "0 이상 U_c 이하인 가상 귀속량",
+      "v_c": "L_c+x_c"
+    },
+    "share_lower": "L_c/(L_total+U_total-U_c)",
+    "share_upper": "(L_c+U_c)/(L_total+U_c)",
+    "necessary_conditions": [
+      "모든 L_c와 U_c는 비음수여야 함. 후보 유효득표에 음수 기권수·무효표를 섞지 않음.",
+      "후보별 x_c가 독립인 상자 제약이며 추가 총량·지리 제약이 없을 때의 극값임.",
+      "유효득표 총분모가 양수여야 함. 분모 0이면 결측/보류 처리.",
+      "제3당·무소속을 포함한 원후보 전체가 분모에 포함되어야 함."
+    ],
+    "interpretation_cautions": [
+      "후보별 하한과 상한은 각기 다른 x 벡터의 극점이므로 하한·상한 벡터를 실제 단일 득표 구성처럼 합산하지 않는다.",
+      "2020 확정 결과 복원 x=U는 L이 원지역구 전체 행정동 소계일 때 성립한다. 일부 이동 동만의 L에는 적용되지 않는다.",
+      "이는 가상 배분의 범위/민감도이며 실제 표가 미확정이라는 뜻도, 2024 지리 변환이나 확률구간도 아니다.",
+      "여러 대상구역을 동시에 만들 때 동일 U를 중복 투입해서는 안 된다. 공동 귀속 제약과 잔여를 따로 관리해야 한다.",
+      "추후 미귀속표의 총귀속량 T 등 추가 제약이 확인되면 상자 범위를 그대로 정확한 공동 범위라고 부르지 말고 제약집합을 갱신해야 한다."
+    ]
+  },
+  "new_model_input": false,
+  "party_support_used": false,
+  "model_modified": false,
+  "only_written_file": "outputs/candidate_check_20261017_1348.json"
+}

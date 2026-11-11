@@ -1,0 +1,38 @@
+test_alternate_official_title_supported (test_crosscheck.CrosscheckTests.test_alternate_official_title_supported) ... ok
+test_every_district_and_candidate_label_checked (test_crosscheck.CrosscheckTests.test_every_district_and_candidate_label_checked) ... ok
+test_historical_validation_not_future_geography (test_crosscheck.CrosscheckTests.test_historical_validation_not_future_geography) ... ok
+test_known_original_header_and_totals (test_crosscheck.CrosscheckTests.test_known_original_header_and_totals) ... ok
+test_proportional_and_byelection_tables_excluded (test_crosscheck.CrosscheckTests.test_proportional_and_byelection_tables_excluded) ... ok
+test_proportional_table_cannot_pass_district_parser (test_crosscheck.CrosscheckTests.test_proportional_table_cannot_pass_district_parser) ... ok
+test_reconstruction_source_hash_still_matches (test_crosscheck.CrosscheckTests.test_reconstruction_source_hash_still_matches) ... ok
+test_unknown_nonnumeric_or_negative_votes_rejected (test_crosscheck.CrosscheckTests.test_unknown_nonnumeric_or_negative_votes_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.080s
+
+OK
+{
+  "check_version": "1.0.0",
+  "verified_date": "2026-10-16",
+  "status": "PASS",
+  "official_zip_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "official_workbooks": 329,
+  "source_page": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129",
+  "parser_sha256": "0069904313822badaff3c514aba8fe6f15d05f91a57ef6a8fcd8c3d3852eea21",
+  "districts_checked": 253,
+  "districts_passed": 253,
+  "candidate_labels_checked": 1101,
+  "excluded_xlsx_by_category": {
+    "비례대표": 250,
+    "재보궐": 56
+  },
+  "historical_district_totals_verified": true,
+  "model_eligible": false,
+  "remaining_gates": [
+    "2020_to_2024_boundary_crosswalk",
+    "poll_history_and_time_split_backtest",
+    "candidate_party_mapping"
+  ],
+  "scope_note": "NEC alternative official XLSX representation, not independent ballot recount. District totals only; not every polling-station row or withdrawn-candidate registry.",
+  "raw_files_unchanged": true
+}

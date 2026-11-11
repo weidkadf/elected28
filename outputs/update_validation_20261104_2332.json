@@ -1,0 +1,16 @@
+{
+  "version": "0.2.17",
+  "unit_tests_passed": 169,
+  "unit_test_commands": [
+    "python -m unittest discover -v",
+    "python -m unittest discover -s data/history_2020 -p 'test_*.py' -v"
+  ],
+  "book_crosscheck_script_pass": true,
+  "book_crosscheck_districts": 13,
+  "book_crosscheck_candidates": 67,
+  "preserved_parent_files": 172,
+  "all_non_document_state_parent_files_byte_identical": true,
+  "scenario_recomputed": false,
+  "geography_approved": false,
+  "backtests_executed": 0
+}

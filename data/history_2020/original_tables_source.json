@@ -1,0 +1,11 @@
+{
+  "download_url": "https://www.nec.go.kr/common/board/Download.do?bcIdx=15052&cbIdx=1129&streFileNm=BBS_202006021136426251.zip",
+  "source_page": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129",
+  "retrieved_date": "2026-10-16",
+  "sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "bytes": 15560000,
+  "status": "PARSED_329_DISTRICT_TABLES_AND_CROSSCHECKED",
+  "previous_status": "DOWNLOADED_NOT_YET_PARSED",
+  "crosscheck_report": "independent_crosscheck_report.json",
+  "crosscheck_date": "2026-10-16"
+}

@@ -1,0 +1,1141 @@
+{
+  "schema_version": "dong_panel_analysis_1",
+  "alpha": {
+    "pair_2024_to_2026_governor": {
+      "n": 205,
+      "groups": "province (governor candidate effect)",
+      "exclusions": "no two-party 2024 vote, share outside (0.15, 0.85), elector ratio off by >8%",
+      "national": {
+        "frame_change_2024_to_2026_logit": 0.1767704110029548,
+        "district_mean_change_logit": 0.09846647230119604,
+        "frame_q_2024": 0.5573277322152935,
+        "frame_q_2026_05": 0.6003909114839587
+      },
+      "x_by_scope": {
+        "서울": 0.1193801286016862,
+        "인천/경기": 0.15339787995683873,
+        "강원": 0.1767704110029548,
+        "대전/세종/충청": 0.21326632259268496,
+        "광주/전라": 0.08496918413970456,
+        "대구/경북": 0.19221611981158454,
+        "부산/울산/경남": 0.18391891809885044,
+        "제주": 0.1767704110029548
+      },
+      "fit_free_intercept": {
+        "nll": -140.2755174150741,
+        "converged": true,
+        "c": 0.16193257042545406,
+        "alpha": 0.06356670681787402,
+        "sigma_region": 0.21553031776066595,
+        "sigma_district": 0.10720424439339804,
+        "alpha_ci95": [
+          -3.450000000000002,
+          3.4499999999999735
+        ]
+      },
+      "fit_no_intercept": {
+        "nll": -140.13169675620907,
+        "converged": true,
+        "c": 0.0,
+        "alpha": 0.9434190561729131,
+        "sigma_region": 0.2162453376450784,
+        "sigma_district": 0.1072585611171374,
+        "alpha_ci95": [
+          0.2999999999999847,
+          1.59999999999998
+        ]
+      }
+    },
+    "pooled_2020_2024_and_2024_2026": {
+      "free_intercepts": {
+        "alpha": 0.06165194901989096,
+        "nll": -156.42182150769173,
+        "c": [
+          -0.05914118728607404,
+          0.16227243294207733
+        ],
+        "sigma_region": [
+          0.10603677714684141,
+          0.21553306023871174
+        ],
+        "sigma_district": [
+          0.20860360567102834,
+          0.10720414187500026
+        ],
+        "alpha_ci95": [
+          -2.05,
+          2.15
+        ]
+      },
+      "no_intercepts": {
+        "alpha": 0.8243714640862221,
+        "nll": -154.72239433873978,
+        "sigma_region": [
+          0.14854770495336844,
+          0.2172727840035299
+        ],
+        "sigma_district": [
+          0.20794533879647442,
+          0.10726006866142788
+        ],
+        "alpha_ci95": [
+          0.15,
+          1.45
+        ]
+      }
+    },
+    "caveats": [
+      "2026 outcome is a governor vote: candidate and incumbency effects sit at the province level",
+      "2026 frame item lacks the 정부 지원/견제 clause",
+      "alpha with free intercepts is identified by 6 survey regions only"
+    ]
+  },
+  "turnout_actual": {
+    "national": {
+      "gen2024": 0.6699186169041353,
+      "pres2025": 0.7937600961617521,
+      "gov2026": 0.6105349169967375
+    },
+    "drop_pres_to_local_pp_per_10pp_dem_share": {
+      "all_254": 1.3159456650023449,
+      "excluding_honam_and_tk": 3.8180593019915228
+    },
+    "gen2024_minus_local_pp_per_10pp_dem_share": {
+      "all_254": 0.9399695587947157,
+      "excluding_honam_and_tk": 2.312000310526548
+    },
+    "note": "district-level association only (ecological); positive = Democratic-leaning districts lose more turnout in the lower-turnout election"
+  },
+  "baseline_2026": {
+    "definition": "district two-party Democratic share in the 2026 governor vote; frame change = current (LV) minus May 2026 (662-664, LV)",
+    "frame_change_by_scope": {
+      "서울": -0.684720912384249,
+      "인천/경기": -0.8359532319232397,
+      "강원": -0.6718233991202385,
+      "대전/세종/충청": -0.6793035390154272,
+      "광주/전라": -0.6919909434197273,
+      "대구/경북": -0.5481979974551556,
+      "부산/울산/경남": -0.5347552405813252,
+      "제주": -0.6718233991202385
+    },
+    "dem_seats_at_alpha0_no_noise": 177,
+    "dem_seats_2024_actual_245": 161,
+    "mean_logit_shift_2024_to_2026_baseline": 0.08582276406050113,
+    "majority_thresholds": {
+      "dem_loses_majority_alpha_bounds": {
+        "pending_9_all_non_dem": 0.2185,
+        "pending_9_all_dem": 0.279
+      },
+      "con_gains_majority_alpha_bounds": {
+        "pending_9_all_con": 0.2381,
+        "pending_9_all_non_con": 0.2996
+      },
+      "definition": "alpha at which the mean simulated seat curve crosses the 254-seat district majority (128); two bounds because the 9 not-estimable seats are not allocated"
+    },
+    "curve": [
+      {
+        "alpha": 0.0,
+        "sigma_national": 0.12,
+        "dem": {
+          "mean": 162.358,
+          "p10_p50_p90": [
+            123,
+            165,
+            197
+          ]
+        },
+        "con": {
+          "mean": 81.673,
+          "p10_p50_p90": [
+            47,
+            79,
+            121
+          ]
+        },
+        "other": {
+          "mean": 0.968,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.924,
+        "p_dem_majority_if_pending_none_dem": 0.872,
+        "p_con_majority_if_pending_all_con": 0.1168,
+        "p_con_majority_if_pending_none_con": 0.068
+      },
+      {
+        "alpha": 0.05,
+        "sigma_national": 0.1357,
+        "dem": {
+          "mean": 154.553,
+          "p10_p50_p90": [
+            109,
+            157,
+            195
+          ]
+        },
+        "con": {
+          "mean": 89.473,
+          "p10_p50_p90": [
+            49,
+            87,
+            135
+          ]
+        },
+        "other": {
+          "mean": 0.973,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.8524,
+        "p_dem_majority_if_pending_none_dem": 0.7972,
+        "p_con_majority_if_pending_all_con": 0.187,
+        "p_con_majority_if_pending_none_con": 0.135
+      },
+      {
+        "alpha": 0.1,
+        "sigma_national": 0.1514,
+        "dem": {
+          "mean": 146.578,
+          "p10_p50_p90": [
+            96,
+            149,
+            193
+          ]
+        },
+        "con": {
+          "mean": 97.443,
+          "p10_p50_p90": [
+            51,
+            95,
+            148
+          ]
+        },
+        "other": {
+          "mean": 0.979,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.775,
+        "p_dem_majority_if_pending_none_dem": 0.7038,
+        "p_con_majority_if_pending_all_con": 0.278,
+        "p_con_majority_if_pending_none_con": 0.2106
+      },
+      {
+        "alpha": 0.15,
+        "sigma_national": 0.1672,
+        "dem": {
+          "mean": 138.626,
+          "p10_p50_p90": [
+            83,
+            140,
+            191
+          ]
+        },
+        "con": {
+          "mean": 105.39,
+          "p10_p50_p90": [
+            53,
+            104,
+            161
+          ]
+        },
+        "other": {
+          "mean": 0.983,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.689,
+        "p_dem_majority_if_pending_none_dem": 0.613,
+        "p_con_majority_if_pending_all_con": 0.371,
+        "p_con_majority_if_pending_none_con": 0.2962
+      },
+      {
+        "alpha": 0.2,
+        "sigma_national": 0.1829,
+        "dem": {
+          "mean": 130.817,
+          "p10_p50_p90": [
+            72,
+            132,
+            188
+          ]
+        },
+        "con": {
+          "mean": 113.198,
+          "p10_p50_p90": [
+            56,
+            112,
+            172
+          ]
+        },
+        "other": {
+          "mean": 0.986,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.6046,
+        "p_dem_majority_if_pending_none_dem": 0.5354,
+        "p_con_majority_if_pending_all_con": 0.4508,
+        "p_con_majority_if_pending_none_con": 0.3788
+      },
+      {
+        "alpha": 0.25,
+        "sigma_national": 0.1986,
+        "dem": {
+          "mean": 123.192,
+          "p10_p50_p90": [
+            61,
+            123,
+            186
+          ]
+        },
+        "con": {
+          "mean": 120.819,
+          "p10_p50_p90": [
+            58,
+            121,
+            183
+          ]
+        },
+        "other": {
+          "mean": 0.989,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.529,
+        "p_dem_majority_if_pending_none_dem": 0.4646,
+        "p_con_majority_if_pending_all_con": 0.5216,
+        "p_con_majority_if_pending_none_con": 0.4568
+      },
+      {
+        "alpha": 0.3,
+        "sigma_national": 0.2143,
+        "dem": {
+          "mean": 115.952,
+          "p10_p50_p90": [
+            53,
+            114,
+            183
+          ]
+        },
+        "con": {
+          "mean": 128.058,
+          "p10_p50_p90": [
+            61,
+            131,
+            191
+          ]
+        },
+        "other": {
+          "mean": 0.99,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.4668,
+        "p_dem_majority_if_pending_none_dem": 0.4044,
+        "p_con_majority_if_pending_all_con": 0.5804,
+        "p_con_majority_if_pending_none_con": 0.5198
+      },
+      {
+        "alpha": 0.35,
+        "sigma_national": 0.2301,
+        "dem": {
+          "mean": 109.058,
+          "p10_p50_p90": [
+            45,
+            104,
+            180
+          ]
+        },
+        "con": {
+          "mean": 134.95,
+          "p10_p50_p90": [
+            64,
+            140,
+            199
+          ]
+        },
+        "other": {
+          "mean": 0.991,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.4092,
+        "p_dem_majority_if_pending_none_dem": 0.35,
+        "p_con_majority_if_pending_all_con": 0.637,
+        "p_con_majority_if_pending_none_con": 0.5792
+      },
+      {
+        "alpha": 0.4,
+        "sigma_national": 0.2458,
+        "dem": {
+          "mean": 102.595,
+          "p10_p50_p90": [
+            40,
+            95,
+            177
+          ]
+        },
+        "con": {
+          "mean": 141.413,
+          "p10_p50_p90": [
+            67,
+            149,
+            204
+          ]
+        },
+        "other": {
+          "mean": 0.992,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.3574,
+        "p_dem_majority_if_pending_none_dem": 0.3096,
+        "p_con_majority_if_pending_all_con": 0.6812,
+        "p_con_majority_if_pending_none_con": 0.6296
+      },
+      {
+        "alpha": 0.45,
+        "sigma_national": 0.2615,
+        "dem": {
+          "mean": 96.7,
+          "p10_p50_p90": [
+            36,
+            87,
+            174
+          ]
+        },
+        "con": {
+          "mean": 147.307,
+          "p10_p50_p90": [
+            70,
+            157,
+            208
+          ]
+        },
+        "other": {
+          "mean": 0.993,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.3194,
+        "p_dem_majority_if_pending_none_dem": 0.277,
+        "p_con_majority_if_pending_all_con": 0.7144,
+        "p_con_majority_if_pending_none_con": 0.6734
+      },
+      {
+        "alpha": 0.5,
+        "sigma_national": 0.2772,
+        "dem": {
+          "mean": 91.223,
+          "p10_p50_p90": [
+            33,
+            79,
+            170
+          ]
+        },
+        "con": {
+          "mean": 152.784,
+          "p10_p50_p90": [
+            74,
+            165,
+            211
+          ]
+        },
+        "other": {
+          "mean": 0.993,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.2846,
+        "p_dem_majority_if_pending_none_dem": 0.2468,
+        "p_con_majority_if_pending_all_con": 0.7422,
+        "p_con_majority_if_pending_none_con": 0.7076
+      },
+      {
+        "alpha": 0.55,
+        "sigma_national": 0.2929,
+        "dem": {
+          "mean": 86.196,
+          "p10_p50_p90": [
+            31,
+            72,
+            167
+          ]
+        },
+        "con": {
+          "mean": 157.812,
+          "p10_p50_p90": [
+            77,
+            172,
+            213
+          ]
+        },
+        "other": {
+          "mean": 0.993,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.2562,
+        "p_dem_majority_if_pending_none_dem": 0.2236,
+        "p_con_majority_if_pending_all_con": 0.7688,
+        "p_con_majority_if_pending_none_con": 0.7342
+      },
+      {
+        "alpha": 0.6,
+        "sigma_national": 0.3087,
+        "dem": {
+          "mean": 81.659,
+          "p10_p50_p90": [
+            30,
+            65,
+            164
+          ]
+        },
+        "con": {
+          "mean": 162.349,
+          "p10_p50_p90": [
+            80,
+            179,
+            214
+          ]
+        },
+        "other": {
+          "mean": 0.992,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.2338,
+        "p_dem_majority_if_pending_none_dem": 0.2028,
+        "p_con_majority_if_pending_all_con": 0.7894,
+        "p_con_majority_if_pending_none_con": 0.7588
+      },
+      {
+        "alpha": 0.65,
+        "sigma_national": 0.3244,
+        "dem": {
+          "mean": 77.534,
+          "p10_p50_p90": [
+            29,
+            58,
+            160
+          ]
+        },
+        "con": {
+          "mean": 166.475,
+          "p10_p50_p90": [
+            84,
+            186,
+            215
+          ]
+        },
+        "other": {
+          "mean": 0.991,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.213,
+        "p_dem_majority_if_pending_none_dem": 0.184,
+        "p_con_majority_if_pending_all_con": 0.8098,
+        "p_con_majority_if_pending_none_con": 0.7808
+      },
+      {
+        "alpha": 0.7,
+        "sigma_national": 0.3401,
+        "dem": {
+          "mean": 73.783,
+          "p10_p50_p90": [
+            28,
+            53,
+            157
+          ]
+        },
+        "con": {
+          "mean": 170.227,
+          "p10_p50_p90": [
+            87,
+            191,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.99,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1938,
+        "p_dem_majority_if_pending_none_dem": 0.1682,
+        "p_con_majority_if_pending_all_con": 0.8268,
+        "p_con_majority_if_pending_none_con": 0.8004
+      },
+      {
+        "alpha": 0.75,
+        "sigma_national": 0.3558,
+        "dem": {
+          "mean": 70.421,
+          "p10_p50_p90": [
+            28,
+            48,
+            154
+          ]
+        },
+        "con": {
+          "mean": 173.591,
+          "p10_p50_p90": [
+            90,
+            196,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.988,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1768,
+        "p_dem_majority_if_pending_none_dem": 0.1534,
+        "p_con_majority_if_pending_all_con": 0.8414,
+        "p_con_majority_if_pending_none_con": 0.8178
+      },
+      {
+        "alpha": 0.8,
+        "sigma_national": 0.3716,
+        "dem": {
+          "mean": 67.367,
+          "p10_p50_p90": [
+            28,
+            44,
+            149
+          ]
+        },
+        "con": {
+          "mean": 176.649,
+          "p10_p50_p90": [
+            95,
+            200,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.984,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.162,
+        "p_dem_majority_if_pending_none_dem": 0.1412,
+        "p_con_majority_if_pending_all_con": 0.8542,
+        "p_con_majority_if_pending_none_con": 0.8326
+      },
+      {
+        "alpha": 0.85,
+        "sigma_national": 0.3873,
+        "dem": {
+          "mean": 64.659,
+          "p10_p50_p90": [
+            28,
+            41,
+            146
+          ]
+        },
+        "con": {
+          "mean": 179.362,
+          "p10_p50_p90": [
+            98,
+            203,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.978,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1504,
+        "p_dem_majority_if_pending_none_dem": 0.131,
+        "p_con_majority_if_pending_all_con": 0.8654,
+        "p_con_majority_if_pending_none_con": 0.8468
+      },
+      {
+        "alpha": 0.9,
+        "sigma_national": 0.403,
+        "dem": {
+          "mean": 62.228,
+          "p10_p50_p90": [
+            28,
+            38,
+            141
+          ]
+        },
+        "con": {
+          "mean": 181.804,
+          "p10_p50_p90": [
+            103,
+            206,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.968,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.139,
+        "p_dem_majority_if_pending_none_dem": 0.1226,
+        "p_con_majority_if_pending_all_con": 0.8744,
+        "p_con_majority_if_pending_none_con": 0.8574
+      },
+      {
+        "alpha": 0.95,
+        "sigma_national": 0.4187,
+        "dem": {
+          "mean": 59.955,
+          "p10_p50_p90": [
+            28,
+            36,
+            138
+          ]
+        },
+        "con": {
+          "mean": 184.085,
+          "p10_p50_p90": [
+            106,
+            208,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.96,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1292,
+        "p_dem_majority_if_pending_none_dem": 0.115,
+        "p_con_majority_if_pending_all_con": 0.8812,
+        "p_con_majority_if_pending_none_con": 0.8674
+      },
+      {
+        "alpha": 1.0,
+        "sigma_national": 0.4344,
+        "dem": {
+          "mean": 57.903,
+          "p10_p50_p90": [
+            28,
+            34,
+            134
+          ]
+        },
+        "con": {
+          "mean": 186.147,
+          "p10_p50_p90": [
+            110,
+            210,
+            216
+          ]
+        },
+        "other": {
+          "mean": 0.95,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1224,
+        "p_dem_majority_if_pending_none_dem": 0.1076,
+        "p_con_majority_if_pending_all_con": 0.8882,
+        "p_con_majority_if_pending_none_con": 0.8748
+      },
+      {
+        "alpha": 1.05,
+        "sigma_national": 0.4502,
+        "dem": {
+          "mean": 56.051,
+          "p10_p50_p90": [
+            28,
+            33,
+            129
+          ]
+        },
+        "con": {
+          "mean": 188.006,
+          "p10_p50_p90": [
+            115,
+            211,
+            217
+          ]
+        },
+        "other": {
+          "mean": 0.943,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1162,
+        "p_dem_majority_if_pending_none_dem": 0.1028,
+        "p_con_majority_if_pending_all_con": 0.8946,
+        "p_con_majority_if_pending_none_con": 0.8808
+      },
+      {
+        "alpha": 1.1,
+        "sigma_national": 0.4659,
+        "dem": {
+          "mean": 54.356,
+          "p10_p50_p90": [
+            27,
+            32,
+            125
+          ]
+        },
+        "con": {
+          "mean": 189.712,
+          "p10_p50_p90": [
+            119,
+            212,
+            217
+          ]
+        },
+        "other": {
+          "mean": 0.932,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1098,
+        "p_dem_majority_if_pending_none_dem": 0.0976,
+        "p_con_majority_if_pending_all_con": 0.9004,
+        "p_con_majority_if_pending_none_con": 0.8878
+      },
+      {
+        "alpha": 1.15,
+        "sigma_national": 0.4816,
+        "dem": {
+          "mean": 52.775,
+          "p10_p50_p90": [
+            27,
+            31,
+            121
+          ]
+        },
+        "con": {
+          "mean": 191.309,
+          "p10_p50_p90": [
+            123,
+            213,
+            217
+          ]
+        },
+        "other": {
+          "mean": 0.916,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.1026,
+        "p_dem_majority_if_pending_none_dem": 0.0926,
+        "p_con_majority_if_pending_all_con": 0.9048,
+        "p_con_majority_if_pending_none_con": 0.8928
+      },
+      {
+        "alpha": 1.2,
+        "sigma_national": 0.4973,
+        "dem": {
+          "mean": 51.304,
+          "p10_p50_p90": [
+            27,
+            30,
+            116
+          ]
+        },
+        "con": {
+          "mean": 192.787,
+          "p10_p50_p90": [
+            128,
+            214,
+            218
+          ]
+        },
+        "other": {
+          "mean": 0.91,
+          "p10_p50_p90": [
+            1,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0978,
+        "p_dem_majority_if_pending_none_dem": 0.0874,
+        "p_con_majority_if_pending_all_con": 0.9096,
+        "p_con_majority_if_pending_none_con": 0.9006
+      },
+      {
+        "alpha": 1.25,
+        "sigma_national": 0.5131,
+        "dem": {
+          "mean": 49.978,
+          "p10_p50_p90": [
+            26,
+            30,
+            112
+          ]
+        },
+        "con": {
+          "mean": 194.125,
+          "p10_p50_p90": [
+            132,
+            214,
+            218
+          ]
+        },
+        "other": {
+          "mean": 0.897,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0952,
+        "p_dem_majority_if_pending_none_dem": 0.0848,
+        "p_con_majority_if_pending_all_con": 0.914,
+        "p_con_majority_if_pending_none_con": 0.9036
+      },
+      {
+        "alpha": 1.3,
+        "sigma_national": 0.5288,
+        "dem": {
+          "mean": 48.707,
+          "p10_p50_p90": [
+            25,
+            29,
+            108
+          ]
+        },
+        "con": {
+          "mean": 195.406,
+          "p10_p50_p90": [
+            136,
+            215,
+            219
+          ]
+        },
+        "other": {
+          "mean": 0.887,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0894,
+        "p_dem_majority_if_pending_none_dem": 0.08,
+        "p_con_majority_if_pending_all_con": 0.9172,
+        "p_con_majority_if_pending_none_con": 0.9074
+      },
+      {
+        "alpha": 1.35,
+        "sigma_national": 0.5445,
+        "dem": {
+          "mean": 47.502,
+          "p10_p50_p90": [
+            25,
+            29,
+            104
+          ]
+        },
+        "con": {
+          "mean": 196.621,
+          "p10_p50_p90": [
+            140,
+            215,
+            220
+          ]
+        },
+        "other": {
+          "mean": 0.876,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0856,
+        "p_dem_majority_if_pending_none_dem": 0.0774,
+        "p_con_majority_if_pending_all_con": 0.9214,
+        "p_con_majority_if_pending_none_con": 0.9132
+      },
+      {
+        "alpha": 1.4,
+        "sigma_national": 0.5602,
+        "dem": {
+          "mean": 46.372,
+          "p10_p50_p90": [
+            24,
+            29,
+            100
+          ]
+        },
+        "con": {
+          "mean": 197.765,
+          "p10_p50_p90": [
+            144,
+            215,
+            221
+          ]
+        },
+        "other": {
+          "mean": 0.863,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0822,
+        "p_dem_majority_if_pending_none_dem": 0.0748,
+        "p_con_majority_if_pending_all_con": 0.9238,
+        "p_con_majority_if_pending_none_con": 0.9154
+      },
+      {
+        "alpha": 1.45,
+        "sigma_national": 0.5759,
+        "dem": {
+          "mean": 45.307,
+          "p10_p50_p90": [
+            22,
+            28,
+            97
+          ]
+        },
+        "con": {
+          "mean": 198.841,
+          "p10_p50_p90": [
+            147,
+            216,
+            222
+          ]
+        },
+        "other": {
+          "mean": 0.851,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0792,
+        "p_dem_majority_if_pending_none_dem": 0.0712,
+        "p_con_majority_if_pending_all_con": 0.9262,
+        "p_con_majority_if_pending_none_con": 0.9196
+      },
+      {
+        "alpha": 1.5,
+        "sigma_national": 0.5917,
+        "dem": {
+          "mean": 44.273,
+          "p10_p50_p90": [
+            21,
+            28,
+            93
+          ]
+        },
+        "con": {
+          "mean": 199.888,
+          "p10_p50_p90": [
+            151,
+            216,
+            223
+          ]
+        },
+        "other": {
+          "mean": 0.84,
+          "p10_p50_p90": [
+            0,
+            1,
+            1
+          ]
+        },
+        "p_dem_majority_if_pending_all_dem": 0.0768,
+        "p_dem_majority_if_pending_none_dem": 0.0682,
+        "p_con_majority_if_pending_all_con": 0.9302,
+        "p_con_majority_if_pending_none_con": 0.9214
+      }
+    ],
+    "main_2024_baseline_thresholds": {
+      "dem_loses_majority_alpha_bounds": {
+        "pending_9_all_non_dem": 0.1825,
+        "pending_9_all_dem": 0.2623
+      },
+      "con_gains_majority_alpha_bounds": {
+        "pending_9_all_con": 0.2077,
+        "pending_9_all_non_con": 0.2893
+      },
+      "definition": "alpha at which the mean simulated seat curve crosses the 254-seat district majority (128); two bounds because the 9 not-estimable seats are not allocated"
+    }
+  }
+}

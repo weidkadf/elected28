@@ -1,0 +1,27 @@
+{
+  "status": "primary_source_archived_only",
+  "access_date": "2026-11-04",
+  "publication_date": "2024-04-02",
+  "election": "2024-04-10",
+  "publisher": "강남구 도곡1동",
+  "landing_url": "https://www.gangnam.go.kr/center/board/B_000282/1096832/view.do?keyfield=bdm_main_title&mid=MC090301&office=3220055&pgno=24",
+  "download_url": "https://www.gangnam.go.kr/file/2/get/e594e2aa-4d4e-43a3-9cfe-d84302ee4376/download.do",
+  "pages": 4,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "extracted_label_count": 127,
+  "sha256": "816968f7bb4918bd236dc85d30e5d7c4a3ac070b042be4bba1711930ada3fd8a",
+  "bytes": 43107,
+  "crosswalk_eligible": false,
+  "training_approved": false,
+  "limitations": [
+    "2020 대응 및 통 경계 변경 미검증",
+    "표의 통 번호는 공간 경계 파일이 아님",
+    "관내사전 및 별도표 거주지 귀속을 입증하지 않음",
+    "행별 정규화 및 원득표 연결 미실시"
+  ]
+}

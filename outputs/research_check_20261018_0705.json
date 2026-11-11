@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-10-18",
+  "new_current_eligible_polls_identified": 0,
+  "current_inputs_changed": false,
+  "checks": [
+    {"url": "https://www.gallup.co.kr/gallupdb/report.asp", "result": "latest listed daily report678 published2026-10-16; already retained"},
+    {"url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do", "result": "latest registrations17314/17313/17312 unchanged; list metadata only"},
+    {"url": "https://nbsurvey.kr/", "result": "502 Bad Gateway; new original-question verification incomplete"},
+    {"url": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129", "result": "web retrieval internal error; no new historical-publication proof approved"}
+  ],
+  "limitations": ["No new poll identified is not a complete proof that none exists.", "Transient source/parallel-agent failures do not authorize changing inputs or treating attempted work as completed."]
+}

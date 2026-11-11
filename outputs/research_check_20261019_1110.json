@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-19T11:10:00+09:00",
+  "new_current_frame_input": false,
+  "party_support_used": false,
+  "source_checks": [
+    {"url": "https://www.gallup.co.kr/", "result": "Latest home display remains Daily678 October2026 week3. Report seqNo1662 direct access error; not proof that no newer survey exists."},
+    {"url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19572", "registration": "17316", "pollster": "여론조사꽃", "series": "CATI180", "fieldwork": ["2026-10-16", "2026-10-17"], "sample": 1003, "first_publication": "2026-10-19T06:00:00+09:00", "result": "Questionnaire image conversion pending; results access notice says available24hours after publication. Government-frame content unverified. Not imported; no nonpublic attachment access attempted."},
+    {"url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19573", "registration": "17317", "pollster": "여론조사꽃", "series": "ARS173", "fieldwork": ["2026-10-16", "2026-10-17"], "sample": 1001, "first_publication": "2026-10-19T06:00:00+09:00", "result": "Questionnaire image conversion pending; results access notice says available24hours after publication. Government-frame content unverified. Not imported; no nonpublic attachment access attempted."},
+    {"url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19568", "registration": "17312", "series": "NBS190", "sample": 1000, "response_rate": 0.168, "first_publication": "2026-10-15T11:00:00+09:00", "result": "Questionnaire/results still image conversion pending. NBS home timeout. No newly verified frame values."},
+    {"url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19570", "registration": "17314", "pollster": "리서치웰", "result": "Questionnaire/results image conversion pending. NationalAssemblyElection label is not enough to identify an eligible government-frame question."}
+  ],
+  "interpretation": "A party-support survey title is neither an eligible input nor proof that a separate government-frame question is absent. No party-support numerical values normalized or used.",
+  "candidate_boundary_check": "Official NEC-domain search did not establish new confirmed23rd district changes or candidate lists; absence of changes is not proven. Previously restricted paths were not retried or bypassed.",
+  "development_change": "Synthetic-only multi-destination fixed-and-remainder conservation validator; no real geographic allocations created.",
+  "geographic_crosswalk_eligible_districts": 0,
+  "historical_backtests_executed": 0,
+  "scenario_recalculated": false,
+  "calibrated": false
+}

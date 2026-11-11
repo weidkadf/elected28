@@ -1,0 +1,16 @@
+{
+  "release": "0.2.14",
+  "scope": "source_archive_only",
+  "all_previous_non_document_state_files_byte_identical": true,
+  "preserved_files": 161,
+  "new_source_pdf_pages": 4,
+  "new_source_label_count": 127,
+  "unit_tests_rerun": false,
+  "prior_release_unit_tests": 169,
+  "scenario_recomputed": false,
+  "geographic_crosswalk_eligible": 0,
+  "historical_backtests_executed": 0,
+  "new_source_sha256": "816968f7bb4918bd236dc85d30e5d7c4a3ac070b042be4bba1711930ada3fd8a",
+  "party_support_inputs_changed": false,
+  "validation_note": "No model/data transformations changed. Prior validation retained; archive integrity and byte preservation checked."
+}

@@ -1,0 +1,243 @@
+{
+  "project": "Election23_Model",
+  "version": "0.5.1",
+  "engine_version": "0.5.0",
+  "as_of": "2026-11-11",
+  "timezone": "Asia/Seoul",
+  "baseline_election": "2024-04-10",
+  "baseline_district_count": 254,
+  "baseline_candidate_count": 693,
+  "forecast_status": "not_estimable",
+  "model_stage": "alpha_curve_conditional_scenarios_partial_backtest_calibrated_sigma",
+  "last_completed": [
+    "2024_official_baseline",
+    "254_district_coverage",
+    "2024_and_current_frame_source_verification",
+    "role_aware_frame_engine",
+    "party_support_invariance_test",
+    "independent_18_check_audit",
+    "hourly_automation_prompt_updated",
+    "publication_date_leakage_gate",
+    "2020_structure_recovery_internal_checks",
+    "2020_alternative_official_zip_download",
+    "13_unit_tests_and_full_input_invariance",
+    "2020_official_xlsx_329_table_253_district_crosscheck",
+    "2020_crosscheck_8_tests",
+    "2026_byelection_14_official_winner_evidence",
+    "baseline_result_availability_gate",
+    "regional_scope_and_membership_gate",
+    "37_unit_tests_and_5000_draw_full_input_validation",
+    "2020_2024_statutory_boundary_annex_sources",
+    "507_statutory_rows_extracted_and_joined",
+    "254_boundary_text_review_inventory",
+    "47_unit_tests_and_unchanged_scenario_archive",
+    "2020_3485_ward_and_1645_special_rows_reconciled",
+    "2020_gallup_394_frame_primary_archive",
+    "2020_gallup_392_395_frame_primary_archives",
+    "historical_frame_inventory_dates_roles_integrity_scope_gates",
+    "79_tests_with_historical_archive_input_invariance",
+    "exact_candidate_remainder_box_envelopes",
+    "253_original_2020_optional_remainder_diagnostics",
+    "95_tests_with_exhaustive_integer_box_checks",
+    "2024_gallup_578_frame_primary_archive",
+    "historical_2020_2024_explicit_role_and_method_profiles",
+    "111_tests_with_cross_election_role_and_party_input_invariance",
+    "historical_asof_archive_routing_and_five_blocked_readiness_manifests",
+    "2024_gallup_580_weekly_historical_archive_and_publication_cutoff_regressions",
+    "2024_gallup_579_weekly_gap_filled_and_cutoff_regressions",
+    "synthetic_multi_destination_fixed_and_remainder_conservation_validator",
+    "2020_child_vote_mode_bookkeeping_reconstructed_and_validated",
+    "gangnam_2024_polling_jurisdiction_primary_pdf_archive",
+    "daechi1_2020_notice_archived_and_five_tong_label_sets_compared",
+    "2020_nec_total_book_archived_page181_aggregate_crosscheck",
+    "book_pages890_891_13_district_67_candidate_exact_vote_crosscheck",
+    "book_pages890_891_original_party_labels_67_checked",
+    "v030_alpha_curve_and_majority_thresholds",
+    "v030_partial_backtest_2020_2024_149_districts",
+    "v030_sigma_d_frame_drift",
+    "v030_multi_pollster_frame_aggregator",
+    "v030_optional_fundamentals_prior",
+    "v030_validate_entrypoint",
+    "v031_turnout_adjustment_frame_by_party",
+    "v040_dong_panel_2025_2026_three_uses"
+  ],
+  "next_priorities": [
+    "second_backtest_fold_2016_2020_for_alpha",
+    "2020_2024_boundary_crosswalk_61_text_diff_22_absent",
+    "nesdc_primary_records_for_non_gallup_frames",
+    "pollster_quality_scorecard",
+    "district_candidate_updates_for_2028",
+    "pr_seat_model"
+  ],
+  "history_2020_status": "official_alternative_tables_district_totals_verified_pending_geography_and_backtest",
+  "history_2020_model_eligible": false,
+  "history_2020_verification_report": "data/history_2020/independent_crosscheck_report.json",
+  "recurrence_intent": "hourly_check_and_incremental_update",
+  "user_authorized_subagents": true,
+  "previous_manual_seat_table_used": false,
+  "automation": {
+    "id": "6ad1b454287c8191bce0abe7661ecd76",
+    "enabled": true,
+    "timezone": "Asia/Seoul",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Seoul:20261016T150000\nRRULE:FREQ=HOURLY\nEND:VEVENT"
+  },
+  "poll_observation_count": 46,
+  "input_sha256": {
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "forecast_v030.py": "8486dee9697f6e744284550b2b8fb13fb5065a1822c01012264d08b4ef32d9b3",
+    "frame_aggregator.py": "d96ce0b733ce0a47ce831b115181a2701ef89eba38cbc7e816f85d23d099caa5",
+    "config/forecast_v030.json": "f444bf7ba37482f24878e9011fe298758bd5f506db38463e1d9c500ea947d075",
+    "data/frame_polls_multi.json": "982de4d2aeafe3b6def2e4b5d55c23298d4b6d875f66d67a3c5d5fc8331398ab",
+    "data/history_polls/gallup_series_v030.json": "3a00c2f92619b58a38cb1cb96d4ab3c66c8dfc763c074ab2e8b8fc68f785025d",
+    "turnout.py": "d9c0e33952f811338a3995985807e23e952ca2bcecbb591531b55d03fca3b324",
+    "data/history_polls/frame_party_crosstabs.json": "b04c18013e35bb4f1aa0a987d34b4636a59d13bc5fd7f1724eb34edc3bf4c1c0"
+  },
+  "linkage": "government_support_opposition_frame_only",
+  "party_support_input_allowed": true,
+  "scenario_eligible_districts": 254,
+  "scenario_pending_districts": 0,
+  "frame_observation_count": 27,
+  "last_development_date": "2026-11-05",
+  "latest_validation": "outputs/update_validation_20261111_v051.json",
+  "unit_test_count": 217,
+  "historical_backtest_readiness": "outputs/backtest_readiness.json",
+  "historical_backtest_preparation_cutoffs": 5,
+  "historical_backtests_executed": 1,
+  "optional_remainder_diagnostic": "outputs/optional_remainder_diagnostic_253.json",
+  "optional_remainder_diagnostic_districts": 253,
+  "optional_remainder_is_geographic_crosswalk": false,
+  "partial_identification_geography_policy_complete": false,
+  "joint_vote_conservation_diagnostic": "outputs/joint_vote_conservation_synthetic.json",
+  "joint_vote_conservation_scope": "synthetic_arithmetic_validation_only",
+  "actual_geographic_allocations_created": false,
+  "ward_inventory_report": "data/history_2020/ward_inventory_report.json",
+  "historical_frame_wave_count": 6,
+  "historical_frame_archive_observation_count": 54,
+  "historical_frame_reviewed_elections": [
+    "2020-04-15",
+    "2024-04-10"
+  ],
+  "historical_cross_election_pooling_approved": false,
+  "historical_frame_inventory": "outputs/historical_frame_inventory.json",
+  "historical_frame_training_approved": false,
+  "historical_frame_cutoff_policy": "strictly_before_cutoff_date_unknown_release_time_excludes_same_day",
+  "historical_frame_archive_in_current_model": false,
+  "release_saved_date": null,
+  "boundary_status": "507_statutory_rows_and_254_text_review_statuses_complete_geometry_unverified",
+  "boundary_inventory_report": "data/boundary_research/boundary_inventory_report.json",
+  "boundary_review_counts": {
+    "same_text": 171,
+    "same_name_text_diff": 61,
+    "no_same_name": 22
+  },
+  "geographic_crosswalk_eligible_districts": 0,
+  "scenario_numbers_changed": true,
+  "publication_precision": "date_only",
+  "storage_provider": "google_drive",
+  "parent_release_sha256": "14eeae4e3a4bfa8eab51a5d0b405de462eac3dfbca5f1ffe564a0ee9048c98db",
+  "parent_drive_file_id": null,
+  "vote_modes_report": "outputs/vote_modes_2020.json",
+  "boundary_primary_archive": "data/boundary_research/gangnam_2024/manifest.json",
+  "historical_total_book_archive": "data/history_2020/nec_total_book/manifest.json",
+  "book_candidate_crosscheck_districts": 13,
+  "book_candidate_crosscheck_candidates": 67,
+  "book_original_party_labels_crosschecked": 67,
+  "legacy_engine_version": "0.2.3",
+  "target_election": "2028-04-12",
+  "partial_backtest": {
+    "report": "outputs/backtest_2020_2024.json",
+    "districts_used": 149,
+    "alpha": 0.061,
+    "alpha_ci95": [
+      -2.9,
+      3.0
+    ],
+    "alpha_identified": false,
+    "sigma_region": 0.106,
+    "sigma_district": 0.209,
+    "geography": "same_statutory_text_unverified_geometry"
+  },
+  "headline_majority_alpha": {
+    "dem_loses_district_majority": [
+      0.182,
+      0.262
+    ],
+    "con_gains_district_majority": [
+      0.208,
+      0.289
+    ]
+  },
+  "frame_aggregator": "frame_aggregator.py",
+  "multi_pollster_frame_file": "data/frame_polls_v050.json",
+  "fundamentals_prior_in_main": false,
+  "release_registry": "config/releases.json",
+  "party_support_use_scope": "turnout weighting groups only",
+  "turnout_adjustment": {
+    "module": "turnout.py",
+    "tau_partisan": 0.89,
+    "tau_independent": 0.56,
+    "net_change_effect_logit": 0.0859
+  },
+  "dong_panel": {
+    "district_panel": "data/district_panel.csv",
+    "analysis": "outputs/dong_panel_analysis.json",
+    "elections": [
+      "2025-06-03 대선",
+      "2026-06-03 시도지사",
+      "2026-06-03 구시군장"
+    ]
+  },
+  "alpha_identified": "partially: combined posterior, routes disagree",
+  "alpha_pooled_no_intercept": 0.82,
+  "alpha_pooled_no_intercept_ci95": [
+    0.15,
+    1.45
+  ],
+  "headline_majority_alpha_v050": {
+    "dem_loses_majority_alpha": {
+      "pending_9_all_non_dem": 0.2026,
+      "pending_9_all_dem": 0.2026
+    },
+    "con_gains_majority_alpha": {
+      "pending_9_all_con": 0.2283,
+      "pending_9_all_non_con": 0.2283
+    }
+  },
+  "nesdc": {
+    "index": "data/nesdc/nesdc_polls_index.csv",
+    "polls": 964,
+    "result_pdfs": 1089,
+    "excluded": "여론조사꽃 161건 (사용자 지시)",
+    "pdfs_in_package": false
+  },
+  "pollster_ratings": "outputs/pollster_ratings.json",
+  "quality_weights": {
+    "CATI_live_interview": 0.335,
+    "ARS_RDD": 1.0
+  },
+  "composite_baseline_weights": {
+    "gen2024": 0.5,
+    "pres2025": 0.3,
+    "gov2026": 0.2
+  },
+  "alpha_posterior": {
+    "mean": 0.53,
+    "ci95": [
+      0.25,
+      0.85
+    ],
+    "p_alpha_above_0.2": 0.9814
+  },
+  "alpha_posterior_excluding_presidential_pair": {
+    "mean": 0.753,
+    "ci95": [
+      0.45,
+      1.05
+    ],
+    "p_alpha_above_0.2": 0.9997
+  },
+  "alpha_identification": "outputs/alpha_identification.json"
+}

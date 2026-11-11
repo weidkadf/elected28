@@ -1,0 +1,15 @@
+{
+  "version": "0.2.16",
+  "scope": "source_archive_and_national_vote_total_crosscheck_only",
+  "preserved_parent_files": 168,
+  "all_non_document_state_parent_files_byte_identical": true,
+  "source_pdf_pages": 1560,
+  "page181_visual_review": true,
+  "regional_total_matches_existing_archive": true,
+  "model_tests_rerun": false,
+  "parent_unit_test_history": 169,
+  "scenario_recomputed": false,
+  "geography_approved": false,
+  "historical_available_on_approved": false,
+  "source_sha256": "9b27872b506f2390c00df595d91bb4a67181d87707d0b96963d0e59ad9e017de"
+}

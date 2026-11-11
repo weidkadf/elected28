@@ -1,0 +1,50 @@
+{
+  "checked_date": "2026-10-18",
+  "current_inputs_changed": false,
+  "party_support_used": false,
+  "new_historical_archive": "data/history_polls/gallup_580_frame_observations.json",
+  "checks": [
+    {
+      "source": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "status": "agent_primary_list_verified_latest_678_20261016",
+      "new_accepted_current_poll": false
+    },
+    {
+      "source": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "status": "latest_registration_17314_20261016_gallup17313_nbs17312",
+      "new_accepted_current_poll": false
+    },
+    {
+      "source": "https://nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19568",
+      "status": "NBS190_metadata_only_question_table_unverified",
+      "fieldwork_start": "2026-10-12",
+      "fieldwork_end": "2026-10-14",
+      "sample_size": 1000,
+      "first_publication_designated": "2026-10-15T11:00:00+09:00",
+      "response_rate": 0.168,
+      "usable_frame_input": false
+    },
+    {
+      "source": "https://nbsurvey.kr/",
+      "status": "timeout_not_evidence_of_no_new_poll"
+    },
+    {
+      "source": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=1598799",
+      "status": "Gangdong_effective20210701_title_only_annex_unavailable_no_geography_approval"
+    },
+    {
+      "source": "https://www.law.go.kr/ordinInfoP.do?ordinSeq=1341967",
+      "status": "Gangdong_effective20180416_title_only_annex_unavailable_no_geography_approval"
+    },
+    {
+      "source": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=1433757",
+      "status": "Saha_effective20191220_title_only_election_date_ward_mapping_unverified"
+    }
+  ],
+  "limitations": [
+    "NEC robots non-retry restriction respected; no bypass.",
+    "No new verified 23rd candidate or statutory boundary evidence found, not proof that no changes exist.",
+    "580 weekly is already a current baseline observation; addition only supplies separately validated historical archive, not duplicate live input.",
+    "All historical training/backtest/geography gates remain closed."
+  ]
+}

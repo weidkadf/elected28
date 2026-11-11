@@ -1,0 +1,93 @@
+{
+  "audit_id": "boundary_evidence_20261017_0917",
+  "access_date": "2026-10-17",
+  "scope": "2020→2024 강동 길동 및 사하 신평제2동 행정동 경계 동일성에 관한 추가 공식 근거 점검",
+  "status": "additional_official_context_found_but_boundary_equivalence_unresolved",
+  "model_input_promoted": false,
+  "party_support_used": false,
+  "existing_material_modified": false,
+  "findings": [
+    {
+      "ward": "서울 강동구 길동",
+      "boundary_equivalence_status": "unresolved",
+      "additional_evidence": [
+        {
+          "url": "https://www.gangdong.go.kr/web/dongrenew/contents/gil_010_010",
+          "publisher": "강동구청",
+          "title": "길동 동소개/연혁",
+          "verified_text_facts": [
+            "1980-07-01 길동과 둔촌동 분동",
+            "1983-12-01 길제1동·길제2동 분동",
+            "2008-07-07 길제1동·길제2동을 길동으로 통합",
+            "현재 소개된 면적 1.61㎢"
+          ],
+          "evidence_type": "official_administrative_history",
+          "limitation": "현재 안내 페이지에 2020·2024 선거일별 관할구역 도형·지번·통반 또는 해당 기간 무변경을 보증하는 자료가 없다. 최근 분동 기록 부재는 경계 불변 증거가 아니다."
+        }
+      ],
+      "conclusion": "통합 연혁만 추가 확인. 2020-04-15와 2024-04-10 사이 정확한 행정동 지리적 경계의 동일성을 입증하지 못했다."
+    },
+    {
+      "ward": "부산 사하구 신평제2동",
+      "boundary_equivalence_status": "unresolved",
+      "additional_evidence": [
+        {
+          "url": "https://council.saha.go.kr/portal/contents.do?mId=0602000000",
+          "publisher": "사하구 공식 누리집",
+          "title": "연혁",
+          "verified_text_facts": [
+            "1992-09-01 신평동을 신평제1동·신평제2동으로 분동"
+          ],
+          "page_last_updated": "2026-03-04",
+          "limitation": "분동일 확인용이며, 페이지에 표시된 연혁의 마지막 사건은 2018년이다. 2020→2024 변경사항을 빠짐없이 열거한 기록으로 간주할 수 없다."
+        },
+        {
+          "url": "https://m.saha.go.kr/portal/Downfiles/basicplan_2020n.pdf",
+          "publisher": "사하구",
+          "title": "2020 지역기본자료",
+          "reference_date": "2020-07-01",
+          "verified_text_facts": [
+            "표지의 자료 기준일 2020-07-01",
+            "연혁에 1992-09-01 신평동 분동 기재"
+          ],
+          "evidence_type": "dated_official_reference_pdf",
+          "limitation": "자료 기준일이 2020-04-15 선거일 이후다. 신평제2동의 선거일 당시 경계와 2024 경계를 비교할 수 있는 상세 지리 정보는 이번 점검에서 확보하지 못했다."
+        }
+      ],
+      "conclusion": "분동 연혁과 2020-07-01 기준 공식자료를 확인했지만, 양 선거일 행정동 경계의 동일성을 입증하지 못했다."
+    }
+  ],
+  "unresolved_official_leads": [
+    {
+      "url": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=1433757",
+      "title": "부산광역시 사하구 동의 명칭과 구역에 관한 조례",
+      "metadata": "시행 2019-12-20, 부산광역시사하구조례 제1278호, 2019-12-20 일부개정",
+      "access_result": "검색결과·법령 제목 및 시행일 메타데이터 확인. 본문과 별표의 충분한 내용은 확보하지 못함.",
+      "limitation": "법정동 명칭·구역과 행정운영동 관할구역을 혼동하면 안 된다. 이 조례만으로 신평제2동 행정동 경계를 확인한 것으로 처리하지 않는다."
+    },
+    {
+      "url": "https://saha.go.kr/portal/Downfiles/s_basicplan_240730.pdf",
+      "title": "2024년 지역기본자료",
+      "reference_date": "2024-07-01",
+      "access_result": "공식 도메인 검색결과 확인. 원문 open은 bare/www 호스트 모두 Internal Error. 본문 미검증.",
+      "limitation": "기준일 역시 2024-04-10 선거일 이후다. 검색 스니펫을 원문 검증으로 승격하지 않는다."
+    },
+    {
+      "url": "https://www.saha.go.kr/portal/contents.do?mId=0303022200",
+      "title": "2024 통계연보 페이지",
+      "access_result": "원문 Timeout. 검증 근거로 사용하지 않음."
+    }
+  ],
+  "necessary_next_evidence": [
+    "2020-04-15와 2024-04-10에 각각 유효한 행정운영동 관할구역 조례 및 별표·개정이력",
+    "두 기준일 사이 변경 조례의 부칙·시행일과 지번·통반 조정 범위",
+    "가능하면 날짜가 명시된 행정동 경계 도형을 확보해 공간적 동일성을 비교하고, 불일치 시 지번·통반 또는 투표구 수준 변환 근거 수집"
+  ],
+  "restrictions": [
+    "국회의원 지역구 법정 구역표상의 이동은 기존 확인사항이므로 이번 추가 증거와 구분한다.",
+    "현재 같은 행정동 이름 또는 현재 면적이 같다는 이유로 2020→2024 경계 동일성을 가정하지 않는다.",
+    "자료 미확보를 변화 없음으로 해석하지 않는다.",
+    "현재 후보 및 2028 후보 구도나 표 배분을 생성하지 않았다."
+  ],
+  "result_for_model": "양 행정동의 역사적 경계 동일성 검증은 보류 유지. 본 점검은 기존 역사적 표수·교차표·모델 출력을 변경하지 않음."
+}

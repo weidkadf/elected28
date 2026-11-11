@@ -1,0 +1,278 @@
+{
+  "run_label": "20261016_1530",
+  "coverage": "Targeted by-election and boundary search; not a complete current-membership or 2028 candidate registry.",
+  "party_support_used": false,
+  "model_or_baseline_modified": false,
+  "new_model_input": false,
+  "sources": [
+    {
+      "url": "https://www.yna.co.kr/amp/view/AKR20260604168500001",
+      "published_at": "2026-06-04T16:40:00+09:00",
+      "access": "Full table read, secondary source",
+      "ref": "turn28view0"
+    },
+    {
+      "url": "https://ampos.nanet.go.kr/activityCongressDetail.do?congress_no=G1899575",
+      "access": "National Assembly Library member profile read; displayed current affiliation, underlying update date unavailable",
+      "ref": "turn31view0"
+    },
+    {
+      "url": "https://www.nec.go.kr/portal/contents.do?cmsid=1337",
+      "access": "Fetch failed restricted URL; search cache mostly pre-election"
+    },
+    {
+      "url": "https://www.assembly.go.kr/portal/assm/assmMemb/member.do",
+      "access": "Fetch failed 400 Bad Request"
+    }
+  ],
+  "by_election_findings": [
+    {
+      "district_id": "2024-26-북구갑",
+      "region": "부산광역시",
+      "district_name": "북구갑",
+      "winner_name": "한동훈",
+      "party_at_election": "무소속",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": true,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-27-달성군",
+      "region": "대구광역시",
+      "district_name": "달성군",
+      "winner_name": "이진숙",
+      "party_at_election": "국민의힘",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-28-연수구갑",
+      "region": "인천광역시",
+      "district_name": "연수구갑",
+      "winner_name": "송영길",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-28-계양구을",
+      "region": "인천광역시",
+      "district_name": "계양구을",
+      "winner_name": "김남준",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-29-광산구을",
+      "region": "광주광역시",
+      "district_name": "광산구을",
+      "winner_name": "임문영",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-31-남구갑",
+      "region": "울산광역시",
+      "district_name": "남구갑",
+      "winner_name": "김태규",
+      "party_at_election": "국민의힘",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-41-평택시을",
+      "region": "경기도",
+      "district_name": "평택시을",
+      "winner_name": "유의동",
+      "party_at_election": "국민의힘",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": true,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-41-안산시갑",
+      "region": "경기도",
+      "district_name": "안산시갑",
+      "winner_name": "김남국",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-41-하남시갑",
+      "region": "경기도",
+      "district_name": "하남시갑",
+      "winner_name": "이광재",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-44-공주시부여군청양군",
+      "region": "충청남도",
+      "district_name": "공주시부여군청양군",
+      "winner_name": "윤용근",
+      "party_at_election": "국민의힘",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-44-아산시을",
+      "region": "충청남도",
+      "district_name": "아산시을",
+      "winner_name": "전은수",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-52-군산시김제시부안군갑",
+      "region": "전북특별자치도",
+      "district_name": "군산시김제시부안군갑",
+      "winner_name": "김의겸",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-52-군산시김제시부안군을",
+      "region": "전북특별자치도",
+      "district_name": "군산시김제시부안군을",
+      "winner_name": "박지원",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    },
+    {
+      "district_id": "2024-50-서귀포시",
+      "region": "제주특별자치도",
+      "district_name": "서귀포시",
+      "winner_name": "김성범",
+      "party_at_election": "더불어민주당",
+      "event_date": "2026-06-03",
+      "current_party": null,
+      "current_party_verified": false,
+      "already_in_events_json": false,
+      "verification_status": "secondary_full_table_read_not_officially_reconciled",
+      "model_action": "candidate_structure_review_only; preserve_2024_votes; no_2028_candidate_assumption"
+    }
+  ],
+  "primary_profile_observations": [
+    {
+      "name": "윤종오",
+      "region": "울산광역시",
+      "district_name": "북구",
+      "displayed_current_party": "진보당",
+      "underlying_updated_at": null,
+      "observed_on": "2026-10-16",
+      "source_url": "https://ampos.nanet.go.kr/activityCongressDetail.do?congress_no=G1899575",
+      "implication": "Does not resolve absence of 2024 Democratic candidate; keep pending and do not remap progressive vote to Democratic vote."
+    }
+  ],
+  "pending_districts": [
+    {
+      "region": "부산광역시",
+      "district_name": "연제구"
+    },
+    {
+      "region": "대구광역시",
+      "district_name": "달서구병"
+    },
+    {
+      "region": "대구광역시",
+      "district_name": "동구군위군을"
+    },
+    {
+      "region": "대구광역시",
+      "district_name": "서구"
+    },
+    {
+      "region": "대구광역시",
+      "district_name": "수성구을"
+    },
+    {
+      "region": "울산광역시",
+      "district_name": "북구"
+    },
+    {
+      "region": "세종특별자치시",
+      "district_name": "세종특별자치시갑"
+    },
+    {
+      "region": "경상북도",
+      "district_name": "경산시"
+    },
+    {
+      "region": "경상북도",
+      "district_name": "의성군청송군영덕군울진군"
+    }
+  ],
+  "pending_districts_resolved": 0,
+  "boundary_status": "No authoritative finalized 2028 boundary evidence retrieved within targeted NEC/Assembly search. This is a search limitation, not a claim that no boundary work or legal change exists.",
+  "limitations": [
+    "Official 2026 winner registry not successfully accessed. Secondary table supplies 12 additional historical winner records beyond 2 already held; not authoritative final vote totals.",
+    "No vote counts or vote shares imported: require NEC reconciliation before calibration or forecast inputs.",
+    "Party at June election is not verified current party or 2028 nomination.",
+    "Search results for current affiliation are partly third-party mirrors; these were not accepted as current official registry.",
+    "Nine pending districts were identified; only targeted checks on Sejong gap, Ulsan buk, Busan Yeonje could be attempted. Remaining six not individually reverified.",
+    "No 2028 candidate or boundary fact accepted for model recomputation."
+  ],
+  "next_steps": [
+    "Retrieve official 2026 by-election winner/candidate table and reconcile all 14 region/district identities.",
+    "Obtain dated current Assembly membership registry separately from election-time party.",
+    "Preserve all nine structural holds until alternative candidate framework has evidence and explicit assumptions."
+  ],
+  "checked_on": "2026-10-16"
+}

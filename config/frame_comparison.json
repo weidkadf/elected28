@@ -1,0 +1,101 @@
+{
+  "comparison_type": "government_frame",
+  "baseline_information": {
+    "election_date": "2024-04-10",
+    "available_on": "2026-10-16",
+    "source_url": "https://www.data.go.kr/data/15025527/fileData.do",
+    "availability_basis": "project_retrieval_date_conservative_not_original_publication"
+  },
+  "baseline_poll_id": "gallup_580_frame_national",
+  "current_poll_id": "gallup_678_frame_national",
+  "roles": {
+    "baseline": {
+      "governing_party": "국민의힘",
+      "opposition_party": "더불어민주당"
+    },
+    "current": {
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘"
+    }
+  },
+  "transfer_coefficients": [
+    0,
+    0.5,
+    1
+  ],
+  "regional_shrinkage_k": 400,
+  "uncertainty_logit": {
+    "national": 0.12,
+    "region": 0.1,
+    "district": 0.18
+  },
+  "uncertainty_calibration": "illustrative_unvalidated_not_sampling_standard_errors",
+  "regions": {
+    "서울": {
+      "baseline_poll_id": "gallup_580_frame_서울",
+      "current_poll_id": "gallup_678_frame_서울",
+      "baseline_regions": [
+        "서울특별시"
+      ]
+    },
+    "인천/경기": {
+      "baseline_poll_id": "gallup_580_frame_인천/경기",
+      "current_poll_id": "gallup_678_frame_인천/경기",
+      "baseline_regions": [
+        "인천광역시",
+        "경기도"
+      ]
+    },
+    "강원": {
+      "baseline_poll_id": "gallup_580_frame_강원",
+      "current_poll_id": "gallup_678_frame_강원",
+      "baseline_regions": [
+        "강원특별자치도"
+      ]
+    },
+    "대전/세종/충청": {
+      "baseline_poll_id": "gallup_580_frame_대전/세종/충청",
+      "current_poll_id": "gallup_678_frame_대전/세종/충청",
+      "baseline_regions": [
+        "대전광역시",
+        "세종특별자치시",
+        "충청북도",
+        "충청남도"
+      ]
+    },
+    "광주/전라": {
+      "baseline_poll_id": "gallup_580_frame_광주/전라",
+      "current_poll_id": "gallup_678_frame_광주/전라",
+      "baseline_regions": [
+        "광주광역시",
+        "전라남도",
+        "전북특별자치도"
+      ]
+    },
+    "대구/경북": {
+      "baseline_poll_id": "gallup_580_frame_대구/경북",
+      "current_poll_id": "gallup_678_frame_대구/경북",
+      "baseline_regions": [
+        "대구광역시",
+        "경상북도"
+      ]
+    },
+    "부산/울산/경남": {
+      "baseline_poll_id": "gallup_580_frame_부산/울산/경남",
+      "current_poll_id": "gallup_678_frame_부산/울산/경남",
+      "baseline_regions": [
+        "부산광역시",
+        "울산광역시",
+        "경상남도"
+      ]
+    },
+    "제주": {
+      "baseline_poll_id": "gallup_580_frame_제주",
+      "current_poll_id": "gallup_678_frame_제주",
+      "baseline_regions": [
+        "제주특별자치도"
+      ]
+    }
+  },
+  "warning": "Only government support/opposition frame CHANGE is linked. This is not vote intention or a calibrated forecast. National and regional observations overlap and are not independent likelihoods."
+}

@@ -1,0 +1,120 @@
+{
+  "comparison_type": "government_frame_v030",
+  "engine_version": "0.3.1",
+  "as_of": "2026-11-11",
+  "target_election_date": "2028-04-12",
+  "baseline_information": {
+    "election_date": "2024-04-10",
+    "available_on": "2026-10-16",
+    "source_url": "https://www.data.go.kr/data/15025527/fileData.do",
+    "availability_basis": "project_retrieval_date_conservative_not_original_publication"
+  },
+  "roles": {
+    "baseline": {
+      "governing_party": "국민의힘",
+      "opposition_party": "더불어민주당",
+      "democratic_component": "check"
+    },
+    "current": {
+      "governing_party": "더불어민주당",
+      "opposition_party": "국민의힘",
+      "democratic_component": "support"
+    }
+  },
+  "frame_inputs": {
+    "baseline_national_archive_waves": [
+      "578",
+      "579",
+      "580"
+    ],
+    "baseline_as_of": "2024-04-10",
+    "current_national_file": "data/frame_polls_multi.json",
+    "current_regional_source": "data/polls.json (Gallup 678 regional tables only)",
+    "aggregator": {
+      "half_life_days": "adaptive",
+      "house_effect_shrinkage_k": 2.0,
+      "house_effect_window_days": 45.0,
+      "quality_weights": {
+        "CATI_live_interview": 1.0,
+        "ARS_RDD": 0.5
+      },
+      "quality_weights_basis": "assumption: no Korean pollster scorecard yet; live-interview probability sample weighted above ARS (response rates 10.4% vs 2.4-2.8%)",
+      "wording_classes_main": [
+        "A_support_check"
+      ],
+      "wording_classes_sensitivity": [
+        "A_support_check",
+        "B_judgment"
+      ]
+    },
+    "regional_shrinkage_k": 400
+  },
+  "alpha_curve": {
+    "min": 0.0,
+    "max": 1.5,
+    "step": 0.05,
+    "primary_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "uncertainty": {
+    "sigma_region": {
+      "source": "outputs/backtest_2020_2024.json fit_intercept_free.sigma_region"
+    },
+    "sigma_district": {
+      "source": "outputs/backtest_2020_2024.json fit_intercept_free.sigma_district"
+    },
+    "sigma_national_at_d0": {
+      "value": 0.12,
+      "basis": "not identified by one election pair; v0.2 assumption retained; 2024 realised national residual at alpha 0..1 was 0.09-0.14 logit"
+    },
+    "drift": {
+      "source": "outputs/frame_drift.json tau_per_sqrt_day_used",
+      "form": "sigma_nat(d) = a + alpha * tau * (d - d_backtest)**0.5",
+      "d_backtest_days": 13
+    }
+  },
+  "fundamentals_prior": {
+    "enabled_in_main": false,
+    "source": "outputs/fundamentals_prior.json"
+  },
+  "majority": {
+    "district_seats_total": 254,
+    "district_majority": 128,
+    "note": "245 simulated + 9 not estimable; thresholds reported as bounds over the 9 pending seats; PR 46 seats not modelled"
+  },
+  "draws": 5000,
+  "seed": 20261105,
+  "warning": "alpha is not identified by the 2020->2024 partial backtest; the alpha curve is the primary result, not a single forecast.",
+  "turnout_adjustment": {
+    "enabled_in_main": true,
+    "decision": "user 2026-11-11: party-support project rule lifted; used here to weight likely voters",
+    "groups": [
+      "더불어민주당 지지",
+      "보수 주정당 지지(2020 미래통합당, 2024~ 국민의힘)",
+      "무당층",
+      "기타 정당(잔차)"
+    ],
+    "tau_partisan": null,
+    "tau_independent": null,
+    "tau_source": "Gallup 394/395 (2020) 국회의원선거 투표 의향 꼭 투표할 것이다, by party; 2024 archive and 678 did not ask it",
+    "baseline_waves": [
+      "578",
+      "579",
+      "580"
+    ],
+    "current_waves": [
+      "678"
+    ],
+    "kappa_aligned_main": 1.0,
+    "sensitivity_kappa": [
+      1.2
+    ],
+    "sensitivity_independent_ratio": [
+      0.5,
+      0.8
+    ],
+    "note": "non-Gallup polls carry no party crosstab; the Gallup-derived shift is added to the aggregate of the same period"
+  }
+}

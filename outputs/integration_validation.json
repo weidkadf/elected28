@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "status": "PASS",
+  "baseline_districts": 254,
+  "scenario_eligible_districts": 245,
+  "scenario_pending_districts": 9,
+  "party_support_linkage": false,
+  "unit_tests_passed": 9,
+  "independent_audit_checks_passed": 18,
+  "audit_file": "outputs/frame_audit.json"
+}

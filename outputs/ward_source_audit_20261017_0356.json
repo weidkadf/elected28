@@ -1,0 +1,294 @@
+{
+  "run_label": "20261017_0356",
+  "audit_date": "2026-10-17",
+  "status": "PASS",
+  "method": "Independent direct ZIP/OOXML extraction with standard-library XML; no existing parser imported or root outputs used. Read-only spreadsheet skill applied.",
+  "archive_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "source_download_url": "https://www.nec.go.kr/common/board/Download.do?bcIdx=15052&cbIdx=1129&streFileNm=BBS_202006021136426251.zip",
+  "source_page": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129",
+  "cases": [
+    {
+      "status": "PASS",
+      "district": "강동구갑",
+      "ward": "길동",
+      "archive_member": "지역구/1서울/개표상황(투표구별)_강동구갑.xlsx",
+      "xlsx_sha256": "07a2d4a1008a9a105c8fcea19d3ea0eb8f15ccaf707023a208abf312286950e2",
+      "matches_original_manifest": true,
+      "sheet_xml": "xl/worksheets/sheet1.xml",
+      "title_cell": "A3",
+      "title": "[국회의원선거][서울특별시][강동구갑][강동구]",
+      "candidate_header_row": 5,
+      "subtotal_row": 77,
+      "subtotal_label_cells": [
+        "A77",
+        "B77"
+      ],
+      "valid_vote_cell": "BC77",
+      "totals": {
+        "electors": 36907,
+        "ballots": 22965,
+        "valid": 22697,
+        "invalid": 268,
+        "abstentions": 13942
+      },
+      "candidate_votes": [
+        {
+          "party_at_election": "더불어민주당",
+          "candidate": "진선미",
+          "votes": 11901,
+          "cell": "E77"
+        },
+        {
+          "party_at_election": "미래통합당",
+          "candidate": "이수희",
+          "votes": 10584,
+          "cell": "F77"
+        },
+        {
+          "party_at_election": "국가혁명배당금당",
+          "candidate": "강옥기",
+          "votes": 212,
+          "cell": "G77"
+        }
+      ],
+      "detail_rows": [
+        {
+          "row": 78,
+          "label": "관내사전투표",
+          "valid": 6278
+        },
+        {
+          "row": 79,
+          "label": "길동제1투",
+          "valid": 1818
+        },
+        {
+          "row": 80,
+          "label": "길동제2투",
+          "valid": 1615
+        },
+        {
+          "row": 81,
+          "label": "길동제3투",
+          "valid": 1796
+        },
+        {
+          "row": 82,
+          "label": "길동제4투",
+          "valid": 2210
+        },
+        {
+          "row": 83,
+          "label": "길동제5투",
+          "valid": 1358
+        },
+        {
+          "row": 84,
+          "label": "길동제6투",
+          "valid": 1457
+        },
+        {
+          "row": 85,
+          "label": "길동제7투",
+          "valid": 1908
+        },
+        {
+          "row": 86,
+          "label": "길동제8투",
+          "valid": 684
+        },
+        {
+          "row": 87,
+          "label": "길동제9투",
+          "valid": 1645
+        },
+        {
+          "row": 88,
+          "label": "길동제10투",
+          "valid": 1928
+        }
+      ],
+      "checks": {
+        "all_candidate_and_metric_detail_sums_equal_subtotal": true,
+        "candidate_sum_equals_valid": true,
+        "valid_plus_invalid_equals_ballots": true,
+        "ward_subtotals_plus_separate_rows_equal_district_total": true,
+        "no_formula_cells_in_source_sheet": true
+      },
+      "district_valid_total": 156033,
+      "district_ward_subtotal_valid_sum": 140552,
+      "separate_district_rows": [
+        {
+          "row": 8,
+          "label": "거소·선상투표",
+          "valid": 381,
+          "abstentions": 11
+        },
+        {
+          "row": 9,
+          "label": "관외사전투표",
+          "valid": 14824,
+          "abstentions": 7
+        },
+        {
+          "row": 10,
+          "label": "국외부재자투표",
+          "valid": 262,
+          "abstentions": 821
+        },
+        {
+          "row": 11,
+          "label": "국외부재자투표(공관)",
+          "valid": 11,
+          "abstentions": -11
+        },
+        {
+          "row": 89,
+          "label": "잘못 투입·구분된 투표지",
+          "valid": 3,
+          "abstentions": -3
+        }
+      ],
+      "separate_district_rows_valid_sum": 15481,
+      "negative_abstention_note": "공관·잘못투입 등 조정행의 음수 기권수는 원본대로 유지하며 비음수 검사로 제거하지 않는다.",
+      "interpretation": "행정동 소계는 관내사전+해당 동 투표구 행 합계. 지역구 별도행은 소계에 포함되지 않으며 특정 동으로 배분하지 않는다."
+    },
+    {
+      "status": "PASS",
+      "district": "사하구을",
+      "ward": "신평제2동",
+      "archive_member": "지역구/2부산/개표상황(투표구별)_사하구을.xlsx",
+      "xlsx_sha256": "8108d56b781cf1d29aa55697b002298b5951fc158be44eac04077411041b3767",
+      "matches_original_manifest": true,
+      "sheet_xml": "xl/worksheets/sheet1.xml",
+      "title_cell": "A3",
+      "title": "[국회의원선거][부산광역시][사하구을][사하구]",
+      "candidate_header_row": 5,
+      "subtotal_row": 18,
+      "subtotal_label_cells": [
+        "A18",
+        "B18"
+      ],
+      "valid_vote_cell": "BC18",
+      "totals": {
+        "electors": 13347,
+        "ballots": 8738,
+        "valid": 8663,
+        "invalid": 75,
+        "abstentions": 4609
+      },
+      "candidate_votes": [
+        {
+          "party_at_election": "더불어민주당",
+          "candidate": "이상호",
+          "votes": 3338,
+          "cell": "E18"
+        },
+        {
+          "party_at_election": "미래통합당",
+          "candidate": "조경태",
+          "votes": 5131,
+          "cell": "F18"
+        },
+        {
+          "party_at_election": "우리공화당",
+          "candidate": "하봉규",
+          "votes": 45,
+          "cell": "G18"
+        },
+        {
+          "party_at_election": "민중당",
+          "candidate": "김진주",
+          "votes": 107,
+          "cell": "H18"
+        },
+        {
+          "party_at_election": "국가혁명배당금당",
+          "candidate": "천서은",
+          "votes": 42,
+          "cell": "I18"
+        }
+      ],
+      "detail_rows": [
+        {
+          "row": 19,
+          "label": "관내사전투표",
+          "valid": 3139
+        },
+        {
+          "row": 20,
+          "label": "신평제2동제1투",
+          "valid": 1034
+        },
+        {
+          "row": 21,
+          "label": "신평제2동제2투",
+          "valid": 1892
+        },
+        {
+          "row": 22,
+          "label": "신평제2동제3투",
+          "valid": 1319
+        },
+        {
+          "row": 23,
+          "label": "신평제2동제4투",
+          "valid": 1279
+        }
+      ],
+      "checks": {
+        "all_candidate_and_metric_detail_sums_equal_subtotal": true,
+        "candidate_sum_equals_valid": true,
+        "valid_plus_invalid_equals_ballots": true,
+        "ward_subtotals_plus_separate_rows_equal_district_total": true,
+        "no_formula_cells_in_source_sheet": true
+      },
+      "district_valid_total": 100419,
+      "district_ward_subtotal_valid_sum": 92350,
+      "separate_district_rows": [
+        {
+          "row": 8,
+          "label": "거소·선상투표",
+          "valid": 374,
+          "abstentions": 34
+        },
+        {
+          "row": 9,
+          "label": "관외사전투표",
+          "valid": 7589,
+          "abstentions": 11
+        },
+        {
+          "row": 10,
+          "label": "국외부재자투표",
+          "valid": 102,
+          "abstentions": 254
+        },
+        {
+          "row": 11,
+          "label": "국외부재자투표(공관)",
+          "valid": 3,
+          "abstentions": -3
+        },
+        {
+          "row": 78,
+          "label": "잘못 투입·구분된 투표지",
+          "valid": 1,
+          "abstentions": -1
+        }
+      ],
+      "separate_district_rows_valid_sum": 8069,
+      "negative_abstention_note": "공관·잘못투입 등 조정행의 음수 기권수는 원본대로 유지하며 비음수 검사로 제거하지 않는다.",
+      "interpretation": "행정동 소계는 관내사전+해당 동 투표구 행 합계. 지역구 별도행은 소계에 포함되지 않으며 특정 동으로 배분하지 않는다."
+    }
+  ],
+  "model_input_modified": false,
+  "original_archive_modified": false,
+  "workbooks_modified": false,
+  "party_support_used": false,
+  "limits": [
+    "Two ward audits only; not a nationwide ward parser validation.",
+    "Electoral geography membership transfer does not solve allocation of district-level special ballots.",
+    "2020 candidate support is election-time actual vote evidence, not 2028 candidate preference."
+  ]
+}

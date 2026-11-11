@@ -1,0 +1,37 @@
+{
+  "status": "STRUCTURE_RECOVERED_QUARANTINED_PENDING_INDEPENDENT_CHECK",
+  "model_eligible": false,
+  "raw_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+  "raw_unchanged": true,
+  "raw_rows": 289980,
+  "block_width": 15,
+  "embedded_headers": 252,
+  "header_cells_explaining_all_nonnumeric_rows": 2772,
+  "numeric_blocks_checked": 19080,
+  "ballot_identities_passed": 19080,
+  "elector_identities_passed": 19080,
+  "unnamed_slot_nonzero_count": 0,
+  "districts": 253,
+  "reconstructed_candidate_labels": 1101,
+  "reconstructed_winners": {
+    "더불어민주당": 163,
+    "미래통합당": 84,
+    "무소속": 5,
+    "정의당": 1
+  },
+  "national_totals": {
+    "electors": 43961157,
+    "ballots": 29121467,
+    "valid": 28741408,
+    "invalid": 380059,
+    "abstentions": 14839690
+  },
+  "independent_check_status": "NOT_COMPLETED_FOR_253_DISTRICTS",
+  "notes": [
+    "모든 후보명을 종로구 이름으로 고정한 원문의 후보자 필드는 열 슬롯 식별자일 뿐이다.",
+    "종로 이후 252개 지역구의 첫 15행은 후보명을 담은 삽입 헤더이다. 11칸 중 실제 후보 외 빈칸은 다음 모든 수치 블록에서 0임을 검증했다.",
+    "헤더의 읍면동 이름은 직전 행의 잘못 투입·구분된 투표지 값이 남아 있으므로 숫자 투표행과 혼동하지 않는다.",
+    "모든 수치블록 내부 산술일치는 독립 원본 대조를 대체하지 않는다. 당선자 이름·정당·유효표·후보득표 253지역구 독립 검증 전 학습·백테스트 투입 금지.",
+    "2020↔2024 지역구 경계동일성 미검증. 이 파일은 2020 원래 경계만 나타낸다."
+  ]
+}

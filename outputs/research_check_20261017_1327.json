@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-10-17",
+  "scope": "09시 수집 이후 최신 원문·등록목록 재확인",
+  "previous_check": "outputs/research_check_20261017_0917.json",
+  "historical_pages_reopened": [
+    "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1091",
+    "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1096"
+  ],
+  "verified_historical_national_shares_support_check_undecided": {
+    "2020-03-13": [43,43,14],
+    "2020-04-03": [47,37,16]
+  },
+  "current_checks": [
+    {"url":"https://nesdc.go.kr/portal/bbs/B0000005/list.do", "result":"최상단17314, 갤럽17313/NBS17312로 이전 확인과 동일. 목록만으로 모든 신규 적격 문항 부재를 보장하지 않음."},
+    {"url":"https://www.gallup.co.kr/gallupdb/report.asp", "result":"페이지 접근 성공. 웹 텍스트에서678호 문자열 확인 불가. 이전09시 직접목록 확인과 구분하여 최신호 재검증으로 과장하지 않음."},
+    {"url":"https://nbsurvey.kr/", "result":"Internal Error; 원문 신규 유무 확인 불가, 접근 실패를 변화 없음으로 간주하지 않음."}
+  ],
+  "new_current_model_input_added": false,
+  "model_or_scenario_numbers_changed": false,
+  "party_support_used": false
+}

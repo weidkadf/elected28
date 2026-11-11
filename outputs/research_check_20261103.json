@@ -1,0 +1,53 @@
+{
+  "checked_on": "2026-11-03",
+  "new_current_frame_observations_accepted": 0,
+  "current_inputs_changed": false,
+  "latest_poll_absence_claimed": false,
+  "checks": [
+    {
+      "source": "Gallup",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "latest_listed": "680",
+      "publication_date": "2026-10-30",
+      "status": "list_verified_full_report_inaccessible_no_new_frame_accepted"
+    },
+    {
+      "source": "NESDC Gallup 17335",
+      "url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19593",
+      "fieldwork": [
+        "2026-10-27",
+        "2026-10-29"
+      ],
+      "sample": 1000,
+      "status": "question_and_results_image_conversion_pending"
+    },
+    {
+      "source": "NESDC NBS 17333",
+      "url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?menuNo=200467&nttId=19591",
+      "fieldwork": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "sample": 1000,
+      "status": "question_and_results_image_conversion_pending"
+    },
+    {
+      "source": "NBS",
+      "url": "https://nbsurvey.kr/",
+      "status": "timeout"
+    },
+    {
+      "source": "Seongdong2020",
+      "url": "https://www.sd.go.kr/main/selectBbsNttView.do?bbsNo=183&key=3623&nttNo=299178",
+      "status": "primary_body_partially_read_full_capture_incomplete_pair_missing"
+    },
+    {
+      "source": "Seongdong2024",
+      "url": "https://www.sd.go.kr/wangsimnidoseon/selectBbsNttList.do?bbsNo=319&key=2906&pageIndex=19",
+      "status": "timeout"
+    }
+  ],
+  "geographic_changes_approved": 0,
+  "candidate_changes_approved": 0,
+  "party_support_used": false
+}

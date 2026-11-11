@@ -1,0 +1,21 @@
+{
+  "version": "0.2.1",
+  "verified_date": "2026-10-16",
+  "unit_tests_passed": 13,
+  "draws": 5000,
+  "seed": 20261016,
+  "checks": {
+    "weekly_scenarios_unchanged": true,
+    "monthly_scenarios_unchanged": true,
+    "seed_reproducible": true,
+    "party_support_deleted_identical": true,
+    "party_support_changed_identical": true,
+    "baseline_254_districts_693_candidates": true,
+    "valid_votes_29234129": true,
+    "vote_and_seat_conservation": true,
+    "all_254_districts_accounted": true
+  },
+  "model_sha256": "0a84705ac47db76136353e3ed6e70ec9d567183374021d7e443069c9665907cd",
+  "publication_precision": "date_only_not_intraday",
+  "history_2020_model_eligible": false
+}

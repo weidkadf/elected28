@@ -1,0 +1,16 @@
+{
+  "detected_on": "2026-10-17",
+  "affected_working_path": "data/history_2020/nec_2020_original_tables.zip",
+  "detected_bytes": 4508160,
+  "detected_sha256": "76a687075e42536c42e709d98b17a09213bb946460577f0a4f04f32b4ed086bc",
+  "expected_bytes": 15560000,
+  "expected_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "action": "Stopped the failing hash gate; retained truncated working bytes separately for diagnostics, then restored only this immutable source member from the already materialized latest archive version 5.",
+  "restored_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "original_library_archive_unchanged": true,
+  "cause": "unknown; no assumption about the actor or storage mechanism",
+  "repeated_working_copy_failure_observed": true,
+  "final_packaging_gate": "Restore the immutable source from verified archive member immediately before full tests, check byte identity and package only after PASS. A failed check is not waived.",
+  "model_input_modified": false,
+  "revalidation_required": "Full source/partition and release tests must pass before writeback."
+}

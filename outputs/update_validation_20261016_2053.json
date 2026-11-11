@@ -1,0 +1,44 @@
+{
+  "project_version": "0.2.2",
+  "engine_version": "0.2.1",
+  "verified_date": "2026-10-16",
+  "status": "PASS",
+  "checks": {
+    "raw_baseline_model_inputs_and_scenario_outputs_unchanged": true,
+    "outputs/model_report.json_coverage_and_accounting": true,
+    "outputs/model_report_monthly.json_coverage_and_accounting": true,
+    "historical_crosscheck_253_districts_1101_labels": true,
+    "historical_data_not_wired_to_current_model": true,
+    "separate_100_draw_model_audit_invariance_seed_accounting": true,
+    "model_13_tests_pass": true,
+    "historical_8_tests_pass": true,
+    "all_254_report_rows_and_input_hashes": true
+  },
+  "new_unit_tests": 8,
+  "existing_model_tests": 13,
+  "scenario_recalculated_for_release": false,
+  "scenario_numbers_changed": false,
+  "protected_sha256": {
+    "model.py": "0a84705ac47db76136353e3ed6e70ec9d567183374021d7e443069c9665907cd",
+    "test_model.py": "a3a860fd8264643b8536ff6bc2094b544a2ea9baf502ec351db6d3d416745bd2",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/events.json": "eb1f7812638d741961e27dc60c7e7aa70d4657bf5b19c3f0ebf1f124fcec3b76",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/districts_2024.csv": "cd9a3b2fc3e75427b73cde2dff1c9b70a67f9a4783901ea10d4f073b5dbbf730",
+    "data/raw/nec_2024.csv": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+    "config/frame_comparison.json": "b5fcbd7ac2f75e274f4dcf593d21d98595661e5a9eef38f67d0ece69c4d105b3",
+    "config/frame_comparison_monthly.json": "0aa343a02a0933e7589b09895ae09cb6640d588d937cddd825ce83400a84448c",
+    "outputs/model_report.json": "63538543ee47e5fbf4903b39c2c16713e3afb19ebb6d247d4d3487382f1de0dd",
+    "outputs/model_report_monthly.json": "50fb11788d42f3885cfba75bf175de18ceee1db7aa4b97e8ad4a0b3b9b641dee",
+    "data/history_2020/nec_2020_raw.csv": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+    "data/history_2020/nec_2020_original_tables.zip": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+    "data/history_2020/reconstructed_candidates_QUARANTINED.csv": "377bf65492f9ffb9157d3bcf13ccb3f1aa493c15348827b43fb94ad46e43a619",
+    "data/history_2020/reconstructed_district_totals_QUARANTINED.csv": "5a5071dc0940b37a2ee0d91a621029a012b23674f4141ac70e2bf79171e8d942"
+  },
+  "remaining_model_gaps": [
+    "FIXED_2024_RESULT_BASELINE_NOT_GATED_BY_AS_OF",
+    "REGIONAL_SCOPE_NOT_CHECKED",
+    "DATE_ONLY_PUBLICATION"
+  ],
+  "historical_scope": "2020 original-boundary district candidate totals only"
+}

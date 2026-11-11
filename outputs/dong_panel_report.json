@@ -1,0 +1,149 @@
+{
+  "districts_2024": 254,
+  "elections": {
+    "pres2025": {
+      "file": "nec_presidential_20250603.csv",
+      "sha256": "4d1479e549e3ab0f6ae2a5b4436ec085f4326711a6a4163636be12a1a6e39e19",
+      "dongs": 3554,
+      "map_status": {
+        "dong_match": 2982,
+        "single_district_fallback": 420,
+        "county_proportional": 152
+      },
+      "unassigned_vote_share": 0.0,
+      "county_level_votes": 4579324,
+      "county_level_votes_not_allocated": 0,
+      "unassigned_examples": []
+    },
+    "gov2026": {
+      "file": "nec_local_governor_20260603.csv",
+      "sha256": "2a3325399391c379e6e40c0a5096379de75f612e0b290ea223b792f18d75a755",
+      "dongs": 3558,
+      "map_status": {
+        "dong_match": 2949,
+        "single_district_fallback": 420,
+        "county_proportional": 157,
+        "sido_wide_dong_match": 24,
+        "no_candidate_district": 8
+      },
+      "unassigned_vote_share": 0.002142562412915091,
+      "county_level_votes": 3226619,
+      "county_level_votes_not_allocated": 0,
+      "unassigned_examples": [
+        [
+          "인천광역시",
+          "영종구",
+          "운서1동",
+          9049
+        ],
+        [
+          "인천광역시",
+          "영종구",
+          "운서2동",
+          7544
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "율목동",
+          1380
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "송현3동",
+          1341
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "송림2동",
+          795
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "금창동",
+          1133
+        ],
+        [
+          "인천광역시",
+          "검단구",
+          "아라1동",
+          17835
+        ],
+        [
+          "인천광역시",
+          "검단구",
+          "아라2동",
+          12402
+        ]
+      ]
+    },
+    "mayor2026": {
+      "file": "nec_local_mayor_20260603.csv",
+      "sha256": "774c27a9f6b9448a0838235efa059c181c7c41fcb7412dfcd62bf79d8b75cb9a",
+      "dongs": 3436,
+      "map_status": {
+        "dong_match": 2834,
+        "single_district_fallback": 418,
+        "county_proportional": 152,
+        "sido_wide_dong_match": 24,
+        "no_candidate_district": 8
+      },
+      "unassigned_vote_share": 0.00221865074430256,
+      "county_level_votes": 3088563,
+      "county_level_votes_not_allocated": 0,
+      "unassigned_examples": [
+        [
+          "인천광역시",
+          "제물포구",
+          "율목동",
+          1378
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "송현3동",
+          1339
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "송림2동",
+          794
+        ],
+        [
+          "인천광역시",
+          "제물포구",
+          "금창동",
+          1134
+        ],
+        [
+          "인천광역시",
+          "영종구",
+          "운서1동",
+          9050
+        ],
+        [
+          "인천광역시",
+          "영종구",
+          "운서2동",
+          7543
+        ],
+        [
+          "인천광역시",
+          "검단구",
+          "아라1동",
+          17834
+        ],
+        [
+          "인천광역시",
+          "검단구",
+          "아라2동",
+          12399
+        ]
+      ]
+    }
+  }
+}

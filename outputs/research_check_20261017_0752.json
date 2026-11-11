@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-17T07:52:51+09:00",
+  "model_input_modified": false,
+  "checks": [
+    {"source": "한국갤럽", "url": "https://www.gallup.co.kr/gallupdb/report.asp", "http_status": 200, "latest_daily_report": 678},
+    {"source": "여심위", "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do", "http_status": 200, "previous_registration_ids_present": [17314,17313,17312]},
+    {"source": "NBS", "url": "https://nbsurvey.kr/", "error": "HTTP Error 502: Bad Gateway"}
+  ],
+  "new_current_frame_observation_identified": false,
+  "limitations": ["공개 목록 확인 범위의 결론이며 모든 조사기관의 신규 문항 부재를 보장하지 않음", "과거394호 확보와 현재조사 갱신은 구분"]
+}

@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-17T09:23:23.806913+09:00",
+  "model_input_modified": false,
+  "new_current_eligible_poll_count": 0,
+  "new_historical_wave_verified_count": 2,
+  "new_historical_observation_rows": 18,
+  "party_support_used": false,
+  "checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "http_status": 200,
+      "latest_daily_report": 678,
+      "latest_post_id": 1662,
+      "existing_observation": true
+    },
+    {
+      "source": "여심위 최신목록",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "http_status": 200,
+      "top_registration": 17314,
+      "gallup_registration": 17313,
+      "nbs_registration": 17312,
+      "new_frame_observation_identified": false
+    },
+    {
+      "source": "NBS",
+      "url": "https://nbsurvey.kr/",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ],
+  "historical_sources": [
+    {
+      "report": 392,
+      "published_at": "2020-03-13",
+      "fieldwork_start": "2020-03-10",
+      "fieldwork_end": "2020-03-12",
+      "observations": 9,
+      "suppressed_count": 2,
+      "source_file": "data/history_polls/gallup_392_20200313.pdf",
+      "sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "source_html_file": "data/history_polls/gallup_392_source.html",
+      "normalized_file": "data/history_polls/gallup_392_frame_observations.json",
+      "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1091",
+      "shares": {
+        "정부지원": 0.43,
+        "정부견제": 0.43,
+        "모름/응답거절": 0.14
+      },
+      "sample_size": 1001,
+      "weighted_sample_size": 1000,
+      "regional_weighted_sum": 999
+    },
+    {
+      "report": 395,
+      "published_at": "2020-04-03",
+      "fieldwork_start": "2020-03-31",
+      "fieldwork_end": "2020-04-02",
+      "observations": 9,
+      "suppressed_count": 2,
+      "source_file": "data/history_polls/gallup_395_20200403.pdf",
+      "sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "source_html_file": "data/history_polls/gallup_395_source.html",
+      "normalized_file": "data/history_polls/gallup_395_frame_observations.json",
+      "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1096",
+      "shares": {
+        "정부지원": 0.47,
+        "정부견제": 0.37,
+        "모름/응답거절": 0.16
+      },
+      "sample_size": 1002,
+      "weighted_sample_size": 1000,
+      "regional_weighted_sum": 999
+    }
+  ],
+  "conclusion": "현재 신규 적격 조사 없음. 갤럽392호·395호 정부지원/견제 문항 전국·권역18행을 원문 확인하여 별도 보정 후보로 보존.",
+  "limitations": [
+    "활성 polls.json 및 기존394파일 수정 없음. 새 관측 model_input_eligible=false.",
+    "그래프의 다른 과거 점은 중복 추가하지 않음.",
+    "발표시각 미확인. 공표일 근거 HTML과 PDF 함께 저장.",
+    "현재 목록점검은 모든 기관의 신규 문항 부재를 보장하지 않음."
+  ]
+}

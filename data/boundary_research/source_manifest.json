@@ -1,0 +1,38 @@
+[
+  {
+    "year": 2020,
+    "amendment_date": "2020-03-11",
+    "district_count_header": 253,
+    "url": "https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110201&flSeq=158197765&gubun=",
+    "web_ref": "turn40view0",
+    "accessed_on": "2026-10-16",
+    "http_status": 200,
+    "local_pdf": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+    "sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+    "bytes": 264345,
+    "publisher": "국가법령정보센터",
+    "authority": "공직선거법 별표1 (법정 구역표)",
+    "download_status": "success",
+    "local_text": "data/boundary_research/public_official_election_act_annex1_2020.txt",
+    "pdfinfo": "Author:          법제처 국가법령정보센터\nCreator:         Hwp 2020 1.0.0.0\nProducer:        Hancom PDF 1.3.0.546\nCreationDate:    Mon Nov 17 13:47:04 2025 +07\nModDate:         Mon Nov 17 13:47:04 2025 +07\nCustom Metadata: yes\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       595 x 841 pts (A4)\nPage rot:        0\nFile size:       264345 bytes\nOptimized:       no\nPDF version:     1.4\n",
+    "header_confirmed": true
+  },
+  {
+    "year": 2024,
+    "amendment_date": "2024-03-08",
+    "district_count_header": 254,
+    "url": "https://law.go.kr/LSW/flDownload.do?flSeq=163897897",
+    "web_ref": "turn39view0",
+    "accessed_on": "2026-10-16",
+    "http_status": 200,
+    "local_pdf": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+    "sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+    "bytes": 273733,
+    "publisher": "국가법령정보센터",
+    "authority": "공직선거법 별표1 (법정 구역표)",
+    "download_status": "success",
+    "local_text": "data/boundary_research/public_official_election_act_annex1_2024.txt",
+    "pdfinfo": "Author:          공미경\nCreator:         Hwp 2020 1.0.0.0\nProducer:        Hancom PDF 1.3.0.546\nCreationDate:    Wed Apr 29 08:36:36 2026 +07\nModDate:         Wed Apr 29 08:36:36 2026 +07\nCustom Metadata: yes\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           12\nEncrypted:       no\nPage size:       595 x 841 pts (A4)\nPage rot:        0\nFile size:       273733 bytes\nOptimized:       no\nPDF version:     1.4\n",
+    "header_confirmed": true
+  }
+]

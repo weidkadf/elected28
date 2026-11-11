@@ -1,0 +1,234 @@
+test_actual_five_folds_remain_blocked_without_metrics (test_backtest_readiness.BacktestReadinessTests.test_actual_five_folds_remain_blocked_without_metrics) ... ok
+test_duplicate_selected_id_rejected (test_backtest_readiness.BacktestReadinessTests.test_duplicate_selected_id_rejected) ... ok
+test_future_changes_do_not_change_selected_manifest (test_backtest_readiness.BacktestReadinessTests.test_future_changes_do_not_change_selected_manifest) ... ok
+test_incomplete_selected_wave_rejected (test_backtest_readiness.BacktestReadinessTests.test_incomplete_selected_wave_rejected) ... ok
+test_invalid_cutoffs_rejected (test_backtest_readiness.BacktestReadinessTests.test_invalid_cutoffs_rejected) ... ok
+test_non_frame_metadata_cannot_affect_selection (test_backtest_readiness.BacktestReadinessTests.test_non_frame_metadata_cannot_affect_selection) ... ok
+test_order_is_deterministic (test_backtest_readiness.BacktestReadinessTests.test_order_is_deterministic) ... ok
+test_publication_day_not_available (test_backtest_readiness.BacktestReadinessTests.test_publication_day_not_available) ... ok
+test_same_election_baseline_rejected (test_backtest_readiness.BacktestReadinessTests.test_same_election_baseline_rejected) ... ok
+test_separate_original_election_groups (test_backtest_readiness.BacktestReadinessTests.test_separate_original_election_groups) ... ok
+test_unrelated_election_not_pooled (test_backtest_readiness.BacktestReadinessTests.test_unrelated_election_not_pooled) ... ok
+test_unvalidated_or_party_used_archive_rejected (test_backtest_readiness.BacktestReadinessTests.test_unvalidated_or_party_used_archive_rejected) ... ok
+test_all_crosswalks_and_transfer_weights_remain_unavailable (test_boundary_inventory.BoundaryInventoryTests.test_all_crosswalks_and_transfer_weights_remain_unavailable) ... ok
+test_all_model_district_ids_join_exactly (test_boundary_inventory.BoundaryInventoryTests.test_all_model_district_ids_join_exactly) ... ok
+test_complete_statutory_row_counts (test_boundary_inventory.BoundaryInventoryTests.test_complete_statutory_row_counts) ... ok
+test_gildong_moves_across_same_named_districts (test_boundary_inventory.BoundaryInventoryTests.test_gildong_moves_across_same_named_districts) ... ok
+test_no_duplicate_statutory_keys (test_boundary_inventory.BoundaryInventoryTests.test_no_duplicate_statutory_keys) ... ok
+test_nowon_three_to_two_districts (test_boundary_inventory.BoundaryInventoryTests.test_nowon_three_to_two_districts) ... ok
+test_only_typographic_normalization (test_boundary_inventory.BoundaryInventoryTests.test_only_typographic_normalization) ... ok
+test_pdf_provenance_and_hashes (test_boundary_inventory.BoundaryInventoryTests.test_pdf_provenance_and_hashes) ... ok
+test_sinpyeong2_moves_across_same_named_districts (test_boundary_inventory.BoundaryInventoryTests.test_sinpyeong2_moves_across_same_named_districts) ... ok
+test_text_comparison_counts_are_a_partition_not_geographic_claim (test_boundary_inventory.BoundaryInventoryTests.test_text_comparison_counts_are_a_partition_not_geographic_claim) ... ok
+test_579_has_only_frame_question_and_missing_not_zero (test_historical_579.Historical579Tests.test_579_has_only_frame_question_and_missing_not_zero) ... ok
+test_579_publication_day_excluded_next_day_available (test_historical_579.Historical579Tests.test_579_publication_day_excluded_next_day_available) ... ok
+test_archive_has_six_waves_not_54_independent_surveys (test_historical_579.Historical579Tests.test_archive_has_six_waves_not_54_independent_surveys) ... ok
+test_exact_period_publication_and_method (test_historical_579.Historical579Tests.test_exact_period_publication_and_method) ... ok
+test_future_579_metadata_cannot_change_earlier_manifest (test_historical_579.Historical579Tests.test_future_579_metadata_cannot_change_earlier_manifest) ... ok
+test_monthly_not_added_or_current_input_linked (test_historical_579.Historical579Tests.test_monthly_not_added_or_current_input_linked) ... ok
+test_new_sources_match_retained_hashes (test_historical_579.Historical579Tests.test_new_sources_match_retained_hashes) ... ok
+test_primary_pdf_page15_exact_weekly_table (test_historical_579.Historical579Tests.test_primary_pdf_page15_exact_weekly_table) ... ok
+test_580_has_only_frame_question_and_missing_not_zero (test_historical_580.Historical580Tests.test_580_has_only_frame_question_and_missing_not_zero) ... ok
+test_580_publication_day_excluded_next_day_available (test_historical_580.Historical580Tests.test_580_publication_day_excluded_next_day_available) ... ok
+test_archive_has_six_waves_not_54_independent_surveys (test_historical_580.Historical580Tests.test_archive_has_six_waves_not_54_independent_surveys) ... ok
+test_exact_period_publication_and_method (test_historical_580.Historical580Tests.test_exact_period_publication_and_method) ... ok
+test_future_580_metadata_cannot_change_earlier_manifest (test_historical_580.Historical580Tests.test_future_580_metadata_cannot_change_earlier_manifest) ... ok
+test_monthly_not_added_or_current_input_linked (test_historical_580.Historical580Tests.test_monthly_not_added_or_current_input_linked) ... ok
+test_new_sources_match_retained_hashes (test_historical_580.Historical580Tests.test_new_sources_match_retained_hashes) ... ok
+test_primary_pdf_page14_exact_weekly_table (test_historical_580.Historical580Tests.test_primary_pdf_page14_exact_weekly_table) ... ok
+test_all_observations_are_frame_only_and_ineligible (test_historical_frame_archive.HistoricalFrameArchiveTests.test_all_observations_are_frame_only_and_ineligible) ... ok
+test_national_values_roles_sample_and_suppression (test_historical_frame_archive.HistoricalFrameArchiveTests.test_national_values_roles_sample_and_suppression) ... ok
+test_original_pdf_hash_and_current_inputs_remain_separate (test_historical_frame_archive.HistoricalFrameArchiveTests.test_original_pdf_hash_and_current_inputs_remain_separate) ... ok
+test_publication_precedes_2020_election_without_invented_time (test_historical_frame_archive.HistoricalFrameArchiveTests.test_publication_precedes_2020_election_without_invented_time) ... ok
+test_complete_inventory_not_training_approval (test_historical_inventory.HistoricalInventoryTests.test_complete_inventory_not_training_approval) ... ok
+test_direct_opposition_judgment_mislabel_rejected (test_historical_inventory.HistoricalInventoryTests.test_direct_opposition_judgment_mislabel_rejected) ... ok
+test_duplicate_wave_scope_across_files_rejected (test_historical_inventory.HistoricalInventoryTests.test_duplicate_wave_scope_across_files_rejected) ... ok
+test_empty_archive_not_success (test_historical_inventory.HistoricalInventoryTests.test_empty_archive_not_success) ... ok
+test_fieldwork_after_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_fieldwork_after_publication_rejected) ... ok
+test_future_publication_excluded (test_historical_inventory.HistoricalInventoryTests.test_future_publication_excluded) ... ok
+test_incomplete_scope_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_incomplete_scope_partition_rejected) ... ok
+test_original_party_not_relabelled_as_successor (test_historical_inventory.HistoricalInventoryTests.test_original_party_not_relabelled_as_successor) ... ok
+test_party_support_deleted_or_malformed_has_no_effect (test_historical_inventory.HistoricalInventoryTests.test_party_support_deleted_or_malformed_has_no_effect) ... ok
+test_post_election_publication_rejected (test_historical_inventory.HistoricalInventoryTests.test_post_election_publication_rejected) ... ok
+test_publication_day_excluded_and_next_day_available (test_historical_inventory.HistoricalInventoryTests.test_publication_day_excluded_and_next_day_available) ... ok
+test_raw_sample_partition_rejected (test_historical_inventory.HistoricalInventoryTests.test_raw_sample_partition_rejected) ... ok
+test_rounding_preserved_but_invalid_shares_rejected (test_historical_inventory.HistoricalInventoryTests.test_rounding_preserved_but_invalid_shares_rejected) ... ok
+test_source_tamper_rejected (test_historical_inventory.HistoricalInventoryTests.test_source_tamper_rejected) ... ok
+test_suppressed_region_not_filled_with_zeros (test_historical_inventory.HistoricalInventoryTests.test_suppressed_region_not_filled_with_zeros) ... ok
+test_unreviewed_pollster_rejected (test_historical_inventory.HistoricalInventoryTests.test_unreviewed_pollster_rejected) ... ok
+test_unreviewed_question_not_silently_pooled (test_historical_inventory.HistoricalInventoryTests.test_unreviewed_question_not_silently_pooled) ... ok
+test_wrong_role_direction_rejected (test_historical_inventory.HistoricalInventoryTests.test_wrong_role_direction_rejected) ... ok
+test_2020_method_change_rejected (test_historical_roles.HistoricalRoleTests.test_2020_method_change_rejected) ... ok
+test_2024_april_outside_reviewed_window_rejected (test_historical_roles.HistoricalRoleTests.test_2024_april_outside_reviewed_window_rejected) ... ok
+test_2024_coordinate_must_be_check (test_historical_roles.HistoricalRoleTests.test_2024_coordinate_must_be_check) ... ok
+test_2024_earlier_three_option_period_not_implicitly_approved (test_historical_roles.HistoricalRoleTests.test_2024_earlier_three_option_period_not_implicitly_approved) ... ok
+test_2024_future_publication_excluded (test_historical_roles.HistoricalRoleTests.test_2024_future_publication_excluded) ... ok
+test_2024_government_opposition_swapped_rejected (test_historical_roles.HistoricalRoleTests.test_2024_government_opposition_swapped_rejected) ... ok
+test_2024_same_day_excluded_next_day_available (test_historical_roles.HistoricalRoleTests.test_2024_same_day_excluded_next_day_available) ... ok
+test_2024_three_option_question_rejected (test_historical_roles.HistoricalRoleTests.test_2024_three_option_question_rejected) ... ok
+test_coverage_is_separate_by_target_election (test_historical_roles.HistoricalRoleTests.test_coverage_is_separate_by_target_election) ... ok
+test_different_methods_remain_unapproved_for_pooling (test_historical_roles.HistoricalRoleTests.test_different_methods_remain_unapproved_for_pooling) ... ok
+test_every_observation_exposes_same_reviewed_role_as_its_wave (test_historical_roles.HistoricalRoleTests.test_every_observation_exposes_same_reviewed_role_as_its_wave) ... ok
+test_method_change_cannot_be_silently_pooled (test_historical_roles.HistoricalRoleTests.test_method_change_cannot_be_silently_pooled) ... ok
+test_no_direct_opposition_judgment_or_vote_mapping (test_historical_roles.HistoricalRoleTests.test_no_direct_opposition_judgment_or_vote_mapping) ... ok
+test_original_role_reversal_recorded_without_successor_mapping (test_historical_roles.HistoricalRoleTests.test_original_role_reversal_recorded_without_successor_mapping) ... ok
+test_party_support_mutation_and_deletion_full_output_invariance (test_historical_roles.HistoricalRoleTests.test_party_support_mutation_and_deletion_full_output_invariance) ... ok
+test_unknown_election_not_automatically_mapped (test_historical_roles.HistoricalRoleTests.test_unknown_election_not_automatically_mapped) ... ok
+test_01_valid_split_preserves_both_categories (test_joint_vote_conservation.JointVoteConservationTests.test_01_valid_split_preserves_both_categories) ... ok
+test_02_report_has_three_fixtures_and_no_real_approval (test_joint_vote_conservation.JointVoteConservationTests.test_02_report_has_three_fixtures_and_no_real_approval) ... ok
+test_03_explicit_true_required (test_joint_vote_conservation.JointVoteConservationTests.test_03_explicit_true_required) ... ok
+test_04_fixed_votes_cannot_be_duplicated (test_joint_vote_conservation.JointVoteConservationTests.test_04_fixed_votes_cannot_be_duplicated) ... ok
+test_05_unlocated_votes_cannot_be_duplicated (test_joint_vote_conservation.JointVoteConservationTests.test_05_unlocated_votes_cannot_be_duplicated) ... ok
+test_06_vote_categories_cannot_compensate (test_joint_vote_conservation.JointVoteConservationTests.test_06_vote_categories_cannot_compensate) ... ok
+test_07_candidates_and_original_parties_cannot_compensate (test_joint_vote_conservation.JointVoteConservationTests.test_07_candidates_and_original_parties_cannot_compensate) ... ok
+test_08_source_districts_cannot_compensate (test_joint_vote_conservation.JointVoteConservationTests.test_08_source_districts_cannot_compensate) ... ok
+test_09_unknown_candidate_or_party_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_09_unknown_candidate_or_party_rejected) ... ok
+test_10_unknown_source_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_10_unknown_source_rejected) ... ok
+test_11_unknown_target_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_11_unknown_target_rejected) ... ok
+test_12_disallowed_or_invalid_edges_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_12_disallowed_or_invalid_edges_rejected) ... ok
+test_13_duplicate_source_identity_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_13_duplicate_source_identity_rejected) ... ok
+test_14_duplicate_allocation_or_target_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_14_duplicate_allocation_or_target_rejected) ... ok
+test_15_negative_votes_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_15_negative_votes_rejected) ... ok
+test_16_noninteger_votes_and_unexpected_fields_rejected (test_joint_vote_conservation.JointVoteConservationTests.test_16_noninteger_votes_and_unexpected_fields_rejected) ... ok
+test_17_missing_source_candidate_is_not_assumed_zero (test_joint_vote_conservation.JointVoteConservationTests.test_17_missing_source_candidate_is_not_assumed_zero) ... ok
+test_18_missing_target_is_not_assumed_zero (test_joint_vote_conservation.JointVoteConservationTests.test_18_missing_target_is_not_assumed_zero) ... ok
+test_19_explicit_zero_rows_are_valid (test_joint_vote_conservation.JointVoteConservationTests.test_19_explicit_zero_rows_are_valid) ... ok
+test_20_exhaustive_81_combinations_only_nine_conserve (test_joint_vote_conservation.JointVoteConservationTests.test_20_exhaustive_81_combinations_only_nine_conserve) ... ok
+test_future_release_is_blocked_even_if_fieldwork_has_finished (test_model.FrameModelTests.test_future_release_is_blocked_even_if_fieldwork_has_finished) ... ok
+test_missing_release_date_is_not_assumed_available (test_model.FrameModelTests.test_missing_release_date_is_not_assumed_available) ... ok
+test_more_current_government_support_increases_democratic_share (test_model.FrameModelTests.test_more_current_government_support_increases_democratic_share) ... ok
+test_no_inputs_and_legacy_linkage_blocked (test_model.FrameModelTests.test_no_inputs_and_legacy_linkage_blocked) ... ok
+test_party_support_changes_do_not_change_any_output (test_model.FrameModelTests.test_party_support_changes_do_not_change_any_output) ... ok
+test_postelection_baseline_release_is_rejected (test_model.FrameModelTests.test_postelection_baseline_release_is_rejected) ... ok
+test_postelection_regional_release_cannot_leak_through_national_anchor (test_model.FrameModelTests.test_postelection_regional_release_cannot_leak_through_national_anchor) ... ok
+test_reproducibility_and_all_seats_accounted (test_model.FrameModelTests.test_reproducibility_and_all_seats_accounted) ... ok
+test_roles_reverse_sign (test_model.FrameModelTests.test_roles_reverse_sign) ... ok
+test_same_democratic_orientation_means_zero_change (test_model.FrameModelTests.test_same_democratic_orientation_means_zero_change) ... ok
+test_suppressed_region_uses_national_change_with_explicit_flag (test_model.FrameModelTests.test_suppressed_region_uses_national_change_with_explicit_flag) ... ok
+test_third_party_fixed_and_missing_major_party_pending (test_model.FrameModelTests.test_third_party_fixed_and_missing_major_party_pending) ... ok
+test_zero_change_and_zero_error_recovers_baseline (test_model.FrameModelTests.test_zero_change_and_zero_error_recovers_baseline) ... ok
+test_all_original_districts_are_diagnostic_only (test_partial_identification.PartialIdentificationTests.test_all_original_districts_are_diagnostic_only) ... ok
+test_duplicate_identity_and_bad_partition_rejected (test_partial_identification.PartialIdentificationTests.test_duplicate_identity_and_bad_partition_rejected) ... ok
+test_exact_bounds_against_enumeration (test_partial_identification.PartialIdentificationTests.test_exact_bounds_against_enumeration) ... ok
+test_full_result_recovered_by_all_remainders (test_partial_identification.PartialIdentificationTests.test_full_result_recovered_by_all_remainders) ... ok
+test_incomplete_district_inventory_rejected (test_partial_identification.PartialIdentificationTests.test_incomplete_district_inventory_rejected) ... ok
+test_independents_remain_separate_candidates (test_partial_identification.PartialIdentificationTests.test_independents_remain_separate_candidates) ... ok
+test_leader_flags_against_enumeration (test_partial_identification.PartialIdentificationTests.test_leader_flags_against_enumeration) ... ok
+test_marginal_extrema_not_joint_vote_vector (test_partial_identification.PartialIdentificationTests.test_marginal_extrema_not_joint_vote_vector) ... ok
+test_negative_float_bool_counts_rejected (test_partial_identification.PartialIdentificationTests.test_negative_float_bool_counts_rejected) ... ok
+test_no_remainder_collapses_intervals (test_partial_identification.PartialIdentificationTests.test_no_remainder_collapses_intervals) ... ok
+test_order_is_reproducible (test_partial_identification.PartialIdentificationTests.test_order_is_reproducible) ... ok
+test_party_support_metadata_has_no_effect (test_partial_identification.PartialIdentificationTests.test_party_support_metadata_has_no_effect) ... ok
+test_scaling_preserves_bounds_and_leader_status (test_partial_identification.PartialIdentificationTests.test_scaling_preserves_bounds_and_leader_status) ... ok
+test_single_candidate_has_unit_share (test_partial_identification.PartialIdentificationTests.test_single_candidate_has_unit_share) ... ok
+test_ties_not_called_guaranteed_or_strict (test_partial_identification.PartialIdentificationTests.test_ties_not_called_guaranteed_or_strict) ... ok
+test_zero_fixed_target_rejected (test_partial_identification.PartialIdentificationTests.test_zero_fixed_target_rejected) ... ok
+test_absent_regional_observation_keeps_explicit_fallback (test_safety_guards.SafetyGuardTests.test_absent_regional_observation_keeps_explicit_fallback) ... ok
+test_correct_regional_identity_is_accepted (test_safety_guards.SafetyGuardTests.test_correct_regional_identity_is_accepted) ... ok
+test_correct_scope_with_wrong_mapped_province_is_rejected (test_safety_guards.SafetyGuardTests.test_correct_scope_with_wrong_mapped_province_is_rejected) ... ok
+test_exact_baseline_available_on_is_accepted (test_safety_guards.SafetyGuardTests.test_exact_baseline_available_on_is_accepted) ... ok
+test_future_baseline_result_is_rejected (test_safety_guards.SafetyGuardTests.test_future_baseline_result_is_rejected) ... ok
+test_malformed_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_malformed_baseline_election_date_is_rejected) ... ok
+test_missing_baseline_availability_metadata_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_availability_metadata_is_rejected) ... ok
+test_missing_baseline_election_date_is_rejected (test_safety_guards.SafetyGuardTests.test_missing_baseline_election_date_is_rejected) ... ok
+test_national_anchor_cannot_be_reused_as_regional_poll (test_safety_guards.SafetyGuardTests.test_national_anchor_cannot_be_reused_as_regional_poll) ... ok
+test_party_support_is_still_fully_ignored (test_safety_guards.SafetyGuardTests.test_party_support_is_still_fully_ignored) ... ok
+test_post_election_but_before_baseline_availability_is_rejected (test_safety_guards.SafetyGuardTests.test_post_election_but_before_baseline_availability_is_rejected) ... ok
+test_real_current_inputs_remain_accepted (test_safety_guards.SafetyGuardTests.test_real_current_inputs_remain_accepted) ... ok
+test_same_day_result_is_not_assumed_public (test_safety_guards.SafetyGuardTests.test_same_day_result_is_not_assumed_public) ... ok
+test_suppression_does_not_bypass_region_identity (test_safety_guards.SafetyGuardTests.test_suppression_does_not_bypass_region_identity) ... ok
+test_wrong_baseline_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_baseline_region_is_rejected) ... ok
+test_wrong_current_region_is_rejected (test_safety_guards.SafetyGuardTests.test_wrong_current_region_is_rejected) ... ok
+test_classification (test_vote_modes.VoteModeTests.test_classification) ... ok
+test_duplicate_child (test_vote_modes.VoteModeTests.test_duplicate_child) ... ok
+test_duplicate_row (test_vote_modes.VoteModeTests.test_duplicate_row) ... ok
+test_missing_advance (test_vote_modes.VoteModeTests.test_missing_advance) ... ok
+test_negative_votes (test_vote_modes.VoteModeTests.test_negative_votes) ... ok
+test_original_controls_and_gates (test_vote_modes.VoteModeTests.test_original_controls_and_gates) ... ok
+test_orphan (test_vote_modes.VoteModeTests.test_orphan) ... ok
+test_parent_mismatch (test_vote_modes.VoteModeTests.test_parent_mismatch) ... ok
+test_unknown_label (test_vote_modes.VoteModeTests.test_unknown_label) ... ok
+test_valid_partition (test_vote_modes.VoteModeTests.test_valid_partition) ... ok
+test_candidate_partitions_reconcile_in_every_district (test_ward_inventory.WardInventoryTests.test_candidate_partitions_reconcile_in_every_district) ... ok
+test_complete_original_workbook_and_district_coverage (test_ward_inventory.WardInventoryTests.test_complete_original_workbook_and_district_coverage) ... ok
+test_every_district_keeps_special_votes_unallocated (test_ward_inventory.WardInventoryTests.test_every_district_keeps_special_votes_unallocated) ... ok
+test_every_selected_row_has_unique_source_coordinate (test_ward_inventory.WardInventoryTests.test_every_selected_row_has_unique_source_coordinate) ... ok
+test_gildong_original_subtotal (test_ward_inventory.WardInventoryTests.test_gildong_original_subtotal) ... ok
+test_national_valid_vote_partition (test_ward_inventory.WardInventoryTests.test_national_valid_vote_partition) ... ok
+test_signed_correction_abstentions_preserved (test_ward_inventory.WardInventoryTests.test_signed_correction_abstentions_preserved) ... ok
+test_sinpyeong2_original_subtotal (test_ward_inventory.WardInventoryTests.test_sinpyeong2_original_subtotal) ... ok
+test_special_categories_are_not_counted_as_wards (test_ward_inventory.WardInventoryTests.test_special_categories_are_not_counted_as_wards) ... ok
+test_ward_and_special_row_counts (test_ward_inventory.WardInventoryTests.test_ward_and_special_row_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 161 tests in 21.841s
+
+OK
+{
+  "inventory_version": "1.0.0",
+  "verified_date": "2026-10-17",
+  "status": "STATUTORY_ROW_INVENTORY_PASS_CROSSWALK_NOT_READY",
+  "parser": "pdfplumber ruled-table cell extraction",
+  "pdfplumber_version": "0.11.9",
+  "extracted_counts": {
+    "2020": 253,
+    "2024": 254
+  },
+  "province_counts_match_source_headings": true,
+  "district_keys_match_historical_vote_files": true,
+  "comparison_status_counts": {
+    "same_name_same_statutory_text_geometry_unverified": 171,
+    "same_name_statutory_text_diff_review_required": 61,
+    "no_same_name_predecessor_review_required": 22
+  },
+  "2024_districts_reviewed": 254,
+  "crosswalk_eligible_districts": 0,
+  "vote_transfer_weights_estimated": false,
+  "model_inputs_modified": false,
+  "province_alias_policy": {
+    "강원도": "강원특별자치도",
+    "전라북도": "전북특별자치도"
+  },
+  "normalization_policy": "NFKC, whitespace removal and middle-dot glyph harmonization only; no administrative-unit equivalence assumed",
+  "limitations": [
+    "Matching statutory text does not prove unchanged geometry.",
+    "Text differences may include administrative renaming/splitting, not only electoral moves.",
+    "No areal/population/vote allocation weights or party vote redistribution."
+  ],
+  "source_pdf_sha256": {
+    "2020": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+    "2024": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae"
+  },
+  "parser_sha256": "a727692a7a9504ef8c1d4c1c8fe6938f8d93772e6b146838fbc7b54da76c4113"
+}
+{
+  "inventory_version": "1.0.0",
+  "verified_date": "2026-10-17",
+  "status": "PASS",
+  "official_workbooks_checked": 329,
+  "districts_reconciled": 253,
+  "named_ward_rows": 3485,
+  "unlocated_category_rows": 1645,
+  "national_valid_votes": 28741408,
+  "named_ward_valid_votes": 25941047,
+  "unlocated_valid_votes": 2800361,
+  "unlocated_category_valid_votes": {
+    "거소·선상투표": 91272,
+    "관외사전투표": 2671307,
+    "국외부재자투표": 34842,
+    "국외부재자투표(공관)": 1372,
+    "잘못 투입·구분된 투표지": 1568
+  },
+  "districts_with_positive_unlocated_votes": 253,
+  "candidate_totals_match_verified_2020": true,
+  "model_inputs_modified": false,
+  "allocation_weights_created": false,
+  "crosswalk_eligible_districts": 0,
+  "source_zip_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "parser_sha256": "3b1829ca037b8a7ca51c42f71a7022ef5dbec8d0c7e467c9e8cb0655f401b9b4",
+  "limitations": [
+    "Named subtotal describes 2020 administrative units, not verified 2024 geometry.",
+    "Unlocated categories remain in original district/candidate identities.",
+    "This is bookkeeping partition, not electoral transfer or calibrated forecast."
+  ]
+}

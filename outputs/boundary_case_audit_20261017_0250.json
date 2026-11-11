@@ -1,0 +1,108 @@
+{
+  "audit_date": "2026-10-17",
+  "run_label": "20261017_0250",
+  "status": "PASS",
+  "scope": "Independent read-only audit of 3 examples against the original PDF table rows; no root parser output used.",
+  "method": [
+    "PDF skill read; original PDF hashes matched to source manifest.",
+    "PyMuPDF extracted text from original pages, independently of stored text and root parser.",
+    "Six original table excerpts rendered in memory and visually inspected."
+  ],
+  "source_checks": [
+    {
+      "year": 2020,
+      "path": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+      "sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "matches_original_manifest": true,
+      "source_url": "https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110201&flSeq=158197765&gubun="
+    },
+    {
+      "year": 2024,
+      "path": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+      "sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "matches_original_manifest": true,
+      "source_url": "https://law.go.kr/LSW/flDownload.do?flSeq=163897897"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "gangdong",
+      "region": "서울특별시",
+      "status": "PASS",
+      "unit": "길동",
+      "2020_assignment": "강동구갑선거구",
+      "2024_assignment": "강동구을선거구",
+      "2020_pdf_page_1based": 2,
+      "2024_pdf_page_1based": 3,
+      "raw_table_text_2020": "강동구갑선거구\n강일동, 상일동, 명일제1동, 명일제2동, 고덕제1동, 고덕제2동, 암사제1동, 암\n사제2동, 암사제3동, 길동\n강동구을선거구\n천호제1동, 천호제2동, 천호제3동, 성내제1동, 성내제2동, 성내제3동, 둔촌제1\n동, 둔촌제2동",
+      "raw_table_text_2024": "강동구갑선거구\n강일동, 상일제1동, 상일제2동, 명일제1동, 명일제2동, 고덕제1동, 고덕제2동,\n암사제1동, 암사제2동, 암사제3동\n강동구을선거구\n천호제1동, 천호제2동, 천호제3동, 성내제1동, 성내제2동, 성내제3동, 길동,\n둔촌제1동, 둔촌제2동",
+      "checks": {
+        "text_and_rendered_rows_independently_match": true,
+        "same_district_names_different_listed_composition": true
+      },
+      "limits": "The changed unit label is established. The two annexes alone do not establish stable geographic polygon boundaries or transfer weights."
+    },
+    {
+      "case_id": "saha",
+      "region": "부산광역시",
+      "status": "PASS",
+      "unit": "신평제2동",
+      "2020_assignment": "사하구을선거구",
+      "2024_assignment": "사하구갑선거구",
+      "2020_pdf_page_1based": 3,
+      "2024_pdf_page_1based": 3,
+      "raw_table_text_2020": "사하구갑선거구\n괴정제1동, 괴정제2동, 괴정제3동, 괴정제4동, 당리동, 하단제1동, 하단제2동\n사하구을선거구\n신평제1동, 신평제2동, 장림제1동, 장림제2동, 다대제1동, 다대제2동, 구평동,\n감천제1동, 감천제2동",
+      "raw_table_text_2024": "사하구갑선거구\n괴정제1동, 괴정제2동, 괴정제3동, 괴정제4동, 당리동, 하단제1동, 하단제2동,\n신평제2동\n사하구을선거구\n신평제1동, 장림제1동, 장림제2동, 다대제1동, 다대제2동, 구평동, 감천제1동,\n감천제2동",
+      "checks": {
+        "text_and_rendered_rows_independently_match": true,
+        "same_district_names_different_listed_composition": true
+      },
+      "limits": "The changed unit label is established. The two annexes alone do not establish stable geographic polygon boundaries or transfer weights."
+    },
+    {
+      "case_id": "nowon",
+      "region": "서울특별시",
+      "status": "PASS",
+      "2020_district_count": 3,
+      "2024_district_count": 2,
+      "2020_pdf_page_1based": 1,
+      "2024_pdf_page_1based": 1,
+      "raw_table_text_2020": "노원구갑선거구\n월계1동, 월계2동, 월계3동, 공릉1동, 공릉2동\n노원구을선거구\n하계1동, 하계2동, 중계본동, 중계1동, 중계2·3동, 중계4동, 상계6·7동\n노원구병선거구\n상계1동, 상계2동, 상계3·4동, 상계5동, 상계8동, 상계9동, 상계10동",
+      "raw_table_text_2024": "노원구갑선거구\n월계1동, 월계2동, 월계3동, 공릉1동, 공릉2동, 하계1동, 하계2동, 중계본동,\n중계2․3동\n노원구을선거구\n중계1동, 중계4동, 상계1동, 상계2동, 상계3․4동, 상계5동, 상계6․7동,\n상계8동, 상계9동, 상계10동",
+      "name_based_membership_observations": {
+        "2020_gap_labels_all_in_2024_gap": true,
+        "2020_byeong_labels_all_in_2024_eul": true,
+        "2020_eul_labels_listed_in_2024_gap": [
+          "중계2·3동",
+          "중계본동",
+          "하계1동",
+          "하계2동"
+        ],
+        "2020_eul_labels_listed_in_2024_eul": [
+          "상계6·7동",
+          "중계1동",
+          "중계4동"
+        ]
+      },
+      "checks": {
+        "text_and_rendered_rows_independently_match": true,
+        "no_one_to_one_name_matching_valid": true
+      },
+      "limits": "Listed unit correspondence only. No geographic equivalence or quantitative vote/area transfer is inferred."
+    }
+  ],
+  "model_input_modified": false,
+  "raw_sources_modified": false,
+  "raw_text_modified": false,
+  "party_support_used": false,
+  "source_amendment_dates": {
+    "2020": "2020-03-11",
+    "2024": "2024-03-08"
+  },
+  "limits": [
+    "Source annexes were downloaded on 2026-10-16. PDF generation metadata is later than legal amendment dates; this audit does not assert the files were available in their current binary form at historical forecasting cutoffs.",
+    "Three case checks are not a full 253-to-254 crosswalk validation.",
+    "Listed administrative units need administrative-code and boundary history before treating them as stable geographic atoms.",
+    "No transfer weights or aggregate vote reconstruction produced."
+  ]
+}

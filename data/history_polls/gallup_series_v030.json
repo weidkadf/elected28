@@ -1,0 +1,538 @@
+{
+  "schema_version": "gallup_series_v030_1",
+  "source_pdf": "data/history_polls/gallup_580_20240329.pdf",
+  "source_pdf_sha256": "03adfce5dd8b102656984b5d2e6f76b794a29d5395feae4dee380656c5f83f3f",
+  "party_support_included": false,
+  "quarterly_approval_tenure": {
+    "definition": "재임 분기(취임일 기준) 긍정/부정률. 1988~2011 분기 중위수, 2012~ 주간 분기 통합 (원문 각주)",
+    "evidence": "gallup_580_20240329.pdf 텍스트 레이어 파싱",
+    "rows": {
+      "노태우": {
+        "approve": [
+          29,
+          57,
+          53,
+          41,
+          45,
+          28,
+          26,
+          null,
+          28,
+          18,
+          28,
+          25,
+          12,
+          null,
+          null,
+          15,
+          null,
+          12,
+          null,
+          null
+        ],
+        "disapprove": [
+          46,
+          16,
+          25,
+          27,
+          25,
+          41,
+          45,
+          null,
+          40,
+          62,
+          55,
+          54,
+          40,
+          null,
+          null,
+          41,
+          null,
+          56,
+          null,
+          null
+        ]
+      },
+      "김영삼": {
+        "approve": [
+          71,
+          83,
+          83,
+          59,
+          55,
+          55,
+          44,
+          36,
+          37,
+          28,
+          29,
+          32,
+          41,
+          41,
+          34,
+          28,
+          14,
+          7,
+          8,
+          6
+        ],
+        "disapprove": [
+          7,
+          4,
+          6,
+          18,
+          24,
+          21,
+          25,
+          33,
+          34,
+          41,
+          45,
+          39,
+          33,
+          37,
+          40,
+          47,
+          65,
+          74,
+          78,
+          74
+        ]
+      },
+      "김대중": {
+        "approve": [
+          71,
+          62,
+          56,
+          63,
+          60,
+          52,
+          46,
+          50,
+          49,
+          38,
+          54,
+          30,
+          27,
+          29,
+          28,
+          31,
+          33,
+          26,
+          28,
+          24
+        ],
+        "disapprove": [
+          7,
+          11,
+          17,
+          14,
+          16,
+          22,
+          29,
+          24,
+          20,
+          26,
+          18,
+          51,
+          55,
+          52,
+          49,
+          49,
+          41,
+          53,
+          52,
+          56
+        ]
+      },
+      "노무현": {
+        "approve": [
+          60,
+          40,
+          29,
+          22,
+          25,
+          34,
+          23,
+          27,
+          33,
+          34,
+          28,
+          23,
+          27,
+          20,
+          16,
+          12,
+          16,
+          24,
+          27,
+          27
+        ],
+        "disapprove": [
+          19,
+          41,
+          53,
+          62,
+          57,
+          46,
+          60,
+          57,
+          55,
+          53,
+          61,
+          67,
+          63,
+          70,
+          74,
+          79,
+          78,
+          66,
+          64,
+          62
+        ]
+      },
+      "이명박": {
+        "approve": [
+          52,
+          21,
+          24,
+          32,
+          34,
+          27,
+          36,
+          47,
+          44,
+          49,
+          44,
+          47,
+          43,
+          39,
+          37,
+          32,
+          25,
+          25,
+          23,
+          24
+        ],
+        "disapprove": [
+          29,
+          69,
+          65,
+          55,
+          55,
+          55,
+          55,
+          45,
+          45,
+          41,
+          43,
+          41,
+          49,
+          54,
+          55,
+          60,
+          62,
+          58,
+          59,
+          63
+        ]
+      },
+      "박근혜": {
+        "approve": [
+          42,
+          51,
+          60,
+          54,
+          55,
+          50,
+          44,
+          44,
+          34,
+          36,
+          40,
+          43,
+          40,
+          33,
+          32,
+          12
+        ],
+        "disapprove": [
+          23,
+          23,
+          21,
+          33,
+          34,
+          39,
+          46,
+          45,
+          56,
+          54,
+          51,
+          46,
+          49,
+          53,
+          55,
+          80
+        ]
+      },
+      "문재인": {
+        "approve": [
+          81,
+          75,
+          73,
+          68,
+          75,
+          60,
+          55,
+          46,
+          45,
+          45,
+          44,
+          46,
+          61,
+          45,
+          42,
+          38,
+          35,
+          39,
+          37,
+          42
+        ],
+        "disapprove": [
+          11,
+          17,
+          19,
+          23,
+          15,
+          30,
+          36,
+          44,
+          45,
+          46,
+          48,
+          46,
+          30,
+          45,
+          48,
+          53,
+          56,
+          53,
+          56,
+          51
+        ]
+      },
+      "윤석열": {
+        "approve": [
+          50,
+          29,
+          30,
+          34,
+          33,
+          34,
+          33,
+          34
+        ],
+        "disapprove": [
+          36,
+          61,
+          61,
+          57,
+          58,
+          57,
+          58,
+          58
+        ]
+      }
+    }
+  },
+  "frame_trend": {
+    "evidence": "gallup_580_20240329.pdf 14쪽 차트 시각 전사; 392/394/395/578/579/580 주간 원문과 일치 검사 통과",
+    "note": "2024년 1월 말~3월 초는 3구도 질문이라 원문 차트에서 제외됨. 2020-04-08·04-14는 공표금지 기간 조사로 선거 전 공표 자료가 아님(추세 분산 추정에만 사용).",
+    "cycle_21": {
+      "governing_party": "더불어민주당",
+      "opposition_party": "미래통합당",
+      "democratic_component": "support",
+      "election_date": "2020-04-15",
+      "points": [
+        {
+          "fieldwork_end": "2019-04-11",
+          "support": 0.47,
+          "check": 0.37
+        },
+        {
+          "fieldwork_end": "2019-05-09",
+          "support": 0.46,
+          "check": 0.39
+        },
+        {
+          "fieldwork_end": "2019-06-05",
+          "support": 0.47,
+          "check": 0.4
+        },
+        {
+          "fieldwork_end": "2020-01-09",
+          "support": 0.49,
+          "check": 0.37
+        },
+        {
+          "fieldwork_end": "2020-02-13",
+          "support": 0.43,
+          "check": 0.45
+        },
+        {
+          "fieldwork_end": "2020-03-12",
+          "support": 0.43,
+          "check": 0.43
+        },
+        {
+          "fieldwork_end": "2020-03-26",
+          "support": 0.46,
+          "check": 0.4
+        },
+        {
+          "fieldwork_end": "2020-04-02",
+          "support": 0.47,
+          "check": 0.37
+        },
+        {
+          "fieldwork_end": "2020-04-08",
+          "support": 0.51,
+          "check": 0.4
+        },
+        {
+          "fieldwork_end": "2020-04-14",
+          "support": 0.49,
+          "check": 0.39
+        }
+      ]
+    },
+    "cycle_22": {
+      "governing_party": "국민의힘",
+      "opposition_party": "더불어민주당",
+      "democratic_component": "check",
+      "election_date": "2024-04-10",
+      "points": [
+        {
+          "fieldwork_end": "2022-12-01",
+          "support": 0.36,
+          "check": 0.49
+        },
+        {
+          "fieldwork_end": "2023-03-02",
+          "support": 0.42,
+          "check": 0.44
+        },
+        {
+          "fieldwork_end": "2023-04-06",
+          "support": 0.36,
+          "check": 0.5
+        },
+        {
+          "fieldwork_end": "2023-05-04",
+          "support": 0.37,
+          "check": 0.49
+        },
+        {
+          "fieldwork_end": "2023-06-01",
+          "support": 0.37,
+          "check": 0.49
+        },
+        {
+          "fieldwork_end": "2023-07-06",
+          "support": 0.38,
+          "check": 0.5
+        },
+        {
+          "fieldwork_end": "2023-08-03",
+          "support": 0.36,
+          "check": 0.48
+        },
+        {
+          "fieldwork_end": "2023-09-07",
+          "support": 0.37,
+          "check": 0.5
+        },
+        {
+          "fieldwork_end": "2023-10-12",
+          "support": 0.39,
+          "check": 0.48
+        },
+        {
+          "fieldwork_end": "2023-11-09",
+          "support": 0.4,
+          "check": 0.46
+        },
+        {
+          "fieldwork_end": "2023-12-07",
+          "support": 0.35,
+          "check": 0.51
+        },
+        {
+          "fieldwork_end": "2024-01-11",
+          "support": 0.35,
+          "check": 0.51
+        },
+        {
+          "fieldwork_end": "2024-03-14",
+          "support": 0.4,
+          "check": 0.49
+        },
+        {
+          "fieldwork_end": "2024-03-21",
+          "support": 0.36,
+          "check": 0.51
+        },
+        {
+          "fieldwork_end": "2024-03-28",
+          "support": 0.4,
+          "check": 0.49
+        }
+      ]
+    }
+  },
+  "weekly_approval_paired": {
+    "gallup_392": {
+      "fieldwork_end": "2020-03-12",
+      "approve": 49,
+      "disapprove": 45,
+      "evidence": "392 PDF p6 chart, visual"
+    },
+    "gallup_394": {
+      "fieldwork_end": "2020-03-26",
+      "approve": 55,
+      "disapprove": 39,
+      "evidence": "394 PDF p6 chart, visual"
+    },
+    "gallup_395": {
+      "fieldwork_end": "2020-04-02",
+      "approve": 56,
+      "disapprove": 36,
+      "evidence": "395 PDF p6 chart, visual"
+    },
+    "gallup_578": {
+      "fieldwork_end": "2024-03-14",
+      "approve": 36,
+      "disapprove": 57,
+      "evidence": "578 PDF text layer"
+    },
+    "gallup_579": {
+      "fieldwork_end": "2024-03-21",
+      "approve": 34,
+      "disapprove": 58,
+      "evidence": "579 PDF text layer"
+    },
+    "gallup_580": {
+      "fieldwork_end": "2024-03-28",
+      "approve": 34,
+      "disapprove": 58,
+      "evidence": "580 PDF text layer"
+    },
+    "gallup_678": {
+      "fieldwork_end": "2026-10-15",
+      "approve": 39,
+      "disapprove": 52,
+      "evidence": "official HTML https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662 (2026-11-05)"
+    }
+  },
+  "crosscheck_passed": true
+}

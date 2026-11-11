@@ -1,0 +1,15 @@
+data/boundary_research/daechi1_2020/notice.pdf
+data/boundary_research/gangnam_2024/jurisdictions.pdf
+data/boundary_research/public_official_election_act_annex1_2020.pdf
+data/boundary_research/public_official_election_act_annex1_2024.pdf
+data/history_2020/nec_total_book/total2020.pdf
+data/history_polls/gallup_392_20200313.pdf
+data/history_polls/gallup_394_20200327.pdf
+data/history_polls/gallup_395_20200403.pdf
+data/history_polls/gallup_578_20240315.pdf
+data/history_polls/gallup_579_20240322.pdf
+data/history_polls/gallup_580_20240329.pdf
+data/history_polls/gallup_662_20260501.pdf
+data/history_polls/gallup_663_20260515.pdf
+data/history_polls/gallup_664_20260522.pdf
+data/history_polls/gallup_678_20261016.pdf

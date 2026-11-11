@@ -1,0 +1,28 @@
+{
+  "checked_date": "2026-10-19",
+  "new_current_frame_input": false,
+  "party_support_used": false,
+  "historical_source": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1467",
+  "source_checks": [
+    {
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "result": "latest678_publication20261016"
+    },
+    {
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "result": "new17315_Realmeter_AsiaEconomy_weekly_party_support_label_excluded_without_import"
+    },
+    {
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19568",
+      "result": "NBS190_metadata_only_attachments_image_conversion_pending_question_values_unverified"
+    },
+    {
+      "url": "https://nbsurvey.kr/",
+      "result": "timeout_not_proof_no_frame_poll"
+    }
+  ],
+  "candidate_boundary_check": "No new official verified 23rd candidate/final-boundary evidence acquired; not proof no changes exist.",
+  "historical_change": "Add579weekly_only; no current linkage, monthly duplication, party-support normalization or training approval.",
+  "retrieval_note": "Fresh source bytes must pass PDF parsing and visual table verification; actual fresh source hash retained even if different from previous interrupted-run download.",
+  "calibrated": false
+}

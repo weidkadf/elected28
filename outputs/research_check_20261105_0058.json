@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-05",
+  "gallup_list_latest": "680 2026-10-30",
+  "nbs_home": "timeout",
+  "nesdc_list_accessible": true,
+  "nesdc_detail_direct_urls": "inaccessible this run",
+  "new_frame_inputs_admitted": 0,
+  "no_new_polls_asserted": false,
+  "urls": [
+    "https://www.gallup.co.kr/gallupdb/report.asp",
+    "https://nbsurvey.kr/",
+    "https://www.nesdc.go.kr/portal/bbs/B0000005/list.do?menuNo=200467"
+  ]
+}

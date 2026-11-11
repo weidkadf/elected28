@@ -1,0 +1,83 @@
+{
+  "version": "0.3.1",
+  "parent_version": "0.3.0",
+  "parent_sha256": "a18a17a6c3ff39f1c8f8c83ee73d6ef18419f00b0b3a7b0fc0e50847fe635323",
+  "status": "PASS",
+  "checks": {
+    "parent_sha256_matches": true,
+    "parent_zip_crc_ok": true,
+    "parent_version_matches": true,
+    "unchanged_files_byte_identical": true,
+    "moved_files_byte_identical": true,
+    "file_set_exact": true,
+    "unit_tests_pass": true,
+    "all_outputs_reproduced": true
+  },
+  "unit_tests_total": 199,
+  "regeneration": [
+    {
+      "cmd": "scripts/extract_gallup_series.py",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "scripts/extract_frame_party_crosstabs.py",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "scripts/backtest_2020_2024.py",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "scripts/estimate_frame_drift.py",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "scripts/estimate_fundamentals_prior.py",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "forecast_v030.py --no-plot",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": true,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "model.py --baseline data/baseline_2024.csv --polls data/polls.json --frame-comparison config/frame_comparison.json --output outputs/model_report.json --draws 5000 --seed 20261016",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": false,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": "model.py --baseline data/baseline_2024.csv --polls data/polls.json --frame-comparison config/frame_comparison_monthly.json --output outputs/model_report_monthly.json --draws 5000 --seed 20261016",
+      "returncode": 0,
+      "outputs_identical": true,
+      "byte_exact": false,
+      "stderr_tail": ""
+    }
+  ],
+  "moved_files": 0,
+  "diagnostics": {
+    "changed_unexpectedly": [],
+    "moved_mismatch": [],
+    "unexpected_files": [],
+    "missing_files": [],
+    "test_failure_tail": ""
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "fundamentals_prior_1",
+  "status": "optional_scenario_only_not_main_result",
+  "party_support_used": false,
+  "current": {
+    "president": "이재명",
+    "inauguration": "2025-06-04",
+    "governing_party": "더불어민주당",
+    "inauguration_basis": "제21대 대통령 취임일(당선 즉시 임기 개시)"
+  },
+  "frame_on_approval": {
+    "pairs": [
+      {
+        "survey": "gallup_392",
+        "fieldwork_end": "2020-03-12",
+        "democrats_governing": true,
+        "frame_logit": 0.0,
+        "approval_logit_dem_direction": 0.08515780834030696
+      },
+      {
+        "survey": "gallup_394",
+        "fieldwork_end": "2020-03-26",
+        "democrats_governing": true,
+        "frame_logit": 0.13976194237515843,
+        "approval_logit_dem_direction": 0.34377153910282454
+      },
+      {
+        "survey": "gallup_395",
+        "fieldwork_end": "2020-04-02",
+        "democrats_governing": true,
+        "frame_logit": 0.23922968906583425,
+        "approval_logit_dem_direction": 0.4418327522790394
+      },
+      {
+        "survey": "gallup_578",
+        "fieldwork_end": "2024-03-14",
+        "democrats_governing": false,
+        "frame_logit": 0.20294084399669038,
+        "approval_logit_dem_direction": 0.45953232937844024
+      },
+      {
+        "survey": "gallup_579",
+        "fieldwork_end": "2024-03-21",
+        "democrats_governing": false,
+        "frame_logit": 0.348306694268216,
+        "approval_logit_dem_direction": 0.5340824859302581
+      },
+      {
+        "survey": "gallup_580",
+        "fieldwork_end": "2024-03-28",
+        "democrats_governing": false,
+        "frame_logit": 0.20294084399669038,
+        "approval_logit_dem_direction": 0.5340824859302581
+      },
+      {
+        "survey": "gallup_678",
+        "fieldwork_end": "2026-10-15",
+        "democrats_governing": true,
+        "frame_logit": -0.3237870770938973,
+        "approval_logit_dem_direction": -0.2876820724517809
+      }
+    ],
+    "intercept": -0.09901796070017574,
+    "beta": 0.7118319119767204,
+    "beta_se": 0.07075587265386048,
+    "note": "7 paired surveys; levels regression pooled across eras"
+  },
+  "midterm_drift": {
+    "tenure_quarter_now_1based": 6,
+    "tenure_quarter_election_1based": 12,
+    "presidents": [
+      {
+        "president": "노태우",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.4057971014492754,
+        "approve_share_election": 0.31645569620253167,
+        "logit_change": -0.3887406651669697
+      },
+      {
+        "president": "김영삼",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.7236842105263158,
+        "approve_share_election": 0.4507042253521127,
+        "logit_change": -1.160636490838968
+      },
+      {
+        "president": "김대중",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.7027027027027027,
+        "approve_share_election": 0.37037037037037035,
+        "logit_change": -1.3908295162852822
+      },
+      {
+        "president": "노무현",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.425,
+        "approve_share_election": 0.25555555555555554,
+        "logit_change": -0.766917531588883
+      },
+      {
+        "president": "이명박",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.32926829268292684,
+        "approve_share_election": 0.5340909090909091,
+        "logit_change": 0.8480718542338924
+      },
+      {
+        "president": "박근혜",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.5617977528089888,
+        "approve_share_election": 0.48314606741573035,
+        "logit_change": -0.3159026400940321
+      },
+      {
+        "president": "문재인",
+        "quarter_now_1based": 6,
+        "quarter_election_1based": 12,
+        "approve_share_now": 0.6666666666666666,
+        "approve_share_election": 0.5,
+        "logit_change": -0.6931471805599452
+      }
+    ],
+    "mean_logit_change": -0.5525860243285983,
+    "sd_logit_change": 0.728329112209066,
+    "source": "Gallup quarterly tenure table in gallup_580_20240329.pdf"
+  },
+  "prior_frame_logit_shift_mean": -0.39334836622944064,
+  "prior_frame_logit_shift_sd": 0.5184479044920868,
+  "decay": "shift computed over remaining tenure quarters; equals 0 when current quarter = election quarter",
+  "limitations": [
+    "7 presidents, heterogeneous eras; 1988-2011 quarterly medians.",
+    "beta from 7 surveys in 3 eras; level relation may not equal change relation.",
+    "Approval drift and frame drift overlap; scenario uses max of the two sds, not their sum."
+  ]
+}

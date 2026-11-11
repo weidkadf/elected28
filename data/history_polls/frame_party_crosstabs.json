@@ -1,0 +1,441 @@
+{
+  "schema_version": "frame_party_crosstabs_1",
+  "note": "Party support used only to define turnout-weighting groups (user decision 2026-11-11).",
+  "waves": {
+    "392": {
+      "pdf": "gallup_392_20200313.pdf",
+      "pdf_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "fieldwork_end": "2020-03-12",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "미래통합당",
+      "frame_by_party": {
+        "dem": {
+          "n_weighted": 391,
+          "support": 0.83,
+          "check": 0.09,
+          "dk": 0.08
+        },
+        "con": {
+          "n_weighted": 216,
+          "support": 0.03,
+          "check": 0.93,
+          "dk": 0.03
+        },
+        "independent": {
+          "n_weighted": 277,
+          "support": 0.2,
+          "check": 0.47,
+          "dk": 0.33
+        },
+        "total": {
+          "n_weighted": 1000,
+          "support": 0.43,
+          "check": 0.43,
+          "dk": 0.14,
+          "source_row": "trend_block_row"
+        },
+        "residual_other_parties": {
+          "n_weighted": 116,
+          "support": 0.3757758620689658,
+          "check": 0.5494827586206897,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "394": {
+      "pdf": "gallup_394_20200327.pdf",
+      "pdf_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+      "fieldwork_end": "2020-03-26",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "미래통합당",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1000,
+          "support": 0.46,
+          "check": 0.4,
+          "dk": 0.14
+        },
+        "dem": {
+          "n_weighted": 367,
+          "support": 0.84,
+          "check": 0.09,
+          "dk": 0.07
+        },
+        "con": {
+          "n_weighted": 225,
+          "support": 0.03,
+          "check": 0.92,
+          "dk": 0.05
+        },
+        "independent": {
+          "n_weighted": 272,
+          "support": 0.28,
+          "check": 0.37,
+          "dk": 0.35
+        },
+        "residual_other_parties": {
+          "n_weighted": 136,
+          "support": 0.5059558823529412,
+          "check": 0.43624999999999986,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": {
+        "total": {
+          "n_weighted": 1000,
+          "certain_to_vote": 0.8
+        },
+        "dem": {
+          "n_weighted": 367,
+          "certain_to_vote": 0.88
+        },
+        "con": {
+          "n_weighted": 225,
+          "certain_to_vote": 0.9
+        },
+        "independent": {
+          "n_weighted": 272,
+          "certain_to_vote": 0.59
+        }
+      }
+    },
+    "395": {
+      "pdf": "gallup_395_20200403.pdf",
+      "pdf_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "fieldwork_end": "2020-04-02",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "미래통합당",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1000,
+          "support": 0.47,
+          "check": 0.37,
+          "dk": 0.16
+        },
+        "dem": {
+          "n_weighted": 413,
+          "support": 0.86,
+          "check": 0.06,
+          "dk": 0.08
+        },
+        "con": {
+          "n_weighted": 232,
+          "support": 0.04,
+          "check": 0.9,
+          "dk": 0.06
+        },
+        "independent": {
+          "n_weighted": 224,
+          "support": 0.23,
+          "check": 0.34,
+          "dk": 0.44
+        },
+        "residual_other_parties": {
+          "n_weighted": 131,
+          "support": 0.4123664122137403,
+          "check": 0.4599999999999999,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": {
+        "total": {
+          "n_weighted": 1000,
+          "certain_to_vote": 0.8
+        },
+        "dem": {
+          "n_weighted": 413,
+          "certain_to_vote": 0.89
+        },
+        "con": {
+          "n_weighted": 232,
+          "certain_to_vote": 0.89
+        },
+        "independent": {
+          "n_weighted": 224,
+          "certain_to_vote": 0.53
+        }
+      }
+    },
+    "578": {
+      "pdf": "gallup_578_20240315.pdf",
+      "pdf_sha256": "c2f26152f8e6c45de7ca8556d98a0729fc13703d105eadcc0c172bc043b5780f",
+      "fieldwork_end": "2024-03-14",
+      "governing_party": "국민의힘",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1002,
+          "support": 0.4,
+          "check": 0.49,
+          "dk": 0.11
+        },
+        "dem": {
+          "n_weighted": 323,
+          "support": 0.06,
+          "check": 0.87,
+          "dk": 0.07
+        },
+        "con": {
+          "n_weighted": 369,
+          "support": 0.92,
+          "check": 0.05,
+          "dk": 0.03
+        },
+        "independent": {
+          "n_weighted": 173,
+          "support": 0.14,
+          "check": 0.46,
+          "dk": 0.4
+        },
+        "residual_other_parties": {
+          "n_weighted": 137,
+          "support": 0.12934306569343043,
+          "check": 0.8170802919708033,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "579": {
+      "pdf": "gallup_579_20240322.pdf",
+      "pdf_sha256": "f6ae4f54a5acfe75b7342a93ca5d4254f87952dd1d1c52b5483f636aa63419c1",
+      "fieldwork_end": "2024-03-21",
+      "governing_party": "국민의힘",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1001,
+          "support": 0.36,
+          "check": 0.51,
+          "dk": 0.12
+        },
+        "dem": {
+          "n_weighted": 327,
+          "support": 0.04,
+          "check": 0.91,
+          "dk": 0.05
+        },
+        "con": {
+          "n_weighted": 339,
+          "support": 0.89,
+          "check": 0.04,
+          "dk": 0.07
+        },
+        "independent": {
+          "n_weighted": 183,
+          "support": 0.19,
+          "check": 0.43,
+          "dk": 0.38
+        },
+        "residual_other_parties": {
+          "n_weighted": 152,
+          "support": 0.07105263157894744,
+          "check": 0.7940131578947368,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "580": {
+      "pdf": "gallup_580_20240329.pdf",
+      "pdf_sha256": "03adfce5dd8b102656984b5d2e6f76b794a29d5395feae4dee380656c5f83f3f",
+      "fieldwork_end": "2024-03-28",
+      "governing_party": "국민의힘",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1001,
+          "support": 0.4,
+          "check": 0.49,
+          "dk": 0.11
+        },
+        "dem": {
+          "n_weighted": 292,
+          "support": 0.04,
+          "check": 0.9,
+          "dk": 0.07
+        },
+        "con": {
+          "n_weighted": 366,
+          "support": 0.91,
+          "check": 0.05,
+          "dk": 0.04
+        },
+        "independent": {
+          "n_weighted": 168,
+          "support": 0.26,
+          "check": 0.37,
+          "dk": 0.37
+        },
+        "residual_other_parties": {
+          "n_weighted": 175,
+          "support": 0.06845714285714297,
+          "check": 0.8413142857142858,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "662": {
+      "pdf": "gallup_662_20260501.pdf",
+      "pdf_sha256": "371f28affe5b6a1608c2b3a1116070774689683383b6603dc0c571a22dc8bd16",
+      "fieldwork_end": "2026-04-30",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1002,
+          "support": 0.46,
+          "check": 0.3,
+          "dk": 0.24
+        },
+        "dem": {
+          "n_weighted": 462,
+          "support": 0.81,
+          "check": 0.06,
+          "dk": 0.13
+        },
+        "con": {
+          "n_weighted": 207,
+          "support": 0.07,
+          "check": 0.79,
+          "dk": 0.15
+        },
+        "independent": {
+          "n_weighted": 266,
+          "support": 0.19,
+          "check": 0.29,
+          "dk": 0.53
+        },
+        "residual_other_parties": {
+          "n_weighted": 67,
+          "support": 0.32343283582089577,
+          "check": 0.4807462686567161,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "663": {
+      "pdf": "gallup_663_20260515.pdf",
+      "pdf_sha256": "27448b26f466e456cd5400f4461209af47c112bdd885c2cc0f011171a137c8db",
+      "fieldwork_end": "2026-05-14",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1011,
+          "support": 0.44,
+          "check": 0.33,
+          "dk": 0.23
+        },
+        "dem": {
+          "n_weighted": 455,
+          "support": 0.81,
+          "check": 0.07,
+          "dk": 0.12
+        },
+        "con": {
+          "n_weighted": 233,
+          "support": 0.04,
+          "check": 0.81,
+          "dk": 0.16
+        },
+        "independent": {
+          "n_weighted": 243,
+          "support": 0.17,
+          "check": 0.34,
+          "dk": 0.49
+        },
+        "residual_other_parties": {
+          "n_weighted": 80,
+          "support": 0.3207499999999996,
+          "check": 0.38037499999999935,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "664": {
+      "pdf": "gallup_664_20260522.pdf",
+      "pdf_sha256": "6ce281bab6ab7be15713e3ce6f1d31c606b4aa0d0aa999a02dd862dd63f62d41",
+      "fieldwork_end": "2026-05-21",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1002,
+          "support": 0.46,
+          "check": 0.33,
+          "dk": 0.21
+        },
+        "dem": {
+          "n_weighted": 456,
+          "support": 0.8,
+          "check": 0.09,
+          "dk": 0.12
+        },
+        "con": {
+          "n_weighted": 218,
+          "support": 0.09,
+          "check": 0.77,
+          "dk": 0.14
+        },
+        "independent": {
+          "n_weighted": 257,
+          "support": 0.17,
+          "check": 0.37,
+          "dk": 0.47
+        },
+        "residual_other_parties": {
+          "n_weighted": 71,
+          "support": 0.46211267605633805,
+          "check": 0.3756338028169016,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    },
+    "678": {
+      "pdf": "gallup_678_20261016.pdf",
+      "pdf_sha256": "d63522a7ef1f426706bb52951807e2a29d9114d87dfa1c9dcb9d2bff2ff46f4c",
+      "fieldwork_end": "2026-10-15",
+      "governing_party": "더불어민주당",
+      "conservative_party_label": "국민의힘",
+      "frame_by_party": {
+        "total": {
+          "n_weighted": 1003,
+          "support": 0.34,
+          "check": 0.47,
+          "dk": 0.18
+        },
+        "dem": {
+          "n_weighted": 365,
+          "support": 0.73,
+          "check": 0.13,
+          "dk": 0.13
+        },
+        "con": {
+          "n_weighted": 269,
+          "support": 0.03,
+          "check": 0.89,
+          "dk": 0.09
+        },
+        "independent": {
+          "n_weighted": 290,
+          "support": 0.16,
+          "check": 0.49,
+          "dk": 0.36
+        },
+        "residual_other_parties": {
+          "n_weighted": 79,
+          "support": 0.25443037974683647,
+          "check": 0.5373417721518986,
+          "derived": "total minus listed rows (rounding error included)"
+        }
+      },
+      "turnout_intention": null
+    }
+  }
+}

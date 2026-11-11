@@ -1,0 +1,205 @@
+{
+  "schema_version": "frame_polls_multi_1",
+  "as_of": "2026-11-11",
+  "timezone": "Asia/Seoul",
+  "purpose": "v0.3.0 여론 집계층 입력. 제23대 총선 대상 정부지원·견제(및 유사) 문항만. 정당지지도 없음.",
+  "target_election": {
+    "name": "제23대 국회의원선거",
+    "date": "2028-04-12",
+    "date_basis": "공직선거법 임기만료일(2028-05-29) 전 50일 이후 첫 수요일 계산; 2차 확인 https://foxcg.com/2028-general-election/"
+  },
+  "roles": {
+    "governing_party": "더불어민주당",
+    "opposition_party": "국민의힘",
+    "democratic_direction_component": "support"
+  },
+  "wording_classes": {
+    "A_support_check": "정부 지원(국정 뒷받침) 위해 여당 다수 vs 정부 견제 위해 야당 다수. 한국갤럽 기준 문항과 같은 개념. 주 집계 포함.",
+    "B_judgment": "정부·여당 심판 vs 힘 실어주기. 심판 표현은 견제와 개념이 다를 수 있어 동등성 미검증. 주 집계 제외, 민감도 집계에만 포함."
+  },
+  "polls": [
+    {
+      "poll_id": "gallup_678_frame_national",
+      "pollster": "한국갤럽",
+      "sponsor": "한국갤럽 자체",
+      "mode": "CATI_live_interview",
+      "sampling_frame": "이동통신 3사 무선전화 가상번호",
+      "fieldwork_start": "2026-10-13",
+      "fieldwork_end": "2026-10-15",
+      "published_at": "2026-10-16",
+      "sample_size": 1003,
+      "response_rate": 0.104,
+      "scope": "national",
+      "wording_class": "A_support_check",
+      "question_exact": "내후년 4월 치러질 제23대 국회의원선거와 관련해 어느 쪽 주장에 더 동의하십니까?",
+      "options_exact": {
+        "support": "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다",
+        "check": "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다"
+      },
+      "shares": {
+        "support": 0.34,
+        "check": 0.47,
+        "dk": 0.18
+      },
+      "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662",
+      "verification_status": "NESDC 등록 결과표 원문 대조 일치 (2026-11-11, data/nesdc/nesdc_polls_index.csv)",
+      "notes": "data/polls.json gallup_678_frame_national과 같은 관측. 권역값은 polls.json에서 읽는다."
+    },
+    {
+      "poll_id": "hangil_20261026_frame_national",
+      "pollster": "한길리서치",
+      "sponsor": "폴리뉴스·KNA25",
+      "mode": "ARS_RDD",
+      "sampling_frame": "무선 RDD 95.6%·유선 RDD 4.4%",
+      "fieldwork_start": "2026-10-25",
+      "fieldwork_end": "2026-10-26",
+      "published_at": "2026-10-27",
+      "sample_size": 1002,
+      "response_rate": 0.024,
+      "scope": "national",
+      "wording_class": "A_support_check",
+      "question_exact": "2028년 국회의원선거에서 어느 쪽이 더 많이 당선돼야 한다고 보는가 (보도 요약)",
+      "options_exact": {
+        "support": "현 정부의 국정 운영을 뒷받침하기 위해 여당이 더 많이 당선돼야 한다",
+        "check": "현 정부의 견제를 위해 야당이 더 많이 당선돼야 한다"
+      },
+      "shares": {
+        "support": 0.37,
+        "check": 0.52,
+        "other": 0.084,
+        "dk": 0.026
+      },
+      "regional_diagnostic_only": {
+        "서울": [
+          0.349,
+          0.518
+        ],
+        "부산/울산/경남": [
+          0.391,
+          0.5
+        ],
+        "대구/경북": [
+          0.19,
+          0.73
+        ],
+        "인천/경기": [
+          0.392,
+          0.495
+        ],
+        "충청": [
+          0.362,
+          0.545
+        ],
+        "강원/제주": [
+          0.287,
+          0.661
+        ],
+        "호남": [
+          0.528,
+          0.34
+        ]
+      },
+      "source_url": "https://www.polinews.co.kr/news/articleView.html?idxno=747027",
+      "verification_status": "NESDC 등록 결과표 원문 대조 일치 (2026-11-11, data/nesdc/nesdc_polls_index.csv)",
+      "notes": "권역 구분이 갤럽과 달라(강원/제주 통합) 진단용으로만 보존. 엔진 권역 입력에 쓰지 않음."
+    },
+    {
+      "poll_id": "researchview_20260831_judgment_national",
+      "pollster": "리서치뷰",
+      "sponsor": "리서치뷰 정기조사",
+      "mode": "ARS_RDD",
+      "sampling_frame": "무선 RDD 100%",
+      "fieldwork_start": "2026-08-29",
+      "fieldwork_end": "2026-08-31",
+      "published_at": "2026-09-01",
+      "sample_size": 1000,
+      "response_rate": 0.025,
+      "scope": "national",
+      "wording_class": "B_judgment",
+      "question_exact": null,
+      "options_exact": {
+        "support": "정부·여당에 힘을 실어줘야 한다",
+        "check": "정부·여당을 심판해야 한다"
+      },
+      "shares": {
+        "support": 0.391,
+        "check": 0.499,
+        "dk": 0.11
+      },
+      "source_url": "https://www.pennmike.com/news/articleView.html?idxno=126831",
+      "verification_status": "NESDC 등록 결과표 원문 대조 일치 (2026-11-11, data/nesdc/nesdc_polls_index.csv)",
+      "notes": "질문 원문 미확보. 심판 표현."
+    },
+    {
+      "poll_id": "researchview_20260930_judgment_national",
+      "pollster": "리서치뷰",
+      "sponsor": "리서치뷰 정기조사",
+      "mode": "ARS_RDD",
+      "sampling_frame": "무선 RDD 100%",
+      "fieldwork_start": "2026-09-28",
+      "fieldwork_end": "2026-09-30",
+      "published_at": "2026-10-01",
+      "sample_size": 1000,
+      "response_rate": 0.028,
+      "scope": "national",
+      "wording_class": "B_judgment",
+      "question_exact": null,
+      "options_exact": {
+        "support": "정부·여당에 힘을 실어줘야 한다",
+        "check": "정부·여당을 심판해야 한다"
+      },
+      "shares": {
+        "support": 0.38,
+        "check": 0.528
+      },
+      "source_url": "https://www.topstarnews.net/news/articleView.html?idxno=16231423",
+      "verification_status": "NESDC 등록 결과표 원문 대조 일치 (2026-11-11, data/nesdc/nesdc_polls_index.csv)",
+      "notes": "질문 원문 미확보. 유보 비율 미보도."
+    },
+    {
+      "poll_id": "researchview_20261108_judgment_national",
+      "pollster": "리서치뷰",
+      "sponsor": "리서치뷰 정기조사",
+      "mode": "ARS_RDD",
+      "sampling_frame": "무선 RDD 100%",
+      "fieldwork_start": "2026-11-07",
+      "fieldwork_end": "2026-11-08",
+      "published_at": "2026-11-10",
+      "sample_size": 1000,
+      "response_rate": 0.029,
+      "scope": "national",
+      "wording_class": "B_judgment",
+      "question_exact": null,
+      "options_exact": {
+        "support": "정부·여당에 힘을 실어줘야 한다",
+        "check": "정부·여당을 심판해야 한다"
+      },
+      "shares": {
+        "support": 0.34,
+        "check": 0.577,
+        "dk": 0.084
+      },
+      "source_url": "https://www.nesdc.go.kr (등록번호 17348)",
+      "verification_status": "NESDC 등록 결과표 원문 (등록번호 17348, 3쪽 표 3)",
+      "notes": "질문 원문 미확보. 유보 비율 미보도."
+    }
+  ],
+  "search_log": [
+    {
+      "date": "2026-11-05",
+      "query": "NBS 전국지표조사 국정안정론/견제론 2026-10",
+      "result": "제23대 총선 대상 문항 보도 미발견(지방선거 대상 문항만 발견)"
+    },
+    {
+      "date": "2026-11-05",
+      "query": "리얼미터·한국리서치·에이스리서치·조원씨앤아이 2028 총선 견제/지원",
+      "result": "미발견"
+    },
+    {
+      "date": "2026-11-05",
+      "query": "한국갤럽 679·680호 총선 결과 기대",
+      "result": "미발견(678호가 최신 해당 문항)"
+    }
+  ],
+  "nesdc_note": "0.5.0: NESDC 제23대 국회의원선거 등록 7건 원문 확인. 프레임 문항이 있는 것은 갤럽 17313, 한길 17330, 리서치뷰 17249·17292·17348. 미디어토마토 17342와 리서치뷰 17202에는 프레임 문항 없음."
+}

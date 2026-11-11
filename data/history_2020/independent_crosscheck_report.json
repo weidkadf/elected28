@@ -1,0 +1,2380 @@
+{
+  "check_version": "1.0.0",
+  "verified_date": "2026-10-16",
+  "status": "PASS",
+  "official_zip_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+  "official_workbooks": 329,
+  "source_page": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129",
+  "parser_sha256": "0069904313822badaff3c514aba8fe6f15d05f91a57ef6a8fcd8c3d3852eea21",
+  "districts_checked": 253,
+  "districts_passed": 253,
+  "candidate_labels_checked": 1101,
+  "excluded_xlsx_by_category": {
+    "비례대표": 250,
+    "재보궐": 56
+  },
+  "historical_district_totals_verified": true,
+  "model_eligible": false,
+  "remaining_gates": [
+    "2020_to_2024_boundary_crosswalk",
+    "poll_history_and_time_split_backtest",
+    "candidate_party_mapping"
+  ],
+  "scope_note": "NEC alternative official XLSX representation, not independent ballot recount. District totals only; not every polling-station row or withdrawn-candidate registry.",
+  "raw_files_unchanged": true,
+  "district_checks": [
+    {
+      "province": "강원도",
+      "district": "강릉시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_강릉시.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "동해시태백시삼척시정선군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_동해시태백시삼척시정선군_동해시.xlsx",
+        "지역구/10강원/개표상황(투표구별)_동해시태백시삼척시정선군_삼척시.xlsx",
+        "지역구/10강원/개표상황(투표구별)_동해시태백시삼척시정선군_정선군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_동해시태백시삼척시정선군_태백시.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "속초시인제군고성군양양군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_속초시인제군고성군양양군_고성군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_속초시인제군고성군양양군_속초시.xlsx",
+        "지역구/10강원/개표상황(투표구별)_속초시인제군고성군양양군_양양군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_속초시인제군고성군양양군_인제군.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "원주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_원주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "원주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_원주시을.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "춘천시철원군화천군양구군갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_춘천시철원군화천군양구군갑.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "춘천시철원군화천군양구군을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_춘천시철원군화천군양구군을_양구군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_춘천시철원군화천군양구군을_철원군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_춘천시철원군화천군양구군을_춘천시.xlsx",
+        "지역구/10강원/개표상황(투표구별)_춘천시철원군화천군양구군을_화천군.xlsx"
+      ]
+    },
+    {
+      "province": "강원도",
+      "district": "홍천군횡성군영월군평창군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/10강원/개표상황(투표구별)_홍성군횡성군영월군평창군_영월군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_홍성군횡성군영월군평창군_평창군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_홍성군횡성군영월군평창군_홍천군.xlsx",
+        "지역구/10강원/개표상황(투표구별)_홍성군횡성군영월군평창군_횡성군.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "고양시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_고양시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "고양시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_고양시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "고양시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_고양시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "고양시정",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_고양시정.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "광명시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_광명시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "광명시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_광명시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "광주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_광주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "광주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_광주시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "구리시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_구리시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "군포시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_군포시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "김포시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_김포시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "김포시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_김포시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "남양주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_남양주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "남양주시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_남양주시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "남양주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_남양주시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "동두천시연천군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_동두천시연천군_동두천시.xlsx",
+        "지역구/9경기/개표상황(투표구별)_동두천시연천군_연천군.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "부천시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_부천시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "부천시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_부천시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "부천시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_부천시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "부천시정",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_부천시정.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "성남시분당구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_성남시분당구갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "성남시분당구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_성남시분당구을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "성남시수정구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_성남시수정구.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "성남시중원구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_성남시중원구.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "수원시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_수원시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "수원시무",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_수원시무.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "수원시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_수원시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "수원시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_수원시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "수원시정",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_수원시정.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "시흥시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_시흥시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "시흥시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_시흥시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안산시단원구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안산시단원구갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안산시단원구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안산시단원구을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안산시상록구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안산시상록구갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안산시상록구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안산시상록구을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안성시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안성시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안양시동안구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안양시동안구갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안양시동안구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안양시동안구을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "안양시만안구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_안양시만안구.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "양주시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_양주시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "여주시양평군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_여주시양평군_양평군.xlsx",
+        "지역구/9경기/개표상황(투표구별)_여주시양평군_여주시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "오산시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_오산시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "용인시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_용인시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "용인시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_용인시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "용인시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_용인시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "용인시정",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_용인시정.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "의왕시과천시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_의왕시과천시_과천시.xlsx",
+        "지역구/9경기/개표상황(투표구별)_의왕시과천시_의왕시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "의정부시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_의정부시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "의정부시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_의정부시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "이천시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_이천시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "파주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_파주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "파주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_파주시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "평택시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_평택시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "평택시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_평택시을.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "포천시가평군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_포천시가평군_가평군.xlsx",
+        "지역구/9경기/개표상황(투표구별)_포천시가평군_포천시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "하남시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_하남시.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "화성시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_화성시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "화성시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_화성시병.xlsx"
+      ]
+    },
+    {
+      "province": "경기도",
+      "district": "화성시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/9경기/개표상황(투표구별)_화성시을.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "거제시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_거제시.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "김해시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_김해시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "김해시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_김해시을.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "밀양시의령군함안군창녕군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_밀양시의령군함안군창녕군_밀양시.xlsx",
+        "지역구/16경남/개표상황(투표구별)_밀양시의령군함안군창녕군_의령군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_밀양시의령군함안군창녕군_창녕군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_밀양시의령군함안군창녕군_함안군.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "사천시남해군하동군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_사천시남해군하동군_남해군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_사천시남해군하동군_사천시.xlsx",
+        "지역구/16경남/개표상황(투표구별)_사천시남해군하동군_하동군.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "산청군함양군거창군합천군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_산청군함양군거창군합천군_거창군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_산청군함양군거창군합천군_산청군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_산청군함양군거창군합천군_함양군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_산청군함양군거창군합천군_합천군.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "양산시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_양산시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "양산시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_양산시을.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "진주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_진주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "진주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_진주시을.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "창원시마산합포구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_창원시마산합포구.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "창원시마산회원구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_창원시마산회원구.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "창원시성산구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_창원시성산구.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "창원시의창구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_창원시의창구.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "창원시진해구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_창원시진해구.xlsx"
+      ]
+    },
+    {
+      "province": "경상남도",
+      "district": "통영시고성군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/16경남/개표상황(투표구별)_통영시고성군_고성군.xlsx",
+        "지역구/16경남/개표상황(투표구별)_통영시고성군_통영시.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "경산시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_경산시.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "경주시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_경주시.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "고령군성주군칠곡군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_고령군성주군칠곡군_고령군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_고령군성주군칠곡군_성주군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_고령군성주군칠곡군_칠곡군.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "구미시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_구미시갑.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "구미시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_구미시을.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "군위군의성군청송군영덕군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_군위군의성군청송군영덕군_군위군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_군위군의성군청송군영덕군_영덕군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_군위군의성군청송군영덕군_의성군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_군위군의성군청송군영덕군_청송군.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "김천시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_김천시.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "상주시문경시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_상주시문경시_문경시.xlsx",
+        "지역구/15경북/개표상황(투표구별)_상주시문경시_상주시.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "안동시예천군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_안동시예천군_안동시.xlsx",
+        "지역구/15경북/개표상황(투표구별)_안동시예천군_예천군.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "영주시영양군봉화군울진군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_영주시영양군봉화군울진군_봉화군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_영주시영양군봉화군울진군_영양군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_영주시영양군봉화군울진군_영주시.xlsx",
+        "지역구/15경북/개표상황(투표구별)_영주시영양군봉화군울진군_울진군.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "영천시청도군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_영천시청도군_영천시.xlsx",
+        "지역구/15경북/개표상황(투표구별)_영천시청도군_청도군.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "포항시남구울릉군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_포항시남구울릉군_울릉군.xlsx",
+        "지역구/15경북/개표상황(투표구별)_포항시남구울릉군_포항시남구.xlsx"
+      ]
+    },
+    {
+      "province": "경상북도",
+      "district": "포항시북구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/15경북/개표상황(투표구별)_포항시북구.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "광산구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_광산구갑.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "광산구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_광산구을.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "동구남구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_동구남구갑_남구.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "동구남구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_동구남구을_동구.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "북구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_북구갑.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "북구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_북구을.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "광주광역시",
+      "district": "서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/5광주/개표상황(투표구별)_서구을.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "달서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_달서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "달서구병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_달서구병.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "달서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_달서구을.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "달성군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_달성군.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "동구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_동구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "동구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_동구을.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "북구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_북구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "북구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_북구을.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "서구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_서구.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "수성구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_수성구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "수성구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_수성구을.xlsx"
+      ]
+    },
+    {
+      "province": "대구광역시",
+      "district": "중구남구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/3대구/개표상황(투표구별)_중구남구_남구.xlsx",
+        "지역구/3대구/개표상황(투표구별)_중구남구_중구.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "대덕구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_대덕구.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "동구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_동구.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_서구을.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "유성구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_유성구갑.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "유성구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_유성구을.xlsx"
+      ]
+    },
+    {
+      "province": "대전광역시",
+      "district": "중구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/6대전/개표상황(투표구별)_중구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "금정구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_금정구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "기장군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_기장군.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "남구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_남구갑.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "남구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_남구을.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "동래구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_동래구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "부산진구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_부산진구갑.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "부산진구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_부산진구을.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "북구강서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_북구강서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "북구강서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_북구강서구을.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "사상구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_사상구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "사하구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_사하구갑.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "사하구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_사하구을.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "서구동구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_서구동구_동구.xlsx",
+        "지역구/2부산/개표상황(투표구별)_서구동구_서구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "수영구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_수영구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "연제구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_연제구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "중구영도구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_중구영도구_영도구.xlsx",
+        "지역구/2부산/개표상황(투표구별)_중구영도구_중구.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "해운대구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_해운대구갑.xlsx"
+      ]
+    },
+    {
+      "province": "부산광역시",
+      "district": "해운대구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/2부산/개표상황(투표구별)_해운대구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강남구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강남구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강남구병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강남구병.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강남구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강남구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강동구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강동구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강동구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강동구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강북구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강북구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강북구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강북구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강서구병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강서구병.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "강서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_강서구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "관악구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_관악구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "관악구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_관악구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "광진구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_광진구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "광진구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_광진구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "구로구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_구로구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "구로구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_구로구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "금천구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_금천구.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "노원구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_노원구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "노원구병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_노원구병.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "노원구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_노원구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "도봉구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_도봉구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "도봉구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_도봉구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "동대문구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_동대문구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "동대문구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_동대문구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "동작구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_동작구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "동작구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_동작구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "마포구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_마포구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "마포구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_마포구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "서대문구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_서대문구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "서대문구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_서대문구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "서초구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_서초구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "서초구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_서초구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "성북구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_성북구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "성북구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_성북구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "송파구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_송파구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "송파구병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_송파구병.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "송파구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_송파구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "양천구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_양천구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "양천구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_양천구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "영등포구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_영등포구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "영등포구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_영등포구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "용산구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_용산구.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "은평구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_은평구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "은평구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_은평구을.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "종로구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_종로구.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "중구성동구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_중구성동구갑_성동구.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "중구성동구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_중구성동구을_중구.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "중랑구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_중랑구갑.xlsx"
+      ]
+    },
+    {
+      "province": "서울특별시",
+      "district": "중랑구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/1서울/개표상황(투표구별)_중랑구을.xlsx"
+      ]
+    },
+    {
+      "province": "세종특별자치시",
+      "district": "세종특별자치시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/8세종/개표상황(투표구별)_세종특별자치시갑.xlsx"
+      ]
+    },
+    {
+      "province": "세종특별자치시",
+      "district": "세종특별자치시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/8세종/개표상황(투표구별)_세종특별자치시을.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "남구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_남구갑.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "남구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_남구을.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "동구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_동구.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "북구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_북구.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "울주군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_울주군.xlsx"
+      ]
+    },
+    {
+      "province": "울산광역시",
+      "district": "중구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/7울산/개표상황(투표구별)_중구.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "계양구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_계양구갑.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "계양구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_계양구을.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "남동구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_남동구갑.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "남동구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_남동구을.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "동구미추홀구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_동구미추홀구갑_동구.xlsx",
+        "지역구/4인천/개표상황(투표구별)_동구미추홀구갑_미추홀구.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "동구미추홀구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_동구미추홀구을_미추홀구.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "부평구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_부평구갑.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "부평구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_부평구을.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "서구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_서구갑.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "서구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_서구을.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "연수구갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_연수구갑.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "연수구을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_연수구을.xlsx"
+      ]
+    },
+    {
+      "province": "인천광역시",
+      "district": "중구강화군옹진군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/4인천/개표상황(투표구별)_중구강화군옹진군_강화군.xlsx",
+        "지역구/4인천/개표상황(투표구별)_중구강화군옹진군_옹진군.xlsx",
+        "지역구/4인천/개표상황(투표구별)_중구강화군옹진군_중구.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "고흥군보성군장흥군강진군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_고흥군보성군장흥군강진군_강진군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_고흥군보성군장흥군강진군_고흥군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_고흥군보성군장흥군강진군_보성군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_고흥군보성군장흥군강진군_장흥군.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "나주시화순군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_나주시화순군_나주시.xlsx",
+        "지역구/14전남/개표상황(투표구별)_나주시화순군_화순군.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "담양군함평군영광군장성군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_담양군함평군영광군장성군_담양군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_담양군함평군영광군장성군_영광군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_담양군함평군영광군장성군_장성군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_담양군함평군영광군장성군_함평군.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "목포시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_목포시.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "순천시광양시곡성군구례군갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_순천시광양시곡성군구례군갑_순천시.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "순천시광양시곡성군구례군을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_순천시광양시곡성군구례군을_곡성군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_순천시광양시곡성군구례군을_광양시.xlsx",
+        "지역구/14전남/개표상황(투표구별)_순천시광양시곡성군구례군을_구례군.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "여수시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_여수시갑.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "여수시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_여수시을.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "영암군무안군신안군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_영암군무안군신안군_무안군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_영암군무안군신안군_신안군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_영암군무안군신안군_영암군.xlsx"
+      ]
+    },
+    {
+      "province": "전라남도",
+      "district": "해남군완도군진도군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/14전남/개표상황(투표구별)_해남군완도군진도군_완도군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_해남군완도군진도군_진도군.xlsx",
+        "지역구/14전남/개표상황(투표구별)_해남군완도군진도군_해남군.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "군산시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_군산시.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "김제시부안군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_김제시부안군_김제시.xlsx",
+        "지역구/13전북/개표상황(투표구별)_김제시부안군_부안군.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "남원시임실군순창군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_남원시임실군군창군_남원시.xlsx",
+        "지역구/13전북/개표상황(투표구별)_남원시임실군군창군_순창군.xlsx",
+        "지역구/13전북/개표상황(투표구별)_남원시임실군군창군_임실군.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "완주군진안군무주군장수군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_완주군진안군무주군장수군_무주군.xlsx",
+        "지역구/13전북/개표상황(투표구별)_완주군진안군무주군장수군_완주군.xlsx",
+        "지역구/13전북/개표상황(투표구별)_완주군진안군무주군장수군_장수군.xlsx",
+        "지역구/13전북/개표상황(투표구별)_완주군진안군무주군장수군_진안군.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "익산시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_익산시갑.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "익산시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_익산시을.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "전주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_전주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "전주시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_전주시병.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "전주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_전주시을.xlsx"
+      ]
+    },
+    {
+      "province": "전라북도",
+      "district": "정읍시고창군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/13전북/개표상황(투표구별)_정읍시고창군_고창군.xlsx",
+        "지역구/13전북/개표상황(투표구별)_정읍시고창군_정읍시.xlsx"
+      ]
+    },
+    {
+      "province": "제주특별자치도",
+      "district": "서귀포시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/17제주/개표상황(투표구별)_서귀포시.xlsx"
+      ]
+    },
+    {
+      "province": "제주특별자치도",
+      "district": "제주시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/17제주/개표상황(투표구별)_제주시갑.xlsx"
+      ]
+    },
+    {
+      "province": "제주특별자치도",
+      "district": "제주시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/17제주/개표상황(투표구별)_제주시을.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "공주시부여군청양군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_공주시부여군청양군_공주시.xlsx",
+        "지역구/12충남/개표상황(투표구별)_공주시부여군청양군_부여군.xlsx",
+        "지역구/12충남/개표상황(투표구별)_공주시부여군청양군_청양군.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "논산시계룡시금산군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_논산시계룡시금산군_계룡시.xlsx",
+        "지역구/12충남/개표상황(투표구별)_논산시계룡시금산군_금산군.xlsx",
+        "지역구/12충남/개표상황(투표구별)_논산시계룡시금산군_논산시.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "당진시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_당진시.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "보령시서천군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_보령시서천군_보령시.xlsx",
+        "지역구/12충남/개표상황(투표구별)_보령시서천군_서천군.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "서산시태안군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_서산시태안군_서산시.xlsx",
+        "지역구/12충남/개표상황(투표구별)_서산시태안군_태안군.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "아산시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_아산시갑.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "아산시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_아산시을.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "천안시갑",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_천안시갑.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "천안시병",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_천안시병.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "천안시을",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_천안시을.xlsx"
+      ]
+    },
+    {
+      "province": "충청남도",
+      "district": "홍성군예산군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/12충남/개표상황(투표구별)_홍성군예산군_예산군.xlsx",
+        "지역구/12충남/개표상황(투표구별)_홍성군예산군_홍성군.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "보은군옥천군영동군괴산군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_보은군옥천군영동군괴산군_괴산군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_보은군옥천군영동군괴산군_보은군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_보은군옥천군영동군괴산군_영동군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_보은군옥천군영동군괴산군_옥천군.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "제천시단양군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_제천시단양군_단양군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_제천시단양군_제천시.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "증평군진천군음성군",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_증평군진천군음성군_음성군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_증평군진천군음성군_증평군.xlsx",
+        "지역구/11충북/개표상황(투표구별)_증평군진천군음성군_진천군.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "청주시상당구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_청주시상당구.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "청주시서원구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_청주시서원구.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "청주시청원구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_청주시청원구.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "청주시흥덕구",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_청주시흥덕구.xlsx"
+      ]
+    },
+    {
+      "province": "충청북도",
+      "district": "충주시",
+      "status": "PASS",
+      "errors": [],
+      "official_members": [
+        "지역구/11충북/개표상황(투표구별)_충주시.xlsx"
+      ]
+    }
+  ]
+}

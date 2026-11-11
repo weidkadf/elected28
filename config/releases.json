@@ -1,0 +1,791 @@
+{
+  "schema_version": "release_registry_1",
+  "storage": "Google Drive, one file per version: Election23_Model_v<version>.zip (user instruction 2026-11-03)",
+  "releases": {
+    "0.2.12": {
+      "drive_file_id": "1FswjuhieWcy23bWGEe5m6PkM-rdo_Vr1",
+      "bytes": 25490591,
+      "sha256": "9e0040b830e76ef1629867c11adbae63b3d30146ccd01e182bbf65dcf5abbc85"
+    },
+    "0.2.13": {
+      "drive_file_id": "1TTgUl-21nbkYYB2W-y978XzxRQ8hHHoC",
+      "bytes": 26544123,
+      "legacy_validator": "validate_release_0_2_13.py",
+      "legacy_packager": "package_release_0_2_13.py"
+    },
+    "0.2.14": {
+      "drive_file_id": "1RkvNrWLez7qCTKtW5g8rJcW2hj0-KAIj",
+      "bytes": 26584321
+    },
+    "0.2.15": {
+      "drive_file_id": "1Ngvt9Q2ut_mM4VABKjgMhYLWD-5vgSa-",
+      "bytes": 26902193
+    },
+    "0.2.16": {
+      "drive_file_id": "1u21ucCMlVuKg10oY0g3uJCqrFQCpEOkH",
+      "bytes": 59152763
+    },
+    "0.2.17": {
+      "drive_file_id": "1bbpXaUeeK10gPl9xPRWDBt2AEIOUIc1H",
+      "bytes": 59432175
+    },
+    "0.2.18": {
+      "drive_file_id": "1qG76zBmiYUCYUH3H49IKiXEhbA7KBi7h",
+      "bytes": 59436494,
+      "sha256": "5fb3cc0218b4b28d8332a21f640b5bfb8ff62b726c26f6480eda7648769dbe90"
+    },
+    "0.3.0": {
+      "parent_version": "0.2.18",
+      "parent_sha256": "5fb3cc0218b4b28d8332a21f640b5bfb8ff62b726c26f6480eda7648769dbe90",
+      "changed": [
+        "README.md",
+        "CHANGELOG.md",
+        "BACKLOG.md",
+        "UPDATE_PROTOCOL.md",
+        "state.json",
+        "model_notes.md",
+        "poll_sources.md"
+      ],
+      "moved_dir": {
+        "from": "scripts/",
+        "to": "scripts/legacy_releases/",
+        "pattern": "^scripts/(validate|package)_release_0_2_\\d+\\.py$"
+      },
+      "removed": [
+        "data/raw/.nec_2024.csv.xMWMaq"
+      ],
+      "new": [
+        "frame_aggregator.py",
+        "forecast_v030.py",
+        "config/forecast_v030.json",
+        "config/releases.json",
+        "data/frame_polls_multi.json",
+        "data/history_polls/gallup_series_v030.json",
+        "scripts/extract_gallup_series.py",
+        "scripts/backtest_2020_2024.py",
+        "scripts/estimate_frame_drift.py",
+        "scripts/estimate_fundamentals_prior.py",
+        "scripts/validate.py",
+        "test_v030.py",
+        "outputs/backtest_2020_2024.json",
+        "outputs/frame_drift.json",
+        "outputs/fundamentals_prior.json",
+        "outputs/forecast_v030.json",
+        "outputs/alpha_curve_v030.csv",
+        "outputs/alpha_curve_v030.png",
+        "outputs/districts_v030.csv",
+        "outputs/update_validation_20261105_v030.json",
+        "outputs/research_check_20261105_v030.json",
+        "docs/archive/README_v0.2.18.md",
+        "docs/archive/BACKLOG_v0.2.18.md",
+        "docs/archive/UPDATE_PROTOCOL_v0.2.18.md"
+      ],
+      "regenerate": [
+        {
+          "cmd": [
+            "scripts/extract_gallup_series.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_series_v030.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/backtest_2020_2024.py"
+          ],
+          "outputs": [
+            "outputs/backtest_2020_2024.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_frame_drift.py"
+          ],
+          "outputs": [
+            "outputs/frame_drift.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_fundamentals_prior.py"
+          ],
+          "outputs": [
+            "outputs/fundamentals_prior.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v030.py",
+            "--no-plot"
+          ],
+          "outputs": [
+            "outputs/forecast_v030.json",
+            "outputs/alpha_curve_v030.csv",
+            "outputs/districts_v030.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison.json",
+            "--output",
+            "outputs/model_report.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison_monthly.json",
+            "--output",
+            "outputs/model_report_monthly.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report_monthly.json"
+          ]
+        }
+      ],
+      "min_tests": 169,
+      "sha256": "a18a17a6c3ff39f1c8f8c83ee73d6ef18419f00b0b3a7b0fc0e50847fe635323",
+      "bytes": 59428154,
+      "drive_file_id": null,
+      "storage_note": "saved to user Downloads; Drive upload pending (manual)"
+    },
+    "0.3.1": {
+      "parent_version": "0.3.0",
+      "parent_sha256": "a18a17a6c3ff39f1c8f8c83ee73d6ef18419f00b0b3a7b0fc0e50847fe635323",
+      "changed": [
+        "README.md",
+        "CHANGELOG.md",
+        "UPDATE_PROTOCOL.md",
+        "state.json",
+        "model_notes.md",
+        "forecast_v030.py",
+        "config/forecast_v030.json",
+        "config/releases.json",
+        "scripts/backtest_2020_2024.py",
+        "test_v030.py",
+        "outputs/backtest_2020_2024.json",
+        "outputs/forecast_v030.json",
+        "outputs/alpha_curve_v030.csv",
+        "outputs/alpha_curve_v030.png",
+        "outputs/districts_v030.csv"
+      ],
+      "removed": [],
+      "new": [
+        "turnout.py",
+        "test_v031.py",
+        "scripts/extract_frame_party_crosstabs.py",
+        "data/history_polls/frame_party_crosstabs.json",
+        "data/history_polls/gallup_678_20261016.pdf",
+        "outputs/update_validation_20261111_v031.json"
+      ],
+      "regenerate": [
+        {
+          "cmd": [
+            "scripts/extract_gallup_series.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_series_v030.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_frame_party_crosstabs.py"
+          ],
+          "outputs": [
+            "data/history_polls/frame_party_crosstabs.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/backtest_2020_2024.py"
+          ],
+          "outputs": [
+            "outputs/backtest_2020_2024.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_frame_drift.py"
+          ],
+          "outputs": [
+            "outputs/frame_drift.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_fundamentals_prior.py"
+          ],
+          "outputs": [
+            "outputs/fundamentals_prior.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v030.py",
+            "--no-plot"
+          ],
+          "outputs": [
+            "outputs/forecast_v030.json",
+            "outputs/alpha_curve_v030.csv",
+            "outputs/districts_v030.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison.json",
+            "--output",
+            "outputs/model_report.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison_monthly.json",
+            "--output",
+            "outputs/model_report_monthly.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report_monthly.json"
+          ]
+        }
+      ],
+      "min_tests": 199,
+      "sha256": "519257dbadc6c24d01cc7249e8452075af68a6e086a6819fbb4faa985febd516",
+      "bytes": 60132108
+    },
+    "0.4.0": {
+      "parent_version": "0.3.1",
+      "parent_sha256": "519257dbadc6c24d01cc7249e8452075af68a6e086a6819fbb4faa985febd516",
+      "changed": [
+        "README.md",
+        "CHANGELOG.md",
+        "state.json",
+        "config/releases.json",
+        "scripts/backtest_2020_2024.py",
+        "scripts/extract_frame_party_crosstabs.py",
+        "data/history_polls/frame_party_crosstabs.json",
+        "test_v031.py"
+      ],
+      "removed": [],
+      "new": [
+        "scripts/build_dong_panel.py",
+        "scripts/extract_local2026_frames.py",
+        "scripts/analyze_dong_panel.py",
+        "test_v040.py",
+        "data/raw/nec_presidential_20250603.csv",
+        "data/raw/nec_local_governor_20260603.csv",
+        "data/raw/nec_local_mayor_20260603.csv",
+        "data/dong_panel.csv",
+        "data/district_panel.csv",
+        "outputs/dong_panel_report.json",
+        "outputs/dong_panel_analysis.json",
+        "data/history_polls/gallup_662_20260501.pdf",
+        "data/history_polls/gallup_663_20260515.pdf",
+        "data/history_polls/gallup_664_20260522.pdf",
+        "data/history_polls/gallup_662_local_frame.json",
+        "data/history_polls/gallup_663_local_frame.json",
+        "data/history_polls/gallup_664_local_frame.json",
+        "outputs/update_validation_20261111_v040.json"
+      ],
+      "regenerate": [
+        {
+          "cmd": [
+            "scripts/extract_gallup_series.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_series_v030.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_local2026_frames.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_662_local_frame.json",
+            "data/history_polls/gallup_663_local_frame.json",
+            "data/history_polls/gallup_664_local_frame.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_frame_party_crosstabs.py"
+          ],
+          "outputs": [
+            "data/history_polls/frame_party_crosstabs.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/backtest_2020_2024.py"
+          ],
+          "outputs": [
+            "outputs/backtest_2020_2024.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_frame_drift.py"
+          ],
+          "outputs": [
+            "outputs/frame_drift.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_fundamentals_prior.py"
+          ],
+          "outputs": [
+            "outputs/fundamentals_prior.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v030.py",
+            "--no-plot"
+          ],
+          "outputs": [
+            "outputs/forecast_v030.json",
+            "outputs/alpha_curve_v030.csv",
+            "outputs/districts_v030.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison.json",
+            "--output",
+            "outputs/model_report.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison_monthly.json",
+            "--output",
+            "outputs/model_report_monthly.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report_monthly.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/build_dong_panel.py"
+          ],
+          "outputs": [
+            "data/dong_panel.csv",
+            "data/district_panel.csv",
+            "outputs/dong_panel_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/analyze_dong_panel.py"
+          ],
+          "outputs": [
+            "outputs/dong_panel_analysis.json"
+          ]
+        }
+      ],
+      "min_tests": 205
+    },
+    "0.5.0": {
+      "parent_version": "0.4.0",
+      "parent_sha256": "1c8de32c53a529355866ab0e2b6bd266db216c628ff32899b4af8d0b0d4c75c5",
+      "changed": [
+        "README.md",
+        "CHANGELOG.md",
+        "state.json",
+        "config/releases.json"
+      ],
+      "removed": [],
+      "new": [
+        "forecast_v050.py",
+        "test_v050.py",
+        "config/forecast_v050.json",
+        "data/frame_polls_v050.json",
+        "data/nesdc/nesdc_polls_index.csv",
+        "data/nesdc/pres2025_toplines.json",
+        "scripts/parse_nesdc_pres.py",
+        "scripts/rate_pollsters.py",
+        "outputs/pollster_ratings.json",
+        "outputs/forecast_v050.json",
+        "outputs/alpha_curve_v050.csv",
+        "outputs/districts_v050.csv",
+        "outputs/update_validation_20261111_v050.json"
+      ],
+      "regenerate": [
+        {
+          "cmd": [
+            "scripts/extract_gallup_series.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_series_v030.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_local2026_frames.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_662_local_frame.json",
+            "data/history_polls/gallup_663_local_frame.json",
+            "data/history_polls/gallup_664_local_frame.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_frame_party_crosstabs.py"
+          ],
+          "outputs": [
+            "data/history_polls/frame_party_crosstabs.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/backtest_2020_2024.py"
+          ],
+          "outputs": [
+            "outputs/backtest_2020_2024.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_frame_drift.py"
+          ],
+          "outputs": [
+            "outputs/frame_drift.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_fundamentals_prior.py"
+          ],
+          "outputs": [
+            "outputs/fundamentals_prior.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v030.py",
+            "--no-plot"
+          ],
+          "outputs": [
+            "outputs/forecast_v030.json",
+            "outputs/alpha_curve_v030.csv",
+            "outputs/districts_v030.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison.json",
+            "--output",
+            "outputs/model_report.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison_monthly.json",
+            "--output",
+            "outputs/model_report_monthly.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report_monthly.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/build_dong_panel.py"
+          ],
+          "outputs": [
+            "data/dong_panel.csv",
+            "data/district_panel.csv",
+            "outputs/dong_panel_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/analyze_dong_panel.py"
+          ],
+          "outputs": [
+            "outputs/dong_panel_analysis.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/rate_pollsters.py"
+          ],
+          "outputs": [
+            "outputs/pollster_ratings.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v050.py"
+          ],
+          "outputs": [
+            "outputs/forecast_v050.json",
+            "outputs/alpha_curve_v050.csv",
+            "outputs/districts_v050.csv"
+          ]
+        }
+      ],
+      "min_tests": 213
+    },
+    "0.5.1": {
+      "parent_version": "0.5.0",
+      "parent_sha256": "14eeae4e3a4bfa8eab51a5d0b405de462eac3dfbca5f1ffe564a0ee9048c98db",
+      "changed": [
+        "README.md",
+        "CHANGELOG.md",
+        "state.json",
+        "config/releases.json"
+      ],
+      "removed": [],
+      "new": [
+        "scripts/identify_alpha.py",
+        "scripts/parse_nesdc_frames.py",
+        "data/nesdc/frame_tables.json",
+        "outputs/alpha_identification.json",
+        "test_v051.py",
+        "outputs/update_validation_20261111_v051.json"
+      ],
+      "regenerate": [
+        {
+          "cmd": [
+            "scripts/extract_gallup_series.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_series_v030.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_local2026_frames.py"
+          ],
+          "outputs": [
+            "data/history_polls/gallup_662_local_frame.json",
+            "data/history_polls/gallup_663_local_frame.json",
+            "data/history_polls/gallup_664_local_frame.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/extract_frame_party_crosstabs.py"
+          ],
+          "outputs": [
+            "data/history_polls/frame_party_crosstabs.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/backtest_2020_2024.py"
+          ],
+          "outputs": [
+            "outputs/backtest_2020_2024.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_frame_drift.py"
+          ],
+          "outputs": [
+            "outputs/frame_drift.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/estimate_fundamentals_prior.py"
+          ],
+          "outputs": [
+            "outputs/fundamentals_prior.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v030.py",
+            "--no-plot"
+          ],
+          "outputs": [
+            "outputs/forecast_v030.json",
+            "outputs/alpha_curve_v030.csv",
+            "outputs/districts_v030.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison.json",
+            "--output",
+            "outputs/model_report.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "model.py",
+            "--baseline",
+            "data/baseline_2024.csv",
+            "--polls",
+            "data/polls.json",
+            "--frame-comparison",
+            "config/frame_comparison_monthly.json",
+            "--output",
+            "outputs/model_report_monthly.json",
+            "--draws",
+            "5000",
+            "--seed",
+            "20261016"
+          ],
+          "outputs": [
+            "outputs/model_report_monthly.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/build_dong_panel.py"
+          ],
+          "outputs": [
+            "data/dong_panel.csv",
+            "data/district_panel.csv",
+            "outputs/dong_panel_report.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/analyze_dong_panel.py"
+          ],
+          "outputs": [
+            "outputs/dong_panel_analysis.json"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/rate_pollsters.py"
+          ],
+          "outputs": [
+            "outputs/pollster_ratings.json"
+          ]
+        },
+        {
+          "cmd": [
+            "forecast_v050.py"
+          ],
+          "outputs": [
+            "outputs/forecast_v050.json",
+            "outputs/alpha_curve_v050.csv",
+            "outputs/districts_v050.csv"
+          ]
+        },
+        {
+          "cmd": [
+            "scripts/identify_alpha.py"
+          ],
+          "outputs": [
+            "outputs/alpha_identification.json"
+          ]
+        }
+      ],
+      "min_tests": 217
+    }
+  }
+}

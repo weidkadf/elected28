@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<meta name="theme-color" content="#ffffff">
+<title>한국갤럽조사연구소</title>
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="/css/slick.css"/>
+<link rel="stylesheet" href="/css/xeicon.css">
+<link rel="stylesheet" type="text/css" href="/css/gallup.css?v=2"/>
+<link rel="stylesheet" type="text/css" href="/css/responsive.css?v=2"/>
+<!--[if IE]><link rel="stylesheet" type="text/css" href="/css/ie.css"/><![endif]-->
+<!--script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,NodeList.prototype.forEach,Array.prototype.includes"></script-->
+<!--[권장] script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=default,NodeList.prototype.forEach,Array.prototype.includes"></script-->
+<!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+<script src='/js/jquery-3.3.1.min.js'></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/scrollnav.min.umd.js"></script>
+<script src="/js/gallup.js"></script>
+
+<!-- 트래픽 데이터 관리 -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-7838933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-7838933-1');
+</script>
+
+<script type="text/javascript">
+<!--
+	function fn_viewList()
+	{
+		var frm = document.forms.page_form;
+		
+		frm.action="./report.asp";
+		frm.submit();
+	}
+
+	function fn_viewContents(sNo)
+	{
+		var frm = document.forms.page_form;
+		
+		frm.seqNo.value = sNo;
+		frm.action="./reportContent.asp?seqNo=" + sNo;
+		frm.submit();
+	}
+//-->
+</script>
+</head>
+<body>
+<div id="main_wrap">
+	<div id="skip-link">
+	    <a href="#main-content">컨텐츠 바로가기</a>
+	</div>
+    <header>
+    	<script type="text/javascript">
+<!--
+	function fn_movePage(url, menu, submenu)
+	{
+		var frm = document.forms.frmMenu;
+		
+		frm.action = url;
+		frm.p_menu.value = menu;
+		frm.p_submenu.value = submenu;
+		frm.submit();
+	}
+//-->
+</script>
+
+		<div class="tnb">
+    		<div class="inner">
+				<ul class="gnb">
+					<li class="inquiry"><a href="" onclick="fn_movePage('/company/recruit.asp','company','company07'); return false;">채용안내</a></li>
+					<li class="map"><a href="" onclick="fn_movePage('/company/location01.asp','company','company08'); return false;">오시는 길</a></li>
+					<li class="panel"><a href="https://mpanel.gallup.co.kr:444/redirect.asp" target="_blank">갤럽패널</a></li>
+					<!--li class="lang"><a href="">ENG</a></li-->
+				</ul>
+			</div>
+    	</div>
+	    <div class="inner">
+	        <div class="logo"><a href="/">Gallup</a></div>
+			<ul class="control">
+				<li class="search"><a href="#" title="검색창 열기"><i class="xi-search"></i><i class="xi-close"></i></a></li>
+				<li class="mobileMenu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i><i class="xi-close"></i></a></li>
+			</ul>
+			<nav>
+				<ul class="m_tnb">
+					<li class="inquiry"><a href="" onclick="fn_movePage('/company/recruit.asp','company','company07'); return false;">채용안내</a></li>
+					<li class="map"><a href="" onclick="fn_movePage('/company/location01.asp','company','company08'); return false;">오시는 길</a></li>
+					<li class="panel"><a href="https://mpanel.gallup.co.kr:444/redirect.asp">갤럽패널</a></li>
+					<!--li class="lang"><a href="">ENG</a></li-->
+				</ul>
+				<ul class="lnb">
+					<li class="l1 expanded">
+						<a href="" onclick="fn_movePage('/company/main.asp','company',''); return false;">한국갤럽</a>
+						<ul>
+							<li class=""><a href="" onclick="fn_movePage('/company/story.asp','company','company01'); return false;">한국갤럽 발자취</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/international.asp','company','company02'); return false;">갤럽인터내셔널</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/ci.asp','company','company03'); return false;">CI 소개</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/infra.asp','company','company04'); return false;">조사인프라</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/award.asp','company','company05'); return false;">한국갤럽상</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/notice.asp','company','company06'); return false;">알림</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/recruit.asp','company','company07'); return false;">채용안내</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/company/location01.asp','company','company08'); return false;">오시는 길</a></li>
+						</ul>
+					</li>
+					<li class="l2 expanded">
+						<a href="" onclick="fn_movePage('/research/main.asp','research',''); return false;">조사분야</a>
+						<ul>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_01','research',''); return false;">부동산</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_02','research',''); return false;">유통</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_03','research',''); return false;">식음료</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_04','research',''); return false;">FMCG</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_05','research',''); return false;">관광</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_06','research',''); return false;">금융</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_07','research',''); return false;">정보통신</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_08','research',''); return false;">보건의료</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_09','research',''); return false;">공공정책</a></li>
+							<li><a href="" onclick="fn_movePage('/research/main.asp#survey_10','research',''); return false;">기타</a></li>
+						</ul>
+					</li>
+					<li class="l3 expanded">
+						<a href="" onclick="fn_movePage('/method/main.asp','method',''); return false;">방법론</a>
+						<ul>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_01','method',''); return false;">전화조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_02','method',''); return false;">면접조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_03','method',''); return false;">정성조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_04','method',''); return false;">온라인/모바일</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_05','method',''); return false;">미스터리쇼핑</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_06','method',''); return false;">국제조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_07','method',''); return false;">옴니버스조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_08','method',''); return false;">공론조사</a></li>
+							<li><a href="" onclick="fn_movePage('/method/main.asp#methodology_09','method',''); return false;">데스크리서치</a></li>
+
+							<!--li><a href="03-methodology.html#survey_01">전화조사</a></li>       
+							<li><a href="03-methodology.html#survey_02">면접조사</a></li>
+							<li><a href="03-methodology.html#survey_03">정성조사</a></li>
+							<li><a href="03-methodology.html#survey_04">온라인/모바일</a></li>
+							<li><a href="03-methodology.html#survey_05">미스터리쇼핑</a></li>
+							<li><a href="03-methodology.html#survey_06">해외조사</a></li>
+							<li><a href="03-methodology.html#survey_07">옴니버스조사</a></li>
+							<li><a href="03-methodology.html#survey_08">공론조사</a></li>
+							<li><a href="03-methodology.html#survey_09">데스크리서치</a></li-->
+							
+						</ul>
+					</li>
+					<li class="l4 expanded">
+						<a href="" onclick="fn_movePage('/gallupdb/main.asp','data',''); return false;">통계자료</a>
+						<ul>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/report.asp','data','data01'); return false;">갤럽리포트</a></li>       
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/news.asp','data','data02'); return false;">언론보도</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/column.asp','data','data03'); return false;">조사담</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/books.asp','data','data04'); return false;">펴낸 책</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/hundred.asp','data','data05'); return false;">100% 한국인</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/research.asp','data','data06'); return false;">진행 중 조사</a></li>
+							<li><a href="https://panel.gallup.co.kr/Gate/Panel/F023.aspx" target="_blank">갤럽DB<i class="xi xi-external-link"></i></a></li>
+						</ul>
+					</li>
+					<li class="l5 expanded">
+						<a href="" onclick="fn_movePage('/gallupdb/faq.asp','inquiry','inquiry01'); return false;">조사문의</a>
+						<ul>
+							<li class=""><a href="" onclick="fn_movePage('/gallupdb/faq.asp','inquiry','inquiry01'); return false;">자주 묻는 질문</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/inquiry/askResearch.asp','inquiry','inquiry02'); return false;">조사 상담</a></li>
+							<li class=""><a href="" onclick="fn_movePage('/inquiry/QNA.asp','inquiry','inquiry03'); return false;">일반 문의</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="m_gnb"><!-- Mobile -->
+					<li class="map"><a href="" onclick="fn_movePage('/company/location01.asp','company','company08'); return false;">오시는 길</a></li>
+					<li class="panel"><a href="https://mpanel.gallup.co.kr:444/redirect.asp" target="_blank">갤럽패널</a></li>
+				</ul>
+			</nav>
+		</div>
+			<form id="frmMenu" name="frmMenu" method="post">
+				<input type="hidden" id="p_menu" name="p_menu" value="">
+				<input type="hidden" id="p_submenu" name="p_submenu" value="">
+			</form>
+		<div class="cf01">
+			<form id="frmTotSch" name="frmTotSch" method="post" action="/etc/searchReport.asp">
+				<fieldset>
+					<label for="search_target">검색대상</label>
+					<select name="search_target" id="search_target">
+						<option value="1" selected="selected">갤럽리포트</option>
+						<option value="2">웹사이트</option>
+					</select>
+					<ul class="mobileTab"><!-- Mobile -->
+						<li class="on"><a data-value="1" href="#">갤럽리포트</a></li>
+						<li><a data-value="2" href="#">웹사이트</a></li>
+					</ul>
+					<label for="search_query">검색어</label>
+					<input type="text" name="search_query" id="search_query" placeholder="검색어를 입력해 주세요" />
+					<button title="검색"><i class="xi-search"></i></button>
+				</fieldset>
+				<p class="info"><i class="xi-help-o"></i> 검색하기 전 <a href="" onclick="fn_movePage('/gallupdb/faq.asp','data','data06'); return false;">자주 묻는 질문</a>을 살펴보세요</p>
+			</form>
+		</div>
+    </header>
+	<!-- 서브 컨텐츠 영역 -->
+    <div class="fc02" id="main-content">
+    	<div class="inner">
+    		<nav>
+    			<ul class="ng02">
+    				<li class="home"><a href="/">홈으로</a></li>
+    				<li><a href="/gallupdb/">통계자료</a></li>
+    				<li class="current">갤럽리포트</li>
+    			</ul>
+    		</nav>
+    		<section>
+    			<div class="header">
+    				<div class="th02">
+    					<h1>갤럽리포트</h1>
+    					<p>매주 새로운 조사 결과를 전합니다</p>
+						<a href="" onclick="fn_movePage('/etc/subscribe.asp','',''); return false;" class="btn01">뉴스레터 구독 신청하기</a>
+    				</div>
+    			</div>
+    			<div class="cBody">
+    				<!-- article -->
+    				<article class="fc02_03">
+    					<div class="header">
+    						<dl class="th04">
+    							<dt>데일리 오피니언 제579호(2024년 3월 3주) - 제22대 국회의원선거 결과 기대, 투표 의향 비례대표 정당, 경제 전망 #총선</dt>
+    							<dd>
+    								<em>조사일 : 2024/03/21</em>
+		 			    			<div class="ng05">
+										<input type="text" id="share_url" value="https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1467"/>
+										<a href="#" class="share" data-clipboard-target="#share_url"><i class="xi-link"></i></a>
+										<script src="/js/clipboard.min.js"></script>
+										<script type="text/javascript">
+										<!--
+										//뷰화면 공유기능
+										var clipboard = new ClipboardJS('.ng05 .share');
+
+										clipboard.on('success', function(e) {
+										    e.clearSelection();
+										    alert('링크가 복사되었습니다');
+										});
+
+										clipboard.on('error', function(e) {
+										    console.error('Action:', e.action);
+										    console.error('Trigger:', e.trigger);
+										});
+										//-->
+										</script>
+										<!--
+										<dl>
+											<dt>게시글을 공유해보세요</dt>
+											<dd>
+												<input type="text" name="share_url" value="https://docs.google.com/present"/>
+												<button>링크복사</button>
+											</dd>
+										</dl>
+										-->
+									</div>
+   								</dd>
+    						</dl>
+							
+							<ul class="ng06">
+								<li><i class="xi-file-o"></i> [GallupKoreaDailyOpinion_579(20240322).pdf] <a href="fileDownload.asp?seqNo=1467&bType=8" target="_blank">다운로드<i class="xi-download"></i></a></li>
+							</ul>
+							
+    					</div>
+    					<!-- postA -->
+    					<div class="postA"><!-- 컨텐츠 --> ● 2024년 3월 22일(금) 공개 | 문의: 02-3702-2571/2621/2622<br />
+<br />
+<!-- 회색박스 -->
+<table border="0" align="center" cellpadding="20" cellspacing="0" style="width:100%; border:none; FONT-SIZE: 10pt;  font-family: '함초롬돋움', 'HCR Dotum', AppleSDGothic, apple sd gothic neo, '나눔고딕','나눔 고딕', 'NanumGothic', nanum gothic, NanumGothic, '맑은 고딕', '맑은고딕','Malgun Gothic', malgun gothic, dotum, sans-serif">
+    <tbody>
+        <tr>
+            <td bgcolor="#F2F2F2"><b><font color="#009FF4">조사연구 분야 우수 논문을 공모합니다.</font></b><br />
+            한국갤럽은 조사연구 분야의 발전을 도모하고, 이를 바탕으로 학술 및 제반 사회 분야에서 과학적 접근을 장려하기 위해 <a style="text-decoration: none;color: #0038AC" href="http://www.kasr.org/" target="blank">한국조사연구학회</a>와 함께 2003년에 '한국갤럽학술논문상'을, 2004년에는 '한국갤럽박사학위논문상'을 추가로 제정하여 매년 시상하고 있습니다. 조사연구 관련 논문을 발표한 연구자라면 누구나 응모하실 수 있습니다. <br />
+            &rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/company/noticeContents.asp?seqNo=10313">심사대상 논문 추천&middot;응모 안내 바로가기</a> (기간: 2024년 3월 13일~4월 10일)<br />
+            &rarr; 역대 수상작 목록: <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/dir/company/award/한국갤럽학술논문상_역대수상작.pdf">학술논문상</a> | <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/dir/company/award/한국갤럽박사학위논문상_역대수상작.pdf">박사학위논문상</a></td>
+        </tr>
+    </tbody>
+</table>
+<!-- //회색박스 --><br />
+<br />
+<b><font color="crimson"><u>한국갤럽 데일리 오피니언 제579호 2024년 3월 3주</u></font></b><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_579(20240322).pdf" target="_blank">교차집계표 다운로드(PDF)</a><br />
+[조사談] <br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=117" target="_blank">표본오차 무시한 여론조사 맹신(盲信)과 불신 (2019)</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=120" target="_blank">여론조사 결과는 왜 내 생각과 다를까?: 정치적 성향과 특성 분석 (2020)</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=138#C" target="_blank">그때는 샤이, 지금은 과표집?: 주관적 정치 성향 개념&middot;측정&middot;특성 (2023)</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=141" target="_blank">전화조사 콜백과 응답률 분석: 무선전화 가상번호 (2024)</a><br />
+<br />
+<b><font color="crimson">/ 조사 개요</font></b><br />
+&middot; 조사기간: 2024년 3월 19~21일<br />
+&middot; 표본추출: 이동통신 3사 제공 무선전화 가상번호 무작위 추출<br />
+&middot; 응답방식: 전화조사원 인터뷰(CATI)<br />
+&middot; 조사대상: 전국 만 18세 이상 1,001명<br />
+&middot; 표본오차: &plusmn;3.1%포인트(95% 신뢰수준)<br />
+&middot; 응답률: 14.3%(총 통화 7,022명 중 1,001명 응답 완료)<br />
+&middot; 의뢰처: 한국갤럽 자체 조사<br />
+<br />
+<b><font color="crimson">/ 조사 문항</font></b>(아래 순서대로 질문, 화살표(&rarr;) 옆 단어 클릭하면 해당 위치로 이동)<br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#A">대통령 직무 수행 평가 / 긍정&middot;부정 평가 이유(자유응답)</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#B">정당 지지도</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#C">제22대 국회의원선거 결과 기대</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#D">투표 의향 비례대표 정당</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#E">경제 전망: 향후 1년 경기(景氣), 살림살이, 국제분쟁</a><br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#Z">주간 조사 기준 응답자 특성표, 주요 지표 표준오차&middot;신뢰구간&middot;상대표준오차</a><br />
+<br />
+<b><font color="crimson">/ 주요 사건 </font></b><br />
+&middot; 3/16 국민의힘, 장예찬 공천 취소 / 오영훈&middot;설훈 의원, 새로운미래 입당<br />
+&middot; 3/17 한동훈 국민의힘 비대위원장, '이종섭 귀국&middot;황상무 사퇴' 촉구<br />
+&middot; 3/18 박용진 더불어민주당 의원, 재경선 탈락 <br />
+&middot; 3/20 '회칼 테러 발언' 황상무 대통령실 시민사회수석 사퇴 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;/ 의대별 2,000명 증원 배분 발표(서울 제외, 비수도권 80%) / 밸류업 기업 세제 혜택 추진 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;/ 민주당, '노무현 비하 발언' 양문석 공천 유지 / 김남국 의원, 더불어민주연합 입당<br />
+&middot; 3/21 국회의원선거 후보 등록 시작 / 이종섭 호주대사 귀국 / KOSPI 2,750선(2년 내 최고치) <br />
+&middot; 이탈 전공의 면허 정지, 의대생 집단 유급, 의대교수 사직서 제출 임박<br />
+&middot; 러시아 푸틴 대통령 5선<br />
+<br />
+<b><font color="crimson"><u>요약</u></font></b><br />
+[대통령 직무 평가] 긍정 34%, 부정 58%<br />
+[정당 지지도] 국민의힘 34%, 더불어민주당 33%, 조국혁신당 8%, 무당(無黨)층 18%<br />
+&middot; 개혁신당 3%, 녹색정의당&middot;새로운미래&middot;진보당 1%<br />
+[총선 결과 기대] 여당 다수 당선 36%, 야당 다수 당선 51%<br />
+[투표 의향 비례대표 정당] 국민의미래 30%, 더불어민주연합 23%, 조국혁신당 22%<br />
+&middot; 개혁신당 5%, 새로운미래&middot;자유통일당 2%, 녹색정의당 1%, 부동(浮動)층 15%<br />
+&middot; 더불어민주당 지지자, 더불어민주연합과 조국혁신당으로 표심 분산 <br />
+[경제] 경기&middot;살림살이 전망, 전월 수준 답보<br />
+&middot; 향후 1년간 우리나라 경제 나빠질 것 48%, 좋아질 것 19%, 비슷할 것 28%<br />
+&middot; 경기 전망 순지수: 국민의힘 지지자 +22, 더불어민주당 지지자 -59, 무당층 -45<br />
+&middot; 살림살이 좋아질 것 19%, 나빠질 것 29%, 비슷할 것 50%<br />
+<br />
+<b><font color="crimson"><u>조사 결과</u></font></b><br />
+<br />
+<a name="A"></a> <b><font color="#009FF4">대통령 직무 수행 평가: '잘하고 있다' 34%, '잘못하고 있다' 58%</font></b><br />
+<br />
+한국갤럽이 2024년 3월 셋째 주(19~21일) 전국 만 18세 이상 유권자 1,001명에게 윤석열 대통령이 현재 대통령으로서의 직무를 잘 수행하고 있다고 보는지 잘못 수행하고 있다고 보는지 물은 결과, 34%가 긍정 평가했고 58%는 부정 평가했으며 그 외는 의견을 유보했다(어느 쪽도 아님 2%, 모름/응답거절 5%). <br />
+<br />
+◎ 윤 대통령이 현재 '잘하고 있다'는 응답은 국민의힘 지지자(79%), 70대 이상(70%) 등에서, '잘못하고 있다'는 더불어민주당 지지자(88%), 30~50대(70% 내외) 등에서 많다. 성향별 직무 긍정률은 보수층에서 64%, 중도층 26%, 진보층 8%다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_1.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_2.png" alt="" /><br />
+<br />
+◎ 대통령 직무 수행 긍정 평가자에게 그 이유를 물은 결과(이하 '가중적용 사례수' 기준 345명, 자유응답) '의대 정원 확대'(27%), '결단력/추진력/뚝심'(10%), '외교'(9%), '서민 정책/복지', '전반적으로 잘한다'(이상 5%), '경제/민생', '주관/소신'(이상 4%) 순으로 나타났다. <br />
+<br />
+◎ 직무 수행 부정 평가자는(584명, 자유응답) '경제/민생/물가'(22%), '독단적/일방적', '소통 미흡'(이상 9%), '의대 정원 확대'(8%), '전반적으로 잘못한다', '외교', '인사(人事)'(이상 5%), '경험&middot;자질 부족/무능함'(4%) 등을 이유로 들었다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_3.png" alt="" /><br />
+<br />
+<br />
+<a name="B"></a> <font color="#009FF4">──</font><br />
+<b><font color="#009FF4">정당 지지도: 국민의힘 34%, 더불어민주당 33%, 조국혁신당 8%, 무당(無黨)층 18%</font></b><br />
+<br />
+2024년 3월 셋째 주(19~21일) 현재 지지하는 정당은 국민의힘 34%, 더불어민주당 33%, 조국혁신당 8%, 개혁신당 3%, 녹색정의당&middot;새로운미래&middot;진보당 각각 1%, 그 외 정당 1%, 지지하는 정당 없는 무당(無黨)층 18%다. <br />
+<br />
+◎ 성향별로는 보수층의 69%가 국민의힘, 진보층의 60%가 더불어민주당을 지지한다고 밝혔다. 중도층에서는 더불어민주당 34%, 국민의힘 23%, 특정 정당을 지지하지 않는 유권자가 24%를 차지했다. <br />
+<br />
+◎ 조국혁신당은 월초 첫 조사에서 6%, 지난주 7%, 이번 주 8%의 지지를 받아 신당들 중 가장 뚜렷한 존재감을 보인다. 이재명 대표와 조국 대표가 3월 5일 총선 연대를 공식화하여, 조국혁신당은 제3지대가 아닌 더불어민주당 연대 정당으로서의 위상을 지닌다. 더불어민주당과 조국혁신당은 핵심 지지 기반을 공유하며, 더불어민주당 지지자 셋 중 한 명은 투표 의향 비례대표 정당으로 조국혁신당을 선택했다. 단, 20&middot;30대까지 아우르는 더불어민주당과 달리 조국혁신당은 중장년층에 집중된 특징을 보인다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_4.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_5.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_6.png" alt="" /><br />
+<br />
+<br />
+<font color="#009FF4">──</font><br />
+<b><font color="#009FF4">지난 1년간 전국 기준 양대 정당 비등한 구도 지속<br />
+작년 하반기부터 서울은 국민의힘, 경기권은 더불어민주당 근소 우위<br />
+올해 3월 조국혁신당 등장 후 범야권 확장하며 급변</font></b><br />
+<br />
+2023년 3월 초 국민의힘 전당대회 이후 양대 정당 비등한 구도가 지속되어 왔다. 주간 단위로 보면 진폭이 커 보일 수도 있으나, 양당 격차는 통계적으로 우열을 가릴 수 없는 오차범위(최대 6%포인트) 내에서의 변동이었다. 지역별로 보면 작년 하반기부터 서울은 국민의힘, 경기권은 더불어민주당이 근소한 차로 앞서며 엎치락뒤치락했는데, 올해 3월 조국혁신당 등장과 함께 범야권이 확장&middot;급변하는 모양새다. 서울과 경기권의 양대 정당 구도에는 약간의 차이가 있지만, 대통령 직무 평가 흐름은 대동소이하다. <br />
+<br />
+◎ <b>현 정부 출범 후 지지하는 정당이 없는 무당층이나 성향 중도층은 대통령 직무 평가나 여러 현안 여론을 기준으로 볼 때 여당보다 야당 성향에 가깝다</b>. 지역이나 연령대 등 응답자 특성별 주요 지표 추이는 &rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1461#C" target="_blank">월간</a>, &rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1449" target="_blank">연간 통합 자료</a> 기준으로 보시길 권한다. <br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="#Z1">주요 지표 표준오차&middot;신뢰구간&middot;상대표준오차 설명</a> <br />
+&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/faqContents.asp?seqNo=122" target="_blank">[참고] 한국기자협회 선거여론조사보도준칙 (2016)</a><br />
+<br />
+◎ 현재 지지하는 정당과 선거 전제하에서의 구도에는 차이가 있다. <font color="crimson">현재 정당 지지도는 현시점 유권자의 정당에 대한 태도다. 특히 각 지역구 구도와 후보 경쟁력에 좌우되는 국회의원선거에서는 투표 행동(투표할 정당 또는 후보 선택)과 괴리가 있으므로, 정당 지지도를 의석수 예상용 가늠자로 활용하기는 부적절하다</font>(&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=121" target="_blank">[조사談] 정당 지지도와 정당별 의석수 비율이 다른 7가지 이유</a>).<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_6_1.png" alt="" /><br />
+<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_6_2.png" alt="" /><br />
+<br />
+<br />
+<a name="C"></a> <font color="#009FF4">────────────</font><br />
+<b><font color="#009FF4">제22대 국회의원선거 결과 기대</font></b><br />
+<font color="#7DCCFD">────────────</font><br />
+<b><font color="#009FF4">'여당 다수 당선' 36%, '야당 다수 당선' 51%</font></b><br />
+<font color="#009FF4">- 70대 이상 '여당 승리(정부 지원)', 50대 이하 '야당 승리(견제)' 우세</font><br />
+<br />
+오는 4월 제22대 국회의원선거와 관련 두 가지 주장을 제시하고 어느 쪽 주장에 더 동의하는지 물은 결과 '현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다' 36%, '현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다' 51%로 나타났고 12%는 의견을 유보했다. <br />
+<br />
+◎ 연령별로 보면 70대 이상에서는 '여당 승리(정부 지원론)', 50대 이하에서는 '야당 승리(정부 견제론)'가 우세하다. 정도의 차이는 있으나, 이러한 고령층과 50대 이하의 대비는 작년 한 해 매월 조사에서 일관된 경향이었다. <br />
+<br />
+◎ 성향 보수층의 73%가 여당 승리, 진보층의 87%는 야당 승리를 기대했고 중도층에서도 여당 승리(26%)보다는 야당 승리(58%) 쪽이 많았다. 현재 지지하는 정당이 없는 무당층에서도 43%가 야당 승리를 원했고, 여당 승리는 19%며 38%는 의견을 유보했다. 단, 여기서의 '여당'은 국민의힘을 뜻하지만 '야당'은 더불어민주당, 조국혁신당 외 소수 정당까지 아우른다. <br />
+<br />
+◎ 향후 1년간 국가 경제, 즉 경기 전망별로 보면 낙관론자('좋아질 것' 응답자)의 76%가 여당 승리, 비관론자의 76%는 야당 승리를 바랐다. 앞으로의 경기가 현재와 변함없을 것이라고 내다본 사람들에게서는 양론이 비슷하게 갈렸다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_7.png" alt="" /><br />
+<br />
+<br />
+◎ 2022년 12월부터 2024년 1월 초까지는 총선 결과 기대를 정부 지원론과 견제론 구도로 매월 물었다. 2023년 3월만 정부 지원론(42%)과 견제론(44%)이 비등했고(&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1370#C" target="_blank">제532호</a>), 그 외는 줄곧 견제론 우세 구도로 유지됐다. <br />
+<br />
+◎ 제21대 국회의원선거 3개월 전인 2020년 1월에는 49%가 정부 지원론, 37%가 정부 견제론에 동의했으나, 2월과 3월 초 양론이 팽팽해졌다가 선거가 임박하면서 다시 간격이 벌어졌고 실제 선거도 당시 여당 압승(더불어민주당&middot;더불어시민당 180석)으로 귀결했다. 선거 직전 이틀간 정당 지지도는 더불어민주당 41%, 미래통합당 25%, 정의당 5%, 국민의당 4%, 열린민주당 3%, 무당층 18%였다(&rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1099" target="_blank">제397호</a>). <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_8.png" alt="" /><br />
+<br />
+<br />
+<a name="D"></a> <font color="#009FF4">──</font><br />
+<b><font color="#009FF4">총선 투표 의향 비례대표 정당: <br />
+국민의미래 30%, 더불어민주연합 23%, 조국혁신당 22%...</font></b><br />
+<br />
+제22대 국회의원선거를 3주 앞둔 2024년 3월 19~21일 전국 유권자 1,001명에게 비례대표 정당 투표에서 어느 정당을 선택할 것 같은지 물었다. 그 결과 국민의미래 30%, 더불어민주연합 23%, 조국혁신당 22%, 개혁신당 5%, 새로운미래&middot;자유통일당 각각 2%, 녹색정의당 1%, 그리고 투표 의향 정당을 밝히지 않은 부동(浮動)층이 15%로 나타났다.<br />
+<br />
+◎ 투표 의향 비례대표 정당에서 국민의힘 지지자는 대부분(83%) 국민의미래를 선택했고, 더불어민주당 지지자의 표심은 더불어민주연합(55%)과 조국혁신당(35%)으로 분산됐다. 개혁신당, 새로운미래, 자유통일당은 현재 지지도보다 각각 1~2%포인트 많은 선택을 받았다. <br />
+<br />
+◎ 성향 중도층의 투표 의향 비례대표 정당은 국민의미래, 더불어민주연합, 조국혁신당이 각각 20%대 초반, 개혁신당 9% 등으로 흩어지며, 여당보다는 야당 쪽으로 기울었다. 18%는 어느 정당도 선택하지 않았다.<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_9.png" alt="" /><br />
+<br />
+<br />
+<a name="E"></a> <!-- 회색박스 -->
+<table border="0" align="center" cellpadding="20" cellspacing="0" style="width:100%; border:none; FONT-SIZE: 10pt;  font-family: '함초롬돋움', 'HCR Dotum', AppleSDGothic, apple sd gothic neo, '나눔고딕','나눔 고딕', 'NanumGothic', nanum gothic, NanumGothic, '맑은 고딕', '맑은고딕','Malgun Gothic', malgun gothic, dotum, sans-serif">
+    <tbody>
+        <tr>
+            <td bgcolor="#F2F2F2"><b><font color="#009FF4"><a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/report.asp?search_target=2&amp;searchKeyword=%B0%E6%C1%A6">#경제</a> 전망 - 향후 1년 경기(景氣), 살림살이, 국제분쟁</font></b><br />
+            한국갤럽은 1979년부터 40여 년간 갤럽 인터내셔널(Gallup International) 다국가 비교 조사의 일환으로 새해 경제 전망을 추적해왔고(매년 말 전국 1,500명 면접조사), 2017년 9월부터는 매월 1회 전국 유권자 1,000명 전화조사로 한층 시의성 있는 자료를 제공한다. 이는 대통령 직무 평가, 정당 지지도 등 정치 지표와 함께 볼 수 있는 국내 유일 경제 지표다. <br />
+            <br />
+            ○ 경제 전망 조사 결과 교차집계표의 Net Score(순(純) 지수)는 낙관-비관 응답 비율의 차이다. 경제 전망 특성상 좋아지지도 나빠지지도 않을 것, 즉 현재와 향후 1년간 상황이 비슷할 것이란 응답이 많으므로 낙관&middot;비관 어느 한쪽의 응답만을 기준으로 판단하기 곤란할 수 있다.<br />
+            Net Score는 이를 단순화하여 조사 시기별, 응답자 특성별 차이를 보기 쉽게 한다. 양수(陽數)가 클수록 낙관론이, 음수(陰數)가 클수록 비관론이 우세하다고 볼 수 있으며 0에 가까울수록 낙관&middot;비관 격차가 작음을 의미한다. <br />
+            <br />
+            <font color="#009FF4">●</font> 지난 몇 년간 우리나라에서는 남북 관계 급변과 정권 교체, 세계적으로는 코로나19 팬데믹과 엔데믹화, 러시아-우크라이나 전쟁과 에너지 수급난, 고물가&middot;고금리 등의 상황이 차례로 펼쳐졌고 그때마다 한국인의 경제 전망도 요동쳤다. 그간의 데이터를 종합하여 주요 사건 영향, 인구사회학적 특성, 정치적 태도와의 연관성을 분석했다. 아래 링크에서 전문을 볼 수 있다. <br />
+            &rarr; <a style="text-decoration: none;color: #0038AC" href="https://www.gallup.co.kr/gallupdb/columnContents.asp?seqNo=140" target="_blank">[조사談] 경제에 대한 생각: 체감 지표의 측정과 특성</a></td>
+        </tr>
+    </tbody>
+</table>
+<!-- //회색박스 -->  <br />
+<br />
+<b><font color="#009FF4">경기&middot;살림살이 전망, 전월 수준 답보</font></b><br />
+<font color="#009FF4">-  향후 1년간 우리나라 경제 나빠질 것 48%, 좋아질 것 19%, 비슷할 것 28%</font><br />
+<font color="#009FF4">- 경기 전망 순지수: 국민의힘 지지자 +22, 더불어민주당 지지자 -59, 무당층 -45</font><br />
+<br />
+한국갤럽이 2024년 3월 19~21일 전국 만 18세 이상 1,001명에게 향후 1년간 우리나라 경기 전망을 물은 결과 48%가 '나빠질 것'이라고 내다봤고, 19%만 '좋아질 것', 28%는 '비슷할 것'이라고 답했다. 6%는 의견을 유보했다. 전월 대비 낙관론, 비관론이 각각 1%포인트 감소했다. 최근 3년 내 경기 낙관론 최고치는 2021년 6월 38%, 비관론 최고치는 2022년 10월 66%다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_10.png" alt="" /><br />
+<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_11.png" alt="" /><br />
+<br />
+<br />
+◎ 경기 낙관론은 대체로 정부 정책 방향에 공감&middot;신뢰 정도가 강한 이들에게서 더 높은 편이다. 지난 1년간 성향 진보층의 경기 낙관론은 대체로 10%를 밑돌았고, 비관론은 70%를 넘나들었다. 보수층의 경기 낙관론은 작년 10월 20%에서 최근 33%로 상승, 같은 기간 비관론은 50%에서 28%로 감소해 뚜렷한 변화를 보였다. <br />
+이번 달 경기 전망 낙관(좋아질 것)-비관(나빠질 것) 격차(Net Score, 순(純)지수) 기준으로 보면 보수층에서는 +5, 중도층 -41, 진보층 -59다. 대통령 직무 긍&middot;부정 평가자 간 전망은 더 양극적이다: 대통령 긍정 평가자 +27, 부정 평가자 -63. 지지정당별로도 국민의힘 지지자 +22, 더불어민주당 지지자 -59로 대비된다. 무당층은 -45로, 여당보다 야당 지지자에 가깝다.<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_12_2.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_12_1.png" alt="" /><br />
+<br />
+<br />
+◎ 향후 1년간 살림살이에 대해서는 '좋아질 것' 19%, '나빠질 것' 29%, '비슷할 것' 50%다. 살림살이 전망에서는 주관적 생활수준별 차이가 뚜렷하고(상/중상층 +8, 중층 -6, 중하층 -32, 하층 -18), 경기 전망보다 정도는 덜하지만 정치적 태도에 따른 차이도 있다: 대통령 긍정 평가자 +26, 부정 평가자 -33 / 국민의힘 지지자 +25, 더불어민주당 지지자 -35, 무당층 -12 / 성향 보수층 +13, 중도층 -14, 진보층 -37.<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_13_2.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_13_1.png" alt="" /><br />
+<br />
+<br />
+◎ 향후 1년간 국제분쟁에 대해서는 50%가 '증가할 것', 10%가 '감소할 것', 29%가 '비슷할 것'이라고 전망했다. 국제관계 비관론은 2개월 연속 감소했다. 국제관계 전망 순지수 기준으로 보면 성향 보수층(-32)보다 중도층(-48)과 진보층(-49), 국민의힘 지지자(-31)보다 더불어민주당 지지자(-50)가 더 비관적이다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_14.png" alt="" /><br />
+<br />
+<br />
+<a name="Z"></a> <font color="#009FF4">──</font><br />
+<b><font color="#009FF4">응답자 특성표</font></b><br />
+<br />
+매주 조사에서 세부 단위로는 실제 분포보다 약간 많거나 적게 조사될 수 있으므로 행정안전부 주민등록인구 기준으로 가중 처리하여 최종 결과를 산출한다. 지역, 성, 연령 외 생활수준, 직업, 정치적 성향은 대통령 직무 평가나 정당 지지도처럼 상황에 따라 바뀔 수 있는 조사 결과다. <br />
+아래 응답자 특성표의 조사완료 사례수는 실제 응답 완료한 인원, 가중값 적용 기준 사례수는 2023년 12월 말 행정안전부 주민등록인구 지역/성/연령 비율에 따른 인원이다. <br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_15.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_16.png" alt="" /><br />
+<br />
+<br />
+<a name="Z1"></a> <font color="#009FF4">──────────────────────</font><br />
+<b><font color="#009FF4">주요 지표 표준오차, 신뢰구간, 상대표준오차</font></b><br />
+<font color="#7DCCFD">──────────────────────</font><br />
+데일리 오피니언은 이동통신 3사 제공 무선전화 가상번호를 무작위 추출해 조사한다. 주요 지표(대통령 직무 수행 평가, 정당 지지도)에 대한 모수 추정치의 신뢰 범위와 정도를 나타내는 95% 신뢰구간과 상대표준오차를 고려하여 해석하시길 바란다.<br />
+<br />
+<font color="#009FF4">─</font><br />
+<b><font color="#009FF4">95% 신뢰구간</font></b><br />
+모수가 이 구간 안에 있을 확률이 95%라는 의미로, 이 구간 안에서의 수치 변동은 실제 변화인지 오차인지 단정할 수 없다. <br />
+<font color="#009FF4">─</font><br />
+<b><font color="#009FF4">상대표준오차</font></b><br />
+통계 신뢰성 지표로, 표준오차를 평균(추정치)으로 나눈 값이다. 수치가 작을수록 측정값의 변동성이 작고, 더 신뢰할 수 있다고 본다. 단, 추정치가 극히 작으면 상대표준오차가 커지는 특성이 있으므로 이때는 95% 신뢰구간을 참고해야 한다. <br />
+<br />
+5% 미만: 매우 좋음<br />
+5% 이상 ~ 15% 미만: 좋은 편<br />
+15% 이상 ~ 25% 미만: 허용 가능한 수준<br />
+25% 이상: 신뢰하기 어려우므로 이용 시 주의 요망<br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_17.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_18.png" alt="" /><br />
+<br />
+<img src="https://www.gallup.co.kr/dir/GallupKoreaDaily/Graph/Daily_579_19.png" alt="" /><br />
+<br />
+<br />
+<!-- //컨텐츠 --></div>
+    					<!-- //postA -->
+ 						<div class="btnA">
+ 							<a class="btn03" href="" onclick="fn_viewList(); return false;">목록으로</a>
+ 						</div>
+	 					<div class="ng10">
+	                         <dl class="prev">
+	                              <dt>이전</dt>
+	                              <dd><a href="" onclick="fn_viewContents('1468'); return false;">좋아하는 방송영상프로그램 - 2024년 3월 #TV #온라인영상서비스 #OTT #눈물의여왕</a></dd>
+	                         </dl>
+	                         <dl class="next">
+	                              <dt>다음</dt>
+	                              <dd><a href="" onclick="fn_viewContents('1466'); return false;">부동산 트렌드 2024 (1) 주거 관련 인식, 선호 공간&middot;주택 특화 유형</a></dd>
+	                         </dl>
+	                    </div>
+
+    				</article>
+    				<!-- //article -->
+     			</div>
+    		</section>
+    	</div>
+	</div>
+	<!-- //서브 컨텐츠 영역 -->
+    <footer>
+    	<div class="menuA">
+	<div class="inner">
+		<ul class="links">
+			<li><a href="" onclick="fn_movePage('/company/recruit.asp','company','company07'); return false;">채용안내</a></li>
+			<li><a href="/etc/sitemap.asp">사이트맵</a></li>
+			
+			<li><a href="/etc/private_v29.asp"><b>개인정보처리방침</b></a></li>
+			<li><a href="/etc/vision_v13.asp"><b>영상정보처리기기 운영 및 관리 방침</b></a></li>
+			<li><a href="/etc/mail.asp"><b>이메일무단수집거부</b></a></li>
+		</ul>
+		<ul class="sns">
+			<li class="letter"><a href="" onclick="fn_movePage('/etc/subscribe.asp','',''); return false;"><i class="xi-mail"></i><em>뉴스레터 구독 신청하기</em></a></li>
+			<!-- <li class="twitter"><a href="https://twitter.com/gallupkoreanews" target="_blank"><i class="xi-twitter"></i></a></li> -->
+			<li class="twitter"><a href="https://twitter.com/gallupkoreanews" target="_blank"><i></i></a></li>
+			<li class="bluesky"><a href="https://bsky.app/profile/gallupkorea.bsky.social" target="_blank"><i></i></a></li>
+			<li class="kakao"><a href="https://pf.kakao.com/_DpBzK" target="_blank"><i></i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="infoA">
+	<div class="inner">
+		<div class="siteInfo">
+			<address>
+				<b>한국갤럽조사연구소</b>&nbsp;&nbsp;
+				<span><b>본관</b>  (03167) 서울시 종로구 사직로 70</span>   
+				<span><b>신관</b>  (03042) 서울시 종로구 자하문로 70</span>    
+				<span><b>대표전화</b> 02-3702-2100</span>
+			</address>
+			<p class="cpr">Copyright <b>Gallup Korea</b> all rights reserved.</p>
+		</div>
+		<ul class="families">
+			<li class="gallup"><a href="https://gallup-international.com/" target="_blank">GALLUP international</a></li>
+			<li class="win"><a href="https://winmr.com" target="_blank">WIN</a></li>
+			<!-- <li class="gallup"><a href="" onclick="fn_movePage('/company/international.asp','company','company02'); return false;">GALLUP international</a></li>
+			<li class="win"><a href="" onclick="fn_movePage('/company/international.asp','company','company02'); return false;">WIN</a></li> -->
+		</ul>
+	</div>
+</div>
+    </footer>
+</div>
+<!-- //main_wrap -->
+
+<form id="page_form" name="page_form" method="post">
+	<!-- menu hidden value -->
+	<input type="hidden" id="p_menu_1" name="p_menu_1" value="">
+	<input type="hidden" id="p_submenu_1" name="p_submenu_1" value="">
+	<!-- menu hidden value -->
+
+	<input type="hidden" name="pagePos" value="">
+	<input type="hidden" name="selectYear" value="">
+	<input type="hidden" name="search_target" value="">
+	<input type="hidden" name="searchKeyword" value="">
+	
+	<input type="hidden" name="seqNo">
+</form>
+
+<!-- 맨위로 -->
+<button onclick="topFunction()" id="myBtn" title="맨위로"><i class="xi xi-2x xi-arrow-top"></i></button>
+
+</body>
+</html>

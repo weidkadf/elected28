@@ -1,0 +1,183 @@
+{
+  "checked_at": "2026-10-17T04:00:06.881164+09:00",
+  "previous_check": "outputs/research_check_20261017_0250.json",
+  "model_input_modified": false,
+  "new_current_eligible_poll_count": 0,
+  "new_historical_wave_verified_count": 1,
+  "party_support_used": false,
+  "checks": [
+    {
+      "source": "한국갤럽 최신목록",
+      "url": "https://www.gallup.co.kr/gallupdb/report.asp",
+      "http_status": 200,
+      "latest_daily_report": 678,
+      "latest_post_id": 1662,
+      "existing_observation": true
+    },
+    {
+      "source": "여심위 최신목록",
+      "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do",
+      "http_status": 200,
+      "top_registration": 17314,
+      "gallup_registration": 17313,
+      "nbs_registration": 17312,
+      "new_frame_observation_identified": false
+    },
+    {
+      "source": "NBS",
+      "url": "https://nbsurvey.kr/",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ],
+  "historical_candidate": {
+    "candidate_poll_id": "gallup_394_frame_national",
+    "question_type": "government_frame",
+    "series_id": "gallup_daily_election_expectation",
+    "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1094",
+    "pdf_url": "https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_394(20200327).pdf",
+    "pdf_page": 13,
+    "pdf_bytes": 1461666,
+    "pdf_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+    "verification_status": "primary_html_methodology_and_pdf_text_table_verified",
+    "source_retention": "공식 PDF 원본 보존. 정당지지도 등 다른 문항은 감사용 원문에만 포함되며 정규관측·모델 입력에는 제외.",
+    "pollster": "한국갤럽",
+    "fieldwork_start": "2020-03-24",
+    "fieldwork_end": "2020-03-26",
+    "published_at": "2020-03-27",
+    "publication_time": null,
+    "publication_timezone": "Asia/Seoul",
+    "publication_date_evidence": "공식 HTML에 2020년 3월 27일 공개 명시; PDF 파일명도 20200327. 정확한 발표시각은 확인하지 않음.",
+    "publication_before_target_election": true,
+    "target_election_date": "2020-04-15",
+    "population": "전국 만 18세 이상",
+    "sampling": "휴대전화 RDD 무작위 추출, 집전화 RDD 15% 포함",
+    "mode": "전화조사원 인터뷰",
+    "response_rate": 0.14,
+    "margin_of_error_95_pp": 3.1,
+    "question_summary": "국회의원선거와 관련하여 두 주장 중 조금이라도 더 동의하는 쪽을 선택하는 문항.",
+    "answer_options_exact": [
+      "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다",
+      "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다"
+    ],
+    "option_order": "두 보기 순서 로테이션",
+    "opposition_judgment_directly_measured": false,
+    "governing_party": "더불어민주당",
+    "main_opposition_party": "미래통합당",
+    "democratic_coordinate_component": "정부지원",
+    "direct_vote_mapping_allowed": false,
+    "party_support_used": false,
+    "observations": [
+      {
+        "scope": "national",
+        "sample_size": 1001,
+        "weighted_sample_size": 1000,
+        "shares": {
+          "정부지원": 0.46,
+          "정부견제": 0.4,
+          "모름/응답거절": 0.14
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "서울",
+        "sample_size": 192,
+        "weighted_sample_size": 192,
+        "shares": {
+          "정부지원": 0.48,
+          "정부견제": 0.41,
+          "모름/응답거절": 0.11
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "인천/경기",
+        "sample_size": 308,
+        "weighted_sample_size": 308,
+        "shares": {
+          "정부지원": 0.48,
+          "정부견제": 0.38,
+          "모름/응답거절": 0.15
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "강원",
+        "sample_size": 30,
+        "weighted_sample_size": 30,
+        "shares": {},
+        "suppressed": true
+      },
+      {
+        "scope": "대전/세종/충청",
+        "sample_size": 105,
+        "weighted_sample_size": 105,
+        "shares": {
+          "정부지원": 0.43,
+          "정부견제": 0.5,
+          "모름/응답거절": 0.08
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "광주/전라",
+        "sample_size": 99,
+        "weighted_sample_size": 99,
+        "shares": {
+          "정부지원": 0.65,
+          "정부견제": 0.18,
+          "모름/응답거절": 0.17
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "대구/경북",
+        "sample_size": 103,
+        "weighted_sample_size": 99,
+        "shares": {
+          "정부지원": 0.33,
+          "정부견제": 0.48,
+          "모름/응답거절": 0.18
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "부산/울산/경남",
+        "sample_size": 151,
+        "weighted_sample_size": 153,
+        "shares": {
+          "정부지원": 0.41,
+          "정부견제": 0.46,
+          "모름/응답거절": 0.13
+        },
+        "suppressed": false
+      },
+      {
+        "scope": "제주",
+        "sample_size": 13,
+        "weighted_sample_size": 13,
+        "shares": {},
+        "suppressed": true
+      }
+    ],
+    "overlap_group": "gallup_20200324_26",
+    "model_input_eligible": false,
+    "eligibility_note": "과거 보정용 후보자료만 확보. polls.json 미변경. 지리변환·후보/정당매핑·이용가능일 정책 승인 전 백테스트 투입하지 않음.",
+    "notes": [
+      "2020 총선 3주 전 관측이며 최종 선거직전 관측이라고 부르지 않음.",
+      "2020년 당시 민주당 여당이므로 정부지원 좌표; 2024년 야당 시기와 정렬 방향이 다름.",
+      "50사례 미만 강원·제주는 원문 비공개. 결측을 0으로 대체하지 않음.",
+      "권역은 소표본 부분풀링 필요. 조사완료 표본과 가중표본을 구분.",
+      "반올림 때문에 일부 권역 합계는 99 또는101이며 임의재배분 금지.",
+      "2020 RDD와 현재 가상번호 조사방식 차이에 대한 보정 검토 필요.",
+      "표의 정당지지층별 행·비례투표의향·대통령평가를 수집 또는 입력하지 않음."
+    ],
+    "source_file": "data/history_polls/gallup_394_20200327.pdf",
+    "normalized_candidate_file": "data/history_polls/gallup_394_frame_observations.json"
+  },
+  "conclusion": "현재 신규 적격 관측 없음. 과거 갤럽394호 정부지원/견제 전국·권역 관측을 원문 확인하여 별도 후보자료로 기록.",
+  "limitations": [
+    "현재 목록확인은 모든 조사기관의 신규 문항 부재를 보장하지 않음.",
+    "발표시각 미확인; 시각 단위 백테스트의 당일 사용허용 근거로 쓰면 안 됨.",
+    "과거 정규 후보 관측은 별도 파일로 보존했으며 polls.json 연결·활성 모델 입력·재산출 없음."
+  ]
+}

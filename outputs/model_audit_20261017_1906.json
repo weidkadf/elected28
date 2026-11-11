@@ -1,0 +1,324 @@
+{
+  "audit_date": "2026-10-17",
+  "audit_run": "1906",
+  "model_version_observed": "0.2.3",
+  "audit_kind": "read_only_regression_actual_input_invariance_source_integrity",
+  "status": "PASS",
+  "model_changed_by_auditor": false,
+  "inputs_changed_by_auditor": false,
+  "report_recalculated_for_release": false,
+  "audit_draws": 100,
+  "seed": 20261016,
+  "party_support_rows_mutated_and_removed": 19,
+  "checks": {
+    "existing_95_tests_pass": true,
+    "original_source_sha_and_size_before_pass": true,
+    "original_source_sha_and_size_after_pass": true,
+    "seed_repeat_full_report_identical": true,
+    "party_support_mutation_full_report_identical": true,
+    "party_support_removal_full_report_identical": true,
+    "coverage_254": true,
+    "candidates_693": true,
+    "baseline_valid_votes_29234129": true,
+    "eligibility_245_pending_9": true,
+    "all_scenario_vote_and_seat_checks": true,
+    "every_scenario_covers_254": true,
+    "scenario_seat_conservation": true,
+    "post_edit_103_core_plus_8_official_tests_pass": true,
+    "archive_four_waves_36_observations": true
+  },
+  "source_integrity_before": [
+    {
+      "path": "data/raw/nec_2024.csv",
+      "expected_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "observed_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "expected_bytes": 7588808,
+      "observed_bytes": 7588808,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_raw.csv",
+      "expected_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "observed_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "expected_bytes": 17774982,
+      "observed_bytes": 17774982,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_original_tables.zip",
+      "expected_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "observed_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "expected_bytes": 15560000,
+      "observed_bytes": 15560000,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+      "expected_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "observed_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "expected_bytes": 264345,
+      "observed_bytes": 264345,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+      "expected_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "observed_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "expected_bytes": 273733,
+      "observed_bytes": 273733,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_392_20200313.pdf",
+      "expected_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "observed_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "expected_bytes": 1282518,
+      "observed_bytes": 1282518,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_394_20200327.pdf",
+      "expected_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+      "observed_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+      "expected_bytes": 1461666,
+      "observed_bytes": 1461666,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_395_20200403.pdf",
+      "expected_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "observed_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "expected_bytes": 1186273,
+      "observed_bytes": 1186273,
+      "passed": true
+    }
+  ],
+  "source_integrity_after": [
+    {
+      "path": "data/raw/nec_2024.csv",
+      "expected_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "observed_sha256": "65632277f979c449038eaba79e21aef9ddd239be71cac4dcfdcd17b97c7de0e1",
+      "expected_bytes": 7588808,
+      "observed_bytes": 7588808,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_raw.csv",
+      "expected_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "observed_sha256": "44bdb7be9caf743ea2a897ede8f9ccd4587bed89c5d03fe7b82dff5c1df40f04",
+      "expected_bytes": 17774982,
+      "observed_bytes": 17774982,
+      "passed": true
+    },
+    {
+      "path": "data/history_2020/nec_2020_original_tables.zip",
+      "expected_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "observed_sha256": "690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f",
+      "expected_bytes": 15560000,
+      "observed_bytes": 15560000,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2020.pdf",
+      "expected_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "observed_sha256": "9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97",
+      "expected_bytes": 264345,
+      "observed_bytes": 264345,
+      "passed": true
+    },
+    {
+      "path": "data/boundary_research/public_official_election_act_annex1_2024.pdf",
+      "expected_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "observed_sha256": "aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae",
+      "expected_bytes": 273733,
+      "observed_bytes": 273733,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_392_20200313.pdf",
+      "expected_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "observed_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
+      "expected_bytes": 1282518,
+      "observed_bytes": 1282518,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_394_20200327.pdf",
+      "expected_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+      "observed_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
+      "expected_bytes": 1461666,
+      "observed_bytes": 1461666,
+      "passed": true
+    },
+    {
+      "path": "data/history_polls/gallup_395_20200403.pdf",
+      "expected_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "observed_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
+      "expected_bytes": 1186273,
+      "observed_bytes": 1186273,
+      "passed": true
+    }
+  ],
+  "test_runs": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "test_model.py",
+        "test_safety_guards.py",
+        "test_boundary_inventory.py",
+        "test_ward_inventory.py",
+        "test_historical_frame_archive.py",
+        "test_historical_inventory.py",
+        "test_partial_identification.py"
+      ],
+      "exit_code": 0,
+      "test_count": 87,
+      "stdout": "{\n  \"inventory_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-17\",\n  \"status\": \"STATUTORY_ROW_INVENTORY_PASS_CROSSWALK_NOT_READY\",\n  \"parser\": \"pdfplumber ruled-table cell extraction\",\n  \"pdfplumber_version\": \"0.11.9\",\n  \"extracted_counts\": {\n    \"2020\": 253,\n    \"2024\": 254\n  },\n  \"province_counts_match_source_headings\": true,\n  \"district_keys_match_historical_vote_files\": true,\n  \"comparison_status_counts\": {\n    \"same_name_same_statutory_text_geometry_unverified\": 171,\n    \"same_name_statutory_text_diff_review_required\": 61,\n    \"no_same_name_predecessor_review_required\": 22\n  },\n  \"2024_districts_reviewed\": 254,\n  \"crosswalk_eligible_districts\": 0,\n  \"vote_transfer_weights_estimated\": false,\n  \"model_inputs_modified\": false,\n  \"province_alias_policy\": {\n    \"강원도\": \"강원특별자치도\",\n    \"전라북도\": \"전북특별자치도\"\n  },\n  \"normalization_policy\": \"NFKC, whitespace removal and middle-dot glyph harmonization only; no administrative-unit equivalence assumed\",\n  \"limitations\": [\n    \"Matching statutory text does not prove unchanged geometry.\",\n    \"Text differences may include administrative renaming/splitting, not only electoral moves.\",\n    \"No areal/population/vote allocation weights or party vote redistribution.\"\n  ],\n  \"source_pdf_sha256\": {\n    \"2020\": \"9402dc0c6a5cae918e9408cd2f851bb4cddc04fa7d70b29d6d0d0d3759450f97\",\n    \"2024\": \"aa22cda3ab4ebdbbda7a23860adefd30be2e4c5f034858ca3a9c914b89b6f2ae\"\n  },\n  \"parser_sha256\": \"a727692a7a9504ef8c1d4c1c8fe6938f8d93772e6b146838fbc7b54da76c4113\"\n}\n{\n  \"inventory_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-17\",\n  \"status\": \"PASS\",\n  \"official_workbooks_checked\": 329,\n  \"districts_reconciled\": 253,\n  \"named_ward_rows\": 3485,\n  \"unlocated_category_rows\": 1645,\n  \"national_valid_votes\": 28741408,\n  \"named_ward_valid_votes\": 25941047,\n  \"unlocated_valid_votes\": 2800361,\n  \"unlocated_category_valid_votes\": {\n    \"거소·선상투표\": 91272,\n    \"관외사전투표\": 2671307,\n    \"국외부재자투표\": 34842,\n    \"국외부재자투표(공관)\": 1372,\n    \"잘못 투입·구분된 투표지\": 1568\n  },\n  \"districts_with_positive_unlocated_votes\": 253,\n  \"candidate_totals_match_verified_2020\": true,\n  \"model_inputs_modified\": false,\n  \"allocation_weights_created\": false,\n  \"crosswalk_eligible_districts\": 0,\n  \"source_zip_sha256\": \"690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f\",\n  \"parser_sha256\": \"3b1829ca037b8a7ca51c42f71a7022ef5dbec8d0c7e467c9e8cb0655f401b9b4\",\n  \"limitations\": [\n    \"Named subtotal describes 2020 administrative units, not verified 2024 geometry.\",\n    \"Unlocated categories remain in original district/candidate identities.\",\n    \"This is bookkeeping partition, not electoral transfer or calibrated forecast.\"\n  ]\n}\n",
+      "stderr": ".......................................................................................\n----------------------------------------------------------------------\nRan 87 tests in 28.814s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "data/history_2020",
+        "-p",
+        "test_crosscheck.py"
+      ],
+      "exit_code": 0,
+      "test_count": 8,
+      "stdout": "{\n  \"check_version\": \"1.0.0\",\n  \"verified_date\": \"2026-10-16\",\n  \"status\": \"PASS\",\n  \"official_zip_sha256\": \"690176009970c6c45e37fee6a65af43c81635416915467a6177a369bd64ed74f\",\n  \"official_workbooks\": 329,\n  \"source_page\": \"https://www.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=15052&cbIdx=1129\",\n  \"parser_sha256\": \"0069904313822badaff3c514aba8fe6f15d05f91a57ef6a8fcd8c3d3852eea21\",\n  \"districts_checked\": 253,\n  \"districts_passed\": 253,\n  \"candidate_labels_checked\": 1101,\n  \"excluded_xlsx_by_category\": {\n    \"비례대표\": 250,\n    \"재보궐\": 56\n  },\n  \"historical_district_totals_verified\": true,\n  \"model_eligible\": false,\n  \"remaining_gates\": [\n    \"2020_to_2024_boundary_crosswalk\",\n    \"poll_history_and_time_split_backtest\",\n    \"candidate_party_mapping\"\n  ],\n  \"scope_note\": \"NEC alternative official XLSX representation, not independent ballot recount. District totals only; not every polling-station row or withdrawn-candidate registry.\",\n  \"raw_files_unchanged\": true\n}\n",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 3.733s\n\nOK\n"
+    }
+  ],
+  "test_count": 95,
+  "tested_input_sha256": {
+    "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
+    "scripts/validate_historical_frames.py": "fad5c7d66b23a4570417937fa0a0b1aa633a65d66fe5d290224e7a7fcd94e9d8"
+  },
+  "coverage": {
+    "expected_districts": 254,
+    "observed_districts": 254,
+    "valid_districts": 254,
+    "scenario_eligible_districts": 245,
+    "complete": true
+  },
+  "scenario_counts": [
+    {
+      "name": "government_frame_delta_alpha_0",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "national_mean_plus_pending": 254
+    },
+    {
+      "name": "government_frame_delta_alpha_0.5",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "national_mean_plus_pending": 254
+    },
+    {
+      "name": "government_frame_delta_alpha_1",
+      "simulated": 245,
+      "pending": 9,
+      "covered": 254,
+      "national_mean_plus_pending": 254
+    }
+  ],
+  "temporal_checks": "Executed test_model/test_safety_guards/test_historical_inventory including unavailable baseline, on-election results, post-election frame, future/missing publication, wrong scope and same-day archive exclusion. Not an empirical backtest.",
+  "boundary_evidence_review": {
+    "path": "data/boundary_research/new_1453_gangdong_ordin_1598799_body.html",
+    "sha256": "394db046b4b341f4400eb2ed3396f9e5a4919fcde0a7c2aff828f1b9c0dcd8c2",
+    "observed_effective_date": "2021-07-01",
+    "observed_ordinance": "서울특별시강동구조례 제1595호, 2021-05-26 일부개정",
+    "assessment": "본문은 관할구역과 연혁을 포함한 유용한 1차 조례 자료 후보이다. 2021년 상일동 분동 및 과거 길동 관련 개정 기록이 있으나 이 본문만으로 2020-04-15와 2024-04-10의 길동 지리 경계 동일성을 확정할 수 없다. 양 시점 시행본 및 별표/지번조서 교차확인 필요.",
+    "crosswalk_approved": false,
+    "weights_created": false
+  },
+  "limitations": [
+    "Simulation invariance is not forecast accuracy or calibration.",
+    "Archive source retention is not historical availability or geometry proof."
+  ],
+  "post_edit_historical_validator_review": {
+    "validator_sha256": "fad5c7d66b23a4570417937fa0a0b1aa633a65d66fe5d290224e7a7fcd94e9d8",
+    "new_tests_sha256": "0918b34d480160ca967ccb9085327521b211a85522a3e6466627c9f713e756ad",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_model.py",
+      "test_safety_guards.py",
+      "test_boundary_inventory.py",
+      "test_ward_inventory.py",
+      "test_historical_frame_archive.py",
+      "test_historical_inventory.py",
+      "test_partial_identification.py",
+      "test_historical_roles.py"
+    ],
+    "exit_code": 0,
+    "test_count": 103,
+    "stderr": ".......................................................................................................\n----------------------------------------------------------------------\nRan 103 tests in 14.483s\n\nOK\n",
+    "inventory_summary": {
+      "schema_version": "historical_archive_inventory_1",
+      "status": "PASS",
+      "as_of": "2026-10-17",
+      "wave_count": 4,
+      "observation_count": 36,
+      "available_observations": 36,
+      "publication_policy": "strictly_before_cutoff_date_unknown_release_time_excludes_same_day",
+      "party_support_used": false,
+      "training_approved": false,
+      "current_model_linked": false,
+      "geography_approved": false,
+      "party_successor_mapping_created": false,
+      "national_and_regions_independent": false,
+      "wave_pooling_or_weights_created": false,
+      "cross_election_pooling_approved": false,
+      "target_election_coverage": [
+        {
+          "target_election_date": "2020-04-15",
+          "wave_count": 3,
+          "observation_count": 27,
+          "available_observations": 27
+        },
+        {
+          "target_election_date": "2024-04-10",
+          "wave_count": 1,
+          "observation_count": 9,
+          "available_observations": 9
+        }
+      ],
+      "remaining_gates": [
+        "geographic_crosswalk",
+        "unlocated_vote_policy",
+        "historical_party_candidate_mapping",
+        "method_comparability",
+        "historical_baseline_availability",
+        "time_split_calibration"
+      ]
+    },
+    "manual_review": {
+      "method_profiles_separate": true,
+      "role_direction_2020_support_2024_check": true,
+      "legacy_2020_party_identity_retained": true,
+      "unreviewed_target_method_question_window_fail_closed": true,
+      "unknown_same_day_release_excluded": true,
+      "current_model_and_training_flags_false": true,
+      "no_party_support_path": true,
+      "no_geometry_or_transfer_approval": true
+    },
+    "review_limitations": [
+      "Exact schema acceptance is not raw-source semantic proof for arbitrary future imports; each source still requires manual verification.",
+      "No empirical backtest or calibration performed."
+    ]
+  },
+  "test_count_after_profile_extension": 111
+}

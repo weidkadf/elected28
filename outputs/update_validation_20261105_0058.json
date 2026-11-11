@@ -1,0 +1,15 @@
+{
+  "version": "0.2.18",
+  "scope": "original_party_labels_archive_crosscheck",
+  "party_labels_checked": 67,
+  "districts": 13,
+  "independents": 4,
+  "party_and_candidate_check_scripts_passed": true,
+  "unit_tests_rerun": false,
+  "parent_unit_tests_passed": 169,
+  "preserved_parent_files": 180,
+  "all_non_document_state_parent_files_byte_identical": true,
+  "scenario_recomputed": false,
+  "geography_approved": false,
+  "historical_available_on_approved": false
+}

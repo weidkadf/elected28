@@ -1,0 +1,77 @@
+{
+  "audit_date": "2026-10-16",
+  "audit_kind": "read_only_model_and_test_review",
+  "status": "CURRENT_DATA_CHECKS_PASS_WITH_BACKTEST_GAPS",
+  "model_changed": false,
+  "inputs_changed": false,
+  "report_recalculated_for_release": false,
+  "audit_draws": 100,
+  "seed": 20261016,
+  "tested_input_sha256": {
+    "model.py": "0a84705ac47db76136353e3ed6e70ec9d567183374021d7e443069c9665907cd",
+    "test_model.py": "a3a860fd8264643b8536ff6bc2094b544a2ea9baf502ec351db6d3d416745bd2",
+    "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
+    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "config/frame_comparison.json": "b5fcbd7ac2f75e274f4dcf593d21d98595661e5a9eef38f67d0ece69c4d105b3"
+  },
+  "checks": {
+    "existing_13_unittests_pass": true,
+    "seed_repeat_full_report_identical": true,
+    "party_support_mutation_full_report_identical": true,
+    "party_support_removal_full_report_identical": true,
+    "coverage_254": true,
+    "all_scenario_vote_and_seat_checks": true,
+    "every_scenario_covers_254": true,
+    "source_files_unchanged": true
+  },
+  "unit_test_output": "test_future_release_is_blocked_even_if_fieldwork_has_finished (test_model.FrameModelTests.test_future_release_is_blocked_even_if_fieldwork_has_finished) ... ok\ntest_missing_release_date_is_not_assumed_available (test_model.FrameModelTests.test_missing_release_date_is_not_assumed_available) ... ok\ntest_more_current_government_support_increases_democratic_share (test_model.FrameModelTests.test_more_current_government_support_increases_democratic_share) ... ok\ntest_no_inputs_and_legacy_linkage_blocked (test_model.FrameModelTests.test_no_inputs_and_legacy_linkage_blocked) ... ok\ntest_party_support_changes_do_not_change_any_output (test_model.FrameModelTests.test_party_support_changes_do_not_change_any_output) ... ok\ntest_postelection_baseline_release_is_rejected (test_model.FrameModelTests.test_postelection_baseline_release_is_rejected) ... ok\ntest_postelection_regional_release_cannot_leak_through_national_anchor (test_model.FrameModelTests.test_postelection_regional_release_cannot_leak_through_national_anchor) ... ok\ntest_reproducibility_and_all_seats_accounted (test_model.FrameModelTests.test_reproducibility_and_all_seats_accounted) ... ok\ntest_roles_reverse_sign (test_model.FrameModelTests.test_roles_reverse_sign) ... ok\ntest_same_democratic_orientation_means_zero_change (test_model.FrameModelTests.test_same_democratic_orientation_means_zero_change) ... ok\ntest_suppressed_region_uses_national_change_with_explicit_flag (test_model.FrameModelTests.test_suppressed_region_uses_national_change_with_explicit_flag) ... ok\ntest_third_party_fixed_and_missing_major_party_pending (test_model.FrameModelTests.test_third_party_fixed_and_missing_major_party_pending) ... ok\ntest_zero_change_and_zero_error_recovers_baseline (test_model.FrameModelTests.test_zero_change_and_zero_error_recovers_baseline) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.029s\n\nOK\n",
+  "coverage": {
+    "expected_districts": 254,
+    "observed_districts": 254,
+    "valid_districts": 254,
+    "scenario_eligible_districts": 245,
+    "complete": true
+  },
+  "scenario_counts": [
+    {
+      "name": "government_frame_delta_alpha_0",
+      "simulated": 245,
+      "pending": 9
+    },
+    {
+      "name": "government_frame_delta_alpha_0.5",
+      "simulated": 245,
+      "pending": 9
+    },
+    {
+      "name": "government_frame_delta_alpha_1",
+      "simulated": 245,
+      "pending": 9
+    }
+  ],
+  "findings": [
+    {
+      "severity": "future_backtest_blocker",
+      "code": "FIXED_2024_RESULT_BASELINE_NOT_GATED_BY_AS_OF",
+      "location": "model.py:build_report/read_baseline",
+      "reproduced": true,
+      "detail": "발표일 게이트는 조사 관측만 검사한다. 합성 as_of=2024-04-09와 그날 공개된 조사로도 이미 확정된 2024-04-10 결과를 기초로 시나리오를 만든다. 현재 2026 회차에 누출이 발생했다는 뜻은 아니며 2020→2024 시점제한 백테스트로 이 함수를 그대로 재사용하면 안 된다.",
+      "next_action": "백테스트용 기준선 선거일·공개일과 예측대상 선거일을 구분하고 모든 입력의 availability <= as_of를 강제하는 별도 harness."
+    },
+    {
+      "severity": "configuration_validation_gap",
+      "code": "REGIONAL_SCOPE_NOT_CHECKED",
+      "location": "model.py:matched_frame_scenarios regional loop",
+      "reproduced": true,
+      "detail": "같은 조사기관·계열·조사종료일이면 광주/전라 scope 관측을 서울에 연결한 합성 설정도 허용한다. 현행 파일의 실제 오연결이 확인됐다는 뜻은 아니다.",
+      "next_action": "명시적인 권역 scope 매핑을 검증하고 전국 관측이 지역관측으로 선택되는 경우 차단."
+    },
+    {
+      "severity": "temporal_resolution_limit",
+      "code": "DATE_ONLY_PUBLICATION",
+      "location": "model.py:validate_polls",
+      "detail": "published_at/as_of는 날짜만 사용한다. 같은 날짜의 발표 전 시각 재현은 지원하지 않는다. 현행 일단위 게이트는 통과했으며 시각단위 백테스트를 표방하려면 시간대 포함 timestamp가 필요하다."
+    }
+  ],
+  "summary_ko": "정당지지도 변경·삭제 불변성과 시드 재현·254구 회계 및 13개 테스트 통과. 2024 결과 기준선의 시점 게이트와 권역 scope 설정 검증은 백테스트 전에 보완 필요."
+}

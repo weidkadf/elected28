@@ -1,0 +1,2 @@
+# Optional read-only statutory PDF inventory, separate from the numpy model.
+pdfplumber==0.11.9

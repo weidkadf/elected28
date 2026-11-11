@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-05",
+  "scope": "제23대 총선 대상 정부지원·견제 및 유사 문항",
+  "found": [
+    {
+      "poll": "한국갤럽 678",
+      "status": "primary_html_verified",
+      "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662"
+    },
+    {
+      "poll": "한길리서치 2026-10-25~26",
+      "status": "secondary_only",
+      "url": "https://www.polinews.co.kr/news/articleView.html?idxno=747027"
+    },
+    {
+      "poll": "리서치뷰 2026-08-29~31",
+      "status": "secondary_only",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=126831"
+    },
+    {
+      "poll": "리서치뷰 2026-09-28~30",
+      "status": "secondary_only",
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16231423"
+    }
+  ],
+  "not_found": [
+    {
+      "date": "2026-11-05",
+      "query": "NBS 전국지표조사 국정안정론/견제론 2026-10",
+      "result": "제23대 총선 대상 문항 보도 미발견(지방선거 대상 문항만 발견)"
+    },
+    {
+      "date": "2026-11-05",
+      "query": "리얼미터·한국리서치·에이스리서치·조원씨앤아이 2028 총선 견제/지원",
+      "result": "미발견"
+    },
+    {
+      "date": "2026-11-05",
+      "query": "한국갤럽 679·680호 총선 결과 기대",
+      "result": "미발견(678호가 최신 해당 문항)"
+    }
+  ],
+  "nesdc_access": "not reachable from this session (allowlist)"
+}

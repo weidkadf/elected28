@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-17T01:42:51+09:00",
+  "model_input_modified": false,
+  "checks": [
+    {"source": "한국갤럽", "url": "https://www.gallup.co.kr/gallupdb/report.asp", "http_status": 200, "latest_daily_report": 678, "existing_observation": true},
+    {"source": "여심위", "url": "https://nesdc.go.kr/portal/bbs/B0000005/list.do", "http_status": 200, "previous_registration_ids_still_present": [17314, 17313, 17312], "new_frame_observation_identified": false},
+    {"source": "NBS", "url": "https://nbsurvey.kr/", "error": "HTTP Error 502: Bad Gateway"}
+  ],
+  "limitations": ["목록 재확인 범위이며 모든 조사기관의 신규 문항 부재를 보장하지 않음", "NBS 자체 사이트 접근 실패는 이전 여심위 190차 원문 기록으로 보완", "공개 목록만 확인했으며 정당지지도를 계산 입력으로 사용하지 않음"]
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Election23 · 제23대 총선 지역구 시나리오</title>
+<meta name="description" content="2028년 제23대 국회의원선거 지역구 254석 조건부 시나리오 모델">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1c1b19;--mute:#6b6862;--line:#dedbd3;--dem:#1f5fbf;--con:#c8372d;--demb:#1f5fbf22;--conb:#c8372d22;--acc:#7a5c00;--accb:#f3e7b8;--post:#00000012}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#151514;--card:#1f1f1d;--ink:#eceae4;--mute:#a09c93;--line:#35342f;--dem:#6ea3f2;--con:#f0776c;--demb:#6ea3f230;--conb:#f0776c30;--acc:#e7c860;--accb:#3d3513;--post:#ffffff14}}
+:root[data-theme=dark]{--bg:#151514;--card:#1f1f1d;--ink:#eceae4;--mute:#a09c93;--line:#35342f;--dem:#6ea3f2;--con:#f0776c;--demb:#6ea3f230;--conb:#f0776c30;--acc:#e7c860;--accb:#3d3513;--post:#ffffff14}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif}
+main{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:21px;margin:44px 0 6px;letter-spacing:-.01em}
+p{margin:6px 0 12px}.mute{color:var(--mute)}.small{font-size:13.5px}
+.banner{background:var(--accb);color:var(--ink);border-left:4px solid var(--acc);padding:10px 14px;border-radius:6px;margin:16px 0;font-size:14.5px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi b{display:block;font-size:30px;line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi span{font-size:13.5px;color:var(--mute)}.kpi em{font-style:normal;font-size:13px;color:var(--mute);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}th{font-weight:600;color:var(--mute);font-size:13px}
+th.s{cursor:pointer;user-select:none}tr.hl td{font-weight:700}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--mute);margin:4px 0 8px}
+.sw{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px}
+svg text{fill:var(--mute);font-size:12px}
+.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+input,select,button{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.seg button{border-radius:0;margin-left:-1px}.seg button:first-child{border-radius:8px 0 0 8px;margin-left:0}.seg button:last-child{border-radius:0 8px 8px 0}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bar{display:inline-block;width:110px;height:10px;background:var(--conb);border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:8px}
+.bar i{display:block;height:100%;background:var(--dem)}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:6px 9px;border-radius:6px;font-size:13px;display:none;z-index:5;white-space:nowrap}
+ul{padding-left:20px;margin:6px 0}li{margin:3px 0}
+footer{margin-top:48px;color:var(--mute);font-size:13.5px;border-top:1px solid var(--line);padding-top:14px}
+a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<p class="mute small" id="meta"></p>
+<h1>제23대 총선 지역구 시나리오</h1>
+<p class="mute">2024 총선·2025 대선·2026 지선 개표와 선거여론조사심의위원회 등록 조사로 만든 지역구 254석 조건부 모델</p>
+<div class="banner"><b>검증된 예측이 아닙니다.</b> “현재의 정부 지원·견제 여론이 선거일까지 유지된다면”이라는 조건에서 계산한 시나리오입니다. 2024년 선거구를 그대로 썼고 후보·비례 46석은 반영하지 않았습니다.</div>
+
+<div class="kpis" id="kpis"></div>
+
+<h2>여론이 득표로 옮겨가는 정도(α)에 따른 의석</h2>
+<p class="mute small">α=0이면 2024년 이후 여론 변화가 득표에 전혀 반영되지 않고, α=1이면 그대로 반영됩니다. 회색 띠는 α의 95% 추정 구간, 선 주변 띠는 의석의 10~90% 범위입니다.</p>
+<div class="card">
+<div class="legend"><span><i class="sw" style="background:var(--dem)"></i>더불어민주당 평균 의석</span><span><i class="sw" style="background:var(--con)"></i>국민의힘 평균 의석</span><span><i class="sw" style="background:var(--mute)"></i>과반 128석</span></div>
+<div id="chart"></div>
+</div>
+
+<h2>α는 얼마인가</h2>
+<p class="mute small">세 경로로 따로 구해 합쳤습니다. 개인 단위와 권역 경로가 서로 어긋나므로 결합값은 잠정적입니다.</p>
+<div class="card scroll"><table id="alpha"></table></div>
+
+<h2>조건부 의석 분포</h2>
+<div class="card scroll"><table id="seats"></table></div>
+
+<h2>조사방식별 정확도 (2025 대선)</h2>
+<p class="mute small" id="modesNote"></p>
+<div class="card scroll"><table id="modes"></table></div>
+
+<h2>지역구 254곳</h2>
+<div class="ctl">
+<input id="q" placeholder="지역구 검색" aria-label="지역구 검색">
+<select id="reg" aria-label="시도"></select>
+<span class="seg" id="aSel" role="group" aria-label="α 선택"></span>
+</div>
+<div class="card scroll"><table id="dist"></table></div>
+<p class="mute small" id="distNote"></p>
+
+<h2>방법</h2>
+<ul>
+<li><b>출발점</b>: 지역구 성향 = 2024 총선 0.5 + 2025 대선 0.3 + 2026 시도지사 0.2 (읍면동 개표를 2024 선거구에 배정).</li>
+<li><b>여론</b>: “정부 지원 vs 견제” 문항의 2024년 → 현재 변화를 권역별로 집계. 최신성 반감기, 기관 단위 가중, 조사방식 품질가중, 투표 의향 보정을 적용.</li>
+<li><b>전이</b>: 지역구 득표 logit = 출발점 + α × 여론 변화 + 전국·권역·지역구 오차. 전국 오차는 선거까지 남은 날의 제곱근에 비례해 커짐.</li>
+<li><b>한계</b>: α 추정 경로가 서로 다른 값을 가리킴. 결과표는 PDF 자동 추출. 품질가중은 대선 한 번의 결과. 선거구 획정·후보·제3정당 변화 미반영.</li>
+</ul>
+<footer id="foot"></footer>
+</main>
+<div id="tip"></div>
+<script src="data.js"></script>
+<script>
+const D=window.E23,$=s=>document.querySelector(s),f1=x=>x==null?'–':x.toFixed(1),f2=x=>x==null?'–':x.toFixed(2),pc=x=>x==null?'–':(100*x).toFixed(0)+'%';
+const P=D.alpha.post.all_three,S=D.seats.all_three,dd=Math.round((new Date(D.election)-new Date(D.as_of))/864e5);
+$('#meta').textContent=`Election23 v${D.version} · 기준일 ${D.as_of} · 선거일 ${D.election} (D-${dd})`;
+$('#kpis').innerHTML=[
+ [f2(P.mean),'α 추정 평균',`95% 구간 ${f2(P.ci95[0])}~${f2(P.ci95[1])}`],
+ [f2(D.thresholds.main_composite_254.dem),'민주당 과반 상실 문턱 α',`국민의힘 과반 획득 ${f2(D.thresholds.main_composite_254.con)}`],
+ [pc(S.p_con_district_majority),'국민의힘 지역구 과반 확률',`평균 ${Math.round(S.con_mean)}석`],
+ [pc(S.p_dem_district_majority),'민주당 지역구 과반 확률',`평균 ${Math.round(S.dem_mean)}석 (10~90% ${S.dem_p10_p50_p90[0]}~${S.dem_p10_p50_p90[2]})`]
+].map(k=>`<div class="kpi"><span>${k[1]}</span><b>${k[0]}</b><em>${k[2]}</em></div>`).join('');
+
+// chart
+(function(){const W=980,H=420,m={l:44,r:16,t:14,b:38},C=D.curve,ax=1.5,x=a=>m.l+a/ax*(W-m.l-m.r),y=v=>H-m.b-v/254*(H-m.t-m.b);
+const path=k=>C.map((p,i)=>(i?'L':'M')+x(p.a).toFixed(1)+' '+y(p[k]).toFixed(1)).join('');
+const band=(lo,hi)=>C.map((p,i)=>(i?'L':'M')+x(p.a).toFixed(1)+' '+y(p[hi]).toFixed(1)).join('')+C.slice().reverse().map(p=>'L'+x(p.a).toFixed(1)+' '+y(p[lo]).toFixed(1)).join('')+'Z';
+let g='';for(let v=0;v<=250;v+=50)g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${m.l-8}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+for(let a=0;a<=1.5;a+=.25)g+=`<text x="${x(a)}" y="${H-m.b+18}" text-anchor="middle">${a}</text>`;
+const thr=D.thresholds.main_composite_254.dem;
+$('#chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="α에 따른 평균 의석 곡선">
+<rect x="${x(P.ci95[0])}" y="${m.t}" width="${x(P.ci95[1])-x(P.ci95[0])}" height="${H-m.t-m.b}" fill="var(--post)"/>
+${g}<path d="${band('dl','dh')}" fill="var(--demb)"/><path d="${band('cl','ch')}" fill="var(--conb)"/>
+<line x1="${m.l}" x2="${W-m.r}" y1="${y(128)}" y2="${y(128)}" stroke="var(--mute)" stroke-dasharray="5 4"/><text x="${W-m.r-4}" y="${y(128)-6}" text-anchor="end">과반 128</text>
+<path d="${path('d')}" fill="none" stroke="var(--dem)" stroke-width="2.5"/><path d="${path('c')}" fill="none" stroke="var(--con)" stroke-width="2.5"/>
+<line x1="${x(P.mean)}" x2="${x(P.mean)}" y1="${m.t}" y2="${H-m.b}" stroke="var(--ink)" stroke-width="1"/><text x="${x(P.mean)+6}" y="${m.t+12}">α 추정 ${f2(P.mean)}</text>
+<text x="${x(thr)-6}" y="${H-m.b-8}" text-anchor="end">문턱 ${f2(thr)}</text>
+<text x="${(W+m.l)/2}" y="${H-4}" text-anchor="middle">α (여론 변화의 득표 전이율)</text>
+<line id="cur" y1="${m.t}" y2="${H-m.b}" stroke="var(--mute)" stroke-width="1" visibility="hidden"/><rect id="hit" x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.t-m.b}" fill="transparent"/></svg>`;
+const svg=$('#chart svg'),tip=$('#tip'),cur=$('#cur');
+svg.addEventListener('pointermove',e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,a=Math.max(0,Math.min(ax,(px-m.l)/(W-m.l-m.r)*ax)),p=C.reduce((b,c)=>Math.abs(c.a-a)<Math.abs(b.a-a)?c:b);
+cur.setAttribute('x1',x(p.a));cur.setAttribute('x2',x(p.a));cur.setAttribute('visibility','visible');tip.style.display='block';tip.style.left=Math.min(e.clientX+14,innerWidth-230)+'px';tip.style.top=(e.clientY+14)+'px';
+tip.innerHTML=`α ${f2(p.a)} · 민주 ${f1(p.d)}석 (${p.dl}~${p.dh}) · 국힘 ${f1(p.c)}석 (${p.cl}~${p.ch})`});
+svg.addEventListener('pointerleave',()=>{tip.style.display='none';cur.setAttribute('visibility','hidden')});})();
+
+// alpha table
+const A=D.alpha,ci=c=>`${f2(c[0])} ~ ${f2(c[1])}`;
+$('#alpha').innerHTML='<tr><th>경로</th><th>α</th><th>95% 구간</th><th>근거</th></tr>'+[
+ ['개인 단위 (프레임×정당 교차표)',A.micro.mean_of_pollster_means,A.post.micro_only.ci95,`조사 ${A.micro.n_polls}건 · ${A.micro.n_pollsters}개 기관`],
+ ['권역 변화: 2024 총선 → 2026 지선',A.pairs.gen2024_to_gov2026.alpha,A.pairs.gen2024_to_gov2026.ci95,`지역구 ${A.pairs.gen2024_to_gov2026.n_districts}곳`],
+ ['권역 변화: 2024 총선 → 2025 대선',A.pairs.gen2024_to_pres2025.alpha,A.pairs.gen2024_to_pres2025.ci95,`지역구 ${A.pairs.gen2024_to_pres2025.n_districts}곳 · 문항이 다름`],
+ ['권역 변화: 두 쌍 합산',A.joint.alpha,A.joint.ci95,''],
+ ['사전분포 (균등 스윙 가정)',1,A.post.prior_only.ci95,'가정'],
+ ['<b>전부 결합</b>',A.post.all_three.mean,A.post.all_three.ci95,'주 결과',1],
+ ['결합, 대선 쌍 제외',A.post.all_three_excluding_presidential_pair.mean,A.post.all_three_excluding_presidential_pair.ci95,'문항 개념이 같은 쌍만']
+].map(r=>`<tr class="${r[4]?'hl':''}"><td>${r[0]}</td><td>${f2(r[1])}</td><td>${ci(r[2])}</td><td class="mute">${r[3]}</td></tr>`).join('');
+const sn={all_three:'전부 결합 (주 결과)',all_three_excluding_presidential_pair:'대선 쌍 제외',micro_plus_region:'사전분포 없이'};
+$('#seats').innerHTML='<tr><th>α 결합 방식</th><th>민주 평균</th><th>민주 10~90%</th><th>국힘 평균</th><th>민주 과반 확률</th><th>국힘 과반 확률</th></tr>'+Object.keys(sn).map(k=>{const s=D.seats[k];return `<tr class="${k=='all_three'?'hl':''}"><td>${sn[k]}</td><td>${Math.round(s.dem_mean)}석</td><td>${s.dem_p10_p50_p90[0]}~${s.dem_p10_p50_p90[2]}석</td><td>${Math.round(s.con_mean)}석</td><td>${pc(s.p_dem_district_majority)}</td><td>${pc(s.p_con_district_majority)}</td></tr>`}).join('');
+$('#modesNote').textContent=`후보 등록 이후 2주간 전국 조사 ${D.n_rated}건의 이재명·김문수 지지율을 실제 득표와 비교했습니다. 이 결과로 조사방식 가중을 정했습니다.`;
+$('#modes').innerHTML='<tr><th>조사방식</th><th>조사 수</th><th>격차 오차</th><th>logit RMSE</th><th>모델 가중</th></tr>'+[['ARS','ARS','ARS_RDD'],['전화면접','CATI','CATI_live_interview']].map(r=>{const m=D.modes[r[1]];return `<tr><td>${r[0]}</td><td>${m.n}</td><td>${m.margin_error_pp>0?'+':''}${f1(m.margin_error_pp)}%p</td><td>${m.rmse_logit.toFixed(3)}</td><td>${f2(D.quality[r[2]])}</td></tr>`}).join('');
+
+// districts
+const AL=[0,.25,.5,.75,1];let ai=2,sk='id',sd=1;
+$('#reg').innerHTML='<option value="">전체 시도</option>'+[...new Set(D.districts.map(d=>d.r))].map(r=>`<option>${r}</option>`).join('');
+function seg(){$('#aSel').innerHTML=AL.map((a,i)=>`<button type="button" aria-pressed="${i==ai}" data-i="${i}">α ${a}</button>`).join('')}
+function draw(){const q=$('#q').value.trim(),rg=$('#reg').value;let R=D.districts.filter(d=>(!q||d.id.includes(q)||d.r.includes(q))&&(!rg||d.r==rg));
+const key=d=>sk=='w'?d.w[ai]:(d[sk]??-1);R.sort((a,b)=>{const x=key(a),y=key(b);return (x>y?1:x<y?-1:0)*sd});
+const h=(k,t)=>`<th class="s" data-k="${k}">${t}${sk==k?(sd>0?' ▲':' ▼'):''}</th>`;
+$('#dist').innerHTML=`<tr>${h('id','지역구')}${h('r','시도')}${h('b24','2024 총선')}${h('b25','2025 대선')}${h('b','출발점')}${h('w','민주 승리 확률')}</tr>`+R.map(d=>`<tr><td>${d.id}</td><td style="text-align:left">${d.r}</td><td>${d.b24==null?'–':(100*d.b24).toFixed(1)}</td><td>${d.b25==null?'–':(100*d.b25).toFixed(1)}</td><td>${(100*d.b).toFixed(1)}</td><td><span class="bar"><i style="width:${100*d.w[ai]}%"></i></span>${pc(d.w[ai])}</td></tr>`).join('');
+const exp=R.reduce((s,d)=>s+d.w[ai],0);$('#distNote').textContent=`${R.length}곳 표시 · 득표율은 민주당 양당 득표율(%) · α ${AL[ai]}에서 표시된 지역구의 민주당 기대 승리 수 ${exp.toFixed(1)} (제3후보 당선 가능 지역 포함)`}
+seg();draw();
+$('#aSel').addEventListener('click',e=>{if(e.target.dataset.i){ai=+e.target.dataset.i;seg();draw()}});
+$('#q').addEventListener('input',draw);$('#reg').addEventListener('change',draw);
+$('#dist').addEventListener('click',e=>{const k=e.target.dataset.k;if(k){sd=sk==k?-sd:(k=='id'||k=='r'?1:-1);sk=k;draw()}});
+$('#foot').innerHTML=`자료: 중앙선거관리위원회 개표 결과, 중앙선거여론조사심의위원회 등록 조사(964건), 한국갤럽 데일리 오피니언. 방법 참고: VoteHub. · v${D.version} · 기준일 ${D.as_of}`;
+</script>
+</body>
+</html>
