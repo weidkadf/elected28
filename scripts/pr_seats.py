@@ -35,9 +35,10 @@ def main():
     d0 = PR2024['민주연합'] + PR2024['조국혁신당']; c0 = PR2024['국민의미래']; two = d0 + c0; z0 = math.log(d0 / c0); rj = PR2024['조국혁신당'] / d0
 
     def run(alphas, weights):
-        acc = {k: [] for k in ('dem_d', 'con_d', 'oth_d', 'dem_pr', 'jk_pr', 'con_pr', 'ref_pr')}; ww = []
+        acc = {k: [] for k in ('dem_d', 'con_d', 'oth_d', 'dem_pr', 'jk_pr', 'con_pr', 'ref_pr')}; ww = []; run.last_win = None
         for a, wi in zip(alphas, weights):
             sn = F.sigma_national(float(a), days, s); r = sim.run(float(a), change, sn, s['region'], s['district'])
+            run.last_win = r['dem_win_prob']
             p = 1 / (1 + np.exp(-(z0 + a * nat_change + sn * sim.zn)))
             sh = np.column_stack([two * p * (1 - rj), two * p * rj, two * (1 - p), np.full_like(p, PR2024['개혁신당'])])
             al = alloc(sh)
@@ -52,12 +53,18 @@ def main():
                 'pr': {'민주': m(X['dem_pr']), '조국혁신당': m(X['jk_pr']), '국민의힘': m(X['con_pr']), '개혁신당': m(X['ref_pr'])},
                 'total_300': {'민주': m(dem), '민주+조국혁신당': m(bloc), '국민의힘': m(con), '기타(지역구 제3후보+개혁신당 비례)': m(X['oth_d'] + X['ref_pr'])},
                 'p10_p50_p90': {'민주': q(dem), '민주+조국혁신당': q(bloc), '국민의힘': q(con)},
+                'p_district_majority_128': {'민주': round(float(w[X['dem_d'] >= 128].sum()), 3), '국민의힘': round(float(w[X['con_d'] >= 128].sum()), 3)},
+                'district_p10_p90': {'민주': q(X['dem_d'], (.1, .9)), '국민의힘': q(X['con_d'], (.1, .9))},
                 'p_majority_151': {'민주 단독': round(float(w[dem >= 151].sum()), 3), '민주+조국혁신당': round(float(w[bloc >= 151].sum()), 3), '국민의힘 단독': round(float(w[con >= 151].sum()), 3)}}
     for name, key in (('posterior_all_three', 'weights_all_three'), ('posterior_excluding_presidential_pair', 'weights_all_three_excluding_presidential_pair')):
         w = np.array(A[key]); keep = (w > 1e-4) & (grid >= 0); out['scenarios'][name] = run(grid[keep], w[keep])
     for a in (0.0, 0.2, 0.53, 0.75, 1.0):
         out['scenarios'][f'alpha_{a:g}'] = run([a], [1.0])
-    (ROOT / 'outputs/seats_300.json').write_text(json.dumps(out, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    ag = [round(x, 2) for x in np.arange(0, 1.5001, 0.05)]
+    out['by_alpha'] = {'alpha': ag, 'rows': [], 'district_ids': [d['district_id'] for d in sim.eligible], 'dem_win_prob': []}
+    for a in ag:
+        out['by_alpha']['rows'].append(run([a], [1.0])); out['by_alpha']['dem_win_prob'].append([round(float(x), 3) for x in run.last_win])
+    (ROOT / 'outputs/seats_300.json').write_text(json.dumps(out, ensure_ascii=False) + '\n', encoding='utf-8')
     for k, v in out['scenarios'].items():
         print(k, v['total_300'], v['pr'], v['p10_p50_p90'], v['p_majority_151'])
     print(out['national_frame_change_logit'])
