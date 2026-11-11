@@ -8,6 +8,7 @@ J = lambda p: json.loads((ROOT / p).read_text(encoding='utf-8'))
 
 def main():
     f, a, r, st = J('outputs/forecast_v050.json'), J('outputs/alpha_identification.json'), J('outputs/pollster_ratings.json'), J('state.json')
+    s300 = J('outputs/seats_300.json')
     curve = [{'a': p['alpha'], 'd': p['dem']['mean'], 'dl': p['dem']['p10_p50_p90'][0], 'dh': p['dem']['p10_p50_p90'][2],
               'c': p['con']['mean'], 'cl': p['con']['p10_p50_p90'][0], 'ch': p['con']['p10_p50_p90'][2]} for p in f['scenarios']['main_composite_254']['curve']]
     t = f['headline']['thresholds_by_scenario']
@@ -22,6 +23,7 @@ def main():
                   'pairs': {k: {x: v[x] for x in ('n_districts', 'alpha', 'ci95')} for k, v in a['regional']['pairs'].items()},
                   'joint': {k: a['regional']['joint_free_intercepts'][k] for k in ('alpha', 'ci95')}},
         'seats': {k: v for k, v in a['seat_distribution'].items() if k != 'condition'},
+        's300': s300['scenarios'],
         'modes': r['mode_summary']['all_parsed'], 'quality': r['quality_weights_for_model'], 'n_rated': r['n_polls'],
         'frame_change': f['inputs']['frame_change_by_scope_main'], 'polls': f['inputs']['current_polls_A_plus_B'],
         'districts': [{'id': d['district_id'].split('-', 2)[2], 'r': d['region'], 'b24': d['dem_two_party_2024'], 'b25': d['dem_two_party_pres2025'], 'b': d['composite_baseline'],
