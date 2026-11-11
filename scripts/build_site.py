@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build the static dashboard data (docs/data.js) from model outputs. The page is docs/index.html."""
-import json
+import hashlib, json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 J = lambda p: json.loads((ROOT / p).read_text(encoding='utf-8'))
@@ -37,7 +37,13 @@ def main():
         'districts': [{'id': d['district_id'].split('-', 2)[2], 'r': d['region'], 'b24': d['dem_two_party_2024'], 'b25': d['dem_two_party_pres2025'], 'b': d['composite_baseline'],
                        'w': [s300['by_alpha']['dem_win_prob'][k][i] for k in range(len(s300['by_alpha']['alpha']))]} for i, d in enumerate(f['districts_main'])],
     }
-    (ROOT / 'docs/data.js').write_text('window.E23 = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    js = 'window.E23 = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n'
+    (ROOT / 'docs/data.js').write_text(js, encoding='utf-8')
+    # Pages caches files for 10 minutes; stamp the data hash on the script URL so a new page never runs against an old data.js
+    page = ROOT / 'docs/index.html'; html = page.read_text(encoding='utf-8')
+    stamped, n = re.subn(r'src="data\.js(\?v=[0-9a-f]+)?"', f'src="data.js?v={hashlib.sha256(js.encode()).hexdigest()[:12]}"', html)
+    assert n == 1
+    if stamped != html: page.write_text(stamped, encoding='utf-8')
     print(json.dumps({'docs/data.js': (ROOT / 'docs/data.js').stat().st_size, 'districts': len(data['districts'])}))
 
 
