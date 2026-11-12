@@ -30,7 +30,8 @@ class JKSupportTests(unittest.TestCase):
         self.assertGreater(self.j['list_vote_uplift_logit'], 0)        # 2024 polls understated the list vote
         sc = self.j['scenarios']
         self.assertAlmostEqual(sc['fixed_2024']['ratio'], 24.25 / (26.69 + 24.25), places=4)
-        self.assertTrue(0 < sc['poll_direct']['ratio'] < sc['poll_swing']['ratio'] < sc['fixed_2024']['ratio'])
+        # direct < swing follows from the positive list-vote uplift; the order against 2024 depends on new polls, so not asserted
+        self.assertTrue(0 < sc['poll_direct']['ratio'] < sc['poll_swing']['ratio'] < 1)
 
     def test_main_output_is_the_fixed_scenario(self):
         g = self.s['pr_sensitivity']['grid']
@@ -42,8 +43,8 @@ class JKSupportTests(unittest.TestCase):
         for k in ('poll_swing', 'poll_direct'):
             r = g[f'{k}|fixed_2024']['posterior_all_three']
             self.assertEqual(r['pr']['국민의힘'], base['pr']['국민의힘'])
-            self.assertLess(r['pr']['조국혁신당'], base['pr']['조국혁신당'])
-            self.assertGreater(r['pr']['민주'], base['pr']['민주'])
+            lower = self.s['pr_sensitivity']['jk'][k]['ratio'] < self.s['pr_sensitivity']['jk']['fixed_2024']['ratio']
+            self.assertEqual(r['pr']['조국혁신당'] <= base['pr']['조국혁신당'], lower)
             self.assertLessEqual(abs(r['total_300']['민주+조국혁신당'] - base['total_300']['민주+조국혁신당']), 1.0)
 
     def test_reform_share_and_threshold(self):

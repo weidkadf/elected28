@@ -1,0 +1,58 @@
+# Daily check for a new NESDC '전국단위 선거여론조사결과 주요 데이터' workbook (posted weekly).
+# When it changed: rebuild the 조국혁신당/개혁신당 PR sensitivity and the dashboard data, run the checks,
+# commit to main, then start the Pages deploy (pushes made with GITHUB_TOKEN do not trigger other workflows).
+# Only the party-support sensitivity is automatic; 정부지원·견제 frame polls stay manual (UPDATE_PROTOCOL).
+name: Update NESDC party support
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 12:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-polls
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch newest workbook
+        id: fetch
+        run: |
+          set +e
+          python scripts/fetch_nesdc_party_support.py
+          code=$?
+          set -e
+          if [ "$code" = "3" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"
+          elif [ "$code" = "0" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"
+          else exit "$code"; fi
+      - name: Rebuild sensitivity and dashboard
+        if: steps.fetch.outputs.changed == 'true'
+        run: |
+          python scripts/build_party_support.py
+          python scripts/pr_seats.py
+          python scripts/build_site.py
+          python -m unittest test_jk_support -v
+      - name: Commit and deploy
+        if: steps.fetch.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title=$(python -c "import json;print(json.load(open('data/nesdc/nesdc_major_data_source.json',encoding='utf-8'))['post_title'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/nesdc/nesdc_major_data_national.xlsx data/nesdc/nesdc_major_data_source.json data/nesdc/party_support_national.csv \
+                  outputs/jk_support.json outputs/seats_300.json docs/data.js docs/index.html
+          git commit -m "자동 갱신: 여심위 ${title}"
+          git push
+          gh workflow run static.yml --ref main

@@ -152,7 +152,8 @@ def main():
 
     use = [dict(r, ratio=r['조국혁신당'] / (r['조국혁신당'] + r['더불어민주당'])) for r in rows
            if r['조국혁신당'] != '' and r['더불어민주당'] != '' and r['조국혁신당'] > 0 and not EXCLUDE.search(r['pollster'])]
-    as_of = date.fromisoformat(cfg['as_of'])
+    # the window follows new data: it ends at the later of the model as_of and the newest poll in the workbook
+    as_of = max(date.fromisoformat(cfg['as_of']), date.fromisoformat(rows[-1]['fieldwork_end']))
     lo = (as_of - timedelta(days=CURRENT_WINDOW_DAYS)).isoformat()
     pre = [p for p in use if PRE2024[0] <= p['fieldwork_end'] <= PRE2024[1]]
     cur = [p for p in use if lo < p['fieldwork_end'] <= as_of.isoformat()]
