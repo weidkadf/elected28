@@ -95,11 +95,33 @@
       "source_url": "https://www.topstarnews.net/news/articleView.html?idxno=16231423",
       "verification_status": "secondary_only_press_report",
       "notes": "질문 원문 미확보. 유보 비율 미보도."
+    },
+    {
+      "poll_id": "researchview_20261108_judgment_national",
+      "pollster": "리서치뷰",
+      "sponsor": "리서치뷰 정기조사",
+      "mode": "ARS_RDD",
+      "sampling_frame": "무선 RDD 100%",
+      "fieldwork_start": "2026-11-07",
+      "fieldwork_end": "2026-11-08",
+      "published_at": "2026-11-10",
+      "sample_size": 1000,
+      "response_rate": 0.029,
+      "scope": "national",
+      "wording_class": "B_judgment",
+      "question_exact": "2028년 4월 제23대 총선과 관련한 다음 두 가지 견해 중 어떤 견해에 더 공감하십니까?",
+      "options_exact": {"support": "정부ㆍ여당에 힘을 실어줘야 한다", "check": "정부ㆍ여당을 심판해야 한다", "dk": "모름/기타"},
+      "shares": {"support": 0.340, "check": 0.577, "dk": 0.084},
+      "source_url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19607&menuNo=200467",
+      "nesdc_reg_no": 17348,
+      "verification_status": "primary_nesdc_verified_2026-11-14",
+      "notes": "여심위 등록번호 17348 원문 대조: 질문지 문6(보기 1~2 로테이션), 결과분석 p.11 표3 '2026년 10월(11/07~08)' 행. 조사일시 11-07 12~22시·11-08 12~20시, 최초 공표·보도 지정일시 2026-11-10 07:00, 응답률 2.9%. 결과표 권역값은 outputs/frame_candidates.json에 있으나 권역 구분이 갤럽과 달라(강원/제주 통합) 등록하지 않음. 자동 스캔 후보를 원문과 대조해 등록."
     }
   ],
   "search_log": [
     {"date": "2026-11-05", "query": "NBS 전국지표조사 국정안정론/견제론 2026-10", "result": "제23대 총선 대상 문항 보도 미발견(지방선거 대상 문항만 발견)"},
     {"date": "2026-11-05", "query": "리얼미터·한국리서치·에이스리서치·조원씨앤아이 2028 총선 견제/지원", "result": "미발견"},
-    {"date": "2026-11-05", "query": "한국갤럽 679·680호 총선 결과 기대", "result": "미발견(678호가 최신 해당 문항)"}
+    {"date": "2026-11-05", "query": "한국갤럽 679·680호 총선 결과 기대", "result": "미발견(678호가 최신 해당 문항)"},
+    {"date": "2026-11-14", "query": "여심위 등록 전국 조사 2026-10-01~11-13 질문지 자동 스캔(57건, 여론조사꽃 제외)", "result": "해당 문항 4건(갤럽 17313, 한길 17330, 리서치뷰 17292·17348). 17348 등록"}
   ]
 }
