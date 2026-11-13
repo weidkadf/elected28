@@ -1,7 +1,10 @@
-# Daily check for a new NESDC '전국단위 선거여론조사결과 주요 데이터' workbook (posted weekly).
-# When it changed: rebuild the 조국혁신당/개혁신당 PR sensitivity and the dashboard data, run the checks,
-# commit to main, then start the Pages deploy (pushes made with GITHUB_TOKEN do not trigger other workflows).
-# Only the party-support sensitivity is automatic; 정부지원·견제 frame polls stay manual (UPDATE_PROTOCOL).
+# Daily NESDC check (12:00 KST).
+# 1. '전국단위 선거여론조사결과 주요 데이터' workbook (posted weekly): when it changed, rebuild the 조국혁신당/개혁신당
+#    PR sensitivity and the dashboard data, run the checks, and redeploy Pages
+#    (pushes made with GITHUB_TOKEN do not trigger other workflows).
+# 2. 정부지원·견제 / 정권심판 frame questions in newly registered national polls: only a review list
+#    (outputs/frame_candidates.json) and a GitHub issue. Registering a poll in data/frame_polls_multi.json stays manual
+#    (UPDATE_PROTOCOL). A failure here does not block step 1.
 name: Update NESDC party support
 
 on:
@@ -12,6 +15,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: update-polls
@@ -25,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt pdfplumber==0.11.9
       - name: Fetch newest workbook
         id: fetch
         run: |
@@ -36,6 +40,16 @@ jobs:
           if [ "$code" = "3" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"
           elif [ "$code" = "0" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"
           else exit "$code"; fi
+      - name: Scan new registrations for frame questions
+        id: frames
+        continue-on-error: true
+        run: |
+          set +e
+          python scripts/scan_nesdc_frame_candidates.py --summary "$RUNNER_TEMP/frame_summary.md"
+          code=$?
+          set -e
+          if [ "$code" = "0" ]; then echo "found=true" >> "$GITHUB_OUTPUT"
+          elif [ "$code" != "3" ]; then exit "$code"; fi
       - name: Rebuild sensitivity and dashboard
         if: steps.fetch.outputs.changed == 'true'
         run: |
@@ -43,16 +57,31 @@ jobs:
           python scripts/pr_seats.py
           python scripts/build_site.py
           python -m unittest test_jk_support -v
-      - name: Commit and deploy
+      - name: Commit
+        id: commit
+        run: |
+          git add data/nesdc/nesdc_major_data_national.xlsx data/nesdc/nesdc_major_data_source.json data/nesdc/party_support_national.csv \
+                  outputs/jk_support.json outputs/seats_300.json docs/data.js docs/index.html \
+                  data/nesdc/frame_scan_state.json outputs/frame_candidates.json
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          msg="자동 갱신: 여심위"
+          if [ "${{ steps.fetch.outputs.changed }}" = "true" ]; then
+            msg="$msg $(python -c "import json;print(json.load(open('data/nesdc/nesdc_major_data_source.json',encoding='utf-8'))['post_title'])")"
+          else
+            msg="$msg 등록 조사 스캔"
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "$msg"
+          git push
+      - name: Deploy Pages
         if: steps.fetch.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static.yml --ref main
+      - name: Open review issue for frame candidates
+        if: steps.frames.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          title=$(python -c "import json;print(json.load(open('data/nesdc/nesdc_major_data_source.json',encoding='utf-8'))['post_title'])")
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/nesdc/nesdc_major_data_national.xlsx data/nesdc/nesdc_major_data_source.json data/nesdc/party_support_national.csv \
-                  outputs/jk_support.json outputs/seats_300.json docs/data.js docs/index.html
-          git commit -m "자동 갱신: 여심위 ${title}"
-          git push
-          gh workflow run static.yml --ref main
+          gh issue create --title "정부지원·견제 문항 후보 검토 ($(TZ=Asia/Seoul date +%F))" --body-file "$RUNNER_TEMP/frame_summary.md"

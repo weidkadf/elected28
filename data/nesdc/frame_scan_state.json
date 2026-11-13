@@ -1,0 +1,1225 @@
+{
+ "last_reg_no": 17354,
+ "since": "2026-10-01",
+ "polls": {
+  "17354": {
+   "ntt": 19614,
+   "reg_no": 17354,
+   "pollster": "리서치웰",
+   "sponsor": "뉴데일리",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 국회의원선거 대통령선거",
+   "registered": "2026-11-13",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-11",
+   "fieldwork_end": "2026-11-12",
+   "published_at": "2026-11-13 14:00",
+   "sample_size": 1000,
+   "response_rate_pct": 3.0
+  },
+  "17353": {
+   "ntt": 19612,
+   "reg_no": 17353,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-12",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-10",
+   "fieldwork_end": "2026-11-12",
+   "published_at": "2026-11-13 10:00",
+   "sample_size": 1002,
+   "response_rate_pct": 10.1
+  },
+  "17352": {
+   "ntt": 19611,
+   "reg_no": 17352,
+   "pollster": "(주)엠브레인퍼블릭",
+   "sponsor": "㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-11",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-09",
+   "fieldwork_end": "2026-11-11",
+   "published_at": "2026-11-12 11:00",
+   "sample_size": 1001,
+   "response_rate_pct": 14.3
+  },
+  "17351": {
+   "ntt": 19610,
+   "reg_no": 17351,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-11-11",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-09",
+   "fieldwork_end": "2026-11-10",
+   "published_at": "2026-11-12 01:00",
+   "sample_size": 1001,
+   "response_rate_pct": 3.4
+  },
+  "17350": {
+   "ntt": 19609,
+   "reg_no": 17350,
+   "pollster": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "sponsor": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-10",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-09",
+   "fieldwork_end": "2026-11-10",
+   "published_at": "2026-11-11 08:00",
+   "sample_size": 1003,
+   "response_rate_pct": 5.5
+  },
+  "17349": {
+   "ntt": 19608,
+   "reg_no": 17349,
+   "pollster": "한길리서치",
+   "sponsor": "쿠키뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정당지지도 정기(정례)조사",
+   "registered": "2026-11-10",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-07",
+   "fieldwork_end": "2026-11-09",
+   "published_at": "2026-11-11 05:00",
+   "sample_size": 1006,
+   "response_rate_pct": 1.9
+  },
+  "17348": {
+   "ntt": 19607,
+   "reg_no": 17348,
+   "pollster": "(주)리서치뷰",
+   "sponsor": "리서치뷰",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 국회의원선거",
+   "registered": "2026-11-09",
+   "area": "전국",
+   "status": "parsed",
+   "fieldwork_start": "2026-11-07",
+   "fieldwork_end": "2026-11-08",
+   "published_at": "2026-11-10 07:00",
+   "sample_size": 1000,
+   "response_rate_pct": 2.9,
+   "question": "06. 2028년 4월 제23대 총선과 관련한 다음 두 가지 견해 중 어떤 견해에 더 공감하십니까?",
+   "options": [
+    "정부ㆍ여당에 힘을 실어줘야 한다",
+    "정부ㆍ여당을 심판해야 한다",
+    "모름/기타"
+   ],
+   "option_roles": [
+    "support",
+    "check",
+    "other"
+   ],
+   "result_file": "결과분석_(리서치뷰)_전국_10월_정기조사_261110.pdf",
+   "table": {
+    "page": 11,
+    "national_label": "2026년 10월(",
+    "national": {
+     "정부ㆍ여당에 힘을 실어줘야 한다": 34.0,
+     "정부ㆍ여당을 심판해야 한다": 57.7,
+     "모름/기타": 8.4
+    },
+    "national_n": 1000.0,
+    "regions": {
+     "서울": {
+      "shares": [
+       29.2,
+       62.1,
+       8.6
+      ],
+      "n": 187.0
+     },
+     "인천/경기": {
+      "shares": [
+       32.7,
+       58.4,
+       9.0
+      ],
+      "n": 324.0
+     },
+     "광주/전라": {
+      "shares": [
+       48.7,
+       41.7,
+       9.6
+      ],
+      "n": 96.0
+     },
+     "대구/경북": {
+      "shares": [
+       25.4,
+       67.8,
+       6.8
+      ],
+      "n": 97.0
+     },
+     "부산/울산/경남": {
+      "shares": [
+       36.4,
+       57.0,
+       6.7
+      ],
+      "n": 146.0
+     },
+     "강원/제주": {
+      "shares": [
+       36.9,
+       48.8,
+       14.3
+      ],
+      "n": 42.0
+     }
+    },
+    "raw_text": "  3. 2028총선  프레임  공감도\n                        (%)\n                          조사완료  가중값적용\n                                           정부·여당 지원론      정부·여당 심판론      모름/기타\n                          (사례수)  (사례수)\n       2026년 8월(8/29~31)  1,000   1,000       39.1           49.9         11.0\n       2026년 9월(9/28~30)  1,000   1,000       38.0           52.8         9.2\n      2026년 10월(11/07~08) 1,000  1,000        34.0           57.7         8.4\n             남성            533    495         30.7           61.0         8.4\n      성별\n             여성            467    505         37.2           54.4         8.4\n             18/20대        130    145         31.5           54.8         13.8\n             30대           140    153         21.5           73.0         5.5\n             40대           176    168         47.1           46.7         6.1\n      연령\n             50대           204    191         35.8           56.3         7.9\n             60대           190    179         34.9           58.7         6.3\n             70대+          160    164         31.1           57.5         11.3\n             18/20대        87     75          30.9           57.4         11.6\n             30대           86     80          23.7           70.7         5.6\n             40대           91     86          37.1           56.5         6.4\n      남성\n             50대           103    96          31.1           58.2         10.7\n             60대           93     88          29.2           65.4         5.5\n             70대+          73     70          31.6           57.6         10.8\n             18/20대        43     70          32.0           51.9         16.0\n             30대           54     73          19.2           75.4         5.4\n             40대           85     82          57.6           36.6         5.9\n      여성\n             50대           101    95          40.6           54.4         5.0\n             60대           97      91         40.5           52.3         7.2\n             70대+          87     94          30.8           57.5         11.7\n             서울            199    187         29.2           62.1         8.6\n             경기/인천         339    324         32.7           58.4         9.0\n             대전/세종/충남북     105    108         36.3           57.3         6.4\n      지역     전남광주/전북       90     96          48.7           41.7         9.6\n             대구/경북         88     97          25.4           67.8         6.8\n             부산/울산/경남      140    146         36.4           57.0         6.7\n             강원/제주         39     42          36.9           48.8         14.3\n             농림축수산업        61     62          32.2           59.7         8.1\n             자영업           240    238         34.7           60.5         4.8\n             블루칼라          138    140         38.0           52.0         9.9\n      직업     화이트칼라         245    244         36.0           58.3         5.8\n             전업주부          142    142         35.5           53.7         10.8\n             학생            51     53          21.1           62.7         16.2\n             기타/무직         123    120         28.6           58.8         12.6\n             더불어민주당        316    316         80.5           12.9         6.6\n             국민의힘          372    369         4.0            90.9         5.0\n             조국혁신당         86     86          36.2           43.8         20.0\n    정당지지도    진보당           10      10         50.7           49.3         0.0\n             개혁신당          25     25          14.2           78.7         7.2\n             기타 정당         26     27          10.6           79.7         9.7\n             없음/모름         165    168         16.7           69.7         13.6\n             잘함            347    347         87.1           7.5          5.4\n  이재명 대통령 직무평\n             잘못함           628    628         5.8            86.0         8.2\n       가\n             모름/기타         25     24          3.7            41.2         55.1\n             보수            294    296         12.3           82.6         5.1\n             진보            220    217         61.1           28.7         10.1\n    정치적 성향\n             중도            425    425         36.7           56.1         7.2\n             모름/기타         61     62          24.1           50.5         25.5"
+   }
+  },
+  "17347": {
+   "ntt": 19606,
+   "reg_no": 17347,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 전체 정기(정례)조사정당지지도대통령선거",
+   "registered": "2026-11-07",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17346": {
+   "ntt": 19605,
+   "reg_no": 17346,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도대통령선거",
+   "registered": "2026-11-07",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17345": {
+   "ntt": 19604,
+   "reg_no": 17345,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 11월 1주차 주간집계",
+   "registered": "2026-11-06",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-05",
+   "fieldwork_end": "2026-11-06",
+   "published_at": "2026-11-08 14:00",
+   "sample_size": 1006,
+   "response_rate_pct": 3.2
+  },
+  "17344": {
+   "ntt": 19603,
+   "reg_no": 17344,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-05",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-03",
+   "fieldwork_end": "2026-11-05",
+   "published_at": "2026-11-06 10:00",
+   "sample_size": 1001,
+   "response_rate_pct": 9.7
+  },
+  "17343": {
+   "ntt": 19601,
+   "reg_no": 17343,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-11-04",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-02",
+   "fieldwork_end": "2026-11-03",
+   "published_at": "2026-11-05 01:00",
+   "sample_size": 1001,
+   "response_rate_pct": 3.7
+  },
+  "17342": {
+   "ntt": 19600,
+   "reg_no": 17342,
+   "pollster": "미디어토마토",
+   "sponsor": "뉴스토마토",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 전체 정기(정례)조사정당지지도국회의원선거",
+   "registered": "2026-11-04",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-02",
+   "fieldwork_end": "2026-11-03",
+   "published_at": "2026-11-05 06:00",
+   "sample_size": 1031,
+   "response_rate_pct": 2.2
+  },
+  "17341": {
+   "ntt": 19599,
+   "reg_no": 17341,
+   "pollster": "조원씨앤아이",
+   "sponsor": "스트레이트뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-11-03",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-31",
+   "fieldwork_end": "2026-11-02",
+   "published_at": "2026-11-04 05:00",
+   "sample_size": 2005,
+   "response_rate_pct": 3.2
+  },
+  "17340": {
+   "ntt": 19598,
+   "reg_no": 17340,
+   "pollster": "여론조사공정(주)",
+   "sponsor": "펜앤마이크",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-02",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-11-01",
+   "fieldwork_end": "2026-11-02",
+   "published_at": "2026-11-03 08:00",
+   "sample_size": 1001,
+   "response_rate_pct": 3.1
+  },
+  "17339": {
+   "ntt": 19597,
+   "reg_no": 17339,
+   "pollster": "(주)비전코리아",
+   "sponsor": "올리서치",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-11-02",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-31",
+   "fieldwork_end": "2026-11-01",
+   "published_at": "2026-11-02 14:30",
+   "sample_size": 1024,
+   "response_rate_pct": 3.7
+  },
+  "17338": {
+   "ntt": 19596,
+   "reg_no": 17338,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-31",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17337": {
+   "ntt": 19595,
+   "reg_no": 17337,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-31",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17336": {
+   "ntt": 19594,
+   "reg_no": 17336,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 10월 5주차 주간집계",
+   "registered": "2026-10-30",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-29",
+   "fieldwork_end": "2026-10-30",
+   "published_at": "2026-11-01 14:00",
+   "sample_size": 1005,
+   "response_rate_pct": 3.0
+  },
+  "17335": {
+   "ntt": 19593,
+   "reg_no": 17335,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-29",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-27",
+   "fieldwork_end": "2026-10-29",
+   "published_at": "2026-10-30 10:00",
+   "sample_size": 1000,
+   "response_rate_pct": 10.4
+  },
+  "17334": {
+   "ntt": 19592,
+   "reg_no": 17334,
+   "pollster": "리서치웰",
+   "sponsor": "뉴데일리",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 국회의원선거 대통령선거",
+   "registered": "2026-10-29",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-28",
+   "fieldwork_end": "2026-10-29",
+   "published_at": "2026-10-30 14:00",
+   "sample_size": 1000,
+   "response_rate_pct": 2.3
+  },
+  "17333": {
+   "ntt": 19591,
+   "reg_no": 17333,
+   "pollster": "케이스탯리서치",
+   "sponsor": "(주)엠브레인퍼블릭, 케이스탯리서치, (주)코리아리서치인터내서널, (주)한국리서치",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도",
+   "registered": "2026-10-29",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-26",
+   "fieldwork_end": "2026-10-28",
+   "published_at": "2026-10-29 11:00",
+   "sample_size": 1000,
+   "response_rate_pct": 14.7
+  },
+  "17332": {
+   "ntt": 19590,
+   "reg_no": 17332,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-10-28",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-26",
+   "fieldwork_end": "2026-10-27",
+   "published_at": "2026-10-29 01:00",
+   "sample_size": 1001,
+   "response_rate_pct": 3.7
+  },
+  "17331": {
+   "ntt": 19589,
+   "reg_no": 17331,
+   "pollster": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "sponsor": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-27",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-26",
+   "fieldwork_end": "2026-10-27",
+   "published_at": "2026-10-28 08:00",
+   "sample_size": 1000,
+   "response_rate_pct": 5.7
+  },
+  "17330": {
+   "ntt": 19588,
+   "reg_no": 17330,
+   "pollster": "한길리서치",
+   "sponsor": "KNA25/폴리뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 전체 정당지지도정기(정례)조사대통령선거",
+   "registered": "2026-10-26",
+   "area": "전국",
+   "status": "parsed",
+   "fieldwork_start": "2026-10-25",
+   "fieldwork_end": "2026-10-26",
+   "published_at": "2026-10-27 14:00",
+   "sample_size": 1002,
+   "response_rate_pct": 2.6,
+   "question": "Q9. 마지막으로 2028년 4월에 국회의원 선거가 있습니다. 선생님께서는 다음 국회의원 선거에서 어떤 결과가 나오기를 더 바라십니까?",
+   "options": [
+    "현 정부의 국정 운영을 뒷받침하기 위해 여당이 더 많이 당선되어야 한다",
+    "현 정부의 견제를 위해 야당이 더 많이 당선되어야 한다",
+    "기타",
+    "잘 모르겠다"
+   ],
+   "option_roles": [
+    "support",
+    "check",
+    "other",
+    "other"
+   ],
+   "result_file": "결과분석_한길리서치1026.pdf",
+   "table": {
+    "page": 12,
+    "national_label": "전체",
+    "national": {
+     "현 정부의 국정 운영을 뒷받침하기 위해 여당이 더 많이 당선되어야 한다": 37.0,
+     "현 정부의 견제를 위해 야당이 더 많이 당선되어야 한다": 52.0,
+     "기타": 8.4,
+     "잘 모르겠다": 2.6
+    },
+    "national_n": 1002.0,
+    "regions": {
+     "서울": {
+      "shares": [
+       34.9,
+       51.8,
+       10.6,
+       2.7
+      ],
+      "n": 186.0
+     },
+     "부산/울산/경남": {
+      "shares": [
+       39.1,
+       50.0,
+       9.5,
+       1.3
+      ],
+      "n": 147.0
+     },
+     "대구/경북": {
+      "shares": [
+       19.0,
+       73.0,
+       4.4,
+       3.7
+      ],
+      "n": 96.0
+     },
+     "인천/경기": {
+      "shares": [
+       39.2,
+       49.5,
+       7.8,
+       3.6
+      ],
+      "n": 326.0
+     },
+     "광주/전라": {
+      "shares": [
+       52.8,
+       34.0,
+       12.2,
+       1.0
+      ],
+      "n": 96.0
+     },
+     "대전/세종/충청": {
+      "shares": [
+       36.2,
+       54.5,
+       6.5,
+       2.9
+      ],
+      "n": 108.0
+     },
+     "강원/제주": {
+      "shares": [
+       28.7,
+       66.1,
+       5.3,
+       0.0
+      ],
+      "n": 43.0
+     }
+    },
+    "raw_text": "                                                          한길리뷰  정기조사(2610-4)\n        문8) 마지막으로 2028년 4월에 국회의원 선거가 있습니다. 선생님께서는 다음 국회의원 선거에서  어떤 결과가\n           나오기를 더 바라십니까?\n                                      ① 현 정부의\n                                               ② 현 정부의\n                                      국정 운영을\n                                               견제를 위해\n                               합계    뒷받침하기 위해            ③ 기타     ④ 잘모름\n                                              야당이 더 많이\n                                     여당이 더 많이\n                                              당선되어야 한다\n                                     당선되어야 한다\n                            조사   가중값\n                                         %        %        %        %\n                            완료   적용\n                 전체         1,002 1,002 37.0     52.0     8.4      2.6\n                     남자     547  496    36.8     54.0     7.4      1.8\n             성별\n                     여자     455  506    37.1     50.0     9.4      3.4\n                    18-20대  118  146    30.3     59.1     8.1      2.5\n                     30대    146  152    33.6     60.7     2.1      3.6\n                     40대    172  168    42.7     46.5     9.1      1.6\n            연령별\n                     50대    211  192    36.8     44.7     15.1     3.4\n                     60대    198  179    41.6     47.2     9.7      1.5\n                    70대 이상  157  165    35.4     56.9     4.6      3.1\n                     서울     208  186    34.9     51.8     10.6     2.7\n                   부산/울산/경남 152  147    39.1     50.0     9.5      1.3\n                    대구/경북   103   96    19.0     73.0     4.4      3.7\n           광역지역별    인천/경기   286  326    39.2     49.5     7.8      3.6\n                     호남권     99   96    52.8     34.0     12.2     1.0\n                     충청권    111  108    36.2     54.5     6.5      2.9\n                   강원/제주권    43   43    28.7     66.1     5.3       .0\n                   더불어민주당   356  357    72.2     20.4     6.3      1.1\n                    국민의힘    284  282    7.4      86.7     2.9      2.9\n                    조국혁신당    55   57    34.5     35.1     28.7     1.7\n           지지정당별     진보당     16   17    77.7     10.8     5.7      5.9\n                    개혁신당     21   20    17.7     64.2     13.6     4.6\n                    기타 정당    40   40    18.5     61.5     20.0      .0\n                     무당층    230  228    20.9     63.1     11.2     4.8\n                     잘함     359  360    88.5     3.2      5.5      2.7\n            대통령\n                     잘못함    626  625    7.5      80.6     9.9      2.0\n           국정지지별\n                     잘모름     17   17    29.1     33.7     13.8     23.4\n                     보수     253  248    17.8     76.8     3.3      2.1\n           정치 성향별    중도     396  407    35.7     54.1     8.1      2.1\n                     진보     303  296    56.1     28.8     12.9     2.1\n                                       - 11 -"
+   }
+  },
+  "17329": {
+   "ntt": 19587,
+   "reg_no": 17329,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-24",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17328": {
+   "ntt": 19586,
+   "reg_no": 17328,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-24",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17326": {
+   "ntt": 19584,
+   "reg_no": 17326,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 10월 4주차 주간집계",
+   "registered": "2026-10-23",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-22",
+   "fieldwork_end": "2026-10-23",
+   "published_at": "2026-10-25 14:00",
+   "sample_size": 1003,
+   "response_rate_pct": 3.2
+  },
+  "17325": {
+   "ntt": 19583,
+   "reg_no": 17325,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-22",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-20",
+   "fieldwork_end": "2026-10-22",
+   "published_at": "2026-10-23 10:00",
+   "sample_size": 1001,
+   "response_rate_pct": 10.6
+  },
+  "17323": {
+   "ntt": 19581,
+   "reg_no": 17323,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-10-21",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-19",
+   "fieldwork_end": "2026-10-20",
+   "published_at": "2026-10-22 01:00",
+   "sample_size": 1004,
+   "response_rate_pct": 3.7
+  },
+  "17322": {
+   "ntt": 19580,
+   "reg_no": 17322,
+   "pollster": "미디어토마토",
+   "sponsor": "뉴스토마토",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-21",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-19",
+   "fieldwork_end": "2026-10-20",
+   "published_at": "2026-10-22 06:00",
+   "sample_size": 1033,
+   "response_rate_pct": 2.2
+  },
+  "17321": {
+   "ntt": 19577,
+   "reg_no": 17321,
+   "pollster": "한길리서치",
+   "sponsor": "쿠키뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정당지지도 정기(정례)조사",
+   "registered": "2026-10-20",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-17",
+   "fieldwork_end": "2026-10-19",
+   "published_at": "2026-10-21 05:00",
+   "sample_size": 1019,
+   "response_rate_pct": 2.7
+  },
+  "17320": {
+   "ntt": 19576,
+   "reg_no": 17320,
+   "pollster": "조원씨앤아이",
+   "sponsor": "스트레이트뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-10-20",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-17",
+   "fieldwork_end": "2026-10-19",
+   "published_at": "2026-10-21 05:00",
+   "sample_size": 2000,
+   "response_rate_pct": 3.4
+  },
+  "17319": {
+   "ntt": 19575,
+   "reg_no": 17319,
+   "pollster": "여론조사공정(주)",
+   "sponsor": "펜앤마이크",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-19",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-18",
+   "fieldwork_end": "2026-10-19",
+   "published_at": "2026-10-20 08:00",
+   "sample_size": 1002,
+   "response_rate_pct": 3.2
+  },
+  "17318": {
+   "ntt": 19574,
+   "reg_no": 17318,
+   "pollster": "(주)비전코리아",
+   "sponsor": "올리서치",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-10-19",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-16",
+   "fieldwork_end": "2026-10-17",
+   "published_at": "2026-10-19 14:30",
+   "sample_size": 1055,
+   "response_rate_pct": 3.8
+  },
+  "17317": {
+   "ntt": 19573,
+   "reg_no": 17317,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-17",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17316": {
+   "ntt": 19572,
+   "reg_no": 17316,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-17",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17315": {
+   "ntt": 19571,
+   "reg_no": 17315,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 10월 3주차 주간집계",
+   "registered": "2026-10-16",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-15",
+   "fieldwork_end": "2026-10-16",
+   "published_at": "2026-10-18 14:00",
+   "sample_size": 1005,
+   "response_rate_pct": 2.7
+  },
+  "17314": {
+   "ntt": 19570,
+   "reg_no": 17314,
+   "pollster": "리서치웰",
+   "sponsor": "뉴데일리",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 국회의원선거 대통령선거",
+   "registered": "2026-10-16",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-14",
+   "fieldwork_end": "2026-10-15",
+   "published_at": "2026-10-16 14:00",
+   "sample_size": 1001,
+   "response_rate_pct": 2.5
+  },
+  "17313": {
+   "ntt": 19569,
+   "reg_no": 17313,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도 국회의원선거",
+   "registered": "2026-10-15",
+   "area": "전국",
+   "status": "parsed",
+   "fieldwork_start": "2026-10-13",
+   "fieldwork_end": "2026-10-15",
+   "published_at": "2026-10-16 10:00",
+   "sample_size": 1003,
+   "response_rate_pct": 10.4,
+   "question": "문 4) 다음 국회의원 선거는 내후년 4월 치러집니다. ○○님께서는 국회의원 선거와 관련해 어느 쪽 의견에 조금이라도 더 동의하십니까? (1, 2를 읽어줄 것, Rotation)",
+   "options": [
+    "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다",
+    "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다",
+    "모름/응답거절"
+   ],
+   "option_roles": [
+    "support",
+    "check",
+    "other"
+   ],
+   "result_file": "결과분석_한국갤럽_2026년 10월 3주_정당지지도.pdf",
+   "table": {
+    "page": "14 (left half)",
+    "national_label": "전체",
+    "national": {
+     "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다": 34.0,
+     "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다": 47.0,
+     "모름/응답거절": 18.0
+    },
+    "national_n": null,
+    "regions": {
+     "서울": {
+      "shares": [
+       30.0,
+       55.0,
+       16.0
+      ],
+      "n": 86.0
+     },
+     "인천/경기": {
+      "shares": [
+       31.0,
+       52.0,
+       17.0
+      ],
+      "n": 26.0
+     },
+     "대전/세종/충청": {
+      "shares": [
+       31.0,
+       49.0,
+       19.0
+      ],
+      "n": null
+     },
+     "광주/전라": {
+      "shares": [
+       60.0,
+       23.0,
+       16.0
+      ],
+      "n": null
+     },
+     "대구/경북": {
+      "shares": [
+       31.0,
+       53.0,
+       16.0
+      ],
+      "n": null
+     },
+     "부산/울산/경남": {
+      "shares": [
+       36.0,
+       40.0,
+       23.0
+      ],
+      "n": 48.0
+     }
+    },
+    "raw_text": "    질문) 다음 국회의원선거는 내후년 4월 치러집니다.\n        귀하는 국회의원선거와 관련해 어느 쪽 의견에 조금이라도 더 동의하십니까?\n                                                    [참\n        -현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다\n         / 현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다 (항목 로테이션)\n                 조사완료 가중적용    제23대 국회의원선거 결과 기대\n      2026년 10월 3주\n                  사례수  사례수  현 정부 지원 정부 견제    모름/\n        (13~15일)\n                   (명) (명) 여당 다수 당선 야당 다수 당선 응답거절\n          전체       1 ,003 1 ,003 34%  47%    18%\n                                                     4\n    지역별  서울         1 85 1 86 30%     55%    16%\n         인천/경기      3 25 3 26 31%     52%    17%\n         강원         3 0  3 0    -       -      -\n         대전/세종/충청   1 11 1 08 31%     49%    19%     3\n         전남광주/전북    9 8  9 6  60%     23%    16%\n         대구/경북      9 6  9 6  31%     53%    16%\n         부산/울산/경남   1 46 1 48 36%     40%    23%\n         제주         1 2  1 3    -       -      -     12\n    성별   남성         5 16 4 97 34%     53%    13%\n                                                     20\n         여성         4 87 5 06 35%     42%    23%\n    연령별  18~29세     1 42 1 46 22%     54%    24%     -위\n         30대        1 67 1 52 26%     51%    23%\n                                                     -첫\n         40대        1 56 1 69 50%     34%    16%\n                                                     -마\n         50대        1 84 1 94 48%     40%    13%\n         60대        1 78 1 80 34%     54%    12%     -2\n         70대 이상     1 76 1 63 23%     54%    23%     -시\n    주요   더불어민주당     3 59 3 65 73%     13%    13%\n    지지   국민의힘       2 73 2 69  3%     89%     9%\n    정당별  조국혁신당      2 8  2 9    -       -      -    [참\n         무당(無黨)층    2 91 2 90 16%     49%    36%\n    직업별  농/임/어업     2 6  2 3    -       -      -\n         자영업        1 70 1 66 37%     50%    13%\n         기능노무/서비스   1 17 1 15 42%     49%    10%\n         사무/관리      2 99 3 01 37%     45%    18%\n         전업주부       1 91 2 00 32%     47%    21%\n         학생         6 6  7 1  24%     48%    28%\n         무직/은퇴/기타   1 34 1 27 29%     47%    24%\n    생활   상/중상       2 07 2 15 38%     50%    12%\n    수준별  중          4 64 4 59 36%     46%    18%\n         중하         1 73 1 71 29%     53%    18%\n         하          1 45 1 44 32%     43%    24%\n    성향별  보수         2 98 2 97 11%     78%    11%\n         중도         3 44 3 44 36%     44%    20%\n         진보         2 29 2 31 71%     21%     8%\n         모름/응답거절    1 32 1 31 20%     33%    48%      4\n    대통령  긍정 평가자     3 84 3 87 71%     14%    15%      2\n    직무   부정 평가자     5 26 5 24 10%     75%    15%\n    평소   많이 있다      2 11 2 13 44%     45%    11%     -위\n    정치에  약간 있다      4 89 4 87 37%     51%    12%     -첫\n    관심이  별로 없다      1 92 1 93 28%     51%    21%\n                                                     -마\n         전혀 없다/모름   1 11 1 10 18%     27%    54%\n                                                     -조\n    -50사례 미만은 수치 제시하지 않음. 한국갤럽 데일리 오피니언 제678호 www.gallup.co.kr\n 14"
+   }
+  },
+  "17312": {
+   "ntt": 19568,
+   "reg_no": 17312,
+   "pollster": "(주)한국리서치",
+   "sponsor": "(주)한국리서치/케이스탯리서치/(주)코리아리서치인터내셔널/(주)엠브레인퍼블릭",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도 (사회 현안 등)",
+   "registered": "2026-10-15",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-12",
+   "fieldwork_end": "2026-10-14",
+   "published_at": "2026-10-15 11:00",
+   "sample_size": 1000,
+   "response_rate_pct": 16.8
+  },
+  "17311": {
+   "ntt": 19567,
+   "reg_no": 17311,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 국회의원선거 정당 지지도, 국정현안 등",
+   "registered": "2026-10-14",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-12",
+   "fieldwork_end": "2026-10-13",
+   "published_at": "2026-10-15 01:00",
+   "sample_size": 1002,
+   "response_rate_pct": 3.8
+  },
+  "17310": {
+   "ntt": 19566,
+   "reg_no": 17310,
+   "pollster": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "sponsor": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-13",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-12",
+   "fieldwork_end": "2026-10-13",
+   "published_at": "2026-10-14 08:00",
+   "sample_size": 1001,
+   "response_rate_pct": 5.8
+  },
+  "17307": {
+   "ntt": 19563,
+   "reg_no": 17307,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도",
+   "registered": "2026-10-10",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17306": {
+   "ntt": 19562,
+   "reg_no": 17306,
+   "pollster": "(주)에브리리서치",
+   "sponsor": "(주)에브리뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-10",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-09",
+   "fieldwork_end": "2026-10-10",
+   "published_at": "2026-10-13 09:30",
+   "sample_size": 1000,
+   "response_rate_pct": 3.1
+  },
+  "17305": {
+   "ntt": 19561,
+   "reg_no": 17305,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 전체 정기(정례)조사정당지지도",
+   "registered": "2026-10-10",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17303": {
+   "ntt": 19560,
+   "reg_no": 17303,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-08",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-06",
+   "fieldwork_end": "2026-10-08",
+   "published_at": "2026-10-09 10:00",
+   "sample_size": 1000,
+   "response_rate_pct": 9.7
+  },
+  "17302": {
+   "ntt": 19558,
+   "reg_no": 17302,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 10월 2주차 주간집계",
+   "registered": "2026-10-08",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-07",
+   "fieldwork_end": "2026-10-08",
+   "published_at": "2026-10-11 14:00",
+   "sample_size": 1004,
+   "response_rate_pct": 2.6
+  },
+  "17301": {
+   "ntt": 19556,
+   "reg_no": 17301,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-10-07",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-05",
+   "fieldwork_end": "2026-10-06",
+   "published_at": "2026-10-08 01:00",
+   "sample_size": 1003,
+   "response_rate_pct": 4.3
+  },
+  "17300": {
+   "ntt": 19555,
+   "reg_no": 17300,
+   "pollster": "미디어토마토",
+   "sponsor": "뉴스토마토",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-07",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-05",
+   "fieldwork_end": "2026-10-06",
+   "published_at": "2026-10-08 06:00",
+   "sample_size": 1033,
+   "response_rate_pct": 2.3
+  },
+  "17298": {
+   "ntt": 19551,
+   "reg_no": 17298,
+   "pollster": "조원씨앤아이",
+   "sponsor": "스트레이트뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-10-06",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-03",
+   "fieldwork_end": "2026-10-05",
+   "published_at": "2026-10-07 05:00",
+   "sample_size": 2000,
+   "response_rate_pct": 4.1
+  },
+  "17297": {
+   "ntt": 19550,
+   "reg_no": 17297,
+   "pollster": "여론조사공정(주)",
+   "sponsor": "펜앤마이크",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-10-05",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-04",
+   "fieldwork_end": "2026-10-05",
+   "published_at": "2026-10-06 14:00",
+   "sample_size": 1002,
+   "response_rate_pct": 3.1
+  },
+  "17296": {
+   "ntt": 19549,
+   "reg_no": 17296,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도대통령선거",
+   "registered": "2026-10-03",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17295": {
+   "ntt": 19548,
+   "reg_no": 17295,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 전체 정기(정례)조사정당지지도대통령선거",
+   "registered": "2026-10-03",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17294": {
+   "ntt": 19547,
+   "reg_no": 17294,
+   "pollster": "(주)리얼미터",
+   "sponsor": "에너지경제신문",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 10월 1주차 주간집계",
+   "registered": "2026-10-02",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-10-01",
+   "fieldwork_end": "2026-10-02",
+   "published_at": "2026-10-04 14:00",
+   "sample_size": 1009,
+   "response_rate_pct": 3.0
+  },
+  "17293": {
+   "ntt": 19546,
+   "reg_no": 17293,
+   "pollster": "(주)비전코리아",
+   "sponsor": "올리서치",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-10-01",
+   "area": "전국",
+   "status": "no_frame_question",
+   "fieldwork_start": "2026-09-30",
+   "fieldwork_end": "2026-10-01",
+   "published_at": "2026-10-01 15:00",
+   "sample_size": 1051,
+   "response_rate_pct": 3.7
+  },
+  "17292": {
+   "ntt": 19545,
+   "reg_no": 17292,
+   "pollster": "(주)리서치뷰",
+   "sponsor": "리서치뷰",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 국회의원선거",
+   "registered": "2026-10-01",
+   "area": "전국",
+   "status": "parsed",
+   "fieldwork_start": "2026-09-28",
+   "fieldwork_end": "2026-09-30",
+   "published_at": "2026-10-01 08:00",
+   "sample_size": 1000,
+   "response_rate_pct": 2.8,
+   "question": "07. 2028년 4월 제23대 총선과 관련한 다음 두 가지 견해 중 어떤 견해에 더 공감하십니까?",
+   "options": [
+    "정부ㆍ여당에 힘을 실어줘야 한다",
+    "정부ㆍ여당을 심판해야 한다",
+    "모름/기타"
+   ],
+   "option_roles": [
+    "support",
+    "check",
+    "other"
+   ],
+   "result_file": "결과분석_(리서치뷰)_전국_9월말_정기조사_261001.pdf",
+   "table": {
+    "page": 14,
+    "national_label": "2026년 9월(",
+    "national": {
+     "정부ㆍ여당에 힘을 실어줘야 한다": 38.0,
+     "정부ㆍ여당을 심판해야 한다": 52.8,
+     "모름/기타": 9.2
+    },
+    "national_n": 1000.0,
+    "regions": {
+     "서울": {
+      "shares": [
+       33.6,
+       57.1,
+       9.3
+      ],
+      "n": 186.0
+     },
+     "인천/경기": {
+      "shares": [
+       38.9,
+       48.9,
+       12.2
+      ],
+      "n": 325.0
+     },
+     "광주/전라": {
+      "shares": [
+       61.2,
+       34.6,
+       4.3
+      ],
+      "n": 96.0
+     },
+     "대구/경북": {
+      "shares": [
+       30.8,
+       62.6,
+       6.6
+      ],
+      "n": 95.0
+     },
+     "부산/울산/경남": {
+      "shares": [
+       37.1,
+       54.3,
+       8.6
+      ],
+      "n": 147.0
+     },
+     "강원/제주": {
+      "shares": [
+       33.0,
+       43.0,
+       26.9
+      ],
+      "n": null
+     }
+    },
+    "raw_text": "  4. 2028총선 프레임  공감도\n                       (%)\n                            조사완료   가중값적용\n                                            정부·여당 지원론      정부·여당 심판론     모름/기타\n                            (사례수)  (사례수)\n        2026년 8월(8/29~31)    1,000  1,000      39.1           49.9        11.0\n        2026년 9월(9/28~30)   1,000  1,000       38.0           52.8         9.2\n             남성              535    495        36.9           54.6         8.5\n      성별\n             여성              465    505        39.0           51.0         9.9\n             18/20대          111    146        30.2           56.1        13.7\n             30대             150    151        26.1           65.5         8.3\n             40대             174    169        42.3           51.6         6.1\n      연령\n             50대             207    193        50.7           39.2        10.1\n             60대             195    179        35.9           56.2         7.9\n             70대+            163    162        38.5           51.7         9.8\n             18/20대           81    101        32.9           54.8        12.2\n             30대             90     84         21.9           68.2         9.9\n             40대              91    80         42.6           56.3         1.1\n      남성\n             50대             105    88         46.3           43.0        10.8\n             60대             95     78         38.3           54.4         7.3\n             70대+             73    64         41.1           50.7         8.2\n             18/20대          30     45         24.2           58.9        16.8\n             30대             60     67         31.4           62.2         6.4\n             40대             83     89         42.1           47.3        10.5\n      여성\n             50대             102    105        54.4           36.1         9.5\n             60대             100    101        34.1           57.6         8.3\n             70대+            90     98         36.8           52.4        10.8\n             서울              196    186        33.6           57.1         9.3\n             경기/인천           333    325        38.9           48.9        12.2\n             대전/세종/충남북       104    108        34.0           57.0         9.0\n      지역     전남광주/전북         93     96         61.2           34.6         4.3\n             대구/경북           99     95         30.8           62.6         6.6\n             부산/울산/경남        142    147        37.1           54.3         8.6\n             강원/제주           33     43         26.9           67.3         5.8\n             농림축수산업          66     65         30.6           58.2        11.3\n             자영업             246    233        33.6           57.3         9.1\n             블루칼라            121    119        40.1           51.7         8.2\n      직업     화이트칼라           253    255        39.3           53.4         7.4\n             전업주부            160    170        38.8           51.9         9.3\n             학생               37    43         39.0           55.3         5.6\n             기타/무직           117    116        44.2           41.2        14.6\n             더불어민주당          346    342        84.2           9.6          6.2\n             국민의힘            386    390         5.3           89.2         5.5\n             조국혁신당           66     64         45.0           37.2        17.9\n             진보당              14     14        63.4           36.6         0.0\n             개혁신당            26     27          3.2           83.3        13.6\n    정당지지도    기본소득당            8      8         38.9           48.8        12.3\n             사회민주당            3      3         32.7           32.4        34.8\n             정의당              6      6         34.2           37.4        28.4\n             새미래민주당           7      7         43.6           43.6        12.8\n             기타 정당           24     25         10.3           79.6        10.2\n             없음/모름           114    112        18.1           57.8        24.1\n             잘함              378    376        88.5           5.4          6.1\n    이재명 대통령\n             잘못함             601    603         7.1           83.0         9.9\n     직무평가\n             모름/기타            21     21        22.8           32.5        44.7\n             보수              305    312        15.1           77.4         7.5\n             진보              211    208        64.6           27.0         8.3\n    정치적 성향\n             중도              403    397        42.6           49.9         7.5\n             모름/기타            81    83         35.1           39.0        26.0\n             박정희             345    345         4.8           84.6        10.6\n             김영삼              12     13        17.1           75.4         7.6\n             김대중             59     54         68.3           26.3         5.4\n             노무현             148    144        56.2           30.1        13.7\n   전ㆍ현직 대통령  이명박             49     53          5.9           88.2         6.0\n     호감도     박근혜             28     28          3.7           82.9        13.4\n             문재인             28     28         41.7           40.1        18.2\n             윤석열              79    82          5.0           91.0         4.0\n             이재명             235    234        94.7           1.3          4.0\n             모름/기타            17     18         6.3           53.0        40.7"
+   }
+  }
+ }
+}
