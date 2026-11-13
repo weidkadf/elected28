@@ -72,7 +72,7 @@ def parse(text):
                 frames.append(rec)
             # (A) party table with frame rows
             hh = head[-7:]
-            xd = xpos(hh, re.compile('민주')); xk = xpos(hh, re.compile(r'국민의|국민\s*의'))
+            xd = xpos(hh, re.compile('더불어')); xd = xpos(hh, re.compile('민주')) if xd is None else xd; xk = xpos(hh, re.compile(r'국민의|국민\s*의'))
             if xd is not None and xk is not None and xd != xk and len(v) >= 2:
                 order = ('D', 'C') if xd < xk else ('C', 'D')
                 rows = {}

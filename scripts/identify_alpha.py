@@ -33,6 +33,25 @@ def dem_side(end):
     return 'c' if end < GOV_CHANGE else 's'
 
 
+def party_order_from_header(title):
+    """True when the header names 더불어민주당 before 국민의힘. Two-line headers ('더불어' / '민주당') made the parser
+    place 민주 by its second line and swap the two columns in tables that also list 조국혁신당 etc."""
+    h = re.sub(r'\s', '', title); i, j = h.rfind('더불어'), h.rfind('국민의')
+    return None if i < 0 or j < 0 else i < j
+
+
+def fix_party_order(polls):
+    sw = lambda d: {('C' if k == 'D' else 'D' if k == 'C' else k): v for k, v in d.items()}
+    fixed = []
+    for o in polls:
+        for t in o['xtabs']:
+            dem_first = party_order_from_header(t['title'])
+            if dem_first is not None and dem_first != (next(iter(t['tot'])) == 'D'):
+                t['tot'] = sw(t['tot']); t['rows'] = {k: sw(v) for k, v in t['rows'].items()}
+                fixed.append({'reg': o['reg'], 'page': t['page']})
+    return fixed
+
+
 def micro(polls):
     rows, dropped = [], 0
     for o in polls:
@@ -166,7 +185,8 @@ def seats(comb):
 
 def main():
     polls = json.loads((ROOT / 'data/nesdc/frame_tables.json').read_text(encoding='utf-8'))
-    mic = micro(polls); regn = regional(polls); comb = combine(mic, regn); sd = seats(comb)
+    fixed = fix_party_order(polls)
+    mic = micro(polls); mic['party_column_order_fixed'] = fixed; regn = regional(polls); comb = combine(mic, regn); sd = seats(comb)
     out = {'schema_version': 'alpha_identification_1', 'micro': mic, 'regional': regn, 'combined': comb, 'seat_distribution': sd,
            'caveats': ['micro slope is cross-sectional (composition), not a causal over-time effect', 'automatic PDF parsing; frame wording differs by pollster and election (지원/견제, 심판/안정, 정권교체/유지)',
                        'regional x is noisy; reliability reported per pair', 'prior is an assumption; results without it are reported']}
