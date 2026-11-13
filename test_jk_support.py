@@ -42,7 +42,8 @@ class JKSupportTests(unittest.TestCase):
         g = self.s['pr_sensitivity']['grid']; base = g['fixed_2024|fixed_2024']['posterior_all_three']
         for k in ('poll_swing', 'poll_direct'):
             r = g[f'{k}|fixed_2024']['posterior_all_three']
-            self.assertEqual(r['pr']['국민의힘'], base['pr']['국민의힘'])
+            # 조국혁신당 can fall under the 3% threshold in low-Dem draws, which moves a fraction of a seat to the others
+            self.assertLessEqual(abs(r['pr']['국민의힘'] - base['pr']['국민의힘']), 0.2)
             lower = self.s['pr_sensitivity']['jk'][k]['ratio'] < self.s['pr_sensitivity']['jk']['fixed_2024']['ratio']
             self.assertEqual(r['pr']['조국혁신당'] <= base['pr']['조국혁신당'], lower)
             self.assertLessEqual(abs(r['total_300']['민주+조국혁신당'] - base['total_300']['민주+조국혁신당']), 1.0)

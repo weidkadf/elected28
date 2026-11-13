@@ -27,5 +27,16 @@ class PartyOrderTests(unittest.TestCase):
             self.assertGreater(p['v_dem_side'] - p['v_other_side'], 0.3)
 
 
+    def test_jk_added_to_dem_side(self):
+        a = json.loads((ROOT / 'outputs/alpha_identification.json').read_text(encoding='utf-8'))['micro']
+        jk = json.loads((ROOT / 'data/nesdc/frame_xtab_jk.json').read_text(encoding='utf-8'))
+        self.assertGreaterEqual(a['jk']['tables_with_jk_added'], 85)
+        self.assertLessEqual(len(jk['unread']), 3)
+        # 리서치뷰 17348 문8 교차표, checked by hand against the PDF: 조국혁신당 8.6 / 지원론 9.1 / 심판론 6.5
+        self.assertEqual(jk['tables']['17348:8:31.6:36.9']['J'], {'tot': 8.6, 's': 9.1, 'c': 6.5})
+        p = next(p for p in a['polls'] if p['reg'] == '17348')
+        self.assertEqual(p['jk_in_dem'], {'tot': 8.6, 's': 9.1, 'c': 6.5})
+
+
 if __name__ == '__main__':
     unittest.main()

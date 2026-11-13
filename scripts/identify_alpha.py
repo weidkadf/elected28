@@ -52,11 +52,35 @@ def fix_party_order(polls):
     return fixed
 
 
+JK_FILE = ROOT / 'data/nesdc/frame_xtab_jk.json'
+
+
+def jk_key(o, t):
+    return f"{o['reg']}:{t['page']}:{t['tot']['D']}:{t['tot']['C']}"
+
+
+def add_jk(polls, jk):
+    """Dem side = 더불어민주당 + 조국혁신당 (user decision 2026-11-14). Run after fix_party_order. A crosstab whose header names
+    조국혁신당 but whose 조국 column was not read (scripts/fetch_xtab_jk.py) is skipped so every table uses the same definition."""
+    added, skipped = 0, []
+    for o in polls:
+        for t in o['xtabs']:
+            if '조국' not in re.sub(r'\s', '', t['title']): continue
+            j = jk.get(jk_key(o, t))
+            if j is None:
+                t['skip'] = True; skipped.append(jk_key(o, t)); continue
+            t['tot']['D'] += j['J']['tot']
+            for k, r in t['rows'].items(): r['D'] += j['J'][k]
+            t['jk'] = j['J']; added += 1
+    return {'tables_with_jk_added': added, 'tables_skipped_jk_unread': skipped}
+
+
 def micro(polls):
     rows, dropped = [], 0
     for o in polls:
         best = None
         for t in o['xtabs']:
+            if t.get('skip'): continue
             r = t['rows']; ds = dem_side(o['end']); os_ = 's' if ds == 'c' else 'c'
             try:
                 vd = r[ds]['D'] / (r[ds]['D'] + r[ds]['C']); vo = r[os_]['D'] / (r[os_]['D'] + r[os_]['C'])
@@ -70,7 +94,7 @@ def micro(polls):
                 continue
             a = (1 - k) * (vd - vo) * q * (1 - q) / (p * (1 - p))
             cand = {'reg': o['reg'], 'org': o['org'], 'end': o['end'], 'election': o['election'], 'alpha': round(a, 4), 'v_dem_side': round(vd, 3),
-                    'v_other_side': round(vo, 3), 'q': round(q, 3), 'p': round(p, 3), 'k': round(k, 3)}
+                    'v_other_side': round(vo, 3), 'q': round(q, 3), 'p': round(p, 3), 'k': round(k, 3), 'jk_in_dem': t.get('jk')}
             if best is None: best = cand
         if best: rows.append(best)
         elif o['xtabs']: dropped += 1
@@ -186,7 +210,12 @@ def seats(comb):
 def main():
     polls = json.loads((ROOT / 'data/nesdc/frame_tables.json').read_text(encoding='utf-8'))
     fixed = fix_party_order(polls)
-    mic = micro(polls); mic['party_column_order_fixed'] = fixed; regn = regional(polls); comb = combine(mic, regn); sd = seats(comb)
+    mic_dem_only = micro(json.loads(json.dumps(polls)))
+    jk_info = add_jk(polls, json.loads(JK_FILE.read_text(encoding='utf-8'))['tables'])
+    mic = micro(polls); mic['party_column_order_fixed'] = fixed
+    mic['dem_side'] = '더불어민주당 + 조국혁신당 (조국 열이 있는 표); 사용자 결정 2026-11-14'; mic['jk'] = jk_info
+    mic['comparison_dem_only'] = {k: mic_dem_only[k] for k in ('n_polls', 'n_pollsters', 'mean', 'mean_of_pollster_means', 'sd_between_pollsters', 'by_election')}
+    regn = regional(polls); comb = combine(mic, regn); sd = seats(comb)
     out = {'schema_version': 'alpha_identification_1', 'micro': mic, 'regional': regn, 'combined': comb, 'seat_distribution': sd,
            'caveats': ['micro slope is cross-sectional (composition), not a causal over-time effect', 'automatic PDF parsing; frame wording differs by pollster and election (지원/견제, 심판/안정, 정권교체/유지)',
                        'regional x is noisy; reliability reported per pair', 'prior is an assumption; results without it are reported']}
