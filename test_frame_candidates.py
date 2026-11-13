@@ -1,5 +1,5 @@
 """정부지원·견제 frame-question scan (scripts/scan_nesdc_frame_candidates.py): offline parsing checks and the committed review list."""
-import json, sys, unittest
+import csv, json, sys, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -87,6 +87,46 @@ class ReviewListTests(unittest.TestCase):
             nat = dict(zip(c['option_roles'], c['table']['national'].values()))
             self.assertAlmostEqual(nat['support'], p['shares']['support'] * 100, delta=0.6)
             self.assertAlmostEqual(nat['check'], p['shares']['check'] * 100, delta=0.6)
+
+
+VOTE_Q = """(지지 정당)
+Q1. 선생님께서는 2028년 총선에서 다음 중 어느 정당 후보에게 투표하실 생각입니까?
+호명순서는 가나다순입니다.
+1)번 개혁신당 2)번 국민의힘 3)번 더불어민주당
+4)번 조국혁신당 5)번 진보당 6)번 기타 정당
+7)번 없다 8)번 잘 모르겠다
+Q2. 절대 찍고 싶지 않은 정당은 어디입니까? 2028년 총선에서 어느 정당 후보에게 투표하지 않겠습니까?
+1)번 개혁신당 2)번 국민의힘 3)번 더불어민주당"""
+ARS_VOTE_Q = """문5. 내일이 국회의원 총선거라면 선생님께서는 다음 중 어느 정당 후보에게 투표하시겠습니까?
+① 더불어민주당 후보면 1번
+② 국민의힘 후보면 2번
+③ 진보당 후보면 3번
+④ 투표할 정당 후보가 없다면 4번
+⑤ 잘 모르겠다면 5번을 눌러주세요"""
+
+
+class VoteIntentionTests(unittest.TestCase):
+    def test_inline_options(self):
+        q, opts, kind = F.find_vote_question(VOTE_Q)
+        self.assertTrue(q.startswith('Q1.'))
+        self.assertEqual(opts, ['개혁신당', '국민의힘', '더불어민주당', '조국혁신당', '진보당', '기타 정당', '없다', '잘 모르겠다'])
+        self.assertEqual(kind, 'unspecified')
+        self.assertIsNone(F.find_question(VOTE_Q))           # not a frame question
+
+    def test_negative_question_skipped(self):
+        self.assertIsNone(F.find_vote_question(VOTE_Q.split('Q2.')[0].replace('Q1.', 'Q9.').replace('투표하실', '절대 투표하지 않으실')))
+
+    def test_party_mapping(self):
+        q, opts, _ = F.find_vote_question(ARS_VOTE_Q)
+        self.assertEqual([F.party_key(o) for o in opts], ['더불어민주당', '국민의힘', '진보당', '없음', '모름'])
+
+    def test_collected_table(self):
+        with (ROOT / 'outputs/vote_intention_2028.csv').open(encoding='utf-8') as f:
+            rows = list(csv.DictReader(f))
+        for r in rows:
+            self.assertNotIn('여론조사꽃', r['pollster'])
+            if r['status'] == 'auto_read':
+                self.assertAlmostEqual(sum(float(r[k]) for k in F.PARTIES if r[k]), 100, delta=3)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Find 정부지원·견제 / 정권심판 frame questions in newly registered national NESDC polls (board B0000005).
+"""Find 정부지원·견제 / 정권심판 frame questions in newly registered national NESDC polls (board B0000005), and collect
+2028 general-election party vote-intention questions into a separate table (outputs/vote_intention_2028.csv, not a model input).
 
 Semi-automatic: this only builds a review list. Nothing here is written to data/frame_polls_multi.json, because
 UPDATE_PROTOCOL requires the exact wording, role direction, wording class and publication date to be checked by hand.
@@ -15,7 +16,7 @@ Exit code 0 = a candidate was added or got new results (--summary then holds an 
 anything else = failure. The files carry no run timestamp, so a run that finds nothing leaves no diff.
 Needs pdfplumber (pdftotext builds without poppler-data drop Korean glyphs in these PDFs).
 """
-import argparse, html, io, json, re, sys, time, urllib.parse, urllib.request
+import argparse, csv, html, io, json, re, sys, time, urllib.parse, urllib.request
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -28,18 +29,23 @@ LIST = BASE + '/portal/bbs/B0000005/list.do?menuNo=200467&searchCnd=4&searchWrd=
 VIEW = BASE + '/portal/bbs/B0000005/view.do?nttId={}&menuNo=200467'
 STATE = ROOT / 'data/nesdc/frame_scan_state.json'
 OUT = ROOT / 'outputs/frame_candidates.json'
+VOTE_OUT = ROOT / 'outputs/vote_intention_2028.csv'
 REGISTRIES = (ROOT / 'data/frame_polls_multi.json', ROOT / 'data/frame_polls_v050.json')
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; election-model-updater)'}
 EXCLUDED = ('여론조사꽃',)
-FIRST_SINCE = '2026-10-01'      # first run looks back to here
+FIRST_SINCE = '2026-09-01'      # first run looks back to here
 RESULT_WAIT_DAYS = 14           # stop re-checking for a result PDF after this many days
 
 SUP = re.compile(r'지원|안정|힘을?\s*실어|뒷받침|재창출')
 CHK = re.compile(r'견제|심판|교체')
 OPP_TARGET = re.compile(r'야당\S{0,3}\s*(심판|견제)')   # "야당을 심판" points the other way
-QMARK = re.compile(r'^\s*(\[|Q\s*\d|문\s*\d|SQ\s*\d|0\d\.|\d{1,2}\.\s.*\?\s*$)')
+QMARK = re.compile(r'^\s*(\[|Q\s*\d|문\s*\d|SQ\s*\d|0\d\.|[A-Z]\d{1,2}(-\d)?\.\s|\d{1,2}\.\s.*\?\s*$)')
 OPT = re.compile(r'^\s*(?:[①-⑨]|\d\)|\(\d\)|\d\.(?=\s))\s*(?:번\s*[,.]?)?\s*(.+?)\s*$')
-ARS_TAIL = re.compile(r'\s*(?:이)?면\s*\d+\)\s*번.*$')   # '...한다면 1)번을, 눌러주세요'
+ARS_TAIL = re.compile(r'\s*(?:이|라)?면\s*\d+\)?\s*번.*$')   # '...한다면 1)번을, 눌러주세요' / '...후보면 1번'
+VOTEQ = re.compile(r'(총선|국회의원\s*선거).{0,80}(어느|어떤)\s*정당.{0,40}(투표|찍|뽑)')
+PARTIES = ('더불어민주당', '국민의힘', '조국혁신당', '개혁신당', '진보당', '기타정당', '없음', '모름')
+PARTY_PATTERNS = (('더불어민주당', r'민주당'), ('국민의힘', r'국민의힘'), ('조국혁신당', r'조국'), ('개혁신당', r'개혁'),
+                  ('진보당', r'^진보당(후보)?$'), ('없음', r'없'), ('모름', r'모르|모름|무응답|응답거절'))
 NUMTOK = re.compile(r'(?<![\w.])\(?-?\d[\d,]*\.?\d*\)?%?(?![\w])|(?<![\w\d])\.\d+')
 
 
@@ -109,26 +115,66 @@ def role(opt):
     return 'support' if s and not c else 'check' if c and not s else 'other'
 
 
-def find_question(text):
-    """Return (question text, options) for the first block whose options contrast support with check, else None."""
-    text = re.sub(r'[-]', '', text)   # private-use glyphs (box drawing in some fonts)
+def blocks(text):
+    """Question blocks (question line up to the next question line) of a questionnaire."""
+    text = re.sub(r'[\ue000-\uf8ff]', '', text)   # private-use glyphs (box drawing in some fonts)
     lines = [l.strip() for l in text.replace('\f', '\n').split('\n') if l.strip()]
     starts = [i for i, l in enumerate(lines) if QMARK.match(l)] + [len(lines)]
-    for a, b in zip(starts, starts[1:]):
-        block = lines[a:b]
+    return [lines[a:b] for a, b in zip(starts, starts[1:])]
+
+
+def options(block):
+    """Answer options in order. Handles wrapped option text and several '1)번 A 2)번 B' options on one line."""
+    opts = []
+    for l in block[1:]:
+        m = OPT.match(l)
+        if m:
+            if re.match(r'\s*\d{1,2}\)', l):   # split '1)번 개혁신당 2)번 국민의힘' style lines
+                parts = re.split(r'\s+(?=\d{1,2}\)\s*번?\s)', l.strip())
+                opts += [OPT.match(p).group(1) for p in parts if OPT.match(p)]
+            else:
+                opts.append(m.group(1))
+        elif opts and not re.match(r'[(\[※*]', l) and len(opts[-1]) < 60: opts[-1] += ' ' + l   # wrapped option text
+    return [ARS_TAIL.sub('', o).strip(' ,.') for o in opts]
+
+
+def question_text(block):
+    first_opt = next((j for j, l in enumerate(block) if j and OPT.match(l)), len(block))
+    return re.sub(r'\s+', ' ', ' '.join(l for l in block[:first_opt] if not l.startswith(('호명', '(☞'))))[:400]
+
+
+def find_question(text):
+    """Return (question text, options) for the first block whose options contrast support with check, else None."""
+    for block in blocks(text):
         joined = ' '.join(block)
-        if not CHK.search(joined) or not re.search(r'국회의원|총선|선거', joined): continue
-        opts = []
-        for l in block[1:]:
-            if OPT.match(l): opts.append(OPT.match(l).group(1))
-            elif opts and not re.match(r'[(\[※*]', l) and len(opts[-1]) < 60: opts[-1] += ' ' + l   # wrapped option text
-        opts = [ARS_TAIL.sub('', o).strip(' ,.') for o in opts]
+        if not CHK.search(joined) or not re.search(r'국회의원|총선|선거', question_text(block)): continue
+        opts = options(block)
+        if not 2 <= len(opts) <= 8: continue   # a run-on block (unrecognised question numbers) is not one question
         roles = [role(o) for o in opts]
         if any(r.startswith('support') for r in roles) and 'check' in roles:
-            first_opt = next(j for j, l in enumerate(block) if j and OPT.match(l))
-            q = ' '.join(l for l in block[:first_opt] if not l.startswith(('호명', '(☞')))
-            return re.sub(r'\s+', ' ', q)[:400], opts
+            return question_text(block), opts
     return None
+
+
+def find_vote_question(text):
+    """Return (question text, options, kind) for a 2028 general-election party vote-intention question, else None.
+    kind: 'list' (비례대표 정당투표), 'district' (지역구), 'unspecified'. Negative questions (절대 찍지 않을 정당) are skipped."""
+    for block in blocks(text):
+        q = question_text(block)
+        if not VOTEQ.search(q) or re.search(r'않|싫|절대|아닌', q): continue
+        opts = options(block)
+        if len(opts) > 12: continue
+        if sum(1 for o in opts if party_key(o) in PARTIES[:4]) < 2: continue   # needs real party options
+        kind = 'list' if re.search(r'비례', q) else 'district' if re.search(r'지역구', q) else 'unspecified'
+        return q, opts, kind
+    return None
+
+
+def party_key(opt):
+    o = re.sub(r'\s', '', opt)
+    for k, pat in PARTY_PATTERNS:
+        if re.search(pat, o): return k
+    return '기타정당'
 
 
 def numbers(s):
@@ -153,14 +199,22 @@ def split_row(line, k):
     return None
 
 
-def read_table(text, opts):
-    """Best-effort read of the frame table: national shares, region shares and the raw page text."""
+def frame_head(head):
+    return bool(CHK.search(head) and (SUP.search(head) or '프레임' in head))
+
+
+def vote_head(head):
+    return bool(re.search(r'총선|국회의원', head) and re.search(r'투표|찍|뽑', head) and not re.search(r'않|절대|싫', head))
+
+
+def read_table(text, opts, head_ok=frame_head):
+    """Best-effort read of the table whose title/header passes head_ok: national shares, region shares and the raw page text."""
     k = len(opts)
     for pi, page in enumerate(text.split('\f')):
         lines = [l.rstrip() for l in page.split('\n') if l.strip()]
         first = next((i for i, l in enumerate(lines) if split_row(l, k)), len(lines))
         head = re.sub(r'\s', '', ' '.join(lines[:first]))   # title and column header of the page's first table
-        if not (CHK.search(head) and (SUP.search(head) or '프레임' in head)): continue
+        if not head_ok(head): continue
         rows = [(i, split_row(l, k)) for i, l in enumerate(lines)]
         rows = [(i, r) for i, r in rows if r]
         if not rows: continue
@@ -183,11 +237,22 @@ def is_total(t):
     return bool(t) and re.sub(r'\s', '', t['national_label']) in ('전체', '합계', '전국', 'Total')
 
 
-def read_result_pdf(blob, opts):
+def result_texts(blob):
+    """Layout text of a result PDF: whole pages, and a lazily built left-half version."""
+    full, cache = pdf_text(blob, layout=True), {}
+
+    def left():
+        if 'l' not in cache: cache['l'] = '\f'.join(pdf_text(blob, layout=True, columns=True).split('\f')[0::2])
+        return cache['l']
+    return full, left
+
+
+def read_result_pdf(texts, opts, head_ok=frame_head):
     """Whole pages first; if that gives no '전체' row, retry on the left half (Gallup prints a trend chart on the right)."""
-    t = read_table(pdf_text(blob, layout=True), opts)
+    full, left_text = texts
+    t = read_table(full, opts, head_ok)
     if is_total(t): return t
-    left = read_table('\f'.join(pdf_text(blob, layout=True, columns=True).split('\f')[0::2]), opts)
+    left = read_table(left_text(), opts, head_ok)
     if left: left['page'] = f"{left['page']} (left half)"
     return left if is_total(left) or not t else t
 
@@ -209,33 +274,44 @@ def registered_keys():
 
 
 def process(rec, today):
-    """Update one candidate in place. Returns True when something reviewable changed."""
+    """Update one registration in place. Returns the set of tracks ('frame', 'vote') that changed in this run."""
     info = view_info(rec['ntt'])
     rec.update({k: v for k, v in info.items() if k not in ('questionnaire', 'results')})
-    changed = False
+    changed = set()
     if rec['status'] == 'new':
         if not info['questionnaire']:
             if (today - date.fromisoformat(rec['registered'])).days > RESULT_WAIT_DAYS: rec['status'] = 'no_questionnaire'
-            return False
-        q = None
+            return changed
+        fq = vq = None
         for f in info['questionnaire']:
             blob = get(f['url'], VIEW.format(rec['ntt']))
-            q = find_question(pdf_text(blob, layout=False)) or find_question(pdf_text(blob, layout=False, columns=True))
-            if q: break
-        if not q:
-            rec['status'] = 'no_frame_question'; return False
-        rec['question'], rec['options'] = q
-        rec['option_roles'] = [role(o) for o in q[1]]
-        rec['status'] = 'awaiting_results'; changed = True
+            texts = (pdf_text(blob, layout=False), pdf_text(blob, layout=False, columns=True))
+            fq = fq or find_question(texts[0]) or find_question(texts[1])
+            vq = vq or find_vote_question(texts[0]) or find_vote_question(texts[1])
+        if fq:
+            rec['question'], rec['options'] = fq
+            rec['option_roles'] = [role(o) for o in fq[1]]
+            changed.add('frame')
+        if vq:
+            rec['vote'] = {'question': vq[0], 'options': vq[1], 'kind': vq[2]}
+            changed.add('vote')
+        rec['status'] = 'awaiting_results' if changed else 'no_target_question'
+        if not changed: return changed
     if rec['status'] == 'awaiting_results':
         if info['results']:
             for f in info['results']:
-                t = read_result_pdf(get(f['url'], VIEW.format(rec['ntt'])), rec['options'])
-                if t:
-                    rec.update(result_file=f['name'], table=t, status='parsed'); break
-            else:
-                rec['status'] = 'results_unparsed'
-            return True
+                texts = result_texts(get(f['url'], VIEW.format(rec['ntt'])))
+                if 'options' in rec and 'table' not in rec:
+                    t = read_result_pdf(texts, rec['options'])
+                    if t: rec.update(result_file=f['name'], table=t); changed.add('frame')
+                if 'vote' in rec and 'table' not in rec['vote']:
+                    t = read_result_pdf(texts, rec['vote']['options'], vote_head)
+                    if t: rec['vote'].update(result_file=f['name'], table=t); changed.add('vote')
+            done = ('options' not in rec or 'table' in rec) and ('vote' not in rec or 'table' in rec['vote'])
+            rec['status'] = 'parsed' if done else 'results_unparsed'
+            if 'options' in rec: changed.add('frame')   # results opened: worth a review note even if unreadable
+            if 'vote' in rec: changed.add('vote')
+            return changed
         if (today - date.fromisoformat(rec['registered'])).days > RESULT_WAIT_DAYS:
             rec['status'] = 'results_not_published'
     return changed
@@ -243,7 +319,7 @@ def process(rec, today):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--max-pages', type=int, default=10)
+    ap.add_argument('--max-pages', type=int, default=20)
     ap.add_argument('--today', default=None)
     ap.add_argument('--summary', type=Path, default=None, help='write a Markdown issue body for candidates changed in this run')
     a = ap.parse_args()
@@ -259,11 +335,13 @@ def main():
         time.sleep(1)
     for r in new:
         polls[str(r['reg_no'])] = dict(r, status='excluded_pollster' if any(x in r['pollster'] for x in EXCLUDED) else 'new')
-    touched = []
+    touched, vote_touched = [], []
     for key, rec in sorted(polls.items(), key=lambda kv: int(kv[0])):
         if rec['status'] in ('new', 'awaiting_results'):
             try:
-                if process(rec, today): touched.append(key)
+                tracks = process(rec, today)
+                if 'frame' in tracks: touched.append(key)
+                if 'vote' in tracks: vote_touched.append(key)
                 rec.pop('last_error', None)
             except Exception as e:  # one broken PDF must not stop the scan; retry on later runs, then give up
                 rec['last_error'] = f'{type(e).__name__}: {e}'[:300]
@@ -285,11 +363,36 @@ def main():
         cands.append(c)
     OUT.write_text(json.dumps({'note': '검토 전 후보 목록이다. 계산 입력이 아니며 data/frame_polls_multi.json 등록은 원문 확인 후 수동으로 한다.',
                                'candidates': cands}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    write_vote_table(polls)
     todo = [c for c in cands if c['registered_in'] != 'frame_polls_multi.json' and c['status'] in ('parsed', 'results_unparsed')]
-    print(f"new registrations {len(new)}, candidates {len(cands)}, awaiting review {len(todo)}, changed {changed}")
+    print(f"new registrations {len(new)}, candidates {len(cands)}, awaiting review {len(todo)}, changed {changed}, "
+          f"vote-intention polls {sum('vote' in r for r in polls.values())} (updated {len(vote_touched)})")
     if a.summary and touched:
         a.summary.write_text(summary_md([c for c in cands if str(c['reg_no']) in touched]), encoding='utf-8')
     sys.exit(0 if changed else 3)
+
+
+def write_vote_table(polls):
+    """Collect-only table of 2028 general-election party vote-intention questions (not a model input).
+    Party columns are auto-read national shares (%), summed when several options map to one column; blank until the
+    result PDF is read. options_raw keeps the questionnaire's own labels in order for checking the mapping."""
+    cols = ['reg_no', 'pollster', 'sponsor', 'mode', 'fieldwork_start', 'fieldwork_end', 'published_at', 'sample_size',
+            'response_rate_pct', 'kind', 'status', *PARTIES, 'question', 'options_raw', 'result_page', 'nesdc_url']
+    out = []
+    for key, rec in sorted(polls.items(), key=lambda kv: -int(kv[0])):
+        v = rec.get('vote')
+        if not v: continue
+        row = {c: rec.get(c) for c in cols[:9]}
+        row.update(kind=v['kind'], question=v['question'], options_raw=' | '.join(v['options']), nesdc_url=VIEW.format(rec['ntt']))
+        t = v.get('table')
+        row['status'] = 'auto_read' if t else rec['status']
+        if t:
+            for o, x in t['national'].items():
+                k = party_key(o); row[k] = round((row.get(k) or 0) + x, 1)
+            row['result_page'] = t['page']
+        out.append(row)
+    with VOTE_OUT.open('w', encoding='utf-8', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=cols, lineterminator='\n'); w.writeheader(); w.writerows(out)
 
 
 def summary_md(cs):

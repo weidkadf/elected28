@@ -5,7 +5,7 @@
 
 > **공개 저장소 안내**
 > - 결과 대시보드: `docs/index.html` (GitHub Pages로 게시). 자료 갱신은 `python scripts/build_site.py`.
-> - 여심위 전국 정당지지도(조국혁신당·개혁신당 비례 민감도)는 `.github/workflows/update-polls.yml`이 매일 확인해 자동 반영한다. 정부지원·견제 문항은 같은 작업이 새 등록 조사의 질문지·결과표에서 후보를 찾아 `outputs/frame_candidates.json`과 GitHub 이슈로 알리고, 등록은 원문 확인 후 수동.
+> - 여심위 전국 정당지지도(조국혁신당·개혁신당 비례 민감도)는 `.github/workflows/update-polls.yml`이 매일 확인해 자동 반영한다. 정부지원·견제 문항은 같은 작업이 새 등록 조사의 질문지·결과표에서 후보를 찾아 `outputs/frame_candidates.json`과 GitHub 이슈로 알리고, 등록은 원문 확인 후 수동. 2028 총선 정당 투표의향 문항은 `outputs/vote_intention_2028.csv`에 수집만 한다(계산 입력 아님).
 > - 한국갤럽 원문 PDF와 선거구·개표 검토용 PDF는 저작권 때문에 넣지 않았다. 목록은 `docs/EXCLUDED_PDFS.txt`. 추출값(JSON)은 들어 있어 `forecast_v050.py`, `scripts/identify_alpha.py`, `scripts/rate_pollsters.py`는 그대로 돌아간다. PDF를 다시 읽는 추출 스크립트와 릴리스 검증(`scripts/validate.py`), 일부 검사는 PDF가 있어야 한다.
 > - NESDC 결과표 PDF(1.5GB)도 넣지 않았다. `data/nesdc/nesdc_polls_index.csv`의 상세주소에서 받을 수 있다.
 

@@ -5,6 +5,8 @@
 # 2. 정부지원·견제 / 정권심판 frame questions in newly registered national polls: only a review list
 #    (outputs/frame_candidates.json) and a GitHub issue. Registering a poll in data/frame_polls_multi.json stays manual
 #    (UPDATE_PROTOCOL). A failure here does not block step 1.
+#    The same scan collects 2028 party vote-intention questions into outputs/vote_intention_2028.csv (collect-only,
+#    not a model input; no issue is opened for these).
 name: Update NESDC party support
 
 on:
@@ -62,7 +64,7 @@ jobs:
         run: |
           git add data/nesdc/nesdc_major_data_national.xlsx data/nesdc/nesdc_major_data_source.json data/nesdc/party_support_national.csv \
                   outputs/jk_support.json outputs/seats_300.json docs/data.js docs/index.html \
-                  data/nesdc/frame_scan_state.json outputs/frame_candidates.json
+                  data/nesdc/frame_scan_state.json outputs/frame_candidates.json outputs/vote_intention_2028.csv
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           msg="자동 갱신: 여심위"
           if [ "${{ steps.fetch.outputs.changed }}" = "true" ]; then
