@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17354,
+ "last_reg_no": 17355,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2495,6 +2495,23 @@
     "other"
    ],
    "last_error": "PdfminerException: Invalid dictionary construct: [/'Type', /'Font', /'Subtype', /'Type0', /'Name', /'F1', /'BaseFont', /'Sandoll', /b'\\xb0', /b'\\xdd', /b'\\xb5', /b'\\xbf', /b'\\xb0', /b'\\xed', /b'\\xb5', /b'\\xf1', 2, 7, /b'Bk', /'Encoding', /'Identity-H', /'DescendantFonts', [<PDFObjRef:221>], /'ToUnic"
+  },
+  "17355": {
+   "ntt": 19615,
+   "reg_no": 17355,
+   "pollster": "(주)리얼미터",
+   "sponsor": "아시아경제",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 11월 2주차 주간집계",
+   "registered": "2026-11-13",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-12",
+   "fieldwork_end": "2026-11-13",
+   "published_at": "2026-11-15 14:00",
+   "sample_size": 1004,
+   "response_rate_pct": 3.0
   }
  }
 }
