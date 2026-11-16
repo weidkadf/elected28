@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17355,
+ "last_reg_no": 17361,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2512,6 +2512,47 @@
    "published_at": "2026-11-15 14:00",
    "sample_size": 1004,
    "response_rate_pct": 3.0
+  },
+  "17361": {
+   "ntt": 19621,
+   "reg_no": 17361,
+   "pollster": "(주)비전코리아",
+   "sponsor": "올리서치",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-11-16",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-14",
+   "fieldwork_end": "2026-11-15",
+   "published_at": "2026-11-16 15:00",
+   "sample_size": 1014,
+   "response_rate_pct": 4.0
+  },
+  "17360": {
+   "ntt": 19620,
+   "reg_no": 17360,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-14",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17359": {
+   "ntt": 19619,
+   "reg_no": 17359,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-14",
+   "area": "전국",
+   "status": "excluded_pollster"
   }
  }
 }
