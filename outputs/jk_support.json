@@ -2,9 +2,9 @@
  "source": {
   "file": "data/nesdc/nesdc_major_data_national.xlsx",
   "board": "https://www.nesdc.go.kr/portal/bbs/B0000025/list.do?menuNo=200500",
-  "n_rows": 1581,
+  "n_rows": 1591,
   "first_fieldwork_end": "2023-10-30",
-  "last_fieldwork_end": "2026-11-07",
+  "last_fieldwork_end": "2026-11-14",
   "excluded_pollsters": "여론조사꽃"
  },
  "definition": "ratio = 조국혁신당 / (더불어민주당 + 조국혁신당) in national party support; pooled in logit, within pollster then quality-weighted",
@@ -43,37 +43,37 @@
  },
  "current": {
   "window": [
-   "2026-10-14",
-   "2026-11-11"
+   "2026-10-17",
+   "2026-11-14"
   ],
   "all": {
-   "ratio": 0.1367,
-   "logit": -1.8427,
-   "n_polls": 23,
-   "n_pollsters": 10,
-   "jk_mean_pct": 5.58
+   "ratio": 0.1525,
+   "logit": -1.7155,
+   "n_polls": 28,
+   "n_pollsters": 13,
+   "jk_mean_pct": 5.85
   },
   "ARS": {
-   "ratio": 0.1421,
-   "logit": -1.7982,
-   "n_polls": 17,
-   "n_pollsters": 8,
-   "jk_mean_pct": 6.29
+   "ratio": 0.1592,
+   "logit": -1.6639,
+   "n_polls": 20,
+   "n_pollsters": 10,
+   "jk_mean_pct": 6.54
   },
   "CATI": {
-   "ratio": 0.0769,
-   "logit": -2.4848,
-   "n_polls": 5,
-   "n_pollsters": 2,
-   "jk_mean_pct": 3.0
+   "ratio": 0.0861,
+   "logit": -2.3623,
+   "n_polls": 6,
+   "n_pollsters": 3,
+   "jk_mean_pct": 3.33
   }
  },
  "list_vote_uplift_logit": 1.0141,
  "swing_logit_by_mode": {
-  "ARS": -0.7902,
-  "CATI": -1.1138
+  "ARS": -0.6559,
+  "CATI": -0.9913
  },
- "swing_logit": -0.8714,
+ "swing_logit": -0.7401,
  "scenarios": {
   "fixed_2024": {
    "ratio": 0.4761,
@@ -81,14 +81,14 @@
    "basis": "NEC 2024 list vote"
   },
   "poll_swing": {
-   "ratio": 0.2754,
+   "ratio": 0.3024,
    "label": "여론 변화 반영",
    "basis": "2024 list ratio moved by the within-mode change in poll ratio, pre-2024 window -> current window",
-   "ratio_ARS_only": 0.2919,
-   "ratio_CATI_only": 0.2298
+   "ratio_ARS_only": 0.3204,
+   "ratio_CATI_only": 0.2522
   },
   "poll_direct": {
-   "ratio": 0.1367,
+   "ratio": 0.1525,
    "label": "현재 지지율 그대로",
    "basis": "current pooled poll ratio; no list-vote uplift (2024 polls understated 조국혁신당 list vote)"
   }
@@ -130,11 +130,11 @@
    "jk_mean_pct": 5.27
   },
   "2026-11": {
-   "ratio": 0.1495,
-   "logit": -1.7384,
-   "n_polls": 7,
-   "n_pollsters": 7,
-   "jk_mean_pct": 6.2
+   "ratio": 0.1623,
+   "logit": -1.6414,
+   "n_polls": 15,
+   "n_pollsters": 12,
+   "jk_mean_pct": 6.39
   }
  },
  "reform": {
@@ -165,45 +165,45 @@
   },
   "current": {
    "all": {
-    "ratio": 0.0233,
-    "logit": -3.7363,
-    "n_polls": 23,
-    "n_pollsters": 10,
-    "ref_mean_pct": 2.05
+    "ratio": 0.0247,
+    "logit": -3.677,
+    "n_polls": 28,
+    "n_pollsters": 13,
+    "ref_mean_pct": 2.1
    },
    "ARS": {
-    "ratio": 0.0228,
-    "logit": -3.7573,
-    "n_polls": 17,
-    "n_pollsters": 8,
-    "ref_mean_pct": 2.05
+    "ratio": 0.0246,
+    "logit": -3.6814,
+    "n_polls": 20,
+    "n_pollsters": 10,
+    "ref_mean_pct": 2.1
    },
    "CATI": {
-    "ratio": 0.0287,
-    "logit": -3.523,
-    "n_polls": 5,
-    "n_pollsters": 2,
+    "ratio": 0.0238,
+    "logit": -3.7143,
+    "n_polls": 6,
+    "n_pollsters": 3,
     "ref_mean_pct": 2.0
    }
   },
   "swing_logit_by_mode": {
-   "ARS": -0.2777,
-   "CATI": 0.1013
+   "ARS": -0.2018,
+   "CATI": -0.09
   },
-  "swing_logit": -0.1826,
+  "swing_logit": -0.1737,
   "scenarios": {
    "fixed_2024": {
     "share_pct": 3.61,
     "label": "2024 득표 고정"
    },
    "poll_swing": {
-    "share_pct": 3.03,
+    "share_pct": 3.05,
     "label": "여론 변화 반영",
-    "share_pct_ARS_only": 2.76,
-    "share_pct_CATI_only": 3.98
+    "share_pct_ARS_only": 2.97,
+    "share_pct_CATI_only": 3.31
    },
    "poll_direct": {
-    "share_pct": 2.33,
+    "share_pct": 2.47,
     "label": "현재 지지율 그대로"
    }
   },
@@ -244,11 +244,11 @@
     "ref_mean_pct": 1.97
    },
    "2026-11": {
-    "ratio": 0.0254,
-    "logit": -3.6479,
-    "n_polls": 7,
-    "n_pollsters": 7,
-    "ref_mean_pct": 2.27
+    "ratio": 0.0259,
+    "logit": -3.6256,
+    "n_polls": 15,
+    "n_pollsters": 12,
+    "ref_mean_pct": 2.21
    }
   }
  }

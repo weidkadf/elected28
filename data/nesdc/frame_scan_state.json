@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17361,
+ "last_reg_no": 17363,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2553,6 +2553,23 @@
    "registered": "2026-11-14",
    "area": "전국",
    "status": "excluded_pollster"
+  },
+  "17363": {
+   "ntt": 19623,
+   "reg_no": 17363,
+   "pollster": "여론조사공정(주)",
+   "sponsor": "펜앤마이크",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-16",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-15",
+   "fieldwork_end": "2026-11-16",
+   "published_at": "2026-11-17 08:00",
+   "sample_size": 1004,
+   "response_rate_pct": 2.4
   }
  }
 }
