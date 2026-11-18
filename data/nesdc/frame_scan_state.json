@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17363,
+ "last_reg_no": 17364,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2570,6 +2570,23 @@
    "published_at": "2026-11-17 08:00",
    "sample_size": 1004,
    "response_rate_pct": 2.4
+  },
+  "17364": {
+   "ntt": 19624,
+   "reg_no": 17364,
+   "pollster": "조원씨앤아이",
+   "sponsor": "스트레이트뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도 대통령선거",
+   "registered": "2026-11-17",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-14",
+   "fieldwork_end": "2026-11-16",
+   "published_at": "2026-11-18 05:00",
+   "sample_size": 2002,
+   "response_rate_pct": 4.3
   }
  }
 }
