@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17364,
+ "last_reg_no": 17368,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2587,6 +2587,40 @@
    "published_at": "2026-11-18 05:00",
    "sample_size": 2002,
    "response_rate_pct": 4.3
+  },
+  "17368": {
+   "ntt": 19628,
+   "reg_no": 17368,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 국회의원선거 정당 지지도, 국정현안 등",
+   "registered": "2026-11-18",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-16",
+   "fieldwork_end": "2026-11-17",
+   "published_at": "2026-11-19 01:00",
+   "sample_size": 1002,
+   "response_rate_pct": 3.3
+  },
+  "17367": {
+   "ntt": 19627,
+   "reg_no": 17367,
+   "pollster": "미디어토마토",
+   "sponsor": "뉴스토마토",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-18",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-16",
+   "fieldwork_end": "2026-11-17",
+   "published_at": "2026-11-19 06:00",
+   "sample_size": 1033,
+   "response_rate_pct": 2.0
   }
  }
 }
