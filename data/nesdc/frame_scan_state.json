@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17368,
+ "last_reg_no": 17369,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2621,6 +2621,34 @@
    "published_at": "2026-11-19 06:00",
    "sample_size": 1033,
    "response_rate_pct": 2.0
+  },
+  "17369": {
+   "ntt": 19629,
+   "reg_no": 17369,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도국회의원선거",
+   "registered": "2026-11-19",
+   "area": "전국",
+   "status": "awaiting_results",
+   "fieldwork_start": "2026-11-17",
+   "fieldwork_end": "2026-11-19",
+   "published_at": "2026-11-20 10:00",
+   "sample_size": 1001,
+   "response_rate_pct": 10.1,
+   "question": "문 4) 다음 국회의원 선거는 내후년 4월에 치러지는데요. ○○님께서는 국회의원 선거와 관련해 어느 쪽 의견에 조금이라도 더 동의하십니까? (1, 2를 읽어줄 것, Rotation)",
+   "options": [
+    "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다",
+    "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다",
+    "모름/응답거절"
+   ],
+   "option_roles": [
+    "support",
+    "check",
+    "other"
+   ]
   }
  }
 }
