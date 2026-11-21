@@ -16,8 +16,8 @@ class CrosstabTests(unittest.TestCase):
     def setUpClass(cls):
         cls.waves = TO.load()
 
-    def test_ten_waves_and_cells_reproduce_published_totals(self):
-        self.assertEqual(sorted(self.waves), ['392', '394', '395', '578', '579', '580', '662', '663', '664', '678'])
+    def test_waves_and_cells_reproduce_published_totals(self):
+        self.assertEqual(sorted(self.waves), ['392', '394', '395', '578', '579', '580', '662', '663', '664', '678', '683'])
         for w, v in self.waves.items():
             fr = v['frame_by_party']
             tot = fr['total']

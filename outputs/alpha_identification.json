@@ -2292,39 +2292,39 @@
  },
  "seat_distribution": {
   "all_three": {
-   "dem_mean": 96.1,
-   "con_mean": 157.0,
+   "dem_mean": 103.5,
+   "con_mean": 149.5,
    "dem_p10_p50_p90": [
-    32,
-    88,
-    174
+    35,
+    99,
+    178
    ],
-   "p_dem_district_majority": 0.2915,
-   "p_con_district_majority": 0.6995,
+   "p_dem_district_majority": 0.3404,
+   "p_con_district_majority": 0.648,
    "alpha_mass_below_0_dropped": 0.0001
   },
   "micro_plus_region": {
-   "dem_mean": 100.0,
-   "con_mean": 153.1,
+   "dem_mean": 107.0,
+   "con_mean": 146.0,
    "dem_p10_p50_p90": [
-    34,
-    94,
-    175
+    38,
+    105,
+    179
    ],
-   "p_dem_district_majority": 0.3159,
-   "p_con_district_majority": 0.6742,
+   "p_dem_district_majority": 0.3642,
+   "p_con_district_majority": 0.6235,
    "alpha_mass_below_0_dropped": 0.0003
   },
   "all_three_excluding_presidential_pair": {
-   "dem_mean": 80.7,
-   "con_mean": 172.3,
+   "dem_mean": 89.3,
+   "con_mean": 163.7,
    "dem_p10_p50_p90": [
-    28,
-    61,
-    168
+    29,
+    75,
+    175
    ],
-   "p_dem_district_majority": 0.2142,
-   "p_con_district_majority": 0.7799,
+   "p_dem_district_majority": 0.2632,
+   "p_con_district_majority": 0.7285,
    "alpha_mass_below_0_dropped": 0.0
   },
   "condition": "current frame polls held to election day plus time drift sigma(d); 254 district seats only; 2024 boundaries; candidates unknown"

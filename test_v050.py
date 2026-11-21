@@ -25,7 +25,7 @@ class RatingsTests(unittest.TestCase):
         d = json.loads((ROOT / 'data/frame_polls_v050.json').read_text(encoding='utf-8'))
         s = {p['poll_id']: p['shares'] for p in d['polls']}
         self.assertEqual((s['researchview_20261108_judgment_national']['support'], s['researchview_20261108_judgment_national']['check']), (0.34, 0.577))
-        self.assertEqual(len(d['polls']), 5)
+        self.assertEqual(len(d['polls']), 6)
 
 
 class EngineTests(unittest.TestCase):

@@ -1,6 +1,6 @@
 {
   "schema_version": "frame_polls_multi_1",
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-22",
   "timezone": "Asia/Seoul",
   "purpose": "v0.3.0 여론 집계층 입력. 제23대 총선 대상 정부지원·견제(및 유사) 문항만. 정당지지도 없음.",
   "target_election": {
@@ -44,6 +44,34 @@
       "source_url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1662",
       "verification_status": "NESDC 등록 결과표 원문 대조 일치 (2026-11-11, data/nesdc/nesdc_polls_index.csv)",
       "notes": "data/polls.json gallup_678_frame_national과 같은 관측. 권역값은 polls.json에서 읽는다."
+    },
+    {
+      "poll_id": "gallup_683_frame_national",
+      "pollster": "한국갤럽",
+      "sponsor": "한국갤럽 자체",
+      "mode": "CATI_live_interview",
+      "sampling_frame": "이동통신 3사 무선전화 가상번호",
+      "fieldwork_start": "2026-11-17",
+      "fieldwork_end": "2026-11-19",
+      "published_at": "2026-11-20",
+      "sample_size": 1001,
+      "response_rate": 0.101,
+      "scope": "national",
+      "wording_class": "A_support_check",
+      "question_exact": "다음 국회의원선거는 내후년 4월 치러집니다. 귀하는 국회의원선거와 관련해 어느 쪽 의견에 조금이라도 더 동의하십니까?",
+      "options_exact": {
+        "support": "현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다",
+        "check": "현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다"
+      },
+      "shares": {
+        "support": 0.37,
+        "check": 0.47,
+        "dk": 0.16
+      },
+      "source_url": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19629&menuNo=200467",
+      "nesdc_reg_no": 17369,
+      "verification_status": "NESDC 등록번호 17369 결과분석 PDF p.14 원문 대조 (2026-11-22)",
+      "notes": "데일리 오피니언 683호(2026년 11월 3주). 678호와 같은 문항·보기(로테이션). 권역값은 data/polls.json gallup_683_frame_*."
     },
     {
       "poll_id": "hangil_20261026_frame_national",
@@ -199,6 +227,11 @@
       "date": "2026-11-05",
       "query": "한국갤럽 679·680호 총선 결과 기대",
       "result": "미발견(678호가 최신 해당 문항)"
+    },
+    {
+      "date": "2026-11-22",
+      "query": "여심위 등록 전국 조사 2026-11-14~21 자동 스캔 + 웹 검색",
+      "result": "갤럽 17369(683호) 정부지원·견제 37/47/16 원문 대조 후 등록. 그 밖의 등록 조사에는 해당 문항 없음"
     }
   ],
   "nesdc_note": "0.5.0: NESDC 제23대 국회의원선거 등록 7건 원문 확인. 프레임 문항이 있는 것은 갤럽 17313, 한길 17330, 리서치뷰 17249·17292·17348. 미디어토마토 17342와 리서치뷰 17202에는 프레임 문항 없음."

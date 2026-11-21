@@ -1,7 +1,7 @@
 {
   "comparison_type": "government_frame_v050",
   "engine_version": "0.5.0",
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-22",
   "target_election_date": "2028-04-12",
   "baseline_information": {
     "election_date": "2024-04-10",
@@ -29,7 +29,7 @@
     ],
     "baseline_as_of": "2024-04-10",
     "current_national_file": "data/frame_polls_v050.json",
-    "current_regional_source": "data/polls.json (Gallup 678 regional tables only)",
+    "current_regional_source": "data/polls.json (Gallup 678·683 regional tables only)",
     "aggregator": {
       "half_life_days": "adaptive",
       "house_effect_shrinkage_k": 2.0,
@@ -115,7 +115,8 @@
       "580"
     ],
     "current_waves": [
-      "678"
+      "678",
+      "683"
     ],
     "kappa_aligned_main": 1.0,
     "sensitivity_kappa": [
