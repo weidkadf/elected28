@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17371,
+ "last_reg_no": 17373,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2720,6 +2720,30 @@
    "published_at": "2026-11-22 14:00",
    "sample_size": 1010,
    "response_rate_pct": 2.8
+  },
+  "17373": {
+   "ntt": 19633,
+   "reg_no": 17373,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-21",
+   "area": "전국",
+   "status": "excluded_pollster"
+  },
+  "17372": {
+   "ntt": 19632,
+   "reg_no": 17372,
+   "pollster": "(주)여론조사꽃",
+   "sponsor": "(주)여론조사꽃",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-21",
+   "area": "전국",
+   "status": "excluded_pollster"
   }
  }
 }

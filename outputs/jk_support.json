@@ -43,37 +43,37 @@
  },
  "current": {
   "window": [
-   "2026-10-17",
-   "2026-11-14"
+   "2026-10-25",
+   "2026-11-22"
   ],
   "all": {
-   "ratio": 0.1525,
-   "logit": -1.7155,
-   "n_polls": 28,
+   "ratio": 0.1586,
+   "logit": -1.669,
+   "n_polls": 21,
    "n_pollsters": 13,
-   "jk_mean_pct": 5.85
+   "jk_mean_pct": 6.07
   },
   "ARS": {
-   "ratio": 0.1592,
-   "logit": -1.6639,
-   "n_polls": 20,
+   "ratio": 0.1662,
+   "logit": -1.6127,
+   "n_polls": 15,
    "n_pollsters": 10,
-   "jk_mean_pct": 6.54
+   "jk_mean_pct": 6.92
   },
   "CATI": {
-   "ratio": 0.0861,
-   "logit": -2.3623,
-   "n_polls": 6,
+   "ratio": 0.0868,
+   "logit": -2.3534,
+   "n_polls": 5,
    "n_pollsters": 3,
-   "jk_mean_pct": 3.33
+   "jk_mean_pct": 3.4
   }
  },
  "list_vote_uplift_logit": 1.0141,
  "swing_logit_by_mode": {
-  "ARS": -0.6559,
-  "CATI": -0.9913
+  "ARS": -0.6047,
+  "CATI": -0.9824
  },
- "swing_logit": -0.7401,
+ "swing_logit": -0.6995,
  "scenarios": {
   "fixed_2024": {
    "ratio": 0.4761,
@@ -81,14 +81,14 @@
    "basis": "NEC 2024 list vote"
   },
   "poll_swing": {
-   "ratio": 0.3024,
+   "ratio": 0.311,
    "label": "여론 변화 반영",
    "basis": "2024 list ratio moved by the within-mode change in poll ratio, pre-2024 window -> current window",
-   "ratio_ARS_only": 0.3204,
-   "ratio_CATI_only": 0.2522
+   "ratio_ARS_only": 0.3317,
+   "ratio_CATI_only": 0.2538
   },
   "poll_direct": {
-   "ratio": 0.1525,
+   "ratio": 0.1586,
    "label": "현재 지지율 그대로",
    "basis": "current pooled poll ratio; no list-vote uplift (2024 polls understated 조국혁신당 list vote)"
   }
@@ -165,45 +165,45 @@
   },
   "current": {
    "all": {
-    "ratio": 0.0247,
-    "logit": -3.677,
-    "n_polls": 28,
+    "ratio": 0.0254,
+    "logit": -3.6481,
+    "n_polls": 21,
     "n_pollsters": 13,
-    "ref_mean_pct": 2.1
+    "ref_mean_pct": 2.13
    },
    "ARS": {
-    "ratio": 0.0246,
-    "logit": -3.6814,
-    "n_polls": 20,
+    "ratio": 0.0253,
+    "logit": -3.6527,
+    "n_polls": 15,
     "n_pollsters": 10,
-    "ref_mean_pct": 2.1
+    "ref_mean_pct": 2.15
    },
    "CATI": {
-    "ratio": 0.0238,
-    "logit": -3.7143,
-    "n_polls": 6,
+    "ratio": 0.0241,
+    "logit": -3.7027,
+    "n_polls": 5,
     "n_pollsters": 3,
     "ref_mean_pct": 2.0
    }
   },
   "swing_logit_by_mode": {
-   "ARS": -0.2018,
-   "CATI": -0.09
+   "ARS": -0.1731,
+   "CATI": -0.0784
   },
-  "swing_logit": -0.1737,
+  "swing_logit": -0.1493,
   "scenarios": {
    "fixed_2024": {
     "share_pct": 3.61,
     "label": "2024 득표 고정"
    },
    "poll_swing": {
-    "share_pct": 3.05,
+    "share_pct": 3.12,
     "label": "여론 변화 반영",
-    "share_pct_ARS_only": 2.97,
-    "share_pct_CATI_only": 3.31
+    "share_pct_ARS_only": 3.05,
+    "share_pct_CATI_only": 3.35
    },
    "poll_direct": {
-    "share_pct": 2.47,
+    "share_pct": 2.54,
     "label": "현재 지지율 그대로"
    }
   },
