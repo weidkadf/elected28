@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
-"""Extract Gallup frame-by-party crosstab rows and turnout-intention rows (v0.3.1).
-
-For every archived Gallup report with the 총선 결과 기대 item, read from the PDF text layer:
-  전체 row and the 더불어민주당 / 국민의힘(미래통합당) / 무당층 rows of the frame table
-  (weighted n, support %, check %, don't-know %). The remaining parties are kept as a residual
-  group derived from 전체 minus the listed rows, so the cells always add up to the published totals.
-Turnout intention ('꼭 투표할 것이다') by the same groups is read from 394/395 (2020; the 2024
-archive and 678 did not ask it). Requires pdftotext. Output: data/history_polls/frame_party_crosstabs.json
-"""
 from __future__ import annotations
 import hashlib, json, re, subprocess
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +34,6 @@ def last_match(line, name):
 def section(lines, header_pat, span=70):
     for i, l in enumerate(lines):
         if re.search(header_pat, l) and '사례수' not in l:
-            # the table header row follows within a few lines
             for j in range(i, min(i + 8, len(lines))):
                 if '사례수' in lines[j]:
                     return lines[j:j + span]
@@ -69,7 +60,6 @@ def frame_rows(lines, con):
 
 
 def trend_total(lines, end, want):
-    """392 prints the national value only inside its trend block: take the row of this fieldwork."""
     day = int(end[-2:])
     for l in lines:
         for m in re.finditer(rf'~{day}일\)\s+([\d,]+)\s+([\d,]+)\s+(\d+)%\s+(\d+)%\s+(\d+)%', l):
@@ -127,7 +117,9 @@ def main():
         rc = tot['n_weighted'] * tot['check'] - sum(fr[k]['n_weighted'] * fr[k]['check'] for k in ('dem', 'con', 'independent'))
         fr['residual_other_parties'] = {'n_weighted': resid_n, 'support': max(rs, 0) / resid_n, 'check': max(rc, 0) / resid_n,
                                         'derived': 'total minus listed rows (rounding error included)'}
-        res['waves'][w] = {'pdf': pdf, 'pdf_sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'fieldwork_end': end,
+        published_at = date.fromisoformat(pdf.removesuffix('.pdf').rsplit('_', 1)[1]).isoformat()
+        res['waves'][w] = {'pdf': pdf, 'pdf_sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+                           'fieldwork_end': end, 'published_at': published_at,
                            'governing_party': governing, 'conservative_party_label': con,
                            'frame_by_party': fr, 'turnout_intention': turnout_rows(lines, con) or None}
     out = HP / 'frame_party_crosstabs.json'

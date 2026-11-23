@@ -6,6 +6,7 @@
       "pdf": "gallup_392_20200313.pdf",
       "pdf_sha256": "e55404c814581531441b8a82b364e2f7a2b9b6cb4a5fc11e8af05cab93e05e2f",
       "fieldwork_end": "2020-03-12",
+      "published_at": "2020-03-13",
       "governing_party": "더불어민주당",
       "conservative_party_label": "미래통합당",
       "frame_by_party": {
@@ -47,6 +48,7 @@
       "pdf": "gallup_394_20200327.pdf",
       "pdf_sha256": "f9be6742933c26d9828bc9452d4f61081dda396d14f0e65cd9e57e0858a8c7d2",
       "fieldwork_end": "2020-03-26",
+      "published_at": "2020-03-27",
       "governing_party": "더불어민주당",
       "conservative_party_label": "미래통합당",
       "frame_by_party": {
@@ -104,6 +106,7 @@
       "pdf": "gallup_395_20200403.pdf",
       "pdf_sha256": "08d9c642173d8e3acb57a1fd125db574e41c473e570318387beafb490323eeb5",
       "fieldwork_end": "2020-04-02",
+      "published_at": "2020-04-03",
       "governing_party": "더불어민주당",
       "conservative_party_label": "미래통합당",
       "frame_by_party": {
@@ -161,6 +164,7 @@
       "pdf": "gallup_578_20240315.pdf",
       "pdf_sha256": "c2f26152f8e6c45de7ca8556d98a0729fc13703d105eadcc0c172bc043b5780f",
       "fieldwork_end": "2024-03-14",
+      "published_at": "2024-03-15",
       "governing_party": "국민의힘",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -201,6 +205,7 @@
       "pdf": "gallup_579_20240322.pdf",
       "pdf_sha256": "f6ae4f54a5acfe75b7342a93ca5d4254f87952dd1d1c52b5483f636aa63419c1",
       "fieldwork_end": "2024-03-21",
+      "published_at": "2024-03-22",
       "governing_party": "국민의힘",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -241,6 +246,7 @@
       "pdf": "gallup_580_20240329.pdf",
       "pdf_sha256": "03adfce5dd8b102656984b5d2e6f76b794a29d5395feae4dee380656c5f83f3f",
       "fieldwork_end": "2024-03-28",
+      "published_at": "2024-03-29",
       "governing_party": "국민의힘",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -281,6 +287,7 @@
       "pdf": "gallup_662_20260501.pdf",
       "pdf_sha256": "371f28affe5b6a1608c2b3a1116070774689683383b6603dc0c571a22dc8bd16",
       "fieldwork_end": "2026-04-30",
+      "published_at": "2026-05-01",
       "governing_party": "더불어민주당",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -321,6 +328,7 @@
       "pdf": "gallup_663_20260515.pdf",
       "pdf_sha256": "27448b26f466e456cd5400f4461209af47c112bdd885c2cc0f011171a137c8db",
       "fieldwork_end": "2026-05-14",
+      "published_at": "2026-05-15",
       "governing_party": "더불어민주당",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -361,6 +369,7 @@
       "pdf": "gallup_664_20260522.pdf",
       "pdf_sha256": "6ce281bab6ab7be15713e3ce6f1d31c606b4aa0d0aa999a02dd862dd63f62d41",
       "fieldwork_end": "2026-05-21",
+      "published_at": "2026-05-22",
       "governing_party": "더불어민주당",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -401,6 +410,7 @@
       "pdf": "gallup_678_20261016.pdf",
       "pdf_sha256": "d63522a7ef1f426706bb52951807e2a29d9114d87dfa1c9dcb9d2bff2ff46f4c",
       "fieldwork_end": "2026-10-15",
+      "published_at": "2026-10-16",
       "governing_party": "더불어민주당",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {
@@ -441,6 +451,7 @@
       "pdf": "gallup_683_20261120.pdf",
       "pdf_sha256": "56e24ef40e991e25b8da6241a4cb2b5dda0c2b29aa5385cb403e25dbcc14fa4e",
       "fieldwork_end": "2026-11-19",
+      "published_at": "2026-11-20",
       "governing_party": "더불어민주당",
       "conservative_party_label": "국민의힘",
       "frame_by_party": {

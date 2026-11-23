@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""Use the dong-built district panel (2024 general, 2025 presidential, 2026 local) three ways (v0.4.0).
-
-1. alpha: second election pair 2024 general -> 2026 governor vote, frames 2024-03 (578-580) -> 2026-05
-   (662-664), both likely-voter adjusted; fitted alone and pooled with the 2020->2024 pair.
-2. turnout: actual district turnout in the three elections and how the presidential->local drop relates
-   to district partisanship (descriptive check of the survey-based turnout weights).
-3. baseline: alpha curve restarted from the June 2026 governor vote with the frame change since May 2026.
-Cross-type caveat: a governor vote is not a National Assembly vote (17 province-level candidates).
-"""
 from __future__ import annotations
 import csv, json, math, sys
 from datetime import date
@@ -39,7 +30,6 @@ def f(x):
 
 
 def joint_nll(theta, pairs, fix_c0):
-    """pairs: list of (y, x, g). theta = [alpha, (c_k)..., (ln s_r, ln s_d)_k...]."""
     a = theta[0]
     k = len(pairs)
     cs = [0.0] * k if fix_c0 else list(theta[1:1 + k])
@@ -78,7 +68,6 @@ def joint_ci(pairs, best, fix_c0=False, lo=-3, hi=4, step=0.05):
 
 def main():
     rows = panel()
-    # ---------- 1. alpha, pair 2024 -> 2026 governor
     c24, a24, _ = B.frame_coordinates(2024)
     c26, a26, _ = B.frame_coordinates(2026)
     x_scope = {s: c26[s] - c24[s] for s in REGIONAL_SCOPE_MEMBERS}
@@ -97,7 +86,6 @@ def main():
     ci26, _ = B.profile_ci(y26, x26, g26, fit26, lo=-4, hi=5, step=0.05)
     fit26_c0 = B.fit(y26, x26, g26, fix_c=0.0)
     ci26_c0, _ = B.profile_ci(y26, x26, g26, fit26_c0, fix_c=0.0, lo=-4, hi=5, step=0.05)
-    # pair 2020 -> 2024 as in the backtest
     r20, _, _, y20a, x20a, g20a, _ = B.run()
     m = B.robust_mask(r20)
     pairs = [(y20a[m], x20a[m], g20a[m]), (y26, x26, g26)]
@@ -109,7 +97,6 @@ def main():
            'district_mean_change_logit': float(y26.mean()),
            'frame_q_2024': F.FA.sigmoid(a24['logit'] + a24['turnout_shift']),
            'frame_q_2026_05': F.FA.sigmoid(a26['logit'] + a26['turnout_shift'])}
-    # ---------- 2. turnout, actual
     t = {el: np.array([float(r[f'{el}_turnout']) for r in rows]) for el in ('gen2024', 'pres2025', 'gov2026')}
     p25 = np.array([float(r['pres2025_two_party_dem']) for r in rows])
     w = np.array([float(r['pres2025_electors']) for r in rows])
@@ -129,12 +116,11 @@ def main():
         'gen2024_minus_local_pp_per_10pp_dem_share': {'all_254': 10 * wslope(t['gen2024'] - t['gov2026'], p25, w),
                                                       'excluding_honam_and_tk': 10 * wslope((t['gen2024'] - t['gov2026'])[mid], p25[mid], w[mid])},
         'note': 'district-level association only (ecological); positive = Democratic-leaning districts lose more turnout in the lower-turnout election'}
-    # ---------- 3. baseline restarted from June 2026
     cfg = F.load_json('config/forecast_v030.json')
     districts = read_baseline(ROOT / 'data/baseline_2024.csv')
     c_agg, c_dev = F.current_frames(cfg, cfg['frame_inputs']['aggregator']['wording_classes_main'])
     waves = TO.load()
-    tp = TO.turnout_propensity(waves)
+    tp = TO.turnout_propensity(waves, cfg['as_of'])
     lv_c, _ = TO.period_shift(waves, ['678'], cfg['as_of'], c_agg['config']['half_life_days'], tp['tau_partisan'], tp['tau_independent'])
     cur = {s: c_agg['logit'] + lv_c + c_dev.get(s, {'deviation_logit': 0.0})['deviation_logit'] for s in REGIONAL_SCOPE_MEMBERS}
     change26 = {s: cur[s] - c26[s] for s in REGIONAL_SCOPE_MEMBERS}

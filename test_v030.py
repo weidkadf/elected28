@@ -1,4 +1,3 @@
-"""v0.3.0 tests: aggregator, partial backtest, sigma(d), alpha curve, prior, release tooling."""
 import copy
 import json
 import math
@@ -142,6 +141,10 @@ class ForecastTests(unittest.TestCase):
         self.assertGreater(F.sigma_national(1, 500, s), F.sigma_national(1, 100, s))
         self.assertGreater(F.sigma_national(1, 500, s), F.sigma_national(.5, 500, s))
         self.assertAlmostEqual(F.sigma_national(1, 13, s), .12)
+
+    def test_legacy_sensitivity_excludes_same_day_fixed_wave(self):
+        self.assertIsNone(F.legacy_single_wave({**self.cfg, 'as_of': '2026-10-16'}))
+        self.assertIsNotNone(F.legacy_single_wave({**self.cfg, 'as_of': '2026-10-17'}))
 
     def test_published_curve_monotone_and_thresholds_ordered(self):
         rep = json.loads((ROOT / 'outputs/forecast_v030.json').read_text(encoding='utf-8'))

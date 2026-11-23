@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""Three routes to alpha (frame-to-vote transfer), then a combined posterior and a seat distribution.
-
-1. micro  : frame x party crosstabs in NESDC result tables -> composition slope
-            alpha_micro = (1-k) (v_demside - v_other) q(1-q) / (p(1-p))
-2. region : pooled NESDC regional frame deviations (2024 general, 2025 presidential, 2026 local)
-            -> does the vote move more where the frame moved more? (free intercept per pair)
-3. prior  : uniform-swing prior alpha ~ N(1, 0.5^2) (assumption), combined on a grid.
-Input : data/nesdc/frame_tables.json (scripts/parse_nesdc_frames.py), data/district_panel.csv
-Output: outputs/alpha_identification.json
-"""
 import csv, json, math, re, sys, statistics as st
 from collections import defaultdict
 from pathlib import Path
@@ -20,7 +10,7 @@ import analyze_dong_panel as A  # noqa: E402
 from model import REGIONAL_SCOPE_MEMBERS  # noqa: E402
 SCOPE = {m: s for s, ms in REGIONAL_SCOPE_MEMBERS.items() for m in ms}
 lg = lambda p: math.log(p / (1 - p))
-GOV_CHANGE = '2025-06-04'            # before: PPP government (Dem side = check/교체); after: Dem government (Dem side = support)
+GOV_CHANGE = '2025-06-04'
 FRAME_OK = re.compile(r'정권교체|정권을?교체|견제|국정안정|힘을?실어|지원론|심판론|정권심판|정부심판|여당심판|정부.{0,8}지원|재창출')
 WINDOWS = {'gen2024': ('제22대 국회의원선거', '2024-01-01', '2024-04-09'), 'pres2025': ('제21대 대통령선거', '2025-04-04', '2025-06-02'),
            'gov2026': ('제9회 전국동시지방선거', '2026-03-01', '2026-06-02')}
@@ -34,8 +24,6 @@ def dem_side(end):
 
 
 def party_order_from_header(title):
-    """True when the header names 더불어민주당 before 국민의힘. Two-line headers ('더불어' / '민주당') made the parser
-    place 민주 by its second line and swap the two columns in tables that also list 조국혁신당 etc."""
     h = re.sub(r'\s', '', title); i, j = h.rfind('더불어'), h.rfind('국민의')
     return None if i < 0 or j < 0 else i < j
 
@@ -60,8 +48,6 @@ def jk_key(o, t):
 
 
 def add_jk(polls, jk):
-    """Dem side = 더불어민주당 + 조국혁신당 (user decision 2026-11-14). Run after fix_party_order. A crosstab whose header names
-    조국혁신당 but whose 조국 column was not read (scripts/fetch_xtab_jk.py) is skipped so every table uses the same definition."""
     added, skipped = 0, []
     for o in polls:
         for t in o['xtabs']:
@@ -187,7 +173,7 @@ def seats(comb):
     import forecast_v030 as F, forecast_v050 as V
     from datetime import date
     cfg = F.load_json('config/forecast_v050.json'); s = F.sigmas(cfg)
-    change, c_agg = V.frame_change(cfg, cfg['frame_inputs']['aggregator']['wording_classes_main'])
+    change, c_agg, _ = V.frame_change(cfg, cfg['frame_inputs']['aggregator']['wording_classes_main'])
     days = (date.fromisoformat(cfg['target_election_date']) - date.fromisoformat(max(p['fieldwork_end'] for p in c_agg['polls_used']))).days
     comp, _ = V.composite(cfg)
     sim = V.CompositeSimulator(F.read_baseline(ROOT / 'data/baseline_2024.csv'), cfg['draws'], cfg['seed'], F.REGIONAL_SCOPE_MEMBERS, comp)

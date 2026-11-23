@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Partial 2020->2024 backtest on same-name/same-statutory-text districts (v0.3.0).
-
-User instruction 2026-11-05: run the backtest first on the 171 districts whose 2020 and 2024
-statutory district text is identical, before full boundary verification. Geometry is NOT
-verified (identical statutory text can still hide administrative-unit changes), so every
-output carries `geography='same_statutory_text_unverified_geometry'`.
-
-Information set (time-restricted):
-  * 2020 baseline district results (verified alternative NEC tables)
-  * Gallup frame surveys published before 2020-04-15 (392/394/395) and before 2024-04-10
-    (578/579/580); fieldwork-end ages measured from each election day
-  * target: 2024 district results (used only as the outcome)
-Party support is never read.
-
-Model (district i in survey region r):
-  y_i = logit(p24_i) - logit(p20_i),  p = D/(D+C) two-party share
-  x_r = L24_r - L20_r  (role-aligned Democratic-direction frame coordinate, aggregated)
-  y_i = c + alpha * x_r + u_r + e_i,  u_r ~ N(0, s_r^2), e_i ~ N(0, s_d^2)
-c is the realised national error of this single election pair; with one fold the national
-error variance is not identifiable, so it is reported, not estimated.
-"""
 from __future__ import annotations
 import csv, json, math, sys
 from collections import defaultdict
@@ -39,7 +18,7 @@ PARTY_MAP_NOTE = ('Explicit role mapping for this backtest only: 2020 미래통�
                   'the main conservative party of their election. Original party names are kept in outputs.')
 PROVINCE_TO_SCOPE = {m: s for s, ms in REGIONAL_SCOPE_MEMBERS.items() for m in ms}
 ELECTION = {2020: '2020-04-15', 2024: '2024-04-10'}
-COMPONENT = {2020: 'support', 2024: 'check'}   # Democratic direction: governing in 2020, opposition in 2024
+COMPONENT = {2020: 'support', 2024: 'check'}
 WAVES = {2020: ['392', '394', '395'], 2024: ['578', '579', '580']}
 
 
@@ -52,7 +31,7 @@ def load_frames(year, waves=None):
     for w in (waves or WAVES[year]):
         path = ROOT / f'data/history_polls/gallup_{w}_frame_observations.json'
         if not path.exists():
-            path = ROOT / f'data/history_polls/gallup_{w}_local_frame.json'   # 2026 local-election item
+            path = ROOT / f'data/history_polls/gallup_{w}_local_frame.json'
         for p in json.loads(path.read_text(encoding='utf-8'))['polls']:
             g = FA.gallup_to_generic(p)
             g['suppressed'] = not p['shares']
@@ -62,7 +41,7 @@ def load_frames(year, waves=None):
 
 def lv_shift_for(year, wave_ids, hl, kappa=1.0):
     tw = TO.load()
-    tp = TO.turnout_propensity(tw)
+    tp = TO.turnout_propensity(tw, ELECTION[year])
     shift, _ = TO.period_shift(tw, wave_ids, ELECTION[year], hl, tp['tau_partisan'], tp['tau_independent'], kappa)
     return shift
 
@@ -97,16 +76,17 @@ def load_districts():
         if not c20 or not c24:
             excluded.append({'district_id': r['district_id'], 'reason': 'missing_result_rows'})
             continue
-        v20 = {x['party_original']: int(x['votes']) for x in c20}
+        v20 = {(x['party_original'], x['candidate']): int(x['votes']) for x in c20}
+        major20 = {party: v for (party, _), v in v20.items() if party in (DEM, CON[2020])}
         v24 = {x['party']: int(x['votes']) for x in c24}
-        if DEM not in v20 or CON[2020] not in v20 or DEM not in v24 or CON[2024] not in v24:
+        if len(major20) != 2 or DEM not in v24 or CON[2024] not in v24:
             excluded.append({'district_id': r['district_id'], 'reason': 'two_major_parties_not_both_present_in_both_years'})
             continue
         if sum(1 for x in c20 if x['party_original'] in (DEM, CON[2020])) != 2 or \
            sum(1 for x in c24 if x['party'] in (DEM, CON[2024])) != 2:
             excluded.append({'district_id': r['district_id'], 'reason': 'ambiguous_multiple_major_party_candidates'})
             continue
-        p20 = v20[DEM] / (v20[DEM] + v20[CON[2020]])
+        p20 = major20[DEM] / sum(major20.values())
         p24 = v24[DEM] / (v24[DEM] + v24[CON[2024]])
         region = c24[0]['region']
         valid20 = int(c20[0]['valid_votes'])
@@ -132,7 +112,6 @@ def negloglik(theta, y, x, g, fix_c=None):
         m = g == grp
         n = m.sum()
         rg = r[m]
-        # cov = sd2 I + sr2 J ; closed-form inverse/determinant
         det = sd2 ** (n - 1) * (sd2 + n * sr2)
         quad = (rg @ rg) / sd2 - sr2 * rg.sum() ** 2 / (sd2 * (sd2 + n * sr2))
         nll += 0.5 * (math.log(det) + quad + n * math.log(2 * math.pi))
@@ -163,13 +142,12 @@ def profile_ci(y, x, g, best, fix_c=None, lo=-3, hi=5, step=0.01):
     for a in grid:
         prof.append(fit(y, x, g, fix_c=fix_c, fix_alpha=float(a))['nll'])
     prof = np.array(prof)
-    inside = grid[prof - best['nll'] <= 1.920729]   # chi2_1(0.95)/2
+    inside = grid[prof - best['nll'] <= 1.920729]
     return [float(inside.min()), float(inside.max())] if len(inside) else [None, None], \
         {'grid': [round(float(a), 3) for a in grid[::10]], 'delta_nll': [round(float(v), 4) for v in (prof - best['nll'])[::10]]}
 
 
 def evaluate(rows, x_by_scope, alpha, c, s_nat, s_reg, s_d, draws=4000, seed=20261105):
-    """Engine-like winner simulation for 2024 from 2020 baseline; third parties fixed at 2020 share."""
     rng = np.random.default_rng(seed)
     scopes = sorted({r['scope'] for r in rows})
     nat = rng.normal(0, s_nat, draws)
@@ -180,8 +158,8 @@ def evaluate(rows, x_by_scope, alpha, c, s_nat, s_reg, s_d, draws=4000, seed=202
         z = mu + nat + reg[r['scope']] + rng.normal(0, s_d, draws)
         p = 1 / (1 + np.exp(-z))
         sh = r['shares20']
-        tot = sh[DEM] + sh[CON[2020]]
-        others = max([v for k, v in sh.items() if k not in (DEM, CON[2020])] or [0.0])
+        tot = sum(v for (party, _), v in sh.items() if party in (DEM, CON[2020]))
+        others = max((v for (party, _), v in sh.items() if party not in (DEM, CON[2020])), default=0.0)
         dem = tot * p
         con = tot * (1 - p)
         win_dem = (dem > con) & (dem > others)
@@ -219,6 +197,21 @@ def robust_mask(rows):
     return np.array([0.15 < r['p20'] < 0.85 and 0.15 < r['p24'] < 0.85 for r in rows])
 
 
+def evaluate_loro(rows, x_by_scope, s_nat):
+    rows = [r for r in rows if 0.15 < r['p20'] < 0.85]
+    y = np.array([r['y'] for r in rows])
+    x = np.array([x_by_scope[r['scope']] for r in rows])
+    g = np.array([r['scope'] for r in rows])
+    results = []
+    for scope in sorted(set(g)):
+        train = g != scope
+        fold = fit(y[train], x[train], g[train])
+        sub = [r for r in rows if r['scope'] == scope]
+        scores = evaluate(sub, x_by_scope, fold['alpha'], fold['c'], s_nat, fold['sigma_region'], fold['sigma_district'])
+        results.append({**scores, 'scope': scope, 'n': len(sub), 'training_fit': fold})
+    return results
+
+
 def main():
     rows_all, excluded, xs, y_all, x_all, g_all, (a20, d20, a24, d24) = run()
     keep = robust_mask(rows_all)
@@ -230,36 +223,24 @@ def main():
     ci_zero, _ = profile_ci(y, x, g, zero, fix_c=0.0, lo=-6, hi=6, step=0.05)
     all_free = fit(y_all, x_all, g_all)
     ci_all, _ = profile_ci(y_all, x_all, g_all, all_free, lo=-8, hi=6, step=0.05)
-    # shrinkage strength profile (k is re-estimated only by likelihood comparison)
     k_prof = {}
     for k in [50, 100, 200, 400, 800, 1600, 6400]:
         rk, _, _, yk, xk, gk, _ = run(shrink_k=float(k))
         mk = robust_mask(rk)
         k_prof[str(k)] = {**{kk: round(v, 4) if isinstance(v, float) else v for kk, v in fit(yk[mk], xk[mk], gk[mk]).items()}}
-    # legacy single-wave inputs (395 vs 580) for comparison with the v0.2.3 engine design
     rl, _, xs_leg, yl, xl, gl, _ = run(waves={2020: ['395'], 2024: ['580']})
     ml = robust_mask(rl)
     legacy = fit(yl[ml], xl[ml], gl[ml])
     legacy['national_logit_change'] = xs_leg['강원']
-    # same fit without the likely-voter adjustment (v0.3.0 inputs)
     rn, _, xs_n, yn, xn, gn, _ = run(turnout=False)
     mn = robust_mask(rn)
     no_turnout = fit(yn[mn], xn[mn], gn[mn])
     no_turnout['national_logit_change'] = xs_n['강원']
-    # leave-one-region-out alpha (out-of-sample evaluation)
-    loro = {}
-    for s in sorted(set(g)):
-        m = g != s
-        loro[s] = fit(y[m], x[m], g[m])['alpha']
     s_nat_assumed = 0.12
     evals = []
     for a in [0.0, 0.5, 1.0, free['alpha']]:
         evals.append(evaluate(rows, xs, a, 0.0, s_nat_assumed, free['sigma_region'], free['sigma_district']))
-    # out-of-sample: each region evaluated with alpha fitted without it
-    oos = []
-    for s in sorted(set(g)):
-        sub = [r for r in rows if r['scope'] == s]
-        oos.append({**evaluate(sub, xs, loro[s], 0.0, s_nat_assumed, free['sigma_region'], free['sigma_district']), 'scope': s, 'n': len(sub)})
+    oos = evaluate_loro(rows_all, xs, s_nat_assumed)
     nat_y = float(np.average(y))
     out = {
         'schema_version': 'backtest_2020_2024_partial_1',
@@ -300,7 +281,8 @@ def main():
                                'national_frame_change_with': xs['강원'], 'national_frame_change_without': xs_n['강원'],
                                'observed_mean_district_change': float(np.average(y))},
         'shrinkage_k_profile': k_prof,
-        'leave_one_region_out_alpha': loro,
+        'leave_one_region_out_alpha': {r['scope']: r['alpha'] for r in oos},
+        'leave_one_region_out_rule': 'Free intercept and both sigmas fitted on training regions; inclusion uses 2020 two-party share only.',
         'evaluation_in_sample': evals,
         'evaluation_leave_one_region_out': oos,
         'not_identified': ['national_error_variance (single election pair)', 'time dependence of alpha'],

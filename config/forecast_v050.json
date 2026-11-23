@@ -131,6 +131,10 @@
   "composite_baseline": {
     "panel": "data/district_panel.csv",
     "dong_panel": "data/dong_panel.csv",
+    "election_results": {
+      "pres2025": {"election_date": "2025-06-03", "available_on": "2025-06-04"},
+      "gov2026": {"election_date": "2026-06-03", "available_on": "2026-06-04"}
+    },
     "weights": {
       "gen2024": 0.5,
       "pres2025": 0.3,

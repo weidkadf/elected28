@@ -1,4 +1,3 @@
-"""v0.3.1 tests: frame-by-party crosstabs and the likely-voter (turnout) adjustment."""
 import copy
 import json
 import sys
@@ -28,7 +27,7 @@ class CrosstabTests(unittest.TestCase):
             self.assertGreater(fr['residual_other_parties']['n_weighted'], 0)
 
     def test_turnout_propensity_from_2020_only(self):
-        tp = TO.turnout_propensity(self.waves)
+        tp = TO.turnout_propensity(self.waves, '2024-04-10')
         self.assertEqual(tp['waves_used'], ['394', '395'])
         self.assertAlmostEqual(tp['tau_partisan'], 0.89, places=3)
         self.assertAlmostEqual(tp['tau_independent'], 0.56, places=3)
@@ -43,11 +42,19 @@ class TurnoutTests(unittest.TestCase):
         for w in self.waves.values():
             self.assertAlmostEqual(TO.lv_shift(w, 0.8, 0.8, 1.0), 0.0, places=12)
 
+    def test_rewinding_excludes_future_and_same_day_publications(self):
+        for cutoff in ('2026-11-11', '2026-11-20'):
+            shift, detail = TO.period_shift(self.waves, ['678', '683'], cutoff, 28, 0.89, 0.56)
+            self.assertEqual(set(detail), {'678'})
+            self.assertAlmostEqual(shift, TO.lv_shift(self.waves['678'], 0.89, 0.56))
+        with self.assertRaisesRegex(ValueError, 'no turnout waves available'):
+            TO.period_shift(self.waves, ['678', '683'], '2026-10-16', 28, 0.89, 0.56)
+
     def test_current_independents_lean_check_so_shift_favours_democrats(self):
         self.assertGreater(TO.lv_shift(self.waves['678'], 0.89, 0.56), 0.0)
 
     def test_kappa_monotone_toward_larger_aligned_bloc(self):
-        w = self.waves['678']   # Democrat-aligned bloc larger than conservative-aligned bloc
+        w = self.waves['678']
         self.assertGreater(TO.lv_shift(w, 0.89, 0.56, 1.2), TO.lv_shift(w, 0.89, 0.56, 1.0))
 
     def test_role_alignment_flips_with_government(self):

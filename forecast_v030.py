@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""Election23 engine v0.3.0 -- alpha curve, aggregated frames, sigma(d), optional prior.
-
-Keeps the v0.2.3 district mechanics of model.py (two-party logit swing with the two-party total
-and third-party shares fixed at 2024; districts lacking both major parties are not estimable) and
-changes what feeds them:
-
-* frame inputs: recency/house-effect aggregate of comparable polls (frame_aggregator.py) instead of
-  one survey per period; regional deviations from Gallup regional tables of the same surveys
-* alpha: reported as a continuous curve, with the seat-majority alpha thresholds as the headline,
-  because the partial 2020->2024 backtest does not identify alpha
-* sigma: region/district scales from the backtest; national scale grows with days to election,
-  sigma_nat(d) = a + alpha * tau * sqrt(d - d_bt)  (VoteHub-style a + b d^nu, nu = 1/2)
-* optional fundamentals prior (approval mid-term drift) as a separate labelled scenario
-Party support is never read. Output is NOT a calibrated forecast.
-"""
 from __future__ import annotations
 import argparse, csv, json, math
 from datetime import date
@@ -33,7 +18,6 @@ def load_json(p):
     return json.loads((ROOT / p).read_text(encoding='utf-8'))
 
 
-# ---------------------------------------------------------------- frame inputs
 def baseline_frames(cfg, wording=None):
     fi = cfg['frame_inputs']
     nat, reg = [], []
@@ -63,14 +47,16 @@ def current_frames(cfg, wording_classes):
 
 
 def legacy_single_wave(cfg):
-    """v0.2.3 inputs (Gallup 580 vs 678 only) through the same deviation code, for comparison."""
     comp_b, comp_c = cfg['roles']['baseline']['democratic_component'], cfg['roles']['current']['democratic_component']
     pol = load_json('data/polls.json')
-    by = {p['poll_id']: FA.gallup_to_generic(p) for p in pol['polls'] if p['question_type'] == 'government_frame'}
+    polls = [FA.gallup_to_generic(p) for p in pol['polls'] if p['question_type'] == 'government_frame']
     out = {}
-    for period, prefix, comp, as_of in [('baseline', 'gallup_580_frame_', comp_b, '2024-04-10'),
+    for period, prefix, comp, as_of in [('baseline', 'gallup_580_frame_', comp_b, cfg['frame_inputs']['baseline_as_of']),
                                        ('current', 'gallup_678_frame_', comp_c, cfg['as_of'])]:
-        nat = by[prefix + 'national']
+        by = {p['poll_id']: p for p in FA.available(polls, as_of)}
+        nat = by.get(prefix + 'national')
+        if nat is None:
+            return None
         qn, _ = FA.dem_coordinate(nat, comp)
         coords = {}
         for s in REGIONAL_SCOPE_MEMBERS:
@@ -86,7 +72,6 @@ def legacy_single_wave(cfg):
 
 
 def regional_change(base_agg, base_dev, cur_agg, cur_dev, base_shift=0.0, cur_shift=0.0):
-    """base_shift / cur_shift: national likely-voter shifts of each period (turnout.py)."""
     ch = {}
     for s in REGIONAL_SCOPE_MEMBERS:
         b = base_agg['logit'] + base_shift + base_dev.get(s, {'deviation_logit': 0.0})['deviation_logit']
@@ -95,7 +80,6 @@ def regional_change(base_agg, base_dev, cur_agg, cur_dev, base_shift=0.0, cur_sh
     return ch
 
 
-# ---------------------------------------------------------------- uncertainty
 def sigmas(cfg):
     bt = load_json('outputs/backtest_2020_2024.json')['fit_intercept_free']
     dr = load_json('outputs/frame_drift.json')
@@ -111,9 +95,7 @@ def sigma_national(alpha, days, s, drift_sd_override=None):
     return s['national_d0'] + alpha * drift
 
 
-# ---------------------------------------------------------------- simulation
 class Simulator:
-    """Vectorised districts x draws simulator with common random numbers across alpha."""
 
     def __init__(self, districts, draws, seed, scopes):
         self.eligible = [d for d in sorted(districts, key=lambda d: d['district_id']) if eligibility(d)[0]]
@@ -160,7 +142,6 @@ def summarize(arr):
 
 
 def crossing(alphas, values, target, decreasing=True):
-    """First alpha where the mean-seat curve falls below (or rises to) target, linear interpolation."""
     for i in range(1, len(alphas)):
         a0, a1, v0, v1 = alphas[i - 1], alphas[i], values[i - 1], values[i]
         if decreasing and v0 >= target > v1 or (not decreasing and v0 < target <= v1):
@@ -208,22 +189,15 @@ def build(cfg, districts, draws=None, seed=None, alphas=None):
     sens_wc = cfg['frame_inputs']['aggregator']['wording_classes_sensitivity']
     c_agg, c_dev = current_frames(cfg, main_wc)
     c_agg_s, _ = current_frames(cfg, sens_wc)
-    # likely-voter (turnout) adjustment, party-support groups (user decision 2026-11-11)
     ta = cfg['turnout_adjustment']
     waves = TO.load()
-    tp = TO.turnout_propensity(waves)
-    tauP = ta.get('tau_partisan') or tp['tau_partisan']
-    tauI = ta.get('tau_independent') or tp['tau_independent']
+    tauP, tauI, tau_waves = TO.forecast_propensity(cfg, waves)
 
     def shifts(kappa, ratio=None):
         ti = tauP * ratio if ratio is not None else tauI
-        bs, bd = TO.period_shift(waves, ta['baseline_waves'], cfg['frame_inputs']['baseline_as_of'],
-                                 b_agg['config']['half_life_days'], tauP, ti, kappa)
-        cs, cd = TO.period_shift(waves, ta['current_waves'], cfg['as_of'],
-                                 c_agg['config']['half_life_days'], tauP, ti, kappa)
-        return bs, cs, {'baseline': bd, 'current': cd}
+        return TO.forecast_shifts(cfg, waves, b_agg, c_agg, tauP, ti, kappa)
     k0 = ta['kappa_aligned_main']
-    lv_b, lv_c, lv_detail = shifts(k0) if ta['enabled_in_main'] else (0.0, 0.0, {})
+    lv_b, lv_c, lv_detail = TO.main_shifts(cfg, b_agg, c_agg, waves)
     change_raw = regional_change(b_agg, b_dev, c_agg, c_dev)
     change = regional_change(b_agg, b_dev, c_agg, c_dev, lv_b, lv_c)
     change_sens = regional_change(b_agg, b_dev, c_agg_s, c_dev, lv_b, lv_c)
@@ -245,13 +219,13 @@ def build(cfg, districts, draws=None, seed=None, alphas=None):
     for name, (ch, _, _) in sens_lv.items():
         scen[name] = curve(sim, alphas, ch, s, days, s['region'], s['district'], maj, n_pending)
     scen['sens_wording_A_plus_B'] = curve(sim, alphas, change_sens, s, days, s['region'], s['district'], maj, n_pending)
-    scen['sens_legacy_580_vs_678_inputs'] = curve(sim, alphas, change_legacy, s, days, s['region'], s['district'], maj, n_pending)
+    if change_legacy is not None:
+        scen['sens_legacy_580_vs_678_inputs'] = curve(sim, alphas, change_legacy, s, days, s['region'], s['district'], maj, n_pending)
     scen['sens_no_time_drift'] = curve(sim, alphas, change, {**s, 'tau': 0.0}, days, s['region'], s['district'], maj, n_pending)
     fp = load_json('outputs/fundamentals_prior.json')
     prior_sd = max(s['tau'] * math.sqrt(max(0, days - s['d_backtest'])), fp['prior_frame_logit_shift_sd'])
     scen['optional_fundamentals_prior'] = curve(sim, alphas, change, s, days, s['region'], s['district'], maj, n_pending,
                                                shift=fp['prior_frame_logit_shift_mean'], drift_override=prior_sd)
-    # district table for the main scenario at selected alphas
     sel = [0.0, 0.25, 0.5, 0.75, 1.0]
     dist_rows = []
     res = {a: sim.run(a, change, sigma_national(a, days, s), s['region'], s['district']) for a in sel}
@@ -288,7 +262,7 @@ def build(cfg, districts, draws=None, seed=None, alphas=None):
         'uncertainty': {**s, 'sigma_national_at_alpha': {f'{a:g}': round(sigma_national(a, days, s), 4) for a in [0, 0.5, 1]},
                         'form': cfg['uncertainty']['drift']['form']},
         'turnout_adjustment': {'enabled_in_main': ta['enabled_in_main'], 'tau_partisan': tauP, 'tau_independent': tauI,
-                               'tau_source_waves': tp['waves_used'], 'kappa_aligned_main': k0,
+                               'tau_source_waves': tau_waves, 'kappa_aligned_main': k0,
                                'baseline_shift_logit': lv_b, 'current_shift_logit': lv_c,
                                'net_change_effect_logit': lv_c - lv_b, 'per_wave': lv_detail,
                                'sensitivity_shifts': {k: {'baseline': v[1], 'current': v[2]} for k, v in sens_lv.items()},
@@ -353,7 +327,7 @@ def plot(report, path):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Simulate district seats across frame-to-vote sensitivity scenarios.')
     ap.add_argument('--config', default='config/forecast_v030.json')
     ap.add_argument('--baseline', default='data/baseline_2024.csv')
     ap.add_argument('--output', default='outputs/forecast_v030.json')

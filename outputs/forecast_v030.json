@@ -152,7 +152,7 @@
       }
     },
     "current_sensitivity_A_plus_B": {
-      "national_q": 0.4201145330429769,
+      "national_q": 0.40109406475768034,
       "polls": [
         {
           "poll_id": "gallup_678_frame_national",
@@ -185,33 +185,42 @@
           "q": 0.4185022026431718,
           "logit": -0.32892503098583015,
           "wording_class": "B_judgment"
+        },
+        {
+          "poll_id": "researchview_20261108_judgment_national",
+          "pollster": "리서치뷰",
+          "fieldwork_end": "2026-11-08",
+          "q": 0.3707742639040349,
+          "logit": -0.5288966488978925,
+          "wording_class": "B_judgment"
         }
       ],
       "house_effects": {
         "리서치뷰": {
           "residuals_vs_others": [
             0.07988854132774442,
-            0.0014166075824695867
+            0.0025184063933668677,
+            -0.19745321151869538
           ],
-          "n_overlapping": 2,
-          "house_effect_logit": 0.020326287227553502,
-          "house_effect_logit_centred": 0.01488989158606267
+          "n_overlapping": 3,
+          "house_effect_logit": -0.02300925275951682,
+          "house_effect_logit_centred": -0.03911439091106586
         },
         "한국갤럽": {
           "residuals_vs_others": [
-            0.003169773919031338
+            0.11881193791270683
           ],
           "n_overlapping": 1,
-          "house_effect_logit": 0.0010565913063437793,
-          "house_effect_logit_centred": -0.004379804335147054
+          "house_effect_logit": 0.03960397930423561,
+          "house_effect_logit_centred": 0.023498841152686575
         },
         "한길리서치": {
           "residuals_vs_others": [
-            -0.015221074828274339
+            0.09516206372978497
           ],
           "n_overlapping": 1,
-          "house_effect_logit": -0.00507369160942478,
-          "house_effect_logit_centred": -0.010510087250915612
+          "house_effect_logit": 0.031720687909928325,
+          "house_effect_logit_centred": 0.015615549758379286
         }
       }
     },
@@ -236,14 +245,14 @@
       "제주": -0.5809975945779113
     },
     "regional_logit_change_A_plus_B": {
-      "서울": -0.5561591847027009,
-      "인천/경기": -0.673373752886539,
-      "강원": -0.48587138903742166,
-      "대전/세종/충청": -0.45685561734288027,
-      "광주/전라": -0.5978401602001608,
-      "대구/경북": -0.3468002785637091,
-      "부산/울산/경남": -0.3416547234026127,
-      "제주": -0.48587138903742166
+      "서울": -0.6347645174564343,
+      "인천/경기": -0.7519790856402724,
+      "강원": -0.564476721791155,
+      "대전/세종/충청": -0.5354609500966137,
+      "광주/전라": -0.6764454929538942,
+      "대구/경북": -0.4254056113174425,
+      "부산/울산/경남": -0.4202600561563461,
+      "제주": -0.564476721791155
     },
     "regional_logit_change_legacy": {
       "서울": -0.5668314226431281,
@@ -5414,403 +5423,307 @@
           "alpha": 0.05,
           "sigma_national": 0.1357,
           "dem": {
-            "mean": 143.614,
+            "mean": 142.826,
             "p10_p50_p90": [
-              102,
-              147,
-              181
+              101,
+              146,
+              180
             ]
           },
           "con": {
-            "mean": 100.553,
+            "mean": 101.337,
             "p10_p50_p90": [
               64,
-              98,
-              142
+              99,
+              143
             ]
           },
           "other": {
-            "mean": 0.834,
+            "mean": 0.837,
             "p10_p50_p90": [
               0,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.8002,
-          "p_dem_majority_if_pending_none_dem": 0.716,
-          "p_con_majority_if_pending_all_con": 0.2624,
-          "p_con_majority_if_pending_none_con": 0.1844
+          "p_dem_majority_if_pending_all_dem": 0.7904,
+          "p_dem_majority_if_pending_none_dem": 0.7086,
+          "p_con_majority_if_pending_all_con": 0.2698,
+          "p_con_majority_if_pending_none_con": 0.1924
         },
         {
           "alpha": 0.1,
           "sigma_national": 0.1514,
           "dem": {
-            "mean": 137.834,
+            "mean": 136.229,
             "p10_p50_p90": [
-              91,
-              140,
-              180
+              89,
+              139,
+              178
             ]
           },
           "con": {
-            "mean": 106.31,
+            "mean": 107.906,
             "p10_p50_p90": [
-              64,
-              104,
-              153
+              66,
+              106,
+              155
             ]
           },
           "other": {
-            "mean": 0.856,
+            "mean": 0.865,
             "p10_p50_p90": [
               0,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.7254,
-          "p_dem_majority_if_pending_none_dem": 0.6418,
-          "p_con_majority_if_pending_all_con": 0.3412,
-          "p_con_majority_if_pending_none_con": 0.2598
+          "p_dem_majority_if_pending_all_dem": 0.706,
+          "p_dem_majority_if_pending_none_dem": 0.622,
+          "p_con_majority_if_pending_all_con": 0.3584,
+          "p_con_majority_if_pending_none_con": 0.2752
         },
         {
           "alpha": 0.15,
           "sigma_national": 0.1672,
           "dem": {
-            "mean": 132.038,
+            "mean": 129.649,
             "p10_p50_p90": [
-              81,
-              134,
-              179
+              79,
+              132,
+              177
             ]
           },
           "con": {
-            "mean": 112.085,
+            "mean": 114.466,
             "p10_p50_p90": [
-              66,
-              110,
-              163
+              67,
+              112,
+              165
             ]
           },
           "other": {
-            "mean": 0.876,
+            "mean": 0.884,
             "p10_p50_p90": [
               0,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.6544,
-          "p_dem_majority_if_pending_none_dem": 0.566,
-          "p_con_majority_if_pending_all_con": 0.4172,
-          "p_con_majority_if_pending_none_con": 0.33
+          "p_dem_majority_if_pending_all_dem": 0.6268,
+          "p_dem_majority_if_pending_none_dem": 0.5402,
+          "p_con_majority_if_pending_all_con": 0.4426,
+          "p_con_majority_if_pending_none_con": 0.351
         },
         {
           "alpha": 0.2,
           "sigma_national": 0.1829,
           "dem": {
-            "mean": 126.34,
+            "mean": 123.199,
             "p10_p50_p90": [
-              71,
-              128,
-              178
+              68,
+              124,
+              175
             ]
           },
           "con": {
-            "mean": 117.768,
+            "mean": 120.896,
             "p10_p50_p90": [
-              66,
-              116,
-              173
+              69,
+              120,
+              176
             ]
           },
           "other": {
-            "mean": 0.893,
+            "mean": 0.904,
             "p10_p50_p90": [
-              0,
+              1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.5828,
-          "p_dem_majority_if_pending_none_dem": 0.5056,
-          "p_con_majority_if_pending_all_con": 0.4774,
-          "p_con_majority_if_pending_none_con": 0.3982
+          "p_dem_majority_if_pending_all_dem": 0.5508,
+          "p_dem_majority_if_pending_none_dem": 0.4714,
+          "p_con_majority_if_pending_all_con": 0.511,
+          "p_con_majority_if_pending_none_con": 0.4326
         },
         {
           "alpha": 0.25,
           "sigma_national": 0.1986,
           "dem": {
-            "mean": 120.791,
+            "mean": 116.902,
             "p10_p50_p90": [
-              63,
-              122,
-              177
+              59,
+              117,
+              174
             ]
           },
           "con": {
-            "mean": 123.303,
+            "mean": 127.182,
             "p10_p50_p90": [
-              67,
-              123,
-              181
+              70,
+              127,
+              185
             ]
           },
           "other": {
-            "mean": 0.906,
+            "mean": 0.915,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.525,
-          "p_dem_majority_if_pending_none_dem": 0.4528,
-          "p_con_majority_if_pending_all_con": 0.5316,
-          "p_con_majority_if_pending_none_con": 0.4606
+          "p_dem_majority_if_pending_all_dem": 0.4884,
+          "p_dem_majority_if_pending_none_dem": 0.416,
+          "p_con_majority_if_pending_all_con": 0.5664,
+          "p_con_majority_if_pending_none_con": 0.496
         },
         {
           "alpha": 0.3,
           "sigma_national": 0.2143,
           "dem": {
-            "mean": 115.448,
+            "mean": 110.852,
             "p10_p50_p90": [
-              55,
-              115,
-              176
+              51,
+              109,
+              172
             ]
           },
           "con": {
-            "mean": 128.638,
+            "mean": 133.222,
             "p10_p50_p90": [
-              68,
-              129,
-              189
+              72,
+              135,
+              193
             ]
           },
           "other": {
-            "mean": 0.914,
+            "mean": 0.926,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.475,
-          "p_dem_majority_if_pending_none_dem": 0.4064,
-          "p_con_majority_if_pending_all_con": 0.5782,
-          "p_con_majority_if_pending_none_con": 0.51
+          "p_dem_majority_if_pending_all_dem": 0.4324,
+          "p_dem_majority_if_pending_none_dem": 0.3638,
+          "p_con_majority_if_pending_all_con": 0.6236,
+          "p_con_majority_if_pending_none_con": 0.5532
         },
         {
           "alpha": 0.35,
           "sigma_national": 0.2301,
           "dem": {
-            "mean": 110.302,
+            "mean": 105.103,
             "p10_p50_p90": [
-              48,
-              109,
-              175
+              45,
+              101,
+              170
             ]
           },
           "con": {
-            "mean": 133.776,
+            "mean": 138.964,
             "p10_p50_p90": [
-              69,
-              136,
-              196
+              74,
+              143,
+              199
             ]
           },
           "other": {
-            "mean": 0.922,
+            "mean": 0.933,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.4304,
-          "p_dem_majority_if_pending_none_dem": 0.366,
-          "p_con_majority_if_pending_all_con": 0.622,
-          "p_con_majority_if_pending_none_con": 0.556
+          "p_dem_majority_if_pending_all_dem": 0.382,
+          "p_dem_majority_if_pending_none_dem": 0.3216,
+          "p_con_majority_if_pending_all_con": 0.6648,
+          "p_con_majority_if_pending_none_con": 0.6044
         },
         {
           "alpha": 0.4,
           "sigma_national": 0.2458,
           "dem": {
-            "mean": 105.421,
+            "mean": 99.737,
             "p10_p50_p90": [
-              43,
-              101,
-              174
+              40,
+              94,
+              169
             ]
           },
           "con": {
-            "mean": 138.65,
+            "mean": 144.324,
             "p10_p50_p90": [
-              70,
-              143,
-              201
+              75,
+              150,
+              204
             ]
           },
           "other": {
-            "mean": 0.929,
+            "mean": 0.94,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.3884,
-          "p_dem_majority_if_pending_none_dem": 0.3326,
-          "p_con_majority_if_pending_all_con": 0.6558,
-          "p_con_majority_if_pending_none_con": 0.5968
+          "p_dem_majority_if_pending_all_dem": 0.3414,
+          "p_dem_majority_if_pending_none_dem": 0.2882,
+          "p_con_majority_if_pending_all_con": 0.7012,
+          "p_con_majority_if_pending_none_con": 0.645
         },
         {
           "alpha": 0.45,
           "sigma_national": 0.2615,
           "dem": {
-            "mean": 100.884,
+            "mean": 94.707,
             "p10_p50_p90": [
-              39,
-              95,
-              173
+              36,
+              87,
+              167
             ]
           },
           "con": {
-            "mean": 143.182,
+            "mean": 149.346,
             "p10_p50_p90": [
-              71,
-              149,
-              205
+              77,
+              157,
+              208
             ]
           },
           "other": {
-            "mean": 0.934,
+            "mean": 0.947,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.354,
-          "p_dem_majority_if_pending_none_dem": 0.3042,
-          "p_con_majority_if_pending_all_con": 0.6836,
-          "p_con_majority_if_pending_none_con": 0.6324
+          "p_dem_majority_if_pending_all_dem": 0.3056,
+          "p_dem_majority_if_pending_none_dem": 0.263,
+          "p_con_majority_if_pending_all_con": 0.7284,
+          "p_con_majority_if_pending_none_con": 0.6816
         },
         {
           "alpha": 0.5,
           "sigma_national": 0.2772,
           "dem": {
-            "mean": 96.612,
-            "p10_p50_p90": [
-              35,
-              88,
-              172
-            ]
-          },
-          "con": {
-            "mean": 147.45,
-            "p10_p50_p90": [
-              72,
-              156,
-              209
-            ]
-          },
-          "other": {
-            "mean": 0.939,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.326,
-          "p_dem_majority_if_pending_none_dem": 0.2802,
-          "p_con_majority_if_pending_all_con": 0.7104,
-          "p_con_majority_if_pending_none_con": 0.6638
-        },
-        {
-          "alpha": 0.55,
-          "sigma_national": 0.2929,
-          "dem": {
-            "mean": 92.667,
+            "mean": 90.078,
             "p10_p50_p90": [
               33,
-              82,
-              171
+              80,
+              165
             ]
           },
           "con": {
-            "mean": 151.39,
+            "mean": 153.97,
             "p10_p50_p90": [
-              73,
-              162,
+              79,
+              164,
               211
-            ]
-          },
-          "other": {
-            "mean": 0.943,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.3008,
-          "p_dem_majority_if_pending_none_dem": 0.2642,
-          "p_con_majority_if_pending_all_con": 0.727,
-          "p_con_majority_if_pending_none_con": 0.69
-        },
-        {
-          "alpha": 0.6,
-          "sigma_national": 0.3087,
-          "dem": {
-            "mean": 89.039,
-            "p10_p50_p90": [
-              31,
-              76,
-              170
-            ]
-          },
-          "con": {
-            "mean": 155.013,
-            "p10_p50_p90": [
-              74,
-              168,
-              213
-            ]
-          },
-          "other": {
-            "mean": 0.948,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.2808,
-          "p_dem_majority_if_pending_none_dem": 0.2452,
-          "p_con_majority_if_pending_all_con": 0.7482,
-          "p_con_majority_if_pending_none_con": 0.7114
-        },
-        {
-          "alpha": 0.65,
-          "sigma_national": 0.3244,
-          "dem": {
-            "mean": 85.73,
-            "p10_p50_p90": [
-              30,
-              71,
-              169
-            ]
-          },
-          "con": {
-            "mean": 158.318,
-            "p10_p50_p90": [
-              76,
-              173,
-              214
             ]
           },
           "other": {
@@ -5821,60 +5734,28 @@
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.2642,
-          "p_dem_majority_if_pending_none_dem": 0.2322,
-          "p_con_majority_if_pending_all_con": 0.7612,
-          "p_con_majority_if_pending_none_con": 0.7278
+          "p_dem_majority_if_pending_all_dem": 0.2804,
+          "p_dem_majority_if_pending_none_dem": 0.2382,
+          "p_con_majority_if_pending_all_con": 0.7528,
+          "p_con_majority_if_pending_none_con": 0.7116
         },
         {
-          "alpha": 0.7,
-          "sigma_national": 0.3401,
+          "alpha": 0.55,
+          "sigma_national": 0.2929,
           "dem": {
-            "mean": 82.599,
+            "mean": 85.825,
             "p10_p50_p90": [
-              29,
-              66,
-              167
+              31,
+              73,
+              162
             ]
           },
           "con": {
-            "mean": 161.447,
+            "mean": 158.218,
             "p10_p50_p90": [
-              77,
-              178,
-              215
-            ]
-          },
-          "other": {
-            "mean": 0.955,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.25,
-          "p_dem_majority_if_pending_none_dem": 0.2174,
-          "p_con_majority_if_pending_all_con": 0.775,
-          "p_con_majority_if_pending_none_con": 0.7434
-        },
-        {
-          "alpha": 0.75,
-          "sigma_national": 0.3558,
-          "dem": {
-            "mean": 79.747,
-            "p10_p50_p90": [
-              28,
-              60,
-              166
-            ]
-          },
-          "con": {
-            "mean": 164.297,
-            "p10_p50_p90": [
-              78,
-              184,
-              216
+              82,
+              171,
+              213
             ]
           },
           "other": {
@@ -5885,60 +5766,28 @@
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.2362,
-          "p_dem_majority_if_pending_none_dem": 0.2058,
-          "p_con_majority_if_pending_all_con": 0.7876,
-          "p_con_majority_if_pending_none_con": 0.7572
+          "p_dem_majority_if_pending_all_dem": 0.2562,
+          "p_dem_majority_if_pending_none_dem": 0.219,
+          "p_con_majority_if_pending_all_con": 0.7728,
+          "p_con_majority_if_pending_none_con": 0.7352
         },
         {
-          "alpha": 0.8,
-          "sigma_national": 0.3716,
+          "alpha": 0.6,
+          "sigma_national": 0.3087,
           "dem": {
-            "mean": 77.115,
+            "mean": 81.948,
             "p10_p50_p90": [
-              28,
-              56,
-              165
+              30,
+              67,
+              160
             ]
           },
           "con": {
-            "mean": 166.926,
+            "mean": 162.091,
             "p10_p50_p90": [
-              79,
-              188,
-              216
-            ]
-          },
-          "other": {
-            "mean": 0.959,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.2228,
-          "p_dem_majority_if_pending_none_dem": 0.1954,
-          "p_con_majority_if_pending_all_con": 0.8002,
-          "p_con_majority_if_pending_none_con": 0.772
-        },
-        {
-          "alpha": 0.85,
-          "sigma_national": 0.3873,
-          "dem": {
-            "mean": 74.692,
-            "p10_p50_p90": [
-              28,
-              52,
-              164
-            ]
-          },
-          "con": {
-            "mean": 169.348,
-            "p10_p50_p90": [
-              80,
-              192,
-              216
+              84,
+              177,
+              214
             ]
           },
           "other": {
@@ -5949,124 +5798,316 @@
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.2112,
-          "p_dem_majority_if_pending_none_dem": 0.186,
-          "p_con_majority_if_pending_all_con": 0.809,
-          "p_con_majority_if_pending_none_con": 0.7824
+          "p_dem_majority_if_pending_all_dem": 0.2372,
+          "p_dem_majority_if_pending_none_dem": 0.2026,
+          "p_con_majority_if_pending_all_con": 0.7902,
+          "p_con_majority_if_pending_none_con": 0.755
+        },
+        {
+          "alpha": 0.65,
+          "sigma_national": 0.3244,
+          "dem": {
+            "mean": 78.346,
+            "p10_p50_p90": [
+              29,
+              61,
+              159
+            ]
+          },
+          "con": {
+            "mean": 165.692,
+            "p10_p50_p90": [
+              86,
+              183,
+              215
+            ]
+          },
+          "other": {
+            "mean": 0.963,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.2186,
+          "p_dem_majority_if_pending_none_dem": 0.1876,
+          "p_con_majority_if_pending_all_con": 0.8058,
+          "p_con_majority_if_pending_none_con": 0.7746
+        },
+        {
+          "alpha": 0.7,
+          "sigma_national": 0.3401,
+          "dem": {
+            "mean": 75.081,
+            "p10_p50_p90": [
+              28,
+              56,
+              157
+            ]
+          },
+          "con": {
+            "mean": 168.953,
+            "p10_p50_p90": [
+              88,
+              188,
+              216
+            ]
+          },
+          "other": {
+            "mean": 0.966,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.2026,
+          "p_dem_majority_if_pending_none_dem": 0.1732,
+          "p_con_majority_if_pending_all_con": 0.8214,
+          "p_con_majority_if_pending_none_con": 0.7914
+        },
+        {
+          "alpha": 0.75,
+          "sigma_national": 0.3558,
+          "dem": {
+            "mean": 72.074,
+            "p10_p50_p90": [
+              28,
+              52,
+              154
+            ]
+          },
+          "con": {
+            "mean": 171.958,
+            "p10_p50_p90": [
+              90,
+              192,
+              216
+            ]
+          },
+          "other": {
+            "mean": 0.968,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.1866,
+          "p_dem_majority_if_pending_none_dem": 0.1608,
+          "p_con_majority_if_pending_all_con": 0.833,
+          "p_con_majority_if_pending_none_con": 0.8056
+        },
+        {
+          "alpha": 0.8,
+          "sigma_national": 0.3716,
+          "dem": {
+            "mean": 69.347,
+            "p10_p50_p90": [
+              28,
+              48,
+              151
+            ]
+          },
+          "con": {
+            "mean": 174.684,
+            "p10_p50_p90": [
+              93,
+              197,
+              216
+            ]
+          },
+          "other": {
+            "mean": 0.969,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.1744,
+          "p_dem_majority_if_pending_none_dem": 0.1492,
+          "p_con_majority_if_pending_all_con": 0.8462,
+          "p_con_majority_if_pending_none_con": 0.82
+        },
+        {
+          "alpha": 0.85,
+          "sigma_national": 0.3873,
+          "dem": {
+            "mean": 66.918,
+            "p10_p50_p90": [
+              27,
+              44,
+              149
+            ]
+          },
+          "con": {
+            "mean": 177.113,
+            "p10_p50_p90": [
+              95,
+              200,
+              217
+            ]
+          },
+          "other": {
+            "mean": 0.969,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.1632,
+          "p_dem_majority_if_pending_none_dem": 0.1412,
+          "p_con_majority_if_pending_all_con": 0.854,
+          "p_con_majority_if_pending_none_con": 0.8312
         },
         {
           "alpha": 0.9,
           "sigma_national": 0.403,
           "dem": {
-            "mean": 72.462,
+            "mean": 64.697,
             "p10_p50_p90": [
               27,
-              48,
-              163
+              41,
+              147
             ]
           },
           "con": {
-            "mean": 171.579,
+            "mean": 179.336,
             "p10_p50_p90": [
-              81,
-              196,
+              97,
+              203,
               217
             ]
           },
           "other": {
-            "mean": 0.96,
+            "mean": 0.968,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.2016,
-          "p_dem_majority_if_pending_none_dem": 0.1764,
-          "p_con_majority_if_pending_all_con": 0.8176,
-          "p_con_majority_if_pending_none_con": 0.7946
+          "p_dem_majority_if_pending_all_dem": 0.1528,
+          "p_dem_majority_if_pending_none_dem": 0.134,
+          "p_con_majority_if_pending_all_con": 0.8626,
+          "p_con_majority_if_pending_none_con": 0.8422
         },
         {
           "alpha": 0.95,
           "sigma_national": 0.4187,
           "dem": {
-            "mean": 70.47,
+            "mean": 62.621,
             "p10_p50_p90": [
               27,
-              45,
-              161
+              39,
+              144
             ]
           },
           "con": {
-            "mean": 173.572,
+            "mean": 181.412,
             "p10_p50_p90": [
-              83,
-              199,
+              100,
+              205,
               217
             ]
           },
           "other": {
-            "mean": 0.958,
+            "mean": 0.967,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1922,
-          "p_dem_majority_if_pending_none_dem": 0.1666,
-          "p_con_majority_if_pending_all_con": 0.8276,
-          "p_con_majority_if_pending_none_con": 0.8028
+          "p_dem_majority_if_pending_all_dem": 0.1452,
+          "p_dem_majority_if_pending_none_dem": 0.127,
+          "p_con_majority_if_pending_all_con": 0.8688,
+          "p_con_majority_if_pending_none_con": 0.8502
         },
         {
           "alpha": 1.0,
           "sigma_national": 0.4344,
           "dem": {
-            "mean": 68.589,
+            "mean": 60.708,
             "p10_p50_p90": [
-              27,
-              43,
-              160
+              26,
+              37,
+              141
             ]
           },
           "con": {
-            "mean": 175.454,
+            "mean": 183.328,
             "p10_p50_p90": [
-              84,
-              201,
-              217
+              103,
+              207,
+              218
             ]
           },
           "other": {
-            "mean": 0.957,
+            "mean": 0.964,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1834,
-          "p_dem_majority_if_pending_none_dem": 0.1598,
-          "p_con_majority_if_pending_all_con": 0.8358,
-          "p_con_majority_if_pending_none_con": 0.8124
+          "p_dem_majority_if_pending_all_dem": 0.1368,
+          "p_dem_majority_if_pending_none_dem": 0.1234,
+          "p_con_majority_if_pending_all_con": 0.8748,
+          "p_con_majority_if_pending_none_con": 0.8588
         },
         {
           "alpha": 1.05,
           "sigma_national": 0.4502,
           "dem": {
-            "mean": 66.868,
+            "mean": 58.985,
             "p10_p50_p90": [
-              27,
-              41,
-              158
+              26,
+              35,
+              138
             ]
           },
           "con": {
-            "mean": 177.177,
+            "mean": 185.054,
             "p10_p50_p90": [
-              86,
-              204,
-              217
+              106,
+              209,
+              218
+            ]
+          },
+          "other": {
+            "mean": 0.961,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.131,
+          "p_dem_majority_if_pending_none_dem": 0.1186,
+          "p_con_majority_if_pending_all_con": 0.8776,
+          "p_con_majority_if_pending_none_con": 0.866
+        },
+        {
+          "alpha": 1.1,
+          "sigma_national": 0.4659,
+          "dem": {
+            "mean": 57.395,
+            "p10_p50_p90": [
+              26,
+              34,
+              135
+            ]
+          },
+          "con": {
+            "mean": 186.65,
+            "p10_p50_p90": [
+              109,
+              211,
+              218
             ]
           },
           "other": {
@@ -6077,187 +6118,123 @@
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.172,
-          "p_dem_majority_if_pending_none_dem": 0.1544,
-          "p_con_majority_if_pending_all_con": 0.8414,
-          "p_con_majority_if_pending_none_con": 0.8224
-        },
-        {
-          "alpha": 1.1,
-          "sigma_national": 0.4659,
-          "dem": {
-            "mean": 65.249,
-            "p10_p50_p90": [
-              26,
-              38,
-              156
-            ]
-          },
-          "con": {
-            "mean": 178.797,
-            "p10_p50_p90": [
-              88,
-              206,
-              218
-            ]
-          },
-          "other": {
-            "mean": 0.954,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.166,
-          "p_dem_majority_if_pending_none_dem": 0.148,
-          "p_con_majority_if_pending_all_con": 0.8482,
-          "p_con_majority_if_pending_none_con": 0.8296
+          "p_dem_majority_if_pending_all_dem": 0.1264,
+          "p_dem_majority_if_pending_none_dem": 0.1128,
+          "p_con_majority_if_pending_all_con": 0.8842,
+          "p_con_majority_if_pending_none_con": 0.8716
         },
         {
           "alpha": 1.15,
           "sigma_national": 0.4816,
           "dem": {
-            "mean": 63.759,
+            "mean": 55.939,
             "p10_p50_p90": [
               26,
-              37,
-              155
+              32,
+              132
             ]
           },
           "con": {
-            "mean": 180.292,
+            "mean": 188.114,
             "p10_p50_p90": [
-              89,
-              207,
+              112,
+              212,
               218
             ]
           },
           "other": {
-            "mean": 0.949,
+            "mean": 0.946,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1614,
-          "p_dem_majority_if_pending_none_dem": 0.1424,
-          "p_con_majority_if_pending_all_con": 0.8532,
-          "p_con_majority_if_pending_none_con": 0.835
+          "p_dem_majority_if_pending_all_dem": 0.1218,
+          "p_dem_majority_if_pending_none_dem": 0.1084,
+          "p_con_majority_if_pending_all_con": 0.8888,
+          "p_con_majority_if_pending_none_con": 0.8754
         },
         {
           "alpha": 1.2,
           "sigma_national": 0.4973,
           "dem": {
-            "mean": 62.355,
+            "mean": 54.556,
             "p10_p50_p90": [
               26,
-              35,
-              154
+              31,
+              129
             ]
           },
           "con": {
-            "mean": 181.702,
+            "mean": 189.504,
             "p10_p50_p90": [
-              90,
-              209,
+              115,
+              213,
               218
             ]
           },
           "other": {
-            "mean": 0.943,
+            "mean": 0.94,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1546,
-          "p_dem_majority_if_pending_none_dem": 0.1382,
-          "p_con_majority_if_pending_all_con": 0.8584,
-          "p_con_majority_if_pending_none_con": 0.842
+          "p_dem_majority_if_pending_all_dem": 0.1164,
+          "p_dem_majority_if_pending_none_dem": 0.1028,
+          "p_con_majority_if_pending_all_con": 0.8934,
+          "p_con_majority_if_pending_none_con": 0.88
         },
         {
           "alpha": 1.25,
           "sigma_national": 0.5131,
           "dem": {
-            "mean": 61.059,
+            "mean": 53.294,
             "p10_p50_p90": [
               26,
-              34,
-              152
+              31,
+              126
             ]
           },
           "con": {
-            "mean": 183.006,
+            "mean": 190.771,
             "p10_p50_p90": [
-              92,
-              210,
-              218
+              118,
+              213,
+              219
             ]
           },
           "other": {
-            "mean": 0.935,
+            "mean": 0.934,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1516,
-          "p_dem_majority_if_pending_none_dem": 0.1336,
-          "p_con_majority_if_pending_all_con": 0.8626,
-          "p_con_majority_if_pending_none_con": 0.8464
+          "p_dem_majority_if_pending_all_dem": 0.1124,
+          "p_dem_majority_if_pending_none_dem": 0.0992,
+          "p_con_majority_if_pending_all_con": 0.8986,
+          "p_con_majority_if_pending_none_con": 0.8854
         },
         {
           "alpha": 1.3,
           "sigma_national": 0.5288,
           "dem": {
-            "mean": 59.864,
+            "mean": 52.111,
             "p10_p50_p90": [
-              26,
-              33,
-              151
+              25,
+              30,
+              124
             ]
           },
           "con": {
-            "mean": 184.207,
+            "mean": 191.965,
             "p10_p50_p90": [
-              93,
-              211,
-              218
-            ]
-          },
-          "other": {
-            "mean": 0.929,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.1456,
-          "p_dem_majority_if_pending_none_dem": 0.1304,
-          "p_con_majority_if_pending_all_con": 0.8678,
-          "p_con_majority_if_pending_none_con": 0.85
-        },
-        {
-          "alpha": 1.35,
-          "sigma_national": 0.5445,
-          "dem": {
-            "mean": 58.736,
-            "p10_p50_p90": [
-              26,
-              32,
-              149
-            ]
-          },
-          "con": {
-            "mean": 185.339,
-            "p10_p50_p90": [
-              95,
-              212,
+              120,
+              214,
               219
             ]
           },
@@ -6269,116 +6246,148 @@
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1406,
-          "p_dem_majority_if_pending_none_dem": 0.1274,
-          "p_con_majority_if_pending_all_con": 0.8696,
-          "p_con_majority_if_pending_none_con": 0.8556
+          "p_dem_majority_if_pending_all_dem": 0.1076,
+          "p_dem_majority_if_pending_none_dem": 0.0962,
+          "p_con_majority_if_pending_all_con": 0.902,
+          "p_con_majority_if_pending_none_con": 0.8884
+        },
+        {
+          "alpha": 1.35,
+          "sigma_national": 0.5445,
+          "dem": {
+            "mean": 50.997,
+            "p10_p50_p90": [
+              25,
+              29,
+              122
+            ]
+          },
+          "con": {
+            "mean": 193.089,
+            "p10_p50_p90": [
+              122,
+              215,
+              219
+            ]
+          },
+          "other": {
+            "mean": 0.913,
+            "p10_p50_p90": [
+              1,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.103,
+          "p_dem_majority_if_pending_none_dem": 0.093,
+          "p_con_majority_if_pending_all_con": 0.9052,
+          "p_con_majority_if_pending_none_con": 0.893
         },
         {
           "alpha": 1.4,
           "sigma_national": 0.5602,
           "dem": {
-            "mean": 57.628,
+            "mean": 49.933,
             "p10_p50_p90": [
-              25,
-              31,
-              146
+              24,
+              29,
+              119
             ]
           },
           "con": {
-            "mean": 186.457,
+            "mean": 194.16,
             "p10_p50_p90": [
-              98,
-              213,
-              219
+              125,
+              215,
+              220
             ]
           },
           "other": {
-            "mean": 0.915,
+            "mean": 0.907,
             "p10_p50_p90": [
               1,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1362,
-          "p_dem_majority_if_pending_none_dem": 0.1244,
-          "p_con_majority_if_pending_all_con": 0.872,
-          "p_con_majority_if_pending_none_con": 0.86
+          "p_dem_majority_if_pending_all_dem": 0.1004,
+          "p_dem_majority_if_pending_none_dem": 0.0888,
+          "p_con_majority_if_pending_all_con": 0.908,
+          "p_con_majority_if_pending_none_con": 0.8978
         },
         {
           "alpha": 1.45,
           "sigma_national": 0.5759,
           "dem": {
-            "mean": 56.583,
-            "p10_p50_p90": [
-              25,
-              30,
-              144
-            ]
-          },
-          "con": {
-            "mean": 187.509,
-            "p10_p50_p90": [
-              100,
-              214,
-              219
-            ]
-          },
-          "other": {
-            "mean": 0.909,
-            "p10_p50_p90": [
-              1,
-              1,
-              1
-            ]
-          },
-          "p_dem_majority_if_pending_all_dem": 0.1332,
-          "p_dem_majority_if_pending_none_dem": 0.121,
-          "p_con_majority_if_pending_all_con": 0.876,
-          "p_con_majority_if_pending_none_con": 0.864
-        },
-        {
-          "alpha": 1.5,
-          "sigma_national": 0.5917,
-          "dem": {
-            "mean": 55.607,
+            "mean": 48.921,
             "p10_p50_p90": [
               24,
-              30,
-              142
+              29,
+              116
             ]
           },
           "con": {
-            "mean": 188.491,
+            "mean": 195.182,
             "p10_p50_p90": [
-              102,
-              214,
-              220
+              128,
+              215,
+              221
             ]
           },
           "other": {
-            "mean": 0.902,
+            "mean": 0.896,
             "p10_p50_p90": [
               0,
               1,
               1
             ]
           },
-          "p_dem_majority_if_pending_all_dem": 0.1296,
-          "p_dem_majority_if_pending_none_dem": 0.12,
-          "p_con_majority_if_pending_all_con": 0.878,
-          "p_con_majority_if_pending_none_con": 0.8674
+          "p_dem_majority_if_pending_all_dem": 0.0968,
+          "p_dem_majority_if_pending_none_dem": 0.0874,
+          "p_con_majority_if_pending_all_con": 0.9108,
+          "p_con_majority_if_pending_none_con": 0.9012
+        },
+        {
+          "alpha": 1.5,
+          "sigma_national": 0.5917,
+          "dem": {
+            "mean": 47.938,
+            "p10_p50_p90": [
+              23,
+              28,
+              113
+            ]
+          },
+          "con": {
+            "mean": 196.177,
+            "p10_p50_p90": [
+              131,
+              216,
+              222
+            ]
+          },
+          "other": {
+            "mean": 0.886,
+            "p10_p50_p90": [
+              0,
+              1,
+              1
+            ]
+          },
+          "p_dem_majority_if_pending_all_dem": 0.0936,
+          "p_dem_majority_if_pending_none_dem": 0.0848,
+          "p_con_majority_if_pending_all_con": 0.9128,
+          "p_con_majority_if_pending_none_con": 0.9038
         }
       ],
       "majority_thresholds": {
         "dem_loses_majority_alpha_bounds": {
-          "pending_9_all_non_dem": 0.1854,
-          "pending_9_all_dem": 0.2668
+          "pending_9_all_non_dem": 0.1628,
+          "pending_9_all_dem": 0.2333
         },
         "con_gains_majority_alpha_bounds": {
-          "pending_9_all_con": 0.2111,
-          "pending_9_all_non_con": 0.294
+          "pending_9_all_con": 0.1853,
+          "pending_9_all_non_con": 0.2568
         },
         "definition": "alpha at which the mean simulated seat curve crosses the 254-seat district majority (128); two bounds because the 9 not-estimable seats are not allocated"
       }

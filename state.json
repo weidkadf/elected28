@@ -2,7 +2,7 @@
   "project": "Election23_Model",
   "version": "0.5.1",
   "engine_version": "0.5.0",
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-22",
   "timezone": "Asia/Seoul",
   "baseline_election": "2024-04-10",
   "baseline_district_count": 254,
@@ -81,28 +81,33 @@
     "timezone": "Asia/Seoul",
     "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Seoul:20261016T150000\nRRULE:FREQ=HOURLY\nEND:VEVENT"
   },
-  "poll_observation_count": 46,
+  "poll_observation_count": 55,
   "input_sha256": {
     "data/baseline_2024.csv": "ca649f292651cc39113c2587df57e6da1e8a6ac76f697d77cd4e93aa623b06e4",
-    "data/polls.json": "071033ed12acae2724120032e02fda0fed69779baa632cfbbd4630efabb3d28f",
+    "data/polls.json": "9ff2d242f1255bc38389f34d616ae947717303b7d7ce5f94caf1c5678977cc0a",
     "config/frame_comparison.json": "9f0308393ef1995d532fc4c10eefbe2458b87ffe28864e276fe1ea24280e3b26",
     "model.py": "8872d361714a7332beba32a29c6985bc8c0cb1d5df5d74d59343297fe24ca119",
-    "forecast_v030.py": "8486dee9697f6e744284550b2b8fb13fb5065a1822c01012264d08b4ef32d9b3",
-    "frame_aggregator.py": "d96ce0b733ce0a47ce831b115181a2701ef89eba38cbc7e816f85d23d099caa5",
+    "forecast_v030.py": "c17ffd2757a6aa6339c6078b61c030a9bf62956a20d0db091ea5277b231f3be3",
+    "frame_aggregator.py": "5179cf4bff29ec90db74435c41b76decf5ee3203dcc2506abbf06a91df5ee11e",
     "config/forecast_v030.json": "f444bf7ba37482f24878e9011fe298758bd5f506db38463e1d9c500ea947d075",
-    "data/frame_polls_multi.json": "982de4d2aeafe3b6def2e4b5d55c23298d4b6d875f66d67a3c5d5fc8331398ab",
+    "data/frame_polls_multi.json": "e7d75631caab10eb08d1deabdc9e587cd2f0d6ab733b4ee4fec500fe1aee1849",
     "data/history_polls/gallup_series_v030.json": "3a00c2f92619b58a38cb1cb96d4ab3c66c8dfc763c074ab2e8b8fc68f785025d",
-    "turnout.py": "d9c0e33952f811338a3995985807e23e952ca2bcecbb591531b55d03fca3b324",
-    "data/history_polls/frame_party_crosstabs.json": "b04c18013e35bb4f1aa0a987d34b4636a59d13bc5fd7f1724eb34edc3bf4c1c0"
+    "turnout.py": "a47dc1bb0b5ef8e9469678b1c8be083d5a26bd1881805115f6a5a2b16cb7062a",
+    "data/history_polls/frame_party_crosstabs.json": "788a2c8f660052fe92937892e86246e9e154c62c9945a0c0446d3aafb44b2d19",
+    "forecast_v050.py": "7833dd24a4d68eebba0dff897bf9bad53f87a7cb2f92cbac0460d645c1c59c83",
+    "config/forecast_v050.json": "163263574901e6b13ecd42c457d9c96d0e0d0aaa435d066a3d6015c9d994c339",
+    "data/frame_polls_v050.json": "70a02a65a30e11ac55299082b064a0d788bbcd77436d768222e9af49eeda1cd5",
+    "data/dong_panel.csv": "314b1182562fb687026f730106592a0f1e60b48dab7c96c705435db7f87f7d7c",
+    "data/district_panel.csv": "5e0330a5cad294d2e718cf71fff88dcc45809a6b98a335e089fe1b87661d15e7"
   },
   "linkage": "government_support_opposition_frame_only",
   "party_support_input_allowed": true,
   "scenario_eligible_districts": 254,
   "scenario_pending_districts": 0,
-  "frame_observation_count": 27,
-  "last_development_date": "2026-11-05",
+  "frame_observation_count": 36,
+  "last_development_date": "2026-11-24",
   "latest_validation": "outputs/update_validation_20261111_v051.json",
-  "unit_test_count": 217,
+  "unit_test_count": 210,
   "historical_backtest_readiness": "outputs/backtest_readiness.json",
   "historical_backtest_preparation_cutoffs": 5,
   "historical_backtests_executed": 1,
@@ -179,7 +184,7 @@
     "module": "turnout.py",
     "tau_partisan": 0.89,
     "tau_independent": 0.56,
-    "net_change_effect_logit": 0.0859
+    "net_change_effect_logit": 0.0919
   },
   "dong_panel": {
     "district_panel": "data/district_panel.csv",
@@ -191,19 +196,19 @@
     ]
   },
   "alpha_identified": "partially: combined posterior, routes disagree",
-  "alpha_pooled_no_intercept": 0.82,
+  "alpha_pooled_no_intercept": 0.83,
   "alpha_pooled_no_intercept_ci95": [
     0.15,
     1.45
   ],
   "headline_majority_alpha_v050": {
     "dem_loses_majority_alpha": {
-      "pending_9_all_non_dem": 0.2026,
-      "pending_9_all_dem": 0.2026
+      "pending_9_all_non_dem": 0.2369,
+      "pending_9_all_dem": 0.2369
     },
     "con_gains_majority_alpha": {
-      "pending_9_all_con": 0.2283,
-      "pending_9_all_non_con": 0.2283
+      "pending_9_all_con": 0.2673,
+      "pending_9_all_non_con": 0.2673
     }
   },
   "nesdc": {
@@ -224,15 +229,15 @@
     "gov2026": 0.2
   },
   "alpha_posterior": {
-    "mean": 0.53,
+    "mean": 0.531,
     "ci95": [
       0.25,
       0.85
     ],
-    "p_alpha_above_0.2": 0.9814
+    "p_alpha_above_0.2": 0.9816
   },
   "alpha_posterior_excluding_presidential_pair": {
-    "mean": 0.753,
+    "mean": 0.754,
     "ci95": [
       0.45,
       1.05

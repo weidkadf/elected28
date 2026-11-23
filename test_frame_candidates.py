@@ -1,4 +1,3 @@
-"""정부지원·견제 frame-question scan (scripts/scan_nesdc_frame_candidates.py): offline parsing checks and the committed review list."""
 import csv, json, sys, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -37,7 +36,7 @@ class ParseTests(unittest.TestCase):
         q, opts = F.find_question(ARS_Q)
         self.assertTrue(q.startswith('Q9.'))
         self.assertEqual([F.role(o) for o in opts], ['support', 'check', 'other', 'other'])
-        self.assertEqual(opts[2], '기타')                 # ARS '...이면 3)번을' tail removed
+        self.assertEqual(opts[2], '기타')
 
     def test_wrapped_cati_options(self):
         q, opts = F.find_question(CATI_Q)
@@ -54,11 +53,31 @@ class ParseTests(unittest.TestCase):
         self.assertEqual(t['national_label'], '전체')
         self.assertEqual(list(t['national'].values()), [37.0, 52.0, 8.4, 2.6])
         self.assertEqual(t['national_n'], 1002.0)
-        self.assertEqual(t['regions']['광주/전라'], {'shares': [52.8, 34.0, 12.2, 1.0], 'n': 96.0})   # small counts are not shares
+        self.assertEqual(t['regions']['광주/전라'], {'shares': [52.8, 34.0, 12.2, 1.0], 'n': 96.0})
         self.assertEqual(t['regions']['인천/경기']['n'], 326.0)
 
     def test_unrelated_page_is_skipped(self):
         self.assertIsNone(F.read_table('1. 대통령 직무평가\n 잘함 잘못함\n 전체 1,000 1,000 40.0 55.0 5.0', ['s', 'c', 'o']))
+
+    def test_split_counts_do_not_become_shares_or_a_national_row(self):
+        opts = ['s', 'c', 'o']
+        title = '정부 지원론 vs 견제론'
+        region = '부산/울산/경남  1 49  1 47    31% 55% 13%    42 56'
+        sex = '남성  4 95  4 96    35% 49% 16%'
+        self.assertIsNone(F.split_row('부산/울산/경남  1 49  1 47', 3))
+        self.assertIsNone(F.read_table('\n'.join([title, region, sex]), opts))
+        prior = '10월 3주(13~15일)  1 ,003  1 ,003   34% 47% 18%'
+        current = '11월 3주(17~19일)  1 ,001  1 ,001   37% 47% 16%'
+        text = '\n'.join([title, prior, current, region, sex])
+        t = F.read_table(text, opts, fieldwork_end='2026-11-19')
+        self.assertEqual(t['national_label'], '11월 3주(17~19일)')
+        self.assertEqual(t['national'], dict(zip(opts, [37, 47, 16])))
+        self.assertEqual(t['national_n'], 1001)
+        self.assertEqual(t['regions']['부산/울산/경남'], {'shares': [31, 55, 13], 'n': 147})
+        self.assertIsNone(F.read_table(text, opts, fieldwork_end='2026-11-26'))
+        total_page = '\f' + title + '\n전국   1,001 1,001   37% 47% 16%'
+        self.assertEqual(F.read_table(text + total_page, opts)['national_label'], '전국')
+        self.assertEqual(F.split_row('전체 1,001 1,001 37 47 16', 3), ('전체', [37, 47, 16], [1001, 1001]))
 
 
 class ReviewListTests(unittest.TestCase):
@@ -79,14 +98,27 @@ class ReviewListTests(unittest.TestCase):
             if '여론조사꽃' in p['pollster']: self.assertEqual(p['status'], 'excluded_pollster')
 
     def test_review_list_matches_hand_entries(self):
-        """Auto-read national shares agree with the hand-verified registry wherever both exist."""
-        reg = json.loads((ROOT / 'data/frame_polls_multi.json').read_text(encoding='utf-8'))['polls']
+        reg = [p for path in F.REGISTRIES for p in json.loads(path.read_text(encoding='utf-8'))['polls']
+               if p['scope'] == 'national']
         for c in self.c:
-            if c['registered_in'] != 'frame_polls_multi.json' or c['status'] != 'parsed': continue
-            p = next(p for p in reg if F.pkey(p['pollster'], p['fieldwork_end']) == F.pkey(c['pollster'], c['fieldwork_end']))
-            nat = dict(zip(c['option_roles'], c['table']['national'].values()))
-            self.assertAlmostEqual(nat['support'], p['shares']['support'] * 100, delta=0.6)
-            self.assertAlmostEqual(nat['check'], p['shares']['check'] * 100, delta=0.6)
+            if c['status'] != 'parsed':
+                continue
+            key = F.pkey(c['pollster'], c['fieldwork_end'])
+            matches = [p for p in reg if str(p.get('nesdc_reg_no')) == str(c['reg_no'])
+                       or F.pkey(p['pollster'], p['fieldwork_end']) == key]
+            shares = c['table']['national']
+            nat = {role: shares[option] for role, option in zip(c['option_roles'], c['options'])}
+            for p in matches:
+                with self.subTest(reg_no=c['reg_no'], poll_id=p['poll_id']):
+                    self.assertAlmostEqual(nat['support'], p['shares']['support'] * 100, delta=0.6)
+                    self.assertAlmostEqual(nat['check'], p['shares']['check'] * 100, delta=0.6)
+
+    def test_gallup_683_artifacts_agree(self):
+        c = next(c for c in self.c if c['reg_no'] == 17369)
+        self.assertEqual(c['registered_in'], 'frame_polls_multi.json')
+        self.assertEqual(c['table'], self.s['polls']['17369']['table'])
+        self.assertEqual(c['table']['national_label'], '11월 3주(17~19일)')
+        self.assertEqual(list(c['table']['national'].values()), [37, 47, 16])
 
 
 VOTE_Q = """(지지 정당)
@@ -111,7 +143,7 @@ class VoteIntentionTests(unittest.TestCase):
         self.assertTrue(q.startswith('Q1.'))
         self.assertEqual(opts, ['개혁신당', '국민의힘', '더불어민주당', '조국혁신당', '진보당', '기타 정당', '없다', '잘 모르겠다'])
         self.assertEqual(kind, 'unspecified')
-        self.assertIsNone(F.find_question(VOTE_Q))           # not a frame question
+        self.assertIsNone(F.find_question(VOTE_Q))
 
     def test_negative_question_skipped(self):
         self.assertIsNone(F.find_vote_question(VOTE_Q.split('Q2.')[0].replace('Q1.', 'Q9.').replace('투표하실', '절대 투표하지 않으실')))

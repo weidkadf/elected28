@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
-"""Rough 300-seat view: 254 district seats (v0.5 engine) + 46 PR seats by parallel largest-remainder allocation.
-PR shares start from the 2024 list vote and move with the same national frame shift (alpha x change + national error).
-The 민주:조국혁신당 split of the Dem-bloc list vote and the 개혁신당 list share are 2024 values in the main output;
-outputs/jk_support.json (scripts/build_party_support.py, NESDC party support) supplies two poll-based alternatives for each,
-and every combination (3 x 3) is reported under `pr_sensitivity.grid` keyed '<jk>|<ref>'."""
 import json, sys, math
 from datetime import date
 from pathlib import Path
 import numpy as np
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 import forecast_v030 as F, forecast_v050 as V
-PR2024 = {'민주연합': 26.69, '조국혁신당': 24.25, '국민의미래': 36.67, '개혁신당': 3.61}   # NEC official list vote %, parties over 3%
+PR2024 = {'민주연합': 26.69, '조국혁신당': 24.25, '국민의미래': 36.67, '개혁신당': 3.61}
 OTHER2024 = 100 - sum(PR2024.values())
 
 
 def alloc(sh, seats=46):
-    """sh: draws x parties (percent). 3% threshold, Hare largest remainder."""
     ok = sh >= 3.0; e = np.where(ok, sh, 0.0); q = e / e.sum(1, keepdims=True) * seats
     base = np.floor(q); rem = q - base; left = (seats - base.sum(1)).astype(int)
     order = np.argsort(-rem, axis=1)
@@ -26,7 +20,7 @@ def alloc(sh, seats=46):
 
 def main():
     cfg = F.load_json('config/forecast_v050.json'); s = F.sigmas(cfg)
-    change, c_agg = V.frame_change(cfg, cfg['frame_inputs']['aggregator']['wording_classes_main'])
+    change, c_agg, _ = V.frame_change(cfg, cfg['frame_inputs']['aggregator']['wording_classes_main'])
     days = (date.fromisoformat(cfg['target_election_date']) - date.fromisoformat(max(p['fieldwork_end'] for p in c_agg['polls_used']))).days
     comp, _ = V.composite(cfg)
     sim = V.CompositeSimulator(F.read_baseline(ROOT / 'data/baseline_2024.csv'), cfg['draws'], cfg['seed'], F.REGIONAL_SCOPE_MEMBERS, comp)
@@ -69,8 +63,8 @@ def main():
         out['by_alpha']['rows'].append(run([a], [1.0])); out['by_alpha']['dem_win_prob'].append([round(float(x), 3) for x in run.last_win])
     J = json.loads((ROOT / 'outputs/jk_support.json').read_text(encoding='utf-8'))
     keys = ('total_300', 'pr', 'p10_p50_p90', 'p_majority_151')
-    jk = {k: (rj if k == 'fixed_2024' else v['ratio'], v) for k, v in J['scenarios'].items()}   # unrounded main values, so
-    rf = {k: (PR2024['개혁신당'] if k == 'fixed_2024' else v['share_pct'], v) for k, v in J['reform']['scenarios'].items()}  # fixed|fixed == by_alpha
+    jk = {k: (rj if k == 'fixed_2024' else v['ratio'], v) for k, v in J['scenarios'].items()}
+    rf = {k: (PR2024['개혁신당'] if k == 'fixed_2024' else v['share_pct'], v) for k, v in J['reform']['scenarios'].items()}
     out['pr_sensitivity'] = {'source': 'outputs/jk_support.json', 'jk': {k: {'ratio': v['ratio'], 'label': v['label']} for k, (_, v) in jk.items()},
                              'ref': {k: {'share_pct': v['share_pct'], 'label': v['label']} for k, (_, v) in rf.items()}, 'grid': {}}
     wa = np.array(A['weights_all_three']); keep = (wa > 1e-4) & (grid >= 0)
