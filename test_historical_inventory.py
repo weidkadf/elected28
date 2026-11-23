@@ -1,4 +1,3 @@
-"""Regression gates for historical archives, not forecast calibration."""
 import copy
 import json
 from pathlib import Path
@@ -107,7 +106,7 @@ class HistoricalInventoryTests(unittest.TestCase):
             self.run_archive()
 
     def test_rounding_preserved_but_invalid_shares_rejected(self):
-        self.assertEqual(self.run_archive()['status'], 'PASS')  # 99/101% regional rows are valid.
+        self.assertEqual(self.run_archive()['status'], 'PASS')
         self.doc['polls'][0]['shares']['정부지원'] = float('nan')
         with self.assertRaisesRegex(ValueError, 'invalid frame share'):
             self.run_archive()

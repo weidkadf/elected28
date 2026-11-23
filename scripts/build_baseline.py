@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Fetch and aggregate official NEC 2024 constituency returns. Stdlib only."""
 import argparse, collections, csv, datetime, hashlib, io, json, re, urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -31,7 +30,6 @@ def main():
  for reg,dist in sorted(bydistrict,key=lambda k:(REGION_CODES[k[0]],k[1])):
   candidates=sorted(bydistrict[(reg,dist)],key=lambda c:(-c[2],c[0],c[1]));valid=sum(c[2] for c in candidates)
   assert valid==totals[(reg,dist)]['투표수']-totals[(reg,dist)]['무효 투표수'],(reg,dist,'valid reconciliation')
-  # Project-local stable identifier; deliberately NOT a purported official NEC code.
   did=f'2024-{REGION_CODES[reg]}-{dist}'
   win=candidates[0];wins[win[0]]+=1
   for rank,(party,candidate,v) in enumerate(candidates,1):

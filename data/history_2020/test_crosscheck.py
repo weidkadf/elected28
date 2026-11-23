@@ -1,4 +1,3 @@
-"""Tests of exact extraction, full source coverage and parser fail-closed guards."""
 import hashlib
 import json
 from pathlib import Path

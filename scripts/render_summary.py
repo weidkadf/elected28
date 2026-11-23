@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Render auditable district coverage; explicitly distinguish scenarios from forecasts."""
 import csv
 import json
 from collections import Counter, defaultdict

@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""Single entry point for release validation and packaging (replaces 20 per-release scripts).
-
-  python scripts/validate.py --list
-  python scripts/validate.py --release 0.3.0 --prior Election23_Model_v0.2.18.zip [--package OUT.zip]
-  python scripts/validate.py --release 0.2.13 --legacy validate -- <legacy args>   # archived scripts
-
-Generic path (>= 0.3.0) reads config/releases.json and checks, failing closed:
-  1. parent ZIP SHA256 and ZIP CRC; parent state.json version
-  2. every parent file outside `changed`/`moved`/`removed` is byte-identical
-  3. moved files are byte-identical at their new path
-  4. the current file set is exactly parent - removed - moved_old + moved_new + new (+ changed)
-  5. full unit-test suite passes (count >= min_tests)
-  6. every regenerated output is reproduced byte-for-byte from inputs in a scratch copy
-  7. outputs/update_validation_<date>_v<ver>.json is written; --package writes and re-verifies the ZIP
-"""
 from __future__ import annotations
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, tempfile, zipfile
 from datetime import date
@@ -38,7 +23,6 @@ def registry():
 
 
 def run_legacy(version, mode, args):
-    """Execute an archived per-release script as if it still lived in scripts/ (ROOT = parents[1])."""
     name = f"{mode}_release_{version.replace('.', '_')}.py"
     src = LEGACY / name
     if not src.exists():
@@ -51,7 +35,6 @@ def run_legacy(version, mode, args):
 
 
 def run_tests():
-    """Run the suite in a scratch copy: some legacy tests rebuild inventory files in place."""
     with tempfile.TemporaryDirectory() as tmp:
         work = Path(tmp) / 'election23'
         shutil.copytree(ROOT, work, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
@@ -68,7 +51,6 @@ def run_tests():
 
 
 def regenerate(rel):
-    """Re-run each pipeline step in a scratch copy and compare outputs byte-for-byte."""
     results = []
     with tempfile.TemporaryDirectory() as tmp:
         work = Path(tmp) / 'election23'
@@ -134,7 +116,7 @@ def package(version, out):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(description='Validate or package a local Election23 release.', formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--list', action='store_true')
     ap.add_argument('--release')
     ap.add_argument('--prior')

@@ -1,4 +1,3 @@
-"""Exact mathematical tests; diagnostic boxes do not certify geographic mapping."""
 import copy
 from fractions import Fraction
 from itertools import product

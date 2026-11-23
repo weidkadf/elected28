@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""조국혁신당 column for the frame x party crosstabs used by identify_alpha (micro route).
-
-frame_tables.json keeps only the 민주 and 국민의힘 columns. For every crosstab whose header names 조국혁신당 this
-re-downloads the NESDC result PDFs, finds the table rows by word position (pdfplumber), and records the 조국혁신당
-value of the total row and the two frame rows. A value is kept only when the 민주 and 국민의힘 values read from
-the same line equal the stored ones (after identify_alpha.fix_party_order), so a wrong column is not picked up.
-Output: data/nesdc/frame_xtab_jk.json. PDFs are cached in .cache/nesdc_pdf/ (not committed).
-"""
 import csv, io, json, re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,19 +37,17 @@ def num(t):
 
 
 def read_page(page, targets):
-    """targets: {'tot': (D, C), 's': (D, C), 'c': (D, C)} -> {'tot': J, ...} for lines whose D and C match."""
     words = page.extract_words()
     found = {}
     lines = lines_of(words)
     for li, (top, ws) in enumerate(lines):
         if not any(ANCHORS['D'].search(w['text']) for w in ws): continue
         anc = {}
-        for _, ws1 in lines[max(0, li - 3):li + 4]:      # multi-line headers: party names sit on different lines
+        for _, ws1 in lines[max(0, li - 3):li + 4]:
             for k, pat in ANCHORS.items():
                 hit = [w for w in ws1 if pat.search(w['text'])]
                 if hit and k not in anc: anc[k] = (hit[0]['x0'] + hit[0]['x1']) / 2
         if len(anc) < 3: continue
-        # header found: column centre of each party from the header block (word on this line or the line below)
         xs = sorted(anc.values()); tol = min(b - a for a, b in zip(xs, xs[1:])) / 2
         for top2, ws2 in lines[li + 1:li + 80]:
             nums = [(num(w['text']), (w['x0'] + w['x1']) / 2) for w in ws2 if NUMW.match(w['text'])]
@@ -76,9 +66,6 @@ def read_page(page, targets):
 
 
 def read_page_text(page, targets):
-    """Fallback for run-together headers ('더불어국민의조국혁…') where word positions cannot separate the columns: only when
-    the header lists 더불어 -> 국민의 -> 조국 with no other party between, 조국 is the third share on a line whose first two
-    shares equal the stored 민주/국민의힘 values."""
     import parse_nesdc_frames as PF
     lines = page.extract_text(layout=True).split('\n')
     found = {}

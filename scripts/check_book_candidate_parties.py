@@ -1,4 +1,3 @@
-"""Check original 2020 party labels without successor mapping or polling inputs."""
 import csv,json,hashlib
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]

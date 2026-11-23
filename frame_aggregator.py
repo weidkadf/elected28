@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""Government support/check frame aggregator (v0.3.0).
-
-VoteHub-style national average of the *Democratic-direction coordinate*
-q = D-component / (support + check), on the logit scale:
-
-1. availability: only polls with published_at < as_of (date-only, same-day excluded)
-2. recency: weight 0.5 ** (age_days / half_life), age from fieldwork_end
-3. within-pollster averaging by recency; the pollster then carries the weight of its
-   most recent release (repeated releases cannot dominate)
-4. pollster quality weight (assumption table, documented in config)
-5. house effects: leave-one-pollster-out residual vs. consensus of the *other* pollsters,
-   shrunk toward 0 by n_j/(n_j + k_house); none without an overlapping other pollster
-6. ENOP = sum of raw pollster weights (information content)
-
-Regional deviations come only from Gallup regional tables relative to Gallup's own national
-value in the same survey (same respondents), so no sample is counted twice.
-Party support is never read.
-"""
 from __future__ import annotations
 import math
 from datetime import date
@@ -44,7 +26,6 @@ def d(s):
 
 
 def dem_coordinate(poll, democratic_component):
-    """democratic_component: 'support' when Democrats govern, 'check' when they oppose."""
     sh = poll['shares']
     s, c = sh.get('support'), sh.get('check')
     if s is None or c is None or s + c <= 0:
@@ -62,14 +43,12 @@ def available(polls, as_of):
 
 
 def adaptive_half_life(polls, as_of, dense=14.0, sparse=28.0, window=28, min_polls=3):
-    """VoteHub-style: fade faster when polling is dense, slower when sparse."""
     recent = [p for p in available(polls, as_of)
               if p.get('scope', 'national') == 'national' and (d(as_of) - d(p['fieldwork_end'])).days <= window]
     return dense if len(recent) >= min_polls else sparse
 
 
 def _consensus(items, as_of, cfg, exclude=None, house=None):
-    """items: list of dict(poll, L, n). Returns (C, enop, pollster_weights)."""
     hl = float(cfg['half_life_days'])
     groups = {}
     for it in items:
@@ -99,7 +78,6 @@ def _consensus(items, as_of, cfg, exclude=None, house=None):
 
 
 def aggregate(polls, as_of, democratic_component, config=None):
-    """Return national aggregate on the logit scale with diagnostics."""
     cfg = {**DEFAULTS, **(config or {})}
     if cfg.get('half_life_days') == 'adaptive':
         cfg['half_life_days'] = adaptive_half_life(
@@ -113,7 +91,6 @@ def aggregate(polls, as_of, democratic_component, config=None):
         q, n = dem_coordinate(p, democratic_component)
         items.append({'poll': p, 'q': q, 'L': logit(q), 'n': n,
                       'sampling_var': 1 / (n * q * (1 - q))})
-    # house effects (leave-one-pollster-out, time-local, shrunk)
     house, house_diag = {}, {}
     pollsters = sorted({it['poll']['pollster'] for it in items})
     win = float(cfg['house_effect_window_days'])
@@ -133,14 +110,12 @@ def aggregate(polls, as_of, democratic_component, config=None):
         h = sum(res) / (len(res) + k) if res else 0.0
         house[j] = h
         house_diag[j] = {'residuals_vs_others': res, 'n_overlapping': len(res), 'house_effect_logit': h}
-    # identification: house effects are only relative; centre them so they average 0 over pollsters
     if len(pollsters) > 1:
         m = sum(house.values()) / len(house)
         for j in house:
             house[j] -= m
             house_diag[j]['house_effect_logit_centred'] = house[j]
     C, enop, wts = _consensus(items, as_of, cfg, house=house)
-    # spread: weighted variance of pollster values around C plus mean sampling variance
     tot = sum(w['weight'] for w in wts.values())
     spread = sum(w['weight'] * (w['pollster_logit'] - C) ** 2 for w in wts.values()) / tot
     samp = sum(w['weight'] ** 2 * min(it['sampling_var'] for it in items if it['poll']['pollster'] == j)
@@ -156,12 +131,6 @@ def aggregate(polls, as_of, democratic_component, config=None):
 
 
 def regional_deviations(national_polls, regional_polls, as_of, democratic_component, shrink_k, half_life_days=28.0):
-    """Recency-averaged, shrunken Gallup regional deviation from Gallup national of the same survey.
-
-    national_polls / regional_polls carry Gallup-style shares {'정부지원','정부견제'} converted by caller
-    to {'support','check'}; regional polls must share fieldwork_end with a national poll (same sample).
-    Returns {scope: {'deviation_logit', 'weight_sum', 'status'}}.
-    """
     nat = {p['fieldwork_end']: p for p in available(national_polls, as_of)}
     out = {}
     by_scope = {}
@@ -190,7 +159,6 @@ def regional_deviations(national_polls, regional_polls, as_of, democratic_compon
 
 
 def gallup_to_generic(p):
-    """Map Gallup archive/polls.json share labels to support/check without touching anything else."""
     sh = p.get('shares') or {}
     g = dict(p)
     g['shares'] = {} if not sh else {'support': sh.get('정부지원'), 'check': sh.get('정부견제')}

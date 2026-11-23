@@ -60,7 +60,6 @@ class FrameModelTests(unittest.TestCase):
     def test_party_support_changes_do_not_change_any_output(self):
         data,cfg=fixture()
         a=build_report([district()],data,cfg,draws=300)
-        # Even malformed party support has no route to validation or output.
         data['polls'].append({'question_type':'party_support','shares':{DEM:999,CON:-900},'poll_id':'new'})
         b=build_report([district()],data,cfg,draws=300)
         self.assertEqual(a,b)

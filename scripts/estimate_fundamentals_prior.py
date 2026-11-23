@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""Optional fundamentals prior: presidential approval + mid-term drift (v0.3.0).
-
-VoteHub uses an approval-scaled 'out-party gains in midterms' prior whose weight falls to zero
-at election day. Korean analogue, from primary Gallup tables only:
-
-1. beta: slope of the national frame coordinate on presidential approval, both role-aligned to the
-   Democratic direction, from the 7 surveys that carry both items (2020 x3, 2024 x3, 2026 x1).
-2. Mid-term approval drift: for every past president with data, the change in logit approval share
-   (approve/(approve+disapprove)) between the tenure quarter matching *now* and the tenure quarter of
-   the target election (Gallup quarterly table 1988-2024).
-3. Prior frame shift = beta * mean drift; prior sd = |beta| * sd drift. Because the remaining number
-   of quarters shrinks to zero at election day, the prior's weight decays to zero automatically.
-Party support is not used. This prior is OFF in the main result; it runs as a labelled scenario.
-"""
 from __future__ import annotations
 import json, math
 from datetime import date
@@ -35,7 +21,6 @@ def tenure_q(day, inauguration):
 
 def main(as_of_fieldwork='2026-10-15', election='2028-04-12'):
     g = json.loads((ROOT / 'data/history_polls/gallup_series_v030.json').read_text(encoding='utf-8'))
-    # 1. frame vs approval, role-aligned
     frames = {}
     for f in sorted((ROOT / 'data/history_polls').glob('gallup_*_frame_observations.json')):
         for p in json.loads(f.read_text(encoding='utf-8'))['polls']:
@@ -61,7 +46,6 @@ def main(as_of_fieldwork='2026-10-15', election='2028-04-12'):
     resid = Y - X @ coef
     se = math.sqrt(float(resid @ resid) / (len(Y) - 2) / float(((X[:, 1] - X[:, 1].mean()) ** 2).sum()))
     beta = float(coef[1])
-    # 2. mid-term approval drift by tenure quarter
     q_now = tenure_q(as_of_fieldwork, CURRENT['inauguration'])
     q_el = tenure_q(election, CURRENT['inauguration'])
     drifts = []
@@ -75,7 +59,6 @@ def main(as_of_fieldwork='2026-10-15', election='2028-04-12'):
                        'approve_share_now': a0, 'approve_share_election': a1, 'logit_change': lg(a1) - lg(a0)})
     dv = np.array([x['logit_change'] for x in drifts])
     mean_d, sd_d = float(dv.mean()), float(dv.std(ddof=1))
-    # Democrats govern now: an approval fall is a fall of the Democratic-direction coordinate.
     shift = beta * mean_d
     out = {'schema_version': 'fundamentals_prior_1', 'status': 'optional_scenario_only_not_main_result',
            'party_support_used': False, 'current': CURRENT,

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""As-of historical archive routing only: no fitted backtest or live-model use."""
 import hashlib
 import json
 from pathlib import Path
@@ -25,12 +24,6 @@ FIELDS = ('poll_id', 'scope', 'published_at', 'target_election_date', 'role_prof
 
 
 def split_as_of(inventory, baseline_election, target_election, cutoff):
-    """Route validated poll metadata by exact election and conservative cutoff.
-
-    These are archive references, not a feature matrix. Unknown publication time
-    excludes the whole publication date. Future/unrelated rows never enter the
-    selected manifest or its hash. Source values remain in the validated archive.
-    """
     baseline, target, as_of = map(parse_day, (baseline_election, target_election, cutoff))
     require(baseline < as_of < target, 'require baseline election < cutoff < target election')
     require(inventory.get('status') == 'PASS', 'validated archive required')

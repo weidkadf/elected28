@@ -1,4 +1,3 @@
-"""Validate manually reviewed book candidates; never enables model/history gates."""
 from pathlib import Path
 import csv,json,hashlib
 ROOT=Path(__file__).resolve().parents[1]

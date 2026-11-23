@@ -1,16 +1,9 @@
 #!/usr/bin/env python3
-"""Pollster / mode scorecard from NESDC-registered 2025 presidential polls (final two weeks).
-
-Input : data/nesdc/pres2025_toplines.json  (parsed from NESDC result PDFs by scripts/parse_nesdc_pres.py)
-Output: outputs/pollster_ratings.json
-Error metric: logit two-party share  q = Lee/(Lee+Kim)  minus the official result.
-Only the mode-level weights feed the model; pollster rows are provisional (small n, automatic parsing).
-"""
 import json, math, statistics as st
 from collections import defaultdict
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-ACTUAL = {'이재명': 49.42, '김문수': 41.15, '이준석': 8.34}   # NEC official, 2025-06-03
+ACTUAL = {'이재명': 49.42, '김문수': 41.15, '이준석': 8.34}
 ALIAS = {'한국갤럽조사연구소': '한국갤럽', '(주)리서치뷰': '리서치뷰', '한길리서치': '한길리서치', '미디어토마토': '미디어토마토'}
 MODE_KEY = {'CATI': 'CATI_live_interview', 'ARS': 'ARS_RDD'}
 K_SHRINK = 3.0

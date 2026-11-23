@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""Validate a frame-only historical archive; never feed or fit the live engine.
-
-An inventory is NOT training approval. Date-only cutoffs conservatively exclude
-the publication day because an unknown release time cannot establish availability.
-"""
 import argparse
 from datetime import date
 import hashlib
@@ -17,9 +12,6 @@ SCOPES = {'national', '서울', '인천/경기', '강원', '대전/세종/충청
 OPTIONS = ['현 정부를 지원하기 위해 여당 후보가 많이 당선돼야 한다',
            '현 정부를 견제하기 위해 야당 후보가 많이 당선돼야 한다']
 SHARES = {'정부지원', '정부견제', '모름/응답거절'}
-# Explicit original identities and methods; NOT successor maps or pooling approval.
-# The 2024 two-option profile starts at the newly checked 578 wave, not at the
-# earlier three-option January/February/March surveys shown on its trend graph.
 REVIEWED_PROFILES = {'2020-04-15': {
                   'profile_id': 'gallup_2020_rdd_support_dem',
                   'target_election_date': '2020-04-15',
@@ -60,7 +52,6 @@ def positive_integer(value):
 
 
 def archive_inventory(root, paths, as_of):
-    """Return candidate coverage only; exclude non-frame records before parsing."""
     root = Path(root).resolve()
     cutoff = parse_day(as_of)
     rows, waves, seen_ids, seen_observations = [], {}, set(), set()
@@ -186,7 +177,7 @@ def archive_inventory(root, paths, as_of):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description='Validate the historical frame archive and its information cutoff.')
     parser.add_argument('--as-of', required=True)
     parser.add_argument('--output', default='outputs/historical_frame_inventory.json')
     args = parser.parse_args()

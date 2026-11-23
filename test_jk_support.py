@@ -1,4 +1,3 @@
-"""조국혁신당 PR split and 개혁신당 PR share sensitivity: NESDC party-support table, jk_support.json, seats_300.json pr_sensitivity."""
 import csv, json, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -27,10 +26,9 @@ class JKSupportTests(unittest.TestCase):
 
     def test_calibration_and_scenarios_ordered(self):
         self.assertGreaterEqual(self.j['pre2024']['all']['n_polls'], 10)
-        self.assertGreater(self.j['list_vote_uplift_logit'], 0)        # 2024 polls understated the list vote
+        self.assertGreater(self.j['list_vote_uplift_logit'], 0)
         sc = self.j['scenarios']
         self.assertAlmostEqual(sc['fixed_2024']['ratio'], 24.25 / (26.69 + 24.25), places=4)
-        # direct < swing follows from the positive list-vote uplift; the order against 2024 depends on new polls, so not asserted
         self.assertTrue(0 < sc['poll_direct']['ratio'] < sc['poll_swing']['ratio'] < 1)
 
     def test_main_output_is_the_fixed_scenario(self):
@@ -42,7 +40,6 @@ class JKSupportTests(unittest.TestCase):
         g = self.s['pr_sensitivity']['grid']; base = g['fixed_2024|fixed_2024']['posterior_all_three']
         for k in ('poll_swing', 'poll_direct'):
             r = g[f'{k}|fixed_2024']['posterior_all_three']
-            # 조국혁신당 can fall under the 3% threshold in low-Dem draws, which moves a fraction of a seat to the others
             self.assertLessEqual(abs(r['pr']['국민의힘'] - base['pr']['국민의힘']), 0.2)
             lower = self.s['pr_sensitivity']['jk'][k]['ratio'] < self.s['pr_sensitivity']['jk']['fixed_2024']['ratio']
             self.assertEqual(r['pr']['조국혁신당'] <= base['pr']['조국혁신당'], lower)

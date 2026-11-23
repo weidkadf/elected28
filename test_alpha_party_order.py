@@ -1,4 +1,3 @@
-"""identify_alpha: 민주/국힘 column order read from the table header (two-line '더불어/민주당' headers, 조국혁신당 columns)."""
 import json, sys, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -32,7 +31,6 @@ class PartyOrderTests(unittest.TestCase):
         jk = json.loads((ROOT / 'data/nesdc/frame_xtab_jk.json').read_text(encoding='utf-8'))
         self.assertGreaterEqual(a['jk']['tables_with_jk_added'], 85)
         self.assertLessEqual(len(jk['unread']), 3)
-        # 리서치뷰 17348 문8 교차표, checked by hand against the PDF: 조국혁신당 8.6 / 지원론 9.1 / 심판론 6.5
         self.assertEqual(jk['tables']['17348:8:31.6:36.9']['J'], {'tot': 8.6, 's': 9.1, 'c': 6.5})
         p = next(p for p in a['polls'] if p['reg'] == '17348')
         self.assertEqual(p['jk_in_dem'], {'tot': 8.6, 's': 9.1, 'c': 6.5})

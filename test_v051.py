@@ -1,4 +1,3 @@
-"""v0.5.1 tests: alpha identification (micro, regional, prior) and the seat distribution."""
 import json, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -31,14 +30,14 @@ class AlphaTests(unittest.TestCase):
         for k in ('all_three', 'micro_plus_region', 'all_three_excluding_presidential_pair'):
             lo, hi = post[k]['ci95']
             self.assertTrue(lo < post[k]['mean'] < hi)
-            self.assertLess(hi - lo, 1.0)          # narrower than the unidentified (-3, 3)
+            self.assertLess(hi - lo, 1.0)
         s = self.d['seat_distribution']['all_three']
         self.assertAlmostEqual(s['dem_mean'] + s['con_mean'], 254, delta=3)
         self.assertTrue(0 <= s['p_dem_district_majority'] <= 1)
 
     def test_routes_disagree_is_recorded(self):
         r = self.d['regional']['joint_free_intercepts']
-        self.assertLess(r['ci95'][1], self.d['micro']['mean_of_pollster_means'])   # documented tension, not hidden
+        self.assertLess(r['ci95'][1], self.d['micro']['mean_of_pollster_means'])
 
 
 if __name__ == '__main__':

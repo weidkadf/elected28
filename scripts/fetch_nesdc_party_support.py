@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""Download the newest NESDC '전국단위 선거여론조사결과 주요 데이터' workbook (board B0000025, posted weekly).
-
-Writes data/nesdc/nesdc_major_data_national.xlsx and data/nesdc/nesdc_major_data_source.json only when the file content
-changed. Exit code 0 = updated, 3 = unchanged, anything else = failure. Stdlib only (used by .github/workflows/update-polls.yml).
-"""
 import hashlib, html, io, json, re, sys, urllib.request, zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -34,7 +29,7 @@ def main():
     files = [f for f in files if '전국' in f[1]] or files
     if len(files) != 1: sys.exit(f'expected one national xlsx in post {ntt}, found {[f[1] for f in files]}')
     blob = get(BASE + html.unescape(files[0][0]), view_url)
-    z = zipfile.ZipFile(io.BytesIO(blob))                     # raises if NESDC returned an error page instead of a workbook
+    z = zipfile.ZipFile(io.BytesIO(blob))
     assert 'xl/workbook.xml' in z.namelist() and 'xl/sharedStrings.xml' in z.namelist()
     sha = hashlib.sha256(blob).hexdigest()
     if OUT.exists() and hashlib.sha256(OUT.read_bytes()).hexdigest() == sha:

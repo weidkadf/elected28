@@ -1,4 +1,3 @@
-"""Check historical frame-only archive retention, not model eligibility."""
 from datetime import date
 import hashlib
 import json

@@ -1,4 +1,3 @@
-"""Synthetic joint-conservation invariants; no election data are loaded."""
 
 import copy
 from itertools import product

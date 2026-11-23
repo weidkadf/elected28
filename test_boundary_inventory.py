@@ -1,4 +1,3 @@
-"""Statutory row inventory tests; none authorizes geographic vote transfer."""
 import csv
 import hashlib
 import json

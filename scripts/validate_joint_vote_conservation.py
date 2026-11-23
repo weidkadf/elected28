@@ -1,12 +1,3 @@
-"""Synthetic-only, joint conservation checks; never construct a crosswalk.
-
-Separate candidate-wise bounds do not guarantee that several recipient districts
-can be satisfied at once. This validator checks a *supplied* synthetic allocation
-jointly, retaining each source district / original party / candidate identity and
-keeping named-ward votes separate from unlocated votes. Arithmetic validity does
-not certify an edge, ward boundary, candidate coalition, or geographic allocation.
-No election files, party-support polls, model engine, or historical fits are read.
-"""
 
 from __future__ import annotations
 
@@ -46,14 +37,6 @@ def _row(row, fields):
 
 def validate_joint_conservation(sources, targets, allowed_edges, allocations,
                                 *, synthetic_only=False):
-    """Validate supplied synthetic rows; return audit data or raise ValueError.
-
-    The explicit flag is a caller assertion, not a test of data provenance.
-    Edges are supplied hypothetical permissions, never verified geography.
-    Every source-candidate identity and every named target must be represented,
-    including explicit zero rows when needed. Neither missing nor extra source
-    identities may be silently collapsed into another candidate or district.
-    """
     if synthetic_only is not True:
         raise ValueError("only explicitly synthetic inputs are permitted")
     if not isinstance(sources, list) or not sources:
@@ -138,7 +121,6 @@ def validate_joint_conservation(sources, targets, allowed_edges, allocations,
 
 
 def build_synthetic_report():
-    """Three fixed synthetic fixtures: one valid split, two duplication errors."""
     source = {"source_district": "synthetic_source", "party_original": "synthetic_party",
               "candidate": "synthetic_candidate", "fixed_named_ward": 10, "unlocated": 4}
     targets = ["synthetic_A", "synthetic_B"]
@@ -171,7 +153,7 @@ def build_report():
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description='Validate vote conservation across geographic destinations.')
     parser.add_argument("--output", type=Path,
                         default=Path(__file__).resolve().parents[1] / "outputs" /
                         "joint_vote_conservation_synthetic.json")

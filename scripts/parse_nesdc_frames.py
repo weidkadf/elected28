@@ -59,7 +59,6 @@ def parse(text):
             hs = ' '.join(head); hc = re.sub(r'\s', '', hs)
             cnt, v = vals(TOT.sub('', lines[j], 1))
             title = ' '.join(x.strip() for x in lines[max(0, j - 22):max(0, j - 9)] + head if len(re.findall('[가-힣]', x)) >= 5)[-300:]
-            # (B) frame table with region rows
             xs, xc = xpos(head[-7:], SUP), xpos(head[-7:], CHK)
             if xs is not None and xc is not None and xs != xc and len(v) >= 2 and 55 <= v[0] + v[1] <= 100 and not re.search(r'이재명|김문수|민주당|국민의힘', re.sub(r'\s', '', ' '.join(head[-7:]))):
                 order = ('s', 'c') if xs < xc else ('c', 's')
@@ -70,7 +69,6 @@ def parse(text):
                         c2, v2 = vals(l)
                         if len(v2) >= 2: rec['reg'][r] = dict(zip(order, v2[:2]), n=c2[-1] if c2 else None)
                 frames.append(rec)
-            # (A) party table with frame rows
             hh = head[-7:]
             xd = xpos(hh, re.compile('더불어')); xd = xpos(hh, re.compile('민주')) if xd is None else xd; xk = xpos(hh, re.compile(r'국민의|국민\s*의'))
             if xd is not None and xk is not None and xd != xk and len(v) >= 2:

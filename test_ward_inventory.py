@@ -1,4 +1,3 @@
-"""Historical accounting partition tests; no electoral transfer is authorized."""
 from pathlib import Path
 import unittest
 from scripts.build_2020_ward_inventory import build_inventory,signed_count

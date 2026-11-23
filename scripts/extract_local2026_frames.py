@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""Gallup 662/663/664 (2026-04-28 .. 05-21) '지방선거 결과 기대' -> frame observation files (v0.4.0).
-
-Wording differs slightly from the general-election item: '여당 후보가 많이 당선돼야 한다 / 야당 후보가 많이
-당선돼야 한다' without the '현 정부 지원/견제 위해' clause. Stored with wording_note; shares keep the
-archive labels 정부지원(=여당 다수) / 정부견제(=야당 다수) so the same aggregator reads them.
-Requires pdftotext.
-"""
 from __future__ import annotations
 import hashlib, json, re, subprocess
 from pathlib import Path

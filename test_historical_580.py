@@ -1,4 +1,3 @@
-"""Primary weekly table regression, not approval to pool or fit election votes."""
 import copy
 import hashlib
 import json

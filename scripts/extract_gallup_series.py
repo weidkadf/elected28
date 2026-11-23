@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""Build data/history_polls/gallup_series_v030.json from archived Gallup PDFs.
-
-* Quarterly presidential approval table (1988-2024) is parsed from the text layer of
-  gallup_580_20240329.pdf (requires `pdftotext`, poppler-utils).
-* Monthly/weekly "총선 결과 기대" trend points (2019-2024) are visual transcriptions of the
-  chart on PDF page 14 of the same report; they are cross-checked against the separately
-  archived weekly reports 392/394/395/578/579/580 and the build fails on any mismatch.
-* Weekly approval for the paired frame surveys: 2024 from the 578-580 text layer, 2020 from
-  visual transcription of page 6 of 392/394/395, 2026 from the official 678 HTML.
-No party-support values are extracted.
-"""
 from __future__ import annotations
 import hashlib, json, re, subprocess, sys
 from pathlib import Path
@@ -19,7 +8,6 @@ HP = ROOT / 'data' / 'history_polls'
 OUT = HP / 'gallup_series_v030.json'
 PRESIDENTS = ['노태우', '김영삼', '김대중', '노무현', '이명박', '박근혜', '문재인', '윤석열']
 
-# chart on 580 p.14 (fieldwork end date, support%, check%) -- visual transcription
 TREND_22 = [('2022-12-01',36,49),('2023-03-02',42,44),('2023-04-06',36,50),('2023-05-04',37,49),
             ('2023-06-01',37,49),('2023-07-06',38,50),('2023-08-03',36,48),('2023-09-07',37,50),
             ('2023-10-12',39,48),('2023-11-09',40,46),('2023-12-07',35,51),('2024-01-11',35,51),
@@ -27,7 +15,6 @@ TREND_22 = [('2022-12-01',36,49),('2023-03-02',42,44),('2023-04-06',36,50),('202
 TREND_21 = [('2019-04-11',47,37),('2019-05-09',46,39),('2019-06-05',47,40),('2020-01-09',49,37),
             ('2020-02-13',43,45),('2020-03-12',43,43),('2020-03-26',46,40),('2020-04-02',47,37),
             ('2020-04-08',51,40),('2020-04-14',49,39)]
-# weekly approval (approve%, disapprove%) paired with the same survey's frame item
 WEEKLY_APPROVAL = {
     'gallup_392': {'fieldwork_end':'2020-03-12','approve':49,'disapprove':45,'evidence':'392 PDF p6 chart, visual'},
     'gallup_394': {'fieldwork_end':'2020-03-26','approve':55,'disapprove':39,'evidence':'394 PDF p6 chart, visual'},
@@ -61,7 +48,6 @@ def quarterly_table(pdf):
 
 
 def crosscheck():
-    """Chart transcription must match every separately archived weekly report."""
     trend = {d: (s, c) for d, s, c in TREND_21 + TREND_22}
     for f in sorted(HP.glob('gallup_*_frame_observations.json')):
         for p in json.loads(f.read_text(encoding='utf-8'))['polls']:

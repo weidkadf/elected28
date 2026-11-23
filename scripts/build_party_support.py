@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""NESDC national party-support table -> 조국혁신당 share of the Dem bloc, for the PR-seat sensitivity.
-
-Input : data/nesdc/nesdc_major_data_national.xlsx  (NESDC '전국단위 선거여론조사결과 주요 데이터(2023.10.30.~)', board B0000025)
-Output: data/nesdc/party_support_national.csv      (one row per registered poll, all sheets)
-        outputs/jk_support.json                     (pre-2024 calibration, current window, monthly series, PR split scenarios)
-
-Use (user decision 2026-11-11): party support is used only to set the 민주:조국혁신당 split of the Dem-bloc PR vote.
-The bloc-vs-국민의힘 PR share still moves with the frame model. 여론조사꽃 is excluded (v0.5.0 rule).
-Stdlib only.
-"""
 import csv, io, json, math, re, sys, zipfile
 from datetime import date, timedelta
 from pathlib import Path
@@ -19,10 +9,10 @@ XLSX = ROOT / 'data/nesdc/nesdc_major_data_national.xlsx'
 NS = {'m': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 PARTIES = ['더불어민주당', '국민의힘', '조국혁신당', '개혁신당', '진보당', '정의당', '새로운미래', '자유통일당', '기타정당', '지지정당 없음', '모름/ 무응답']
 EXCLUDE = re.compile(r'여론조사꽃')
-PR2024_RATIO = 24.25 / (26.69 + 24.25)          # NEC 2024 list vote: 조국혁신당 / (민주연합 + 조국혁신당)
+PR2024_RATIO = 24.25 / (26.69 + 24.25)
 PRE2024 = ('2024-03-25', '2024-04-03')           # last fieldwork days before the 2024-04-04 publication blackout
 CURRENT_WINDOW_DAYS = 28
-SINCE = '2026-06-04'                             # day after the 2026 local election
+SINCE = '2026-06-04'
 
 
 def logit(p): return math.log(p / (1 - p))
@@ -84,7 +74,6 @@ def build_rows():
                 v = c[hdr.index(p)] if p in hdr and hdr.index(p) < len(c) else ''
                 rec[p] = '' if v in ('', '-') else round(float(v), 2)
             out.append(rec)
-    # sheets overlap at their date boundaries; the same registration can appear twice. Main parties must agree; keep the later sheet.
     by = {}
     for r in out:
         if r['reg_no'] in by:
@@ -96,7 +85,6 @@ def build_rows():
 
 
 def pooled(polls, qw):
-    """Mean logit ratio: within-pollster mean, then quality-weighted across pollsters (weight = mean mode weight)."""
     by = {}
     for p in polls: by.setdefault(p['pollster'], []).append(p)
     z = w = 0.0
@@ -108,11 +96,10 @@ def pooled(polls, qw):
 
 
 NAMED = ['더불어민주당', '국민의힘', '조국혁신당', '개혁신당', '진보당', '정의당', '새로운미래', '자유통일당', '기타정당']
-REF2024_LIST = 3.61                              # NEC 2024 list vote %, 개혁신당
+REF2024_LIST = 3.61
 
 
 def reform(rows, qw, pre_w, cur_w):
-    """개혁신당 share of respondents naming a party (≈ share of valid list votes). Same pooling and scenarios as the 조국 ratio."""
     use = []
     for r in rows:
         if EXCLUDE.search(r['pollster']) or r['개혁신당'] in ('', 0): continue
@@ -152,7 +139,6 @@ def main():
 
     use = [dict(r, ratio=r['조국혁신당'] / (r['조국혁신당'] + r['더불어민주당'])) for r in rows
            if r['조국혁신당'] != '' and r['더불어민주당'] != '' and r['조국혁신당'] > 0 and not EXCLUDE.search(r['pollster'])]
-    # the window follows new data: it ends at the later of the model as_of and the newest poll in the workbook
     as_of = max(date.fromisoformat(cfg['as_of']), date.fromisoformat(rows[-1]['fieldwork_end']))
     lo = (as_of - timedelta(days=CURRENT_WINDOW_DAYS)).isoformat()
     pre = [p for p in use if PRE2024[0] <= p['fieldwork_end'] <= PRE2024[1]]

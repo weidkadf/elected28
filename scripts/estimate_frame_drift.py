@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""Estimate the random-walk drift of the national frame coordinate (v0.3.0).
-
-Data: Gallup monthly/weekly '총선 결과 기대' trend for the 21st (2019-2020) and 22nd (2022-2024)
-cycles (data/history_polls/gallup_series_v030.json). On the logit of the role-aligned
-Democratic-direction coordinate L_t:
-
-    L_t2 - L_t1 = eps_t2 - eps_t1 + w,   w ~ N(0, tau^2 * (t2 - t1)),  eps ~ N(0, v_t)
-
-v_t = 1 / (n_decided q (1-q)) with n = 1000 (Gallup weekly nominal) times design effect.
-tau^2 is estimated by pooled moments  sum(dL^2 - v1 - v2) / sum(dt)  and by ML; the larger
-is kept for the forecast (conservative). Output feeds sigma(d) = a + b * d**nu, nu = 1/2,
-b = alpha * tau, VoteHub-style form.
-"""
 from __future__ import annotations
 import json, math
 from datetime import date
@@ -20,7 +7,7 @@ import numpy as np
 from scipy.optimize import minimize_scalar
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFF = 1.5   # assumed design effect for weighted CATI weekly samples (documented assumption)
+DEFF = 1.5
 
 
 def series():
@@ -56,7 +43,6 @@ def main():
     res = minimize_scalar(nll, bounds=(-20, 0), method='bounded')
     tau2_ml = math.exp(res.x)
     tau2 = max(tau2_mom, tau2_ml)
-    # excess variance check: are short-gap differences consistent with sampling noise alone?
     short = dt <= 14
     out = {'schema_version': 'frame_drift_1', 'design_effect_assumed': DEFF,
            'pairs': pairs, 'n_pairs': len(pairs),

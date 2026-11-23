@@ -1,8 +1,3 @@
-"""Independent regression tests for availability and regional-frame identity.
-
-Synthetic fixtures are separate from test_model.py so changing that module's
-fixtures cannot silently weaken these guards. No party-support linkage allowed.
-"""
 import copy
 import json
 from pathlib import Path

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Build the static dashboard data (docs/data.js) from model outputs. The page is docs/index.html."""
 import hashlib, json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]

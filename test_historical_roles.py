@@ -1,4 +1,3 @@
-"""Explicit cross-election role/method profiles are audit metadata, not fitting."""
 import copy
 import json
 from pathlib import Path
