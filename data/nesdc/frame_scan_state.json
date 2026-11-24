@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17373,
+ "last_reg_no": 17374,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2752,6 +2752,23 @@
    "registered": "2026-11-21",
    "area": "전국",
    "status": "excluded_pollster"
+  },
+  "17374": {
+   "ntt": 19635,
+   "reg_no": 17374,
+   "pollster": "한길리서치",
+   "sponsor": "KNA25/폴리뉴스",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정당지지도 정기(정례)조사 대통령선거",
+   "registered": "2026-11-24",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-22",
+   "fieldwork_end": "2026-11-23",
+   "published_at": "2026-11-24 14:00",
+   "sample_size": 1010,
+   "response_rate_pct": 2.4
   }
  }
 }
