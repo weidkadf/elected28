@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17374,
+ "last_reg_no": 17375,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2769,6 +2769,23 @@
    "published_at": "2026-11-24 14:00",
    "sample_size": 1010,
    "response_rate_pct": 2.4
+  },
+  "17375": {
+   "ntt": 19636,
+   "reg_no": 17375,
+   "pollster": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "sponsor": "케이에스오아이 주식회사(한국사회여론연구소)",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도",
+   "registered": "2026-11-24",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-23",
+   "fieldwork_end": "2026-11-24",
+   "published_at": "2026-11-25 08:00",
+   "sample_size": 1001,
+   "response_rate_pct": 5.7
   }
  }
 }
