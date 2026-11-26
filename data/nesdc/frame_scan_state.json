@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17375,
+ "last_reg_no": 17379,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2786,6 +2786,40 @@
    "published_at": "2026-11-25 08:00",
    "sample_size": 1001,
    "response_rate_pct": 5.7
+  },
+  "17379": {
+   "ntt": 19642,
+   "reg_no": 17379,
+   "pollster": "(주)코리아리서치인터내셔널",
+   "sponsor": "㈜코리아리서치인터내셔널, ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜한국리서치",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 정기(정례)조사 정당지지도 정치 사회 현안",
+   "registered": "2026-11-25",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-23",
+   "fieldwork_end": "2026-11-25",
+   "published_at": "2026-11-26 11:00",
+   "sample_size": 1000,
+   "response_rate_pct": 20.3
+  },
+  "17378": {
+   "ntt": 19641,
+   "reg_no": 17378,
+   "pollster": "(주)코리아정보리서치",
+   "sponsor": "천지일보",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 대통령선거 정당지지도 국정현안 등",
+   "registered": "2026-11-25",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-23",
+   "fieldwork_end": "2026-11-24",
+   "published_at": "2026-11-26 01:00",
+   "sample_size": 1007,
+   "response_rate_pct": 2.8
   }
  }
 }
