@@ -126,7 +126,14 @@
       0.5,
       0.8
     ],
-    "note": "non-Gallup polls carry no party crosstab; the Gallup-derived shift is added to the aggregate of the same period"
+    "note": "non-Gallup polls carry no party crosstab; the Gallup-derived shift is added to the aggregate of the same period",
+    "party_composition": {
+      "enabled": true,
+      "source": "data/nesdc/party_support_national.csv, 한국갤럽 데일리 오피니언(자체 조사) 주간 정당지지도",
+      "window_days": 28,
+      "decision": "user 2026-11-26: 프레임 문항 없이 정당지지도만 있는 조사도 투표율 보정에 활용. 지지층 구성비(민주·국민의힘·무당층·기타)는 갤럽 주간 정당지지도의 최신성 가중 평균, 지지층별 지원·견제 응답은 갤럽 교차표(frame_by_party) 그대로",
+      "recency": "period half_life_days (frame aggregator); Gallup published_at = fieldwork_end + 1 day"
+    }
   },
   "composite_baseline": {
     "panel": "data/district_panel.csv",
