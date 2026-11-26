@@ -91,16 +91,41 @@ class PartyCompositionTests(unittest.TestCase):
         cls.waves = TO.load()
         cls.rows = TO.load_party_support()
 
-    def test_only_gallup_own_surveys_and_shares_sum_to_one(self):
+    def test_tiers_and_shares_sum_to_one(self):
         self.assertTrue(self.rows)
         for r in self.rows:
             self.assertAlmostEqual(sum(r['shares'].values()), 1.0, places=9)
             self.assertGreaterEqual(min(r['shares'].values()), 0.0)
-        self.assertNotIn('13158', [r['reg_no'] for r in self.rows])  # Gallup commissioned survey, not Daily Opinion
+            self.assertNotIn('여론조사꽃', r['pollster'])
+        tier = {r['reg_no']: (r['pollster'], r['tier']) for r in self.rows}
+        self.assertEqual(tier['17369'], ('gallup', 'level'))
+        self.assertEqual(tier['17352'], ('nbs', 'level'))
+        self.assertEqual(tier['13158'][1], 'trend')  # Gallup commissioned survey, not Daily Opinion
 
     def test_includes_weeks_without_frame_question(self):
+        comp = TO.party_composition(self.rows, '2026-11-22', 28, include_trend=False)
+        gallup = [r for r in comp['reg_nos'] if r in ('17335', '17344', '17353', '17369')]
+        self.assertEqual(gallup, ['17335', '17344', '17353', '17369'])  # only 17369 asked the frame question
+        self.assertIn('17352', comp['reg_nos'])  # NBS
+        self.assertEqual(comp['n_trend'], 0)
+
+    def test_trend_polls_enter_net_of_house_effect(self):
         comp = TO.party_composition(self.rows, '2026-11-22', 28)
-        self.assertEqual(comp['reg_nos'], ['17335', '17344', '17353', '17369'])  # only 17369 asked the frame question
+        self.assertGreater(comp['n_trend'], 10)
+        h = comp['house_effects']['리얼미터|ARS']
+        self.assertLess(h['independent'], -0.1)  # ARS finds far fewer 무당층 than Gallup/NBS
+        raw = [r for r in self.rows if r['pollster'] == '리얼미터|ARS' and r['reg_no'] in comp['reg_nos']]
+        self.assertTrue(raw)
+        self.assertLess(max(r['shares']['independent'] for r in raw), comp['shares']['independent'])
+
+    def test_house_effect_uses_only_polls_available_before_cutoff(self):
+        cut = '2026-11-22'
+        later = [dict(r, reg_no='x' + r['reg_no'], fieldwork_end='2026-11-25', published_at='2026-11-26',
+                      shares={'dem': 0.9, 'con': 0.05, 'independent': 0.03, 'residual_other_parties': 0.02}) for r in self.rows[:40]]
+        a = TO.party_composition(self.rows, cut, 28)
+        b = TO.party_composition(self.rows + later, cut, 28)
+        self.assertEqual(a['shares'], b['shares'])
+        self.assertEqual(a['house_effects'], b['house_effects'])
 
     def test_no_lookahead(self):
         comp = TO.party_composition(self.rows, '2026-11-20', 28)  # 17369 published 11-20: excluded on the day
