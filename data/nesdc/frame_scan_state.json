@@ -1,5 +1,5 @@
 {
- "last_reg_no": 17379,
+ "last_reg_no": 17381,
  "since": "2026-09-01",
  "polls": {
   "17354": {
@@ -2820,6 +2820,54 @@
    "published_at": "2026-11-26 01:00",
    "sample_size": 1007,
    "response_rate_pct": 2.8
+  },
+  "17381": {
+   "ntt": 19645,
+   "reg_no": 17381,
+   "pollster": "리서치웰",
+   "sponsor": "뉴데일리",
+   "mode": "무선 ARS",
+   "frame": "무선전화번호 RDD",
+   "title": "전국 정기(정례)조사 국회의원선거 대통령선거",
+   "registered": "2026-11-27",
+   "area": "전국",
+   "status": "awaiting_results",
+   "fieldwork_start": "2026-11-25",
+   "fieldwork_end": "2026-11-26",
+   "published_at": "2026-11-27 14:00",
+   "sample_size": 1005,
+   "response_rate_pct": 3.0,
+   "vote": {
+    "question": "Q1. 선생님께서는 2028년 총선에서 다음 중 어느 정당 후보에게 투표하실 생각입니까?",
+    "options": [
+     "개혁신당",
+     "국민의힘",
+     "더불어민주당",
+     "조국혁신당",
+     "진보당",
+     "기타 정당",
+     "없다",
+     "잘 모르겠다"
+    ],
+    "kind": "unspecified"
+   }
+  },
+  "17380": {
+   "ntt": 19644,
+   "reg_no": 17380,
+   "pollster": "한국갤럽조사연구소",
+   "sponsor": "한국갤럽 자체 조사",
+   "mode": "무선전화면접",
+   "frame": "무선전화번호 휴대전화 가상번호",
+   "title": "전국 전체 정기(정례)조사정당지지도",
+   "registered": "2026-11-26",
+   "area": "전국",
+   "status": "no_target_question",
+   "fieldwork_start": "2026-11-24",
+   "fieldwork_end": "2026-11-26",
+   "published_at": "2026-11-27 10:00",
+   "sample_size": 1000,
+   "response_rate_pct": 10.9
   }
  }
 }
