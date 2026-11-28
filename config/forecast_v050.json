@@ -126,7 +126,19 @@
       0.5,
       0.8
     ],
-    "note": "non-Gallup polls carry no party crosstab; the Gallup-derived shift is added to the aggregate of the same period"
+    "note": "non-Gallup polls carry no party crosstab; the Gallup-derived shift is added to the aggregate of the same period",
+    "party_composition": {
+      "enabled": true,
+      "source": "data/nesdc/party_support_national.csv (여론조사꽃 제외). 수준: 한국갤럽 데일리 오피니언·NBS 그대로. 추세: 그 밖의 기관은 기관별 하우스 효과를 뺀 값",
+      "window_days": 28,
+      "include_trend_pollsters": true,
+      "house_window_days": 182,
+      "house_match_days": 14,
+      "house_min_matched": 3,
+      "decision": "user 2026-11-26: 프레임 문항 없이 정당지지도만 있는 조사도 투표율 보정에 활용. 지지층 구성비(민주·국민의힘·무당층·기타)는 갤럽 주간 정당지지도의 최신성 가중 평균, 지지층별 지원·견제 응답은 갤럽 교차표(frame_by_party) 그대로. 같은 날 사용자 결정으로 NBS 직접 반영과 다른 기관 추세 반영을 추가",
+      "recency": "period half_life_days (frame aggregator), 기관마다 가중 1(기관 내 평균); published_at = fieldwork_end + 1일(갤럽·NBS), + 3일(그 밖)",
+      "house_effect": "기관 g 비율 - 같은 날 ±14일 갤럽·NBS 평균, 기준일 전 182일 평균, 대조 3건 이상인 기관만"
+    }
   },
   "composite_baseline": {
     "panel": "data/district_panel.csv",
